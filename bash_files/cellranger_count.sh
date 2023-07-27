@@ -4,7 +4,7 @@
 # SBATCH -t 0-48:00:00
 # SBATCH --mail-type=ALL
 # SBATCH --mail-user=djuna@mit.edu
-# SBATCH --array=9,22,31,33
+# SBATCH --array=0-41
 #SBATCH --mem=150G
 #SBATCH -n 48
 #SBATCH -N 1

@@ -10,6 +10,7 @@ import time
 import numba as nb
 from numba_progress import ProgressBar
 import os
+import ipdb 
 
 def get_matrix_from_h5(filename):
     '''
@@ -102,31 +103,32 @@ def aggregate_fastqs(path_to_outputs, meta_path_individual, counts_path_individu
     sample_ids = ind_meta['sample_id']
     n_ind = len(sample_ids)
     features_id_path = path_to_outputs + 'features_id.npy'
-    np.save(features_id_path, np.empty(shape=Ngenes*n_ind, dtype='str'))
-    features_id_out = np.lib.format.open_memmap(features_id_path, mode='r+', dtype='str')
+    np.save(features_id_path, np.empty(shape=Ngenes*n_ind, dtype='<U18'))
+    features_id_out = np.lib.format.open_memmap(features_id_path, mode='r+', dtype='<U18')
 
     features_name_path = path_to_outputs + 'features_name.npy'
-    np.save(features_name_path, np.empty(shape=Ngenes*n_ind, dtype='str'))
-    features_name_out = np.lib.format.open_memmap(features_name_path, mode='r+', dtype='str')
+    np.save(features_name_path, np.empty(shape=Ngenes*n_ind, dtype='<U18'))
+    features_name_out = np.lib.format.open_memmap(features_name_path, mode='r+', dtype='<U18')
 
     barcodes_path = path_to_outputs + 'barcodes.npy'
-    np.save(barcodes_path, np.empty(shape=Ncells, dtype='str'))
-    barcodes_out = np.lib.format.open_memmap(barcodes_path, mode='r+', dtype='str')
+    np.save(barcodes_path, np.empty(shape=Ncells, dtype='<U18'))
+    barcodes_out = np.lib.format.open_memmap(barcodes_path, mode='r+', dtype='<U18')
  
     # combine matrices
     counter = 0    
     counter = combine_matrices(sample_ids, cell_meta, ind_meta, cell_counts, counts_path_individual, features_id_out, features_name_out, barcodes_out, counter, Ngenes)
-
-    # save metadata
-    print('saving metadata')
-    np.save(meta_path, cell_meta)
     
-    # truncate arrays     
-    print('truncating arrays')
-    remove = Ncells-counter
-    open(counts_path, 'r+').truncate(cell_counts.size - remove * cell_counts[0].size)   
-    open(meta_path, 'r+').truncate(cell_meta.size - remove * cell_meta[0].size)   
-    open(barcodes_path, 'r+').truncate(barcodes_out.size - remove * barcodes_out[0].size)   
+    return counter, cell_counts, cell_meta, barcodes_out, features_name_out, features_id_out
+#     # save metadata
+#     print('saving metadata')
+#     np.save(meta_path, cell_meta)
+    
+#     # truncate arrays     
+#     print('truncating arrays')
+#     remove = Ncells-counter
+#     open(counts_path, 'r+').truncate(cell_counts.size - remove * cell_counts[0].size)   
+#     open(meta_path, 'r+').truncate(cell_meta.size - remove * cell_meta[0].size)   
+#     open(barcodes_path, 'r+').truncate(barcodes_out.size - remove * barcodes_out[0].size)   
     
     print('done.')
     

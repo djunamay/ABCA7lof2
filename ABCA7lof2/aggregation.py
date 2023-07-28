@@ -12,7 +12,6 @@ from numba_progress import ProgressBar
 import os
 
 def get_matrix_from_h5(filename):
-    print('loading hd5..')
     '''
     function adapted from https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices
     Args:
@@ -52,19 +51,17 @@ def write_matrix(ID, counts_path_individual, cell_counts, cell_meta, subset_meta
     #ipdb.set_trace()
 
 
-    print('loading matrix...')
     matrix = get_matrix_from_h5(counts_path_individual + ID + '/outs/filtered_feature_bc_matrix.h5')
     
     mat_array = matrix.matrix.T.toarray()
     temp_ncells = mat_array.shape[0]
     
-    barcodes_out[counter:temp_ncells]  = decode(np.array(matrix.barcodes))
+    barcodes_out[counter:counter+temp_ncells]  = decode(np.array(matrix.barcodes))
     start = i*Ngenes
     stop = start+Ngenes
     features_id_out[start:stop] = decode(np.array(matrix.feature_ref['id']))
     features_name_out[start:stop] = decode(np.array(matrix.feature_ref['name']))
     
-    print('writing to memmap...')
     write_counts_to_memmap(mat_array, cell_counts, counter)
     add_metadata(cell_meta, subset_meta, counter, temp_ncells)
     
@@ -82,7 +79,6 @@ def add_metadata(cell_meta, subset_meta, counter, temp_ncells):
         cell_meta[counter+x] = subset_meta
         
 def get_metadata(meta, Library_ID, barcodes):
-    print('getting metadata...')
     subset_meta = np.array(meta[meta['sample_id']==Library_ID])[0]
     subset_meta = np.array([subset_meta,]*len(barcodes))
     subset_meta = np.concatenate((barcodes[:,None], subset_meta), axis = 1)
@@ -90,7 +86,7 @@ def get_metadata(meta, Library_ID, barcodes):
     return subset_meta
 
 def aggregate_fastqs(path_to_outputs, meta_path_individual, counts_path_individual, Ncells=300000, Ngenes=36601):
-    
+    print('preparing...')
     # initiate empty counts matrix and load as memmap
     counts_path = path_to_outputs + 'counts.npy'
     np.save(counts_path, np.empty(shape=(Ncells, Ngenes), dtype='int32'))
@@ -122,14 +118,18 @@ def aggregate_fastqs(path_to_outputs, meta_path_individual, counts_path_individu
     counter = combine_matrices(sample_ids, cell_meta, ind_meta, cell_counts, counts_path_individual, features_id_out, features_name_out, barcodes_out, counter, Ngenes)
 
     # save metadata
+    print('saving metadata')
     np.save(meta_path, cell_meta)
     
-    # truncate arrays                 
+    # truncate arrays     
+    print('truncating arrays')
     remove = Ncells-counter
-    truncate(counts_path, cell_counts.size - remove * cell_counts[0].size)   
-    truncate(meta_path, cell_meta.size - remove * cell_meta[0].size)   
-    truncate(barcodes_path, barcodes_out.size - remove * barcodes_out[0].shape)   
-                                             
+    open(counts_path, 'r+').truncate(cell_counts.size - remove * cell_counts[0].size)   
+    open(meta_path, 'r+').truncate(cell_meta.size - remove * cell_meta[0].size)   
+    open(barcodes_path, 'r+').truncate(barcodes_out.size - remove * barcodes_out[0].size)   
+    
+    print('done.')
+    
 def combine_matrices(sample_ids, cell_meta, ind_meta, cell_counts, counts_path_individual, features_id_out, features_name_out, barcodes_out, counter, Ngenes):
     
     for i in (range(len(sample_ids))):

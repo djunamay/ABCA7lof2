@@ -1,22 +1,21 @@
 #!/bin/bash
 
-# SBATCH -J fastq_count
+# SBATCH -J aggr
 # SBATCH -t 0-48:00:00
-# SBATCH -o /home/gridsan/djuna/github/ABCA7_LOF_2022/pre-processing/cellranger_count/cellranger_count_output/out/slurm_Jan2022_%A_%a.out
-# SBATCH -e /home/gridsan/djuna/github/ABCA7_LOF_2022/pre-processing/cellranger_count/cellranger_count_output/err/slurm_Jan2022_%A_%a.err
-# SBATCH --mail-type=ALL
-# SBATCH --mail-user=djuna@mit.edu
-# SBATCH --mem=100G
-# SBATCH --cpus-per-task=40
-# SBATCH --exclusive 
+# SBATCH -o /home/gridsan/djuna/homer/github/ABCA7lof2/logs/slurm_Jan2022_%A_%a.out
+# SBATCH -e /home/gridsan/djuna/homer/github/ABCA7lof2/logs/slurm_Jan2022_%A_%a.err
+# SBATCH --partition=xeon-g6-volta
+# SBATCH --exclusive
+# SBATCH --mem=280G
 
-PATH=/home/gridsan/djuna/github/scmod_R/f_cellranger/cellranger-6.1.2:$PATH 
+HDF5_USE_FILE_LOCKING='FALSE'
 
-cellranger aggr --id=ABCA7_LOF_Jan12_2022 \
-                --csv=metadata_for_aggregation.csv \
+PATH=/home/gridsan/djuna/homer/github/archived_repos/scmod_R/f_cellranger/cellranger-6.1.2:$PATH 
+
+cellranger aggr --id=ABCA7lof2 \
+                --csv=/home/gridsan/djuna/homer/github/ABCA7lof2/raw_data/metadata/single_cell_individual_metadata.csv \
                 --normalize=none \
                 --nosecondary \
-                --localcores=40 \
                 --disable-ui \
                 --jobmode=local \
-                --localmem=50
+                --localmem=280

@@ -145,18 +145,13 @@ def aggregate_fastqs(path_to_outputs, meta_path_individual, counts_path_individu
     counter = 0    
     counter = combine_matrices(sample_ids, cell_meta, ind_meta, cell_counts, counts_path_individual, features_id_out, features_name_out, barcodes_out, counter, Ngenes)
     
-    return counter, cell_counts, cell_meta, barcodes_out, features_name_out, features_id_out
-#     # save metadata
-#     print('saving metadata')
-#     np.save(meta_path, cell_meta)
-    
-#     # truncate arrays     
-#     print('truncating arrays')
-#     remove = Ncells-counter
-#     open(counts_path, 'r+').truncate(cell_counts.size - remove * cell_counts[0].size)   
-#     open(meta_path, 'r+').truncate(cell_meta.size - remove * cell_meta[0].size)   
-#     open(barcodes_path, 'r+').truncate(barcodes_out.size - remove * barcodes_out[0].size)   
-    
+    # truncate arrays
+    truncate_array(barcodes_path, barcodes_out, counter, Ncells, Ngenes)
+    truncate_array(counts_path, cell_counts, counter, Ncells, Ngenes)
+
+    # save metadata
+    print('saving metadata')
+    np.save(meta_path, cell_meta[:counter])
     print('done.')
     
 def combine_matrices(sample_ids, cell_meta, ind_meta, cell_counts, counts_path_individual, features_id_out, features_name_out, barcodes_out, counter, Ngenes):

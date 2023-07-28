@@ -11,7 +11,34 @@ import numba as nb
 from numba_progress import ProgressBar
 import os
 import ipdb 
+import sys
 
+def truncate_array(path, array, counter, Ncells, Ngenes):
+
+    temp = open(path, 'r+')
+    line = temp.readline()
+    temp.close()
+
+    constant = sys.getsizeof(line)
+
+    temp = open(path, 'r+')
+    
+    if array.ndim==1:
+        temp.truncate((array.itemsize*counter)+constant)
+        line = temp.readline()
+        temp.close()
+        newline = line.replace(str(Ncells), str(counter))
+    else:
+        temp.truncate((array.itemsize*array.shape[1]*counter)+constant)
+        line = temp.readline()
+        temp.close()
+        newline = line.replace(str((Ncells, Ngenes)), str((counter, Ngenes)))
+        
+    temp = open(path, 'r+')
+    temp.writelines(newline)
+    temp.close()
+
+    
 def get_matrix_from_h5(filename):
     '''
     function adapted from https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices

@@ -142,18 +142,19 @@ def filter_individuals(celltype_annotations, individual_annotation):
 def filter_genes_by_expression(annotations, counts):
     celltypes = np.unique(annotations)
     N = counts.shape[1]
-    keep_genes_all = np.empty((len(celltypes), N))
+    keep_genes_all = np.empty((len(celltypes), N), dtype=bool)
     for i in range(len(celltypes)):
         index = annotations == celltypes[i]
         with ProgressBar(total=N) as numba_progress:
-            keep_genes_all[i] = filter_genes_by_celltype(N, index, counts, keep_genes_all, i, numba_progress)
-    return keep_genes_all.astype('bool')
+            filter_genes_by_celltype(N, index, counts, keep_genes_all, i, numba_progress)
+    return keep_genes_all#.astype('bool')
 
 @nb.njit(parallel=True)
 def filter_genes_by_celltype(N, index, counts, keep_genes_all, i, progress_hook):
     for x in nb.prange(N):
+        #ipdb.set_trace()
         gene = counts[:,x][index]
-        keep_genes_all[i, x] = (np.sum(gene>0)/len(gene)) > 0.05
+        keep_genes_all[i, x] = (np.sum(gene>0)/len(gene)) > 0
         progress_hook.update(1)
 
 @nb.njit(parallel=True)

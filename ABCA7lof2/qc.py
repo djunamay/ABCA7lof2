@@ -154,7 +154,7 @@ def filter_genes_by_celltype(N, index, counts, keep_genes_all, i, progress_hook)
     for x in nb.prange(N):
         #ipdb.set_trace()
         gene = counts[:,x][index]
-        keep_genes_all[i, x] = (np.sum(gene>0)/len(gene)) > 0
+        keep_genes_all[i, x] = (np.sum(gene>0)/len(gene)) > 0.1
         progress_hook.update(1)
 
 @nb.njit(parallel=True)

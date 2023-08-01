@@ -170,3 +170,24 @@ get_limma_inputs = function(summed_counts_indexed, expressed, meta, vars){
     }
     return(list('aggs' = aggs, 'metadata' = metadata))
 }
+
+#################################
+get_deg_scores = function(degs){
+    # computes -log10(p-value) * sign(logFC) for each gene per cell type
+    #
+    # Args:
+    #   degs: output from RunDiffExprAnalysisLimma()
+    #
+    # Returns:
+    #   list of gene score vectors per celltype
+
+    pseudo_scores = list()
+    for(i in names(degs)){
+        curr = degs[[i]]$res
+        scores = sign(curr$logFC) * -log10(curr$P.Value)
+        names(scores) = rownames(curr)
+        scores = scores[order(scores, decreasing = T)]
+        pseudo_scores[[i]]$scores = scores
+    }
+    return(pseudo_scores)
+}

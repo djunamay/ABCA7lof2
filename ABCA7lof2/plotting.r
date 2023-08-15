@@ -103,12 +103,12 @@ plot_lipid_diff = function(data, gene, name, x_label, y_label){
     lower = x$conf.int[1]
     upper = x$conf.int[2]
 
-    text = paste0('pcc = ',round(estimate, 2), ', 95% CI: [', round(lower, 2), ', ', round(upper, 2), ']')
+    text = paste0('pcc = ',round(estimate, 2), ',\n 95% CI: [', round(lower, 2), ', ', round(upper, 2), ']')
 
     ggplot(data, aes(x=as.numeric(sample1), y=as.numeric(sample2)), label = Row.names) +
-    geom_point() + geom_point(data = data[data$Row.names%in%gene,], col = 'red') + geom_smooth(method=lm, formula='y ~ x') + theme_classic() + geom_vline(xintercept = 0) + geom_hline(yintercept = 0)  + scale_fill_viridis_c() +
-    geom_text_repel(label = ifelse(data$Row.names%in%gene,data$Row.names,''), max.overlaps  = 1000000) + xlab(x_label) + ylab(y_label) + ggtitle(paste0('comparison of DEGs for ', name)) +
-    annotate("text", x=0, y=max(data$sample2), label= text)
+    geom_point(data = data[!(data$Row.names%in%gene),], col = 'grey') + geom_point(data = data[data$Row.names%in%gene,], col = 'forestgreen') + geom_smooth(method=lm, formula='y ~ x') + theme_classic() + geom_vline(xintercept = 0, linetype='dashed') + geom_hline(yintercept = 0, linetype='dashed')  + scale_fill_viridis_c() +
+    geom_text_repel(label = ifelse(data$Row.names%in%gene,data$Row.names,''), max.overlaps  = 1000000) + xlab(x_label) + ylab(y_label) + ggtitle(name) +
+    annotate("text", x=-1.5, y=max(data$sample2), label= text)
 }
 
 draw_deg_hmap = function(celltype, all_data){

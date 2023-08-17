@@ -6,6 +6,9 @@ from sklearn.mixture import GaussianMixture
 from ABCA7lof2.plots import plot_filter_cells
 from numba_progress import ProgressBar
 import ipdb 
+from sklearn.mixture import GaussianMixture
+from sklearn.model_selection import GridSearchCV
+import pandas as pd
 
 @nb.njit(parallel=False)
 def filter_genes(counts, keep_genes):
@@ -76,6 +79,44 @@ def cluster_on_mito_and_counts(mito_fractions, total_counts, sample_size):
     print('counts per label = ' + str(stats[1]))
     return keep_cells
 
+def filter_cells_by_mito(mito_fractions):
+    
+    X  = np.log10(mito_fractions+np.min(mito_fractions[mito_fractions>0])).reshape(-1,1)
+    ###############this code is from: https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
+    param_grid = {
+        "n_components": range(1, 15),
+        "covariance_type": ["spherical", "tied", "diag", "full"],
+    }
+    print('gaussian gridsearch')
+    
+    grid_search = GridSearchCV(
+        GaussianMixture(), param_grid=param_grid, scoring=gmm_bic_score
+    )
+    grid_search.fit(X)
+
+
+    df = pd.DataFrame(grid_search.cv_results_)[
+        ["param_n_components", "param_covariance_type", "mean_test_score"]
+    ]
+    df["mean_test_score"] = -df["mean_test_score"]
+    df = df.rename(
+        columns={
+            "param_n_components": "Number of components",
+            "param_covariance_type": "Type of covariance",
+            "mean_test_score": "BIC score",
+        }
+    )
+    ###############
+
+    x = df.loc[np.argmin(df['BIC score'])]
+    print(x)
+    
+    gm = GaussianMixture(n_components=x[0], max_iter=10000, n_init=100, covariance_type=x[1]).fit(temp)
+    labels = gm.predict(temp)
+    clust_remove = np.argmax([np.mean(temp[labels==x]) for x in np.unique(labels)])
+
+    keep_cells = labels!=clust_remove
+    return keep_cells
 
 def filter_cells(gene_names, counts, meta, sample_size, total_counts_lower_bound, total_counts_upper_bound, pdf, prefix, out_dir):
     '''
@@ -98,17 +139,46 @@ def filter_cells(gene_names, counts, meta, sample_size, total_counts_lower_bound
         prefix: string
             mitochondrial genes start with this prefix (e.g. 'MT-')
     '''
-    mito_fractions, mito_index, total_counts = get_fraction_mito(gene_names, counts, prefix)
-    keep_cells = (total_counts >= total_counts_lower_bound) & (total_counts <= total_counts_upper_bound)
-    keep_cells[keep_cells] = cluster_on_mito_and_counts(mito_fractions[keep_cells], total_counts[keep_cells], sample_size)
-    plot_filter_cells(mito_fractions, total_counts, keep_cells, pdf, total_counts_lower_bound, total_counts_upper_bound)
+    print('getting mito fractions')
+    mito_fractions, mito_index, total_counts = get_fraction_mito(gene_names, counts, prefix)  
+    
+    keep_cells = filter_cells_by_mito(mito_fractions)
+
+    print('All cells')
+    print(len(keep_cells))
+    print('Mito keep')
+    print(np.sum(keep_cells)/len(keep_cells))
+    
+    with ProgressBar(total=counts.shape[0]) as numba_progress:
+        N = np.empty(len(counts))
+        get_N_detected_genes(counts, N, numba_progress)
+    
+    keep_cells = keep_cells&(N>=total_counts_lower_bound)&(N<=total_counts_upper_bound)
+    
+    print('All keep:')
+    print(np.sum(keep_cells)/len(keep_cells))
+    
     filtered_counts = np.memmap(out_dir + '/filtered_counts.npy', mode='w+', shape=(np.count_nonzero(keep_cells), counts.shape[1]), dtype='int16')
     meta_subset = meta[keep_cells]
     mito_fractions_subset = mito_fractions[keep_cells]
+
+    print('Mito fraction mean discard:')
+    print(np.mean(mito_fractions[np.invert(keep_cells)]))
+    
+    print('Mito fraction mean keep:')
+    print(np.mean(mito_fractions_subset))
+    
     total_counts_subset = total_counts[keep_cells]
     with ProgressBar(total=filtered_counts.shape[0]) as numba_progress:
         filter_counts_by_keep_cells(np.where(keep_cells)[0], counts, filtered_counts, numba_progress)
     return mito_index, total_counts_subset, mito_fractions_subset, meta_subset, filtered_counts
+
+############### this function is from: https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
+def gmm_bic_score(estimator, X):
+    """Callable to pass to GridSearchCV that will use the BIC score."""
+    # Make it negative since GridSearchCV expects a score to maximize
+    return -estimator.bic(X)
+###############
 
 
 def filter_cells_by_major_annotation(mito_fractions, total_counts, sample_size, celltype_annotations, individual_annotation, filtered_counts):
@@ -163,6 +233,11 @@ def filter_counts_by_keep_cells(counts_index, counts, filtered_counts, progress_
         filtered_counts[i] = counts[counts_index[i]]
         progress_hook.update(1)
 
+@nb.njit(parallel=True)
+def get_N_detected_genes(counts, N):
+    for i in nb.prange(len(counts)):
+        N[i] = sum(counts[i]>0)
+        
 def filter_on_gaussian_logliklihood(scores):
     scores = scores.reshape(-1,1)
     gm = GaussianMixture(n_components=3, covariance_type='full', random_state=0).fit(scores)

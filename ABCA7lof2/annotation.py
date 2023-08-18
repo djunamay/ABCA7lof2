@@ -7,6 +7,9 @@ from ABCA7lof2.qc import filter_cells_by_major_annotation
 from ABCA7lof2.setup import process_metadata
 from numba_progress import ProgressBar
 import localreg
+from ABCA7lof2.qc import gmm_bic_score
+from sklearn.mixture import GaussianMixture
+from sklearn.model_selection import GridSearchCV
 
 def get_marker_indices(marker_path, gene_names):
     '''
@@ -77,7 +80,40 @@ def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
     '''
     print('estimating gaussian mixture model...')
     rand_index = np.random.choice(range(len(projected_matrix)), replace=False, size=int(sample_size*len(projected_matrix)))
-    gm = GaussianMixture(n_components=n_components_gaussian, covariance_type='full', random_state=0).fit(projected_matrix[rand_index])
+    
+    # first estimate N components and cov matrix
+    X = projected_matrix[rand_index]
+    
+    ###############this code is from: https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
+    param_grid = {
+        "n_components": range(4, 10),
+        "covariance_type": ["spherical", "tied", "diag", "full"],
+    }
+    print('gaussian gridsearch')
+    
+    grid_search = GridSearchCV(
+        GaussianMixture(), param_grid=param_grid, scoring=gmm_bic_score, verbose=10
+    )
+    grid_search.fit(X)
+
+
+    df = pd.DataFrame(grid_search.cv_results_)[
+        ["param_n_components", "param_covariance_type", "mean_test_score"]
+    ]
+    df["mean_test_score"] = -df["mean_test_score"]
+    df = df.rename(
+        columns={
+            "param_n_components": "Number of components",
+            "param_covariance_type": "Type of covariance",
+            "mean_test_score": "BIC score",
+        }
+    )
+    ###############
+
+    x = df.loc[np.argmin(df['BIC score'])]
+    print(x)
+
+    gm = GaussianMixture(n_components=x[0],  max_iter=10000, n_init=100, covariance_type=x[1], random_state=0).fit(X)
     predict = gm.predict(projected_matrix)
     scores = gm.score_samples(projected_matrix)
     return predict, scores

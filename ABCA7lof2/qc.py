@@ -22,8 +22,9 @@ def get_total_counts(counts, total_counts):
         total_counts[i] = counts[i].sum()
     return total_counts
 
+@nb.njit(parallel=True)
 def compute_mito_fraction(counts, gene_index, mito_fractions, total_counts):
-    for i in range(counts.shape[0]):
+    for i in nb.prange(counts.shape[0]):
         total_counts[i] = counts[i].sum()
         if total_counts[i]>0:
             mito_fractions[i] = counts[i][gene_index].sum() / total_counts[i]  # .sum()
@@ -111,9 +112,9 @@ def filter_cells_by_mito(mito_fractions):
     x = df.loc[np.argmin(df['BIC score'])]
     print(x)
     
-    gm = GaussianMixture(n_components=x[0], max_iter=10000, n_init=100, covariance_type=x[1]).fit(temp)
-    labels = gm.predict(temp)
-    clust_remove = np.argmax([np.mean(temp[labels==x]) for x in np.unique(labels)])
+    gm = GaussianMixture(n_components=x[0], max_iter=10000, n_init=100, covariance_type=x[1]).fit(X)
+    labels = gm.predict(X)
+    clust_remove = np.argmax([np.mean(X[labels==x]) for x in np.unique(labels)])
 
     keep_cells = labels!=clust_remove
     return keep_cells
@@ -142,6 +143,7 @@ def filter_cells(gene_names, counts, meta, sample_size, total_counts_lower_bound
     print('getting mito fractions')
     mito_fractions, mito_index, total_counts = get_fraction_mito(gene_names, counts, prefix)  
     
+    print('searching for best params')
     keep_cells = filter_cells_by_mito(mito_fractions)
 
     print('All cells')
@@ -234,9 +236,10 @@ def filter_counts_by_keep_cells(counts_index, counts, filtered_counts, progress_
         progress_hook.update(1)
 
 @nb.njit(parallel=True)
-def get_N_detected_genes(counts, N):
+def get_N_detected_genes(counts, N, progress_hook):
     for i in nb.prange(len(counts)):
         N[i] = sum(counts[i]>0)
+        progress_hook.update(1)
         
 def filter_on_gaussian_logliklihood(scores):
     scores = scores.reshape(-1,1)

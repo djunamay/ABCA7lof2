@@ -10,6 +10,7 @@ import localreg
 from ABCA7lof2.qc import gmm_bic_score
 from sklearn.mixture import GaussianMixture
 from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import StandardScaler
 
 def get_marker_indices(marker_path, gene_names):
     '''
@@ -62,6 +63,8 @@ def run_ipca(marker_mat, n_components_pca, sample_size):
             0< float <=1 indicating the fraction of N-cells to sample and on which to run PCA
     '''
     print('running pca...')
+    scaler = StandardScaler()
+    marker_mat = scaler.fit_transform(marker_mat)
     ipca = IncrementalPCA(n_components_pca, batch_size=int(sample_size*marker_mat.shape[0]))
     ipca.fit(marker_mat)
     projected_matrix = ipca.transform(marker_mat) 
@@ -86,8 +89,8 @@ def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
     
     ###############this code is from: https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
     param_grid = {
-        "n_components": range(4, 10),
-        "covariance_type": ["spherical", "tied", "diag", "full"],
+        "n_components": range(11), #6,12
+        "covariance_type": [ "full"]#,"spherical", "tied", "diag"]
     }
     print('gaussian gridsearch')
     
@@ -113,7 +116,7 @@ def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
     x = df.loc[np.argmin(df['BIC score'])]
     print(x)
 
-    gm = GaussianMixture(n_components=x[0],  max_iter=10000, n_init=100, covariance_type=x[1], random_state=0).fit(X)
+    gm = GaussianMixture(n_components=x[0], covariance_type=x[1], random_state=0).fit(X)
     predict = gm.predict(projected_matrix)
     scores = gm.score_samples(projected_matrix)
     return predict, scores

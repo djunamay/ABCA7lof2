@@ -89,8 +89,8 @@ def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
     
     ###############this code is from: https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py
     param_grid = {
-        "n_components": range(11), #6,12
-        "covariance_type": [ "full"]#,"spherical", "tied", "diag"]
+        "n_components": range(11,16),
+        "covariance_type": [ "full","spherical", "tied", "diag"]
     }
     print('gaussian gridsearch')
     

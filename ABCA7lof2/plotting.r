@@ -55,13 +55,13 @@ get_barplot = function(all_data, x, y){
 
 }
 
-plot_coords_by_grp = function (df, x_name, y_name, annotation_name, alpha_name, colors) 
+plot_coords_by_grp = function (df, x_name, y_name, annotation_name, alpha_name, colors, S) 
 {
     df = (df[,c(x_name, y_name, annotation_name, alpha_name)])
     colnames(df) = c('x_name', 'y_name', 'annotation_name', 'alpha_name')
     
     plot = ggplot(df, aes(x = x_name, y = y_name, color = annotation_name, 
-        alpha = alpha_name)) + geom_point(size = 0.001) + theme_void() + 
+        alpha = alpha_name), size=S) + geom_point(size = S) + theme_void() + 
         theme(panel.background = element_rect(colour = "black", 
             size = 0), legend.position = "none") + scale_color_manual(values = (colors[as.character(unique(df$annotation_name))])) + 
         ggtitle("") + theme(text = element_text(size = (11))) + 

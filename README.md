@@ -1,10 +1,13 @@
-***This repository contains code to reproduce the analyses presented in***
-### ABCA7 loss of function induces lipid dyshomeostasis and DNA damage in neurons
+***This repository contains code to reproduce the analyses in "ABCA7 loss of function induces lipid dyshomeostasis and DNA damage in neurons"***
 
-#### Data Availability
+### 1. Data Availability
 
-- Fastq files and metadata
-> The raw data repository on Synapse is organized as follows (comments indicate the code that generated these data).
+- WGS data
+to get genomic variant data 
+> Follow instructions here:
+> https://github.com/djunamay/ROSMAPwgs
+
+- Single cell data: download from **Synapse** [here](link to synapse).
 > ```
 > ABCA7lof
 > └───fastq
@@ -13,48 +16,28 @@
 >     └───171013Tsa
 >     └───meta
 >     └───md5sums
-> ```
-
-- If you would like to *process the raw counts matrix* and associated metadata, these files can be downloaded on **Synapse** [here](link to synapse). [coming soon]
-> The raw data repository on Synapse is organized as follows (comments indicate the code that generated these data).
-> ```
-> ABCA7lof
 > └───raw_data
 >     └───raw_gene_names.csv # comment on origin
 >     └───raw_sample_metadata.csv 
 >     └───raw_counts.mtx 
-> ```
-
-- If you would like to *access the fully-processed, annotated, and qc-ed data*, that data can be found on **Synapse** [here](link to synapse). [coming soon]
-> The qc-ed data repository on Synapse is organized as follows (comments indicate the code that generated these data).
-> ```
-> ABCA7lof
 > └───qc_data
 >     └───qc_gene_names.csv
 >     └───qc_sample_metadata.csv 
 >     └───qc_counts.mtx 
+> └───pm_lipidomic_data
+>     └───
 > ```
 
-- All other data required to reproduce cell type qc, annotation, and analyses are available on the **Open Science Framework** [here](https://osf.io/vn7w2/).
-> The data repository on OSF is organized as follows (comments indicate the code that generated these data).
-> ```
+- Other data generated as part of this study: download from the **Open Science Framework** [here](https://osf.io/vn7w2/). 
 
-> ```
+- Other data analyzed in this study
 
-- External datasets used for analysis:
 
-    **Proteomic Dataset:** https://www.synapse.org/#!Synapse:syn21449447
-    
-#### 
+### 2. Data pre-processing
+**`./1-metadata.ipynb`**
+Extract metadata for post-mortem samples and match it to the snRNAseq library IDs. Extract genomic variant info of interest and match that as well.
 
-1. Run **`./wgs script`** to get genomic variant data 
-> Follow instructions here:
-> https://github.com/djunamay/ROSMAPwgs
->
-
-2. Run **`./metadata.ipynb`** to get all the necessary metadata
-
-3. Run **`./bash_files/cellranger_count.sh`** and **`./bash_files/aggregate.sh`** to align, count, and aggregate the FASTQ files.
+**`cellranger counting`** 
 
 > ```bash
 > # Make the squash file systems 
@@ -69,8 +52,7 @@
 > */bash_files/check_success.sh # iterate over all logs and check whether pipeline was successful before moving to aggregation
 > ```
 
-4. Run **`./sample swap`** to perform sample swap analysis
-
+**`sample swap`**
 > ```bash
 >*/bash_files/crossmap.sh #to remap the vcf file (see crossmap.sh)
 >*/htslib-1.10.2/bgzip out.hg38.vcf --threads 20 #compress with bgzip
@@ -78,18 +60,50 @@
 >*/htslib-1.10.2/tabix -p vcf out.hg38.sorted.vcf.gz #then generate the corresponding tabix file 
 >*/bcftools annotate --rename-chrs chr_name_conv.txt out.hg38.sorted.vcf.gz -Oz -o out.hg38.sorted.ChrNamed.vcf.gz --threads 40
 >*htslib-1.10.2/tabix -p vcf out.hg38.sorted.ChrNamed.vcf.gz # then generate the corresponding tabix file 
-> ```
+> `
 
-Follow  **`*/bash_files/sample_swap_make_exec.ipynb`**
+**`./02-sample_swap.ipynb`**
+Visualize sample swap results
 
-> ```bash
-> sbatch --array 1-42 */bash_files/sample_swap.sh
-> ```
+**`./03-aggregate.ipynb`**
+Aggregate cellranger count outputs
 
-5. Follow **`./aggregate.ipynb`** to aggregate the individual count profiles into single matrix
+**`./04-get_marker_genes.ipynb`**
+Get marker genes for celltype annotation
 
-5. Follow  **`./single_cell_qc_anno.ipynb`** to QC and ANNOTATE the single-cell counts matrix:
+**`./05-single_cell_qc_anno.ipynb`**
+Run celltype quality control and annotation I
 
-6. Follow **`./pathway_analsysis.ipynb`** and **`./other_analysis.ipynb`** to perform all analyses
+**`./06-umaps.ipynb`**
+Run celltype quality control and annotation II
 
-7. Follow **`./figures.ipynb`** to plot all the figures
+**`./07-make_sce.ipynb`**
+Save single cell data as singlecellexperiment object
+
+### 3. Stats
+**`./08-processing_gsets.ipynb`**
+Processing genesets and evaluating KL heuristic
+
+**`./09-stats_inputs.ipynb`**
+Format data for input to stats analysis
+
+**`./10-compute_stats.ipynb`**
+Compute DEGs and pathway enrichments 
+
+**`./11-projections.ipynb`**
+Projecting DEGs into UMAP space and clustering
+
+**`./12-KL_clusters.ipynb`**
+Assign leading edge genes to clusters based on gene-pathway graph
+
+
+### 4. Figures
+**`./13-plotting_inputs.ipynb`**
+Process some of the external/non-single cell datasets for plotting
+
+**`./14-figures.ipynb`**
+Plot remaining main figure panels
+
+**`./15-extended-figures.ipynb`**
+Plot extended figures
+

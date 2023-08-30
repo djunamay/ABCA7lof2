@@ -186,7 +186,7 @@ get_deg_scores = function(degs){
         curr = degs[[i]]$res
         scores = sign(curr$logFC) * -log10(curr$P.Value)
         names(scores) = rownames(curr)
-        scores = scores[order(scores, decreasing = T)]
+        scores = scores[order(scores, decreasing = TRUE)]
         pseudo_scores[[i]]$scores = scores
     }
     return(pseudo_scores)

@@ -2,12 +2,15 @@
 
 ### 1. Data Availability
 
-- WGS data
-to get genomic variant data 
-> Follow instructions here:
-> https://github.com/djunamay/ROSMAPwgs
+*Follow these instructions to access the data generated and used as part of this study.*
 
-- Single cell data: download from **Synapse** [here](link to synapse).
+- For whole genome sequencing data
+> Follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
+
+- For snRNA-seq and post-mortem lipidomic data
+> Download from **Synapse** [coming soon](https://linktosynapse) \
+> This is what the file structure on Synapse looks like: \
+> click [here](https://linktosynapse) for descriptions
 > ```
 > ABCA7lof
 > └───fastq
@@ -17,7 +20,7 @@ to get genomic variant data
 >     └───meta
 >     └───md5sums
 > └───raw_data
->     └───raw_gene_names.csv # comment on origin
+>     └───raw_gene_names.csv 
 >     └───raw_sample_metadata.csv 
 >     └───raw_counts.mtx 
 > └───qc_data
@@ -28,82 +31,100 @@ to get genomic variant data
 >     └───
 > ```
 
-- Other data generated as part of this study: download from the **Open Science Framework** [here](https://osf.io/vn7w2/). 
+- For all other data
+> Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
+> This is what the file structure on OSF looks like: \
+> click [here](https://osf.io/vn7w2/) for descriptions
+> ```
+> ABCA7lof
+> └───single_cell_data
+>     └───
+> └───ipsc_data
+>     └───
+> └───other_postmortem_data
+>     └───
+> └───supplementary_tables
+>     └───
+> ```
 
-- Other data analyzed in this study
+### 2. Data Analysis
+
+*If you'd like to start with the fastq files:*
+
+a. **`Download the fastq files` [[here](https://linktosynapse)]** 
 
 
-### 2. Data pre-processing
-**`./1-metadata.ipynb`**
-Extract metadata for post-mortem samples and match it to the snRNAseq library IDs. Extract genomic variant info of interest and match that as well.
-
-**`cellranger counting`** 
+b. **`run cellranger counting`** 
 
 > ```bash
 > # Make the squash file systems 
-> mksquashfs */fastqs/10x-4819F batch_4819F.sqsh
+> mksquashfs */fastqs/10x-4819F batch_4819F.sqsh # or modify the cellranger_count.sh script to run without the squash file system
 > mksquashfs */fastqs/10x-4826F batch_4826F.sqsh
 > mksquashfs */fastqs/171013Tsa 171013Tsa.sqsh
 > ```
 
 > ```bash
-> # count and aggregate the FASTQ files:
+> # count the FASTQ files:
 > sbatch --array 1-42 */bash_files/cellranger_count.sh
 > */bash_files/check_success.sh # iterate over all logs and check whether pipeline was successful before moving to aggregation
 > ```
 
-**`sample swap`**
+c. **`sample swap`**
+
+*NB. We did this for the analysis as a control to check that WGS data and snRNA-seq data match (they do), so you don't need to run this again*
+> see *`/bash_files/crossmap.sh`* to remap the vcf file \
+> then run the following commands in bash:
 > ```bash
->*/bash_files/crossmap.sh #to remap the vcf file (see crossmap.sh)
->*/htslib-1.10.2/bgzip out.hg38.vcf --threads 20 #compress with bgzip
->*/bcftools sort out.hg38.vcf.gz -o out.hg38.sorted.vcf.gz #sort the vcf file: 
->*/htslib-1.10.2/tabix -p vcf out.hg38.sorted.vcf.gz #then generate the corresponding tabix file 
->*/bcftools annotate --rename-chrs chr_name_conv.txt out.hg38.sorted.vcf.gz -Oz -o out.hg38.sorted.ChrNamed.vcf.gz --threads 40
->*htslib-1.10.2/tabix -p vcf out.hg38.sorted.ChrNamed.vcf.gz # then generate the corresponding tabix file 
-> `
+> */htslib-1.10.2/bgzip out.hg38.vcf --threads 20 # compress with bgzip
+> */bcftools sort out.hg38.vcf.gz -o out.hg38.sorted.vcf.gz # sort the vcf file 
+> */htslib-1.10.2/tabix -p vcf out.hg38.sorted.vcf.gz # then generate the corresponding tabix file 
+> */bcftools annotate --rename-chrs chr_name_conv.txt out.hg38.sorted.vcf.gz -Oz -o out.hg38.sorted.ChrNamed.vcf.gz --threads 40
+> *htslib-1.10.2/tabix -p vcf out.hg38.sorted.ChrNamed.vcf.gz # then generate the corresponding tabix file 
+>```
+> see *`sample_swap_make_exec.ipynb`* to make text file to iterate through \
+> see *`sample_swap.sh`* to run sample swap \
+> see *`./02-sample_swap.ipynb`* to visualize sample swap results 
 
-**`./02-sample_swap.ipynb`**
-Visualize sample swap results
+d. **`aggregate counts`** 
+> see *`./03-aggregate.ipynb`* to aggregate all the count files
 
-**`./03-aggregate.ipynb`**
-Aggregate cellranger count outputs
+e. **`celltype annotation & QC`** 
 
-**`./04-get_marker_genes.ipynb`**
-Get marker genes for celltype annotation
+*If you'd like to start with the annotations, start here:*
 
-**`./05-single_cell_qc_anno.ipynb`**
-Run celltype quality control and annotation I
+- download x here
 
-**`./06-umaps.ipynb`**
-Run celltype quality control and annotation II
+> see *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation \
+> see *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
+> see *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
+> see *`./07-make_sce.ipynb`* to save single cell data as singlecellexperiment object 
 
-**`./07-make_sce.ipynb`**
-Save single cell data as singlecellexperiment object
+e. **`gene clusters`** 
 
-### 3. Stats
-**`./08-processing_gsets.ipynb`**
-Processing genesets and evaluating KL heuristic
+*If you'd like to play with the gene clustering, start here:*
+> run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
+> see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
-**`./09-stats_inputs.ipynb`**
-Format data for input to stats analysis
-
-**`./10-compute_stats.ipynb`**
-Compute DEGs and pathway enrichments 
-
-**`./11-projections.ipynb`**
-Projecting DEGs into UMAP space and clustering
-
-**`./12-KL_clusters.ipynb`**
-Assign leading edge genes to clusters based on gene-pathway graph
+<details>
+<summary>Methods</summary>
+<br>
+methods from paper
+</details>
 
 
-### 4. Figures
-**`./13-plotting_inputs.ipynb`**
-Process some of the external/non-single cell datasets for plotting
+f. **`stats`**
 
-**`./14-figures.ipynb`**
-Plot remaining main figure panels
+*If you'd like to start with the stats, start here:*
 
-**`./15-extended-figures.ipynb`**
-Plot extended figures
+> see *`./09-stats_inputs.ipynb`* to format data for input to stats analysis \
+> see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments \ 
+
+g. **`plots`**
+
+*If you'd like to just replot:*
+> see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering
+> see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results \
+> see *`./13-plotting_inputs.ipynb`* to format some data for plotting \
+> see *`./14-figures.ipynb`* to plot main figure panels \
+> see *`./15-extended-figures.ipynb`* to plot extended figures
 

@@ -8,7 +8,7 @@ In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we 
 
 Follow these instructions to access the data generated and used as part of this study.*
 
-- **`processed WGS data`**
+### **`processed WGS data`**
 > Follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 > <details>
 > <summary>Then run the main.py script with the following parameters:</summary>
@@ -19,17 +19,17 @@ Follow these instructions to access the data generated and used as part of this 
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
 > </details>
-- **`processed and raw snRNAseq data (post-mortem)`**
+### **`processed and raw snRNAseq data (post-mortem)`**
 > Download from **Synapse** [coming soon](https://linktosynapse) \
 > This is what the file structure on Synapse looks like: \
 > click [here](https://linktosynapse) for descriptions
 
-- **`processed and raw lipidomic data (post-mortem)`**
+### **`processed and raw lipidomic data (post-mortem)`**
 > Download from **Synapse** [coming soon](https://linktosynapse) \
 > This is what the file structure on Synapse looks like: \
 > click [here](https://linktosynapse) for descriptions
 
-- **`processed and raw iPSC data`**
+### **`processed and raw iPSC data`**
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions
@@ -87,7 +87,7 @@ Follow these instructions to access the data generated and used as part of this 
 > </details>
 > <details>
 > <summary>Get the data</summary>
-See sections **`run cellranger counting`**  and **`processed WGS data`** above to get BAM files and WGS data.
+> See sections **`run cellranger counting`**  and **`processed WGS data`** above to get BAM files and WGS data.
 > </details>
 > <details>
 > <summary>Show the methods</summary>
@@ -114,7 +114,7 @@ See sections **`run cellranger counting`**  and **`processed WGS data`** above t
 ### **`celltype annotation & QC`** 
 > <details>
 > <summary>Show description</summary>
-Follow these steps for snRNA-seq quality control and annotation as in the paper.
+> Follow these steps for snRNA-seq quality control and annotation as in the paper.
 > </details>
 > <details>
 > <summary>Get the data</summary>
@@ -171,15 +171,11 @@ Follow these steps for snRNA-seq quality control and annotation as in the paper.
 > see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
 ### **`stats`**
-
 > <details>
 > <summary>Show description</summary>
-<br>
-methods from paper
 > </details>
 > <details>
 > <summary>Get the data</summary>
-<br>
 > </details>
 > <details>
 > <summary>Show the methods</summary>
@@ -209,19 +205,16 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
     
 > see *`./09-stats_inputs.ipynb`* to format data for input to stats analysis \
 > see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments \
-> see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering
-> see *`./13-plotting_inputs.ipynb`* to format some data for plotting \
+> see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering \
+> see *`./13-plotting_inputs.ipynb`* to format some data for plotting 
 
 ### **`plots`**
     
 > <details>
 > <summary>Show description</summary>
-<br>
-methods from paper
 > </details>
 > <details>
 > <summary>Get the data</summary>
-<br>
 > </details>
 > <details>
 > <summary>Show the methods</summary>

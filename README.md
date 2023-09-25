@@ -7,7 +7,7 @@ In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we 
 
 ## Data
 
-Follow these instructions to access the data generated and used as part of this study.*
+Follow these instructions to access the data generated and used as part of this study.
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 > Then run the main.py script with the following parameters

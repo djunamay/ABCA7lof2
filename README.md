@@ -1,4 +1,4 @@
-[![Static Badge](https://img.shields.io/badge/bioRxiv%2C%202023.09.05.556%2C%20red)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
 # A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
 

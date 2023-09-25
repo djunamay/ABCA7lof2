@@ -16,14 +16,16 @@ Follow these instructions to access the data generated and used as part of this 
 > python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'annotated.coding.txt' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
-- For the processed and raw **snRNAseq data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
+- For the processed and raw **post-mortem snRNAseq data**, go to [Synapse](https://linktosynapse) to request the data
 
-- For the processed and raw **lipidomic data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
+- For the processed and raw **post-mortem lipidomic data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
 
 - For the processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
 
-- For **stats results** from the post-mortem data, go to [OSF](https://osf.io/vn7w2/) to download
+- For **post-mortem lipidomic stats results** and **post-mortem snRNAseq stats results**, go to [OSF](https://osf.io/vn7w2/) to download
 
+- For raw and processed **post-mortem imaging data**, go to [OSF](https://osf.io/vn7w2/) to download
+  
 ## Analyses
 
 ### run cellranger counting

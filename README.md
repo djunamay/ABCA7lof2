@@ -189,6 +189,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > <details>
 > <summary>1. Get the data</summary>
 > </details>  
+>
 > 2. see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results \
 > 3. see *`./14-figures.ipynb`* to plot main figure panels \
 > 4. see *`./15-extended-figures.ipynb`* to plot extended figures

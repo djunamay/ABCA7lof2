@@ -42,10 +42,7 @@ Follow these instructions to access the data generated and used as part of this 
 
 ## Analyses
 
-a. **`Download the fastq files` [[here](https://linktosynapse)]** 
-
-
-b. **`run cellranger counting`** 
+### **`run cellranger counting`** 
 > <details>
 > <summary>Show description</summary>
 Counting and aggregation of fastq files.

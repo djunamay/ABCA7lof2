@@ -119,6 +119,7 @@ Follow these instructions to access the data generated and used as part of this 
 >
 > [Download the aggregated counts matrix, rowData, and colData here](https://linktosynapse)    
 > </details>
+>
 > 2. run *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation \
 > 3. run *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
 > 4. run *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
@@ -138,6 +139,7 @@ Follow these instructions to access the data generated and used as part of this 
 >
 > [Download the gene-pathway matrix here](https://osf.io/vn7w2/)    
 > </details>
+>
 > 1. run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
 > 2. see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
@@ -170,6 +172,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > <details>
 > <summary>1. Get the data</summary>
 > </details>
+>
 > 2. see *`./09-stats_inputs.ipynb`* to format data for input to stats analysis \
 > 3. see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments \
 > 4. see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering \

@@ -45,17 +45,16 @@ Follow these instructions to access the data generated and used as part of this 
 ### **`run cellranger counting`** 
 > <details>
 > <summary>Show description</summary>
-Counting and aggregation of fastq files.
+> Counting and aggregation of fastq files.
 > </details>
 > <details>
 > <summary>Get the data</summary>
-<br>
-[Download FASTQ files here](https://linktosynapse)    
+>
+> [Download FASTQ files here](https://linktosynapse)    
 > </details>
 > <details>
 > <summary>Show the methods</summary>
-<br>
-Library demultiplexing was performed using the BMC/BCC pipelines (https://openwetware.org/wiki/BioMicroCenter:Software). Fast-q reads were aligned to human genome GRCh38 and counted using the cellranger count() function from cellranger version 6.1.2. (10x Genomics). Introns were included in counting, to allow for detection of unspliced transcripts and the expected number of cells was set to 5000. Otherwise cellranger (v.6.1.2) default parameters were used. Counts across individual samples were then aggregated using a custom aggregation script, resulting in a total of 150,456 cells. 
+> Library demultiplexing was performed using the BMC/BCC pipelines (https://openwetware.org/wiki/BioMicroCenter:Software). Fast-q reads were aligned to human genome GRCh38 and counted using the cellranger count() function from cellranger version 6.1.2. (10x Genomics). Introns were included in counting, to allow for detection of unspliced transcripts and the expected number of cells was set to 5000. Otherwise cellranger (v.6.1.2) default parameters were used. Counts across individual samples were then aggregated using a custom aggregation script, resulting in a total of 150,456 cells. 
 > </details>
 >
 > <details>
@@ -81,7 +80,7 @@ Library demultiplexing was performed using the BMC/BCC pipelines (https://openwe
 >
 > see *`./03-aggregate.ipynb`* to aggregate all the count files
 
-c. **`sample swap`**
+### **`sample swap`**
 > <details>
 > <summary>Show description</summary>
 > To quantify consistency of matched WGS and snRNAseq data. *NB. We did this for the analysis as a control to check that WGS data and snRNA-seq data match (they do), so you don't need to run this again*
@@ -92,7 +91,7 @@ See sections **`run cellranger counting`**  and **`processed WGS data`** above t
 > </details>
 > <details>
 > <summary>Show the methods</summary>
-Sample swap analysis was performed using a previously established pipeline (MVV; QTLtools_1.1) (2), which compares allelic concordance between genomic and transcriptomic sequencing data. As input, we used the BAM files generated in the cellranger counting step and the chromosome 19 (the chromosome harboring ABCA7) variant call files (VCF). When comparing the concordance of BAM and VCF data for homozygous and heterozygous sites, the expected WGS sample should appear as a clear outlier.
+> Sample swap analysis was performed using a previously established pipeline (MVV; QTLtools_1.1) (2), which compares allelic concordance between genomic and transcriptomic sequencing data. As input, we used the BAM files generated in the cellranger counting step and the chromosome 19 (the chromosome harboring ABCA7) variant call files (VCF). When comparing the concordance of BAM and VCF data for homozygous and heterozygous sites, the expected WGS sample should appear as a clear outlier.
 > </details>
 >
 > see *`/bash_files/crossmap.sh`* to remap the vcf file
@@ -112,7 +111,7 @@ Sample swap analysis was performed using a previously established pipeline (MVV;
 > see *`sample_swap.sh`* to run sample swap \
 > see *`./02-sample_swap.ipynb`* to visualize sample swap results 
 
-e. **`celltype annotation & QC`** 
+### **`celltype annotation & QC`** 
 > <details>
 > <summary>Show description</summary>
 Follow these steps for snRNA-seq quality control and annotation as in the paper.
@@ -147,8 +146,8 @@ Follow these steps for snRNA-seq quality control and annotation as in the paper.
 > see *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
 > see *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
 > see *`./07-make_sce.ipynb`* to save single cell data as singlecellexperiment object 
-
-e. **`gene clusters`** 
+    
+### **`gene clusters`** 
 
 > <details>
 > <summary>Show description</summary>
@@ -171,7 +170,7 @@ e. **`gene clusters`**
 > run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
 > see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
-f. **`stats`**
+### **`stats`**
 
 > <details>
 > <summary>Show description</summary>
@@ -213,7 +212,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering
 > see *`./13-plotting_inputs.ipynb`* to format some data for plotting \
 
-g. **`plots`**
+### **`plots`**
     
 > <details>
 > <summary>Show description</summary>

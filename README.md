@@ -2,7 +2,7 @@
 
 # A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
 
-In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we ..
+In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we explored the impact of ABCA7 loss-of-function (LoF) variants on Alzheimer's disease (AD) by conducting single-nuclear RNA sequencing on 36 human post-mortem samples from the prefrontal cortex. We found that ABCA7 LoF variants resulted in gene expression changes across all major cell types, with the most marked alterations observed in excitatory neurons. These changes influenced lipid metabolism, mitochondrial function, DNA damage, and NF-kB signaling. Through functional assays, we confirmed elevated levels of mitochondrial dysfunction, DNA damage, and NF-kB activation in neurons. We also used mass spectrometry to reveal that ABCA7 LoF led to significant changes in the lipidome, including increased triglycerides and altered phospholipid species. Our study provides a detailed transcriptional atlas of ABCA7 LoF effects in the human brain and suggests that lipid dysregulation in neurons may be a key mechanism by which ABCA7 LoF increases the risk of AD. This GitHub repository contains all the code necessary to replicate our analyses and to explore, generate, and analyze this detailed transcriptional atlas.
 
 ## Data
 
@@ -34,7 +34,7 @@ Follow these instructions to access the data generated and used as part of this 
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions
 
-- **`processed de-identified post-mortem data`**
+### **`processed de-identified post-mortem data`**
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions

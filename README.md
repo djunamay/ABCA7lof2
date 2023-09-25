@@ -22,23 +22,15 @@ Follow these instructions to access the data generated and used as part of this 
 > </details>
 ### processed and raw snRNAseq data (post-mortem)
 > Download from **Synapse** [coming soon](https://linktosynapse) \
-> This is what the file structure on Synapse looks like: \
-> click [here](https://linktosynapse) for descriptions
 
 ### processed and raw lipidomic data (post-mortem)
 > Download from **Synapse** [coming soon](https://linktosynapse) \
-> This is what the file structure on Synapse looks like: \
-> click [here](https://linktosynapse) for descriptions
 
 ### processed and raw iPSC data
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
-> This is what the file structure on OSF looks like: \
-> click [here](https://osf.io/vn7w2/) for descriptions
 
 ### processed de-identified post-mortem data
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
-> This is what the file structure on OSF looks like: \
-> click [here](https://osf.io/vn7w2/) for descriptions
 
 
 ## Analyses

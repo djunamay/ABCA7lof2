@@ -1,10 +1,11 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2303.14186-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
-# ***A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons***
+# A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
 
 In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we ..
 
-### 1. Data Availability:
+## Data
+
 Follow these instructions to access the data generated and used as part of this study.*
 
 - **`processed WGS data`**
@@ -39,7 +40,7 @@ Follow these instructions to access the data generated and used as part of this 
 > click [here](https://osf.io/vn7w2/) for descriptions
 
 
-### 2. Data Analysis
+## Analyses
 
 a. **`Download the fastq files` [[here](https://linktosynapse)]** 
 

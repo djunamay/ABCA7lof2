@@ -9,7 +9,7 @@ In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we 
 
 Follow these instructions to access the data generated and used as part of this study.*
 
-- For the processed WGS data, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
+- For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 > <details>
 > <summary>Then run the main.py script with the following parameters:</summary>
 > 
@@ -19,7 +19,7 @@ Follow these instructions to access the data generated and used as part of this 
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
 > </details>
-### processed and raw snRNAseq data (post-mortem)
+- For the processed and raw **snRNAseq data** (post-mortem)
 > Download from **Synapse** [coming soon](https://linktosynapse) \
 
 ### processed and raw lipidomic data (post-mortem)

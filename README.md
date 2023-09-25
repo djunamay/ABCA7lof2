@@ -1,4 +1,4 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2303.14186-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
+[![Static Badge](https://img.shields.io/badge/bioRxiv%2C%202023.09.05.556%2C%20red)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
 # A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
 
@@ -29,7 +29,7 @@ Follow these instructions to access the data generated and used as part of this 
 > This is what the file structure on Synapse looks like: \
 > click [here](https://linktosynapse) for descriptions
 
-### **`processed and raw iPSC data`**
+### processed and raw iPSC data
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions

@@ -20,11 +20,11 @@ Follow these instructions to access the data generated and used as part of this 
 
 - For the raw **post-mortem lipidomic data**, go to [Synapse](https://linktosynapse) to request the data
 
-- For the processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
-
 - For **post-mortem lipidomic stats results** and **post-mortem snRNAseq stats results**, go to [OSF](https://osf.io/vn7w2/) to download
 
 - For raw and processed **post-mortem imaging data**, go to [OSF](https://osf.io/vn7w2/) to download
+
+- For all processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
   
 ## Analyses
 

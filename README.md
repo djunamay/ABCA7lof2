@@ -10,15 +10,12 @@ In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we 
 Follow these instructions to access the data generated and used as part of this study.*
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
-> <details>
-> <summary>Then run the main.py script with the following parameters:</summary>
-> 
+-- Then run the main.py script with the following parameters:</summary>
 > ```bash
 > python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'recalibrated_variants.vcf.gz' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'annotated.coding.txt' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
-> </details>
 - For the processed and raw **snRNAseq data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
 
 - For the processed and raw **lipidomic data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data

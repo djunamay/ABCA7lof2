@@ -19,18 +19,13 @@ Follow these instructions to access the data generated and used as part of this 
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
 > </details>
-- For the processed and raw **snRNAseq data** (post-mortem)
-> Download from **Synapse** [coming soon](https://linktosynapse) \
+- For the processed and raw **snRNAseq data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
 
-### processed and raw lipidomic data (post-mortem)
-> Download from **Synapse** [coming soon](https://linktosynapse) \
+- For the processed and raw **lipidomic data** (post-mortem), go to [Synapse](https://linktosynapse) to request the data
 
-### processed and raw iPSC data
-> Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
+- For the processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
 
-### processed de-identified post-mortem data
-> Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
-
+- For **stats results** from the post-mortem data, go to [OSF](https://osf.io/vn7w2/) to download
 
 ## Analyses
 

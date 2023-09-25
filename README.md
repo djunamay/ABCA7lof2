@@ -119,7 +119,6 @@ Follow these instructions to access the data generated and used as part of this 
 >
 > [Download the aggregated counts matrix, rowData, and colData here](https://linktosynapse)    
 > </details>
-
 > 2. run *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation \
 > 3. run *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
 > 4. run *`./06-umaps.ipynb`* to run celltype quality control and annotation II \

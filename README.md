@@ -8,7 +8,7 @@ In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we 
 
 Follow these instructions to access the data generated and used as part of this study.*
 
-### **`processed WGS data`**
+### processed WGS data
 > Follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 > <details>
 > <summary>Then run the main.py script with the following parameters:</summary>
@@ -19,12 +19,12 @@ Follow these instructions to access the data generated and used as part of this 
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
 > </details>
-### **`processed and raw snRNAseq data (post-mortem)`**
+### processed and raw snRNAseq data (post-mortem)
 > Download from **Synapse** [coming soon](https://linktosynapse) \
 > This is what the file structure on Synapse looks like: \
 > click [here](https://linktosynapse) for descriptions
 
-### **`processed and raw lipidomic data (post-mortem)`**
+### processed and raw lipidomic data (post-mortem)
 > Download from **Synapse** [coming soon](https://linktosynapse) \
 > This is what the file structure on Synapse looks like: \
 > click [here](https://linktosynapse) for descriptions
@@ -34,7 +34,7 @@ Follow these instructions to access the data generated and used as part of this 
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions
 
-### **`processed de-identified post-mortem data`**
+### processed de-identified post-mortem data
 > Download from the **Open Science Framework**, [here](https://osf.io/vn7w2/) \
 > This is what the file structure on OSF looks like: \
 > click [here](https://osf.io/vn7w2/) for descriptions
@@ -42,7 +42,7 @@ Follow these instructions to access the data generated and used as part of this 
 
 ## Analyses
 
-### **`run cellranger counting`** 
+### run cellranger counting
 > <details>
 > <summary>Show description</summary>
 > Counting and aggregation of fastq files.
@@ -80,7 +80,7 @@ Follow these instructions to access the data generated and used as part of this 
 >
 > see *`./03-aggregate.ipynb`* to aggregate all the count files
 
-### **`sample swap`**
+### sample swap
 > <details>
 > <summary>Show description</summary>
 > To quantify consistency of matched WGS and snRNAseq data. *NB. We did this for the analysis as a control to check that WGS data and snRNA-seq data match (they do), so you don't need to run this again*
@@ -111,7 +111,7 @@ Follow these instructions to access the data generated and used as part of this 
 > see *`sample_swap.sh`* to run sample swap \
 > see *`./02-sample_swap.ipynb`* to visualize sample swap results 
 
-### **`celltype annotation & QC`** 
+### celltype annotation & QC
 > <details>
 > <summary>Show description</summary>
 > Follow these steps for snRNA-seq quality control and annotation as in the paper.
@@ -147,7 +147,7 @@ Follow these instructions to access the data generated and used as part of this 
 > see *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
 > see *`./07-make_sce.ipynb`* to save single cell data as singlecellexperiment object 
     
-### **`gene clusters`** 
+### gene clusters 
 
 > <details>
 > <summary>Show description</summary>
@@ -170,7 +170,7 @@ Follow these instructions to access the data generated and used as part of this 
 > run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
 > see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
-### **`stats`**
+### stats
 > <details>
 > <summary>Show description</summary>
 > </details>
@@ -208,7 +208,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering \
 > see *`./13-plotting_inputs.ipynb`* to format some data for plotting 
 
-### **`plots`**
+### plots
     
 > <details>
 > <summary>Show description</summary>

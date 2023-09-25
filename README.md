@@ -31,21 +31,18 @@ Follow these instructions to access the data generated and used as part of this 
 
 ### run cellranger counting
 > <details>
-> <summary>Show description</summary>
-> Counting and aggregation of fastq files.
-> </details>
-> <details>
-> <summary>Get the data</summary>
->
-> [Download FASTQ files here](https://linktosynapse)    
-> </details>
-> <details>
 > <summary>Show the methods</summary>
 > Library demultiplexing was performed using the BMC/BCC pipelines (https://openwetware.org/wiki/BioMicroCenter:Software). Fast-q reads were aligned to human genome GRCh38 and counted using the cellranger count() function from cellranger version 6.1.2. (10x Genomics). Introns were included in counting, to allow for detection of unspliced transcripts and the expected number of cells was set to 5000. Otherwise cellranger (v.6.1.2) default parameters were used. Counts across individual samples were then aggregated using a custom aggregation script, resulting in a total of 150,456 cells. 
 > </details>
 >
 > <details>
-> <summary>make the squash file system</summary>
+> <summary>1. Download the data</summary>
+>
+> [Download FASTQ files here](https://linktosynapse)    
+> </details>
+>
+> <details>
+> <summary>2. make the squash file system</summary>
 >
 > ```bash
 > # Make the squash file systems 
@@ -56,7 +53,7 @@ Follow these instructions to access the data generated and used as part of this 
 > </details>
 >
 > <details>
-> <summary>run cellranger counting</summary>
+> <summary>3. run cellranger counting</summary>
 >
 > ```bash
 > # count the FASTQ files:
@@ -65,25 +62,23 @@ Follow these instructions to access the data generated and used as part of this 
 > ```
 > </details>
 >
-> see *`./03-aggregate.ipynb`* to aggregate all the count files
+> 4. run *`./03-aggregate.ipynb`* to aggregate all the count files
 
 ### sample swap
-> <details>
-> <summary>Show description</summary>
-> To quantify consistency of matched WGS and snRNAseq data. *NB. We did this for the analysis as a control to check that WGS data and snRNA-seq data match (they do), so you don't need to run this again*
-> </details>
-> <details>
-> <summary>Get the data</summary>
-> See sections **`run cellranger counting`**  and **`processed WGS data`** above to get BAM files and WGS data.
-> </details>
 > <details>
 > <summary>Show the methods</summary>
 > Sample swap analysis was performed using a previously established pipeline (MVV; QTLtools_1.1) (2), which compares allelic concordance between genomic and transcriptomic sequencing data. As input, we used the BAM files generated in the cellranger counting step and the chromosome 19 (the chromosome harboring ABCA7) variant call files (VCF). When comparing the concordance of BAM and VCF data for homozygous and heterozygous sites, the expected WGS sample should appear as a clear outlier.
 > </details>
 >
-> see *`/bash_files/crossmap.sh`* to remap the vcf file
 > <details>
-> <summary>then run the following commands in bash:</summary>
+> <summary>1. Download the data</summary>
+>
+> See sections **`run cellranger counting`**  and **`processed WGS data`** above to get BAM files and WGS data.
+> </details>
+>
+> 2. run *`/bash_files/crossmap.sh`* to remap the vcf file
+> <details>
+> <summary>3.then run the following commands in bash:</summary>
 > 
 > ```bash
 > */htslib-1.10.2/bgzip out.hg38.vcf --threads 20 # compress with bgzip
@@ -94,57 +89,43 @@ Follow these instructions to access the data generated and used as part of this 
 >```
 > </details>
 >
-> see *`sample_swap_make_exec.ipynb`* to make text file to iterate through \
-> see *`sample_swap.sh`* to run sample swap \
-> see *`./02-sample_swap.ipynb`* to visualize sample swap results 
+> 4. run *`sample_swap_make_exec.ipynb`* to make text file to iterate through \
+> 5. run *`sample_swap.sh`* to run sample swap \
+> 6. run *`./02-sample_swap.ipynb`* to visualize sample swap results 
 
 ### celltype annotation & QC
 > <details>
-> <summary>Show description</summary>
-> Follow these steps for snRNA-seq quality control and annotation as in the paper.
-> </details>
-> <details>
-> <summary>Get the data</summary>
->
-> [Download the aggregated counts matrix, rowData, and colData here](https://linktosynapse)    
-> </details>
-> <details>
 > <summary>Show the methods</summary>
 > 
-> Cell filtering metrics    
+> **Cell filtering metrics**    
 > * Prior to cell type annotation, we performed a series of quality control steps on the aggregated counts matrix. First, we removed cells, for which the number of detected genes (Ng) did not fall in the interval [500, 10000], where Ng is defined for each cell as the number of genes, where counts >0. 
 > * Next, we removed all cells with a high fraction of counts coming from mitochondrial-encoded genes. Mitochondrial fraction (Mf) is a commonly used per-cell metric to measure compromised nuclear integrity, where high fractions indicate low-quality nuclei, where Mf = (total counts mitochondrially-encoded genes)/(total counts all genes). We fit a gaussian mixture model to log2-transformed per-cell Mf values, using grid search to choose the optimal number of components and covariance type. The model with five components and full covariance had the lowest bayesian information criterion (BIC) score. Cells belonging to the component with the highest average Mf scores were presumed to constitute a population of low-quality cells and removed from further analysis. This initial filtering removed circa 20,000 cells.   
 > * Considering all remaining cells in marker-gene expression space, where marker genes include only known cell type-specific genes for the major human PFC cell type, including astrocytes (with 159 markers), excitatory neurons (113 markers), inhibitory neurons (83 markers), microglia (97 markers),  oligodendrocytes (179 markers), OPCs (143 markers), and  vascular cells (124 markers) (Reference 1; Table S2) normalized to total library counts, we performed incremental PCA (IncrementalPCA from sklearn.decomposition) on this mean-centered standardized matrix to project cells from the marker gene space onto the top 50 principal components sorted by variance. Visually, the cells formed a number of gaussian-like clusters when the first two principal components were examined. Under the assumption that each gaussian cluster represented a different cell type in the brain, we next fit a gaussian mixture model (GaussianMixture from sklearn.mixture) to the projected data, using grid search (GridSearchCV from sklearn.preprocessing) to choose the optimal number of components and covariance type. The model with ten components and full covariance had the lowest BIC score. Indeed, each resulting cell cluster was robustly enriched for a subset of major cell type markers in the brain, indicating a cluster of astrocytes, microglia, OPCs, oligodendrocytes, excitatory neurons, and inhibitory neurons, and a heterogeneous cluster of vascular cells. 
 > * To remove cells that were not well-captured by this model and likely represent low-quality cells, we next computed the per-cell logliklihood (i.e. the liklihood of the observed data, given the model) and removed cells with a liklihood \< -100. We also removed two gaussian clusters whose liklihood distributions constituted clear outliers compared to remaining clusters. The excluded cells had significantly lower total counts and higher mitochondrial fractions compared to those that passed the liklihood filter, suggesting that the removed cells indeed were low quality. When examining the data visually projected onto the first two principal components, this filtering removed many of the cells that were not visibly associated with a main gaussian cluster. Together, this filtering removed an additional circa 12,000 cells, leaving a total of 118,668 cells. 
 >
-> Gene filtering metrics
+> **Gene filtering metrics**
 > * For the remaining downstream analysis we only considered genes that were both nuclear-encoded and protein-coding, which constituted a total of 19384 genes, based on annotation of ensembl GRCh38p12. 
 >
-> Cell type annotations
+> **Cell type annotations**
 > * To avoid biased cell type annotations due to technical artifacts associated with sequencing batch and individual-of origin, we first applied the Python implementation of the Harmony algorithm (3) with individual-of-origin as indicator vector to the low-dimensional embedding of cells (first 50 principal components) remaining after the initial rounds of quality control (see above Cell filtering metrics). Next, we computed a neighborhood graph on the Harmony-corrected values in the PC embedding space, as implemented in the Scanpy (4) Python package, using default parameters. Finally, we applied the Leiden graph-clustering algorithm to cluster this neighborhood graph of cells, using the Scanpy implementation of the Leiden algorithm (5).
 > * We used the Scanpy ‘rank_genes_groups’ function to compute top marker genes per Leiden cluster. Internally, this function uses a T-test to compute the relative enrichments of genes for each Leiden cluster compared to all other Leiden clusters. We assigned a major cell type label (‘Ex’, ‘In’, ‘Ast’, ‘Mic’, ‘Oli’, or ‘Opc’, ‘Vascular’) by computing per-cluster average log2-fold-changes (logFC) for respective cell type markers (Reference 1; Table S2) and assigning the cell type with the highest logFC, where large and positive logFCs indicate high relative expression of a gene in a given Leiden clusters compared to all other clusters. 
 > * Finally, we sub-clustered cells from each major cell type using the Leiden clustering algorithm and examined distributions of mitochondrial fractions and total counts among subclusters of the same cell type. Clusters whose mean mitochondrial fraction was >2 standard deviations (sd) above the mean or whose mean total counts were < 2 sd below the mean or >2 sd above the mean (when comparing sub-clusters of a single cell type) were removed. Manual inspection of the removed clusters revealed that they tended to have fewer cells and low individual-level representations, and were not well-connected in the graph.
 >
-> Individual-level filtering 
+> **Individual-level filtering** 
 > * After all rounds of qc as described above, we noted a subset of individuals (N=6) with very few cells (<500) and these subjects were removed from further analysis, resulting in 24 control individuals and 12 ABCA7 LoF individuals. None of these individuals carried ABCA7 PTC variants and removing them did not substantially alter metadata distributions. 
 > </details>
+> <details>
+> <summary>1. Download the data</summary>
+>
+> [Download the aggregated counts matrix, rowData, and colData here](https://linktosynapse)    
+> </details>
 
-> see *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation \
-> see *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
-> see *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
-> see *`./07-make_sce.ipynb`* to save single cell data as singlecellexperiment object 
+> 2. run *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation \
+> 3. run *`./05-single_cell_qc_anno.ipynb`* to run celltype quality control and annotation I \
+> 4. run *`./06-umaps.ipynb`* to run celltype quality control and annotation II \
+> 5. run *`./07-make_sce.ipynb`* to save single cell data as singlecellexperiment object 
     
 ### gene clusters 
-
-> <details>
-> <summary>Show description</summary>
-> Recapitulate gene-pathway groupings and benchmarking of partitioning and clustering algorithms as in the paper.
-> </details>
-> <details>
-> <summary>Get the data</summary>
->
-> [Download the gene-pathway matrix here](https://osf.io/vn7w2/)    
-> </details>
 > <details>
 > <summary>Show the methods</summary>
 >
@@ -153,17 +134,15 @@ Follow these instructions to access the data generated and used as part of this 
 > * The K/L algorithm was implemented in Python based on its original paper (14) and run with parameters set as C=0, KL_modified=True, random_labels=True, unweighted=True, and K=50 to partition G into 8 groups. We performed 5.0x10e4 random initiations on G and report the partitioning with the lowest loss among all initiations.
 > * For benchmarking results, see the correpsonding [github repo](https://github.com/djunamay/geneclusters).
 > </details>
-    
-> run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
-> see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
+> <details>
+> <summary>1. Get the data</summary>
+>
+> [Download the gene-pathway matrix here](https://osf.io/vn7w2/)    
+> </details>
+> 1. run *`./08-run_partitioning.py`* to run METIS and K\L algorithms \
+> 2. see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
 
 ### stats
-> <details>
-> <summary>Show description</summary>
-> </details>
-> <details>
-> <summary>Get the data</summary>
-> </details>
 > <details>
 > <summary>Show the methods</summary>
 >
@@ -189,20 +168,15 @@ Follow these instructions to access the data generated and used as part of this 
 Per-cell-type perturbation scores (Sc) for each cluster were computed as the average gene score S (for a given cell type) for all genes in that cluster. The statistical significance of each cell type-specific cluster score was assessed by permuting cluster assignments (100,000 permutations). 
 >
 > </details>
-    
-> see *`./09-stats_inputs.ipynb`* to format data for input to stats analysis \
-> see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments \
-> see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering \
-> see *`./13-plotting_inputs.ipynb`* to format some data for plotting 
+> <details>
+> <summary>1. Get the data</summary>
+> </details>
+> 2. see *`./09-stats_inputs.ipynb`* to format data for input to stats analysis \
+> 3. see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments \
+> 4. see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering \
+> 5. see *`./13-plotting_inputs.ipynb`* to format some data for plotting 
 
 ### plots
-    
-> <details>
-> <summary>Show description</summary>
-> </details>
-> <details>
-> <summary>Get the data</summary>
-> </details>
 > <details>
 > <summary>Show the methods</summary>
 > 
@@ -210,10 +184,12 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > * Gene-pathway graph layouts were computed using the networkx Python package using the spring layout algorithm, with 10,000 iterations. Layouts were visualized using the matplotlib pyplot package in Python. 
 > * Representative pathways for each cluster were inferred from the graph, by averaging the ABCA7 LoF perturbation scores S for all genes in the cluster of interest sharing an edge with the pathway in question. Scores for pathways with intra-cluster degrees>=5 were reported in the figures. Manually picked subsets of genes with the largest scores (|S|>1) were reported in the figures. All gene statistics are reported in Data S3 and cluster assignments are reported in Data S7. 
 > </details>
-    
-> see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results \
-> see *`./14-figures.ipynb`* to plot main figure panels \
-> see *`./15-extended-figures.ipynb`* to plot extended figures
+> <details>
+> <summary>1. Get the data</summary>
+> </details>  
+> 2. see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results \
+> 3. see *`./14-figures.ipynb`* to plot main figure panels \
+> 4. see *`./15-extended-figures.ipynb`* to plot extended figures
 
 ## Citation
 If you use this code in your work, please cite using the following BibTeX entry:

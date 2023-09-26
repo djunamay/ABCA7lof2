@@ -1,3 +1,9 @@
+get_gset_names_by_category = function(cat, gsets){
+  gset = unlist(lapply(gsets, function(x) unlist(sum(sapply(cat, grepl, x))>0)))
+  gset = (gsets[gset])
+  return(gset)
+}
+                       
 #################################
 get_degs = function(nebula_out, p_cut, LFC_cut, p_slot, LFC_slot){
     degs = list()

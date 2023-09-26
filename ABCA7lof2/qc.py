@@ -10,6 +10,71 @@ from sklearn.mixture import GaussianMixture
 from sklearn.model_selection import GridSearchCV
 import pandas as pd
 
+@nb.njit(parallel=True)
+def filter_logcounts(temp_output, logcounts, index_cells, index_genes):
+    for i in nb.prange(len(index_cells)):
+        temp_output[i] = logcounts[index_cells[i]][index_genes]
+
+def compute_thresh(adata, obs_slot, grp_slot):
+    df = adata.obs[[obs_slot, grp_slot]].groupby(grp_slot).mean()
+    x = df[obs_slot]
+    thresh_up = np.mean(x) + 1.5*np.std(x)
+    thresh_down = np.mean(x) - 1.5*np.std(x)
+    return df, thresh_up, thresh_down
+
+def filter_clusters(temp, grp, remove):
+    df, up, down = compute_thresh(temp, 'mito_fractions', grp)
+    x = list(np.array(df.index)[np.array(df['mito_fractions'])>up])
+    for i in x:
+        remove.append(i)
+
+    df, up, down = compute_thresh(temp, 'total_counts', grp)
+    x = list(np.array(df.index)[(np.array(df['total_counts'])>up)]) 
+    for i in x:
+        remove.append(i)
+    
+    i = np.argsort(np.array(temp.obs[grp]))
+    temp = temp[i]
+
+    cols = [x in set(remove)for x in np.array(temp.obs[grp])]
+
+    sns.set(rc={'figure.figsize':(20,3)})
+
+    sns.boxplot(x=np.array(temp.obs[grp]), y=np.array(temp.obs['mito_fractions']), hue=cols)
+    plt.ylabel('mito_fractions')
+    plt.legend([], [], frameon=False)
+
+    plt.show()
+
+    sns.boxplot(x=np.array(temp.obs[grp]), y=np.array(temp.obs['total_counts']), hue=cols)
+    plt.ylabel('total_counts')
+    plt.legend([], [], frameon=False)
+
+    plt.show()
+
+    b = pd.DataFrame(np.unique(temp.obs[grp], return_counts=True)).T
+    b.columns = ['cluster', 'N']
+    b['COL'] =[ x in set(remove) for x in b['cluster'] ]
+    sns.barplot(data = b, x = 'cluster', y = 'N', hue = 'COL')
+    plt.ylabel('N cells')
+    plt.legend([], [], frameon=False)
+
+    plt.show()
+
+    unique_samples = list()
+    temp2 = temp.obs[[grp, 'sample_id']]
+    for i in np.unique(temp2[grp]):
+        unique_samples.append(len(np.unique(temp2['sample_id'][temp2[grp]==i])))
+    COL = [ x in set(remove) for x in np.unique(temp2[grp])]
+    sns.barplot(x = np.unique(temp2[grp]), y = unique_samples, hue = COL)
+    plt.ylabel('N individuals')
+    plt.legend([], [], frameon=False)
+
+
+    sns.set(rc={'figure.figsize':(5,3.5)})
+    temp.obs['COL'] = np.array([x if x in set(remove) else 'other' for x in temp.obs[grp]])
+    sc.pl.umap(temp, color=['COL'], add_outline=False, frameon=False, gene_symbols='Gene', return_fig=False)
+
 @nb.njit(parallel=False)
 def filter_genes(counts, keep_genes):
     i = counts.shape[0]
@@ -247,11 +312,7 @@ def filter_on_gaussian_logliklihood(scores):
     predict = gm.predict(scores)
     keep_cells = predict!=np.bincount(predict).argmin()
     return keep_cells
-    #keep_cells, keep_genes_per_celltype = filter_cells_by_major_annotation(total_counts, mito_fractions, sample_size, annotations, meta[:,3], filtered_counts)
-    #meta = process_metadata(scores, predict, projected_matrix, meta, mito_fractions, annotations, keep_cells, total_counts)
-    #return meta, keep_genes_per_celltype
     
-#@nb.njit(parallel=True)
 def log_normalize_counts(counts, total_counts, norm_counts):
     median_counts = np.median(total_counts)
     for i in tqdm(range(counts.shape[0])):

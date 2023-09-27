@@ -174,3 +174,37 @@ plot_volcano = function(sce, ratio_name, pval_name, lab, pval_cut, lfc_cut, adju
     p = ggplot(temp, aes(x=log2, y= -log10(pvalue), col=label, label = label2))+ geom_text_repel(max.overlaps = Inf, size = 5)+  scale_color_manual(values = c('yellow', 'blue','green')) + geom_point(aes(alpha = 0.01), size = 2, show.legend = FALSE)+geom_hline(yintercept = -log10(pval_cut)) +geom_vline(xintercept = 0)+ theme_classic() +   theme(text = element_text(size=20),strip.background = element_blank(),strip.placement = "outside" ,strip.text.y = element_text(size = 20, color = "black"))+ theme(legend.position='none')#+ #facet_wrap(~label, ncol = 7, scales = "free_x")
     return(p)
 }
+
+plot_top_paths = function(fgsea, celltype, name, colors){
+    temp = fgsea[[celltype]]
+    temp = temp[temp$pval<0.025,]
+    temp = as.data.frame(temp)
+    rownames(temp) = unlist(lapply(temp$pathway, function(x) strsplit(x, ' WP')[[1]][1]))
+    temp$genes = unlist(lapply(temp[,'leadingEdge'], function(x) paste(x, collapse = ', ')))
+    temp$score = sign(temp$NES) * -log10(temp$pval)
+    temp = rbind(temp[rownames(temp)[order((temp$score),decreasing=TRUE)[1:5]],],temp[rownames(temp)[order((temp$score),decreasing=FALSE)[1:5]],])
+    temp$pathway = rownames(temp)
+    temp = temp[unlist(lapply(temp$leadingEdge, function(x) length(x)))>3,]
+
+    temp$pathway = factor(temp$pathway, levels=temp$pathway[order(temp$score,decreasing=FALSE)])
+    P = ggplot(data=temp, aes(x=score, y=pathway))+
+      geom_bar(stat="identity", fill=colors[celltype]) +theme_classic()+
+    geom_text(aes(label = genes,x=min(temp$score), hjust = 0, fontface="italic"),color='black')+
+    theme(legend.position = "bottom", strip.text.x = element_blank() )+
+    ggtitle('') + ylab('') + ggtitle(name)+ theme(text = element_text(size = 15))+ xlab('Score')+theme(plot.title = element_text(size = 13, face = "italic", hjust=.5))#+xlim(-2,4)    
+    return(P)
+}
+                              
+plot_volcano = function(sce, ratio_name, pval_name, lab, pval_cut, lfc_cut, adjust, annotation1, class_cols){
+    cols = c('dodgerblue2', 'grey', 'red')
+    names(cols) = c('down', 'other', 'up')
+    temp = as.data.frame(rowData(sce)[,c(ratio_name, pval_name, annotation1)])
+    colnames(temp) = c('log2', 'pvalue', 'label')
+    if(adjust){
+        temp$pvalue = p.adjust(temp$pvalue, 'fdr')
+    }
+    temp$direction = ifelse(temp$log2>lfc_cut & temp$pvalue<pval_cut, 'up', ifelse(temp$log2< -1*lfc_cut & temp$pvalue<pval_cut, 'down', 'other'))
+    temp$label2 = ifelse(temp$direction!='other' & temp$label%in%lab, temp$label,'')
+    p = ggplot(temp, aes(x=log2, y= -log10(pvalue), col=direction, label = label2))+ geom_text_repel(max.overlaps = Inf, size = 3.5)+  scale_color_manual(values = cols) + geom_point(aes(alpha = 0.01), size = 2, show.legend = FALSE)+theme_classic() +   theme(text = element_text(size=10),strip.background = element_blank(),strip.placement = "outside" ,strip.text.y = element_text(size = 10, color = "black"))+ theme(legend.position='none')#+ #facet_wrap(~label, ncol = 7, scales = "free_x")
+    return(p+xlab('log2(fold change)')+ylab('-log10(p-value)'))
+}

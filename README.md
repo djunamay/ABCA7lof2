@@ -140,7 +140,7 @@ Follow these instructions to access the data generated and used as part of this 
 > </details>
 >
 > 1. run *`./08-run_partitioning.py`* to run METIS and K\L algorithms 
-> 2. see *`./08-processing_gsets.ipynb`* to benchmark clustering and partitioning methods
+> 2. see *`./08-benchmarking_graph_partitioning.ipynb`* to benchmark clustering and partitioning methods
 
 ### stats
 > <details>

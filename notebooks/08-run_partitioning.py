@@ -21,6 +21,12 @@ import metis
 
 from ABCA7lof2.geneclusters import evaluate_cut, get_scores, get_kernighan_lin_clusters, get_gene_pathway_matrix, get_full_matrix_from_bipartite, plot_component, plot_edges, plot_nodes, group, compute_groupped_matrix, get_scores, find_similar_clusters, get_representative_name_per_cluster, get_kernighan_lin_clusters, get_gene_pathway_matrix, compute_groupped_matrix, get_full_matrix_from_bipartite
 
+# save wikipaths graph
+p1 = np.load('./raw_data/genesets/WikiPathways_2019_Human.npy', allow_pickle=True).item()
+res = {**p1}
+np.save('./processed_data/genesets/all_paths.npy', res)
+pd.DataFrame.from_dict(res, orient='index').to_csv('./processed_data/genesets/all_paths.csv')
+
 # subset matrix
 mat = get_gene_pathway_matrix('./processed_data/genesets/all_paths.npy')
 leading_edge = './processed_data/for_plotting/leading_edge_0825Ex.csv'

@@ -1,3 +1,5 @@
+# run many KL and METIS iterations on the Ex-LE graph
+
 import numpy as np
 import gseapy
 from scipy.sparse import csr_matrix
@@ -13,6 +15,8 @@ from sklearn.manifold import SpectralEmbedding
 from tqdm import tqdm
 from sklearn.cluster import SpectralClustering
 import seaborn as sns
+import metis
+import networkx as nx
 import metis
 
 from ABCA7lof2.geneclusters import evaluate_cut, get_scores, get_kernighan_lin_clusters, get_gene_pathway_matrix, get_full_matrix_from_bipartite, plot_component, plot_edges, plot_nodes, group, compute_groupped_matrix, get_scores, find_similar_clusters, get_representative_name_per_cluster, get_kernighan_lin_clusters, get_gene_pathway_matrix, compute_groupped_matrix, get_full_matrix_from_bipartite
@@ -31,7 +35,6 @@ mat_sub = mat_sub.loc[path_index]
 mat_sub = mat_sub.loc[:,np.sum(mat_sub, axis=0)>0]
 
 # run many KL iterations
-
 C = 0
 KL_modified = True
 random_labels = True
@@ -50,8 +53,6 @@ for i in tqdm(range(N)):
 np.save('./processed_data/genesets/kl_labs.npy', labs_kl)
 np.save('./processed_data/genesets/kl_loss.npy', loss_kl)
 
-import networkx as nx
-import metis
 # compute laplacian matrix
 full_mat = np.zeros((np.sum(mat_sub.shape), np.sum(mat_sub.shape)))
 full_mat[mat_sub.shape[1]:][:,:mat_sub.shape[1]] = mat_sub
@@ -60,6 +61,7 @@ full_mat[:mat_sub.shape[1]][:,mat_sub.shape[1]:]=mat_sub.T
 g = nx.from_numpy_matrix(full_mat)
 clusters = np.empty((N,np.sum(mat_sub.shape)))
 
+# run METIS iterations
 loss_met=np.empty(N)
 labs_met = np.zeros_like(clusters)
 for i in tqdm(range(N)): 

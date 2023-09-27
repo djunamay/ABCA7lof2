@@ -10,6 +10,85 @@ from scipy.sparse.csgraph import shortest_path
 import networkx
 import matplotlib.pyplot as plt
 
+@nb.njit()
+def compute_jaccard(arr1, arr2):
+    outer = arr1-arr2
+    i_outer = np.sum(outer>0)
+    outer_sum = np.sum(np.abs(outer))
+    shared = np.sum(arr1)-i_outer
+    jaccard = shared/(outer_sum+shared)
+    return jaccard
+
+@nb.njit(parallel=True)
+def compute_all_jaccard(mat_array):
+    N = mat_array.shape[0]
+    out = np.empty(shape=(N,N))
+    for i in nb.prange(N):
+        for j in nb.prange(N):
+            out[i,j] = compute_jaccard(mat_array[i], mat_array[j])
+    return out
+
+@nb.njit()
+def get_rand_index(x, y):
+    a=0
+    b=0
+    c=0
+    d=0
+    for i in range(len(x)):
+        for j in range(len(x)):
+            if (x[i]==x[j]) & (y[i]==y[j]):
+                a+=1
+            elif (x[i]!=x[j]) & (y[i]!=y[j]):
+                b+=1
+            elif (x[i]!=x[j]) & (y[i]==y[j]):
+                c+=1
+            elif (x[i]==x[j]) & (y[i]!=y[j]):
+                d+=1
+    R = (a+b)/(a+b+c+d)
+    return R
+
+def get_LP(full_mat):
+    LP = full_mat*-1
+    np.fill_diagonal(LP, np.sum(full_mat, axis=1))
+    return LP
+
+def get_spectral_partition(labels_sp, LP, i, index):
+    eigvals, eigvect = np.linalg.eig(LP)
+    v2 = eigvect[:,np.argsort(eigvals)[1]]
+    temp = (np.argsort(v2))
+    N = len(temp)
+    middle = int(N/2)
+    x = labels_sp[0][index]
+
+    x[temp[middle:]]=1
+    x[temp[:middle]]=-1
+    labels_sp[i][index] = x    
+
+@nb.njit(parallel=True)
+def compute_jaccard_all_clust(arr1, arr2):
+    N = len(np.unique(arr1))
+    out = np.empty(shape=(N,N))
+    for i in nb.prange(N):
+        for j in nb.prange(N):
+            i_0 = (arr1==i)#.astype(int)
+            j_0 = (arr2==j)#.astype(int)
+            out[i,j] = compute_jaccard(i_0, j_0)
+    return out
+
+@nb.njit(parallel=True)
+def get_all_rands(rands_out, N, labs):
+    for i in nb.prange(N):
+        for j in nb.prange(N):
+            rands_out[i, j] = get_rand_index(labs[i], labs[j])
+            
+@nb.njit(parallel=True)
+def get_all_rands2grps(rands_out, N, labs1, labs2):
+    for i in nb.prange(N):
+        for j in nb.prange(N):
+            rands_out[i, j] = get_rand_index(labs1[i], labs2[j])
+
+
+##
 def plot_component(graph, selected_names, unique_clusters, colors, k, iterations, scale, component = None, center=None, seed=None, S=200):  
     if component is None:
         graph_temp = graph

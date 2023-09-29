@@ -13,16 +13,39 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import StandardScaler
 
 def get_marker_indices(marker_path, gene_names):
-    '''
-    provides indices for celltype-marker genes in vector of gene names, as well as celltype-marker gene dictionary
+    """
+    Retrieve indices of celltype-marker genes and create a celltype-marker gene dictionary.
+
     Args:
-        marker_path string
-            path to csv file containing marker gene annotations with the following columns: | marker | major_celltype |
-            marker = gene names (must intersect with input to gene_names argument)
-            major_celltype = indicating corresponding cell type
-        gene_names: ndarray
-            1D array containing gene names with '<U17' data type; array length = N-features
-    '''
+        marker_path (str):
+            Path to a CSV file containing marker gene annotations with the following columns:
+            - marker: Gene names (must intersect with the input gene_names argument).
+            - major_celltype: Corresponding cell type.
+
+        gene_names (numpy.ndarray):
+            1D array containing gene names with '<U17' data type; array length = N-features.
+
+    Returns:
+        tuple:
+            A tuple containing two elements:
+            - marker_indices (list): List of indices for celltype-marker genes in the gene_names array.
+            - celltype_dic (dict): Dictionary mapping marker genes to their corresponding cell types.
+
+    Notes:
+    ------
+    This function reads marker gene annotations from a CSV file, retrieves the indices of celltype-marker
+    genes in the input gene_names array, and creates a dictionary mapping marker genes to cell types.
+
+    Example:
+    --------
+    >>> marker_path = "marker_annotations.csv"
+    >>> gene_names = np.array(['GeneA', 'GeneB', 'GeneC'], dtype='<U17')
+    >>> marker_indices, celltype_dic = get_marker_indices(marker_path, gene_names)
+    >>> marker_indices
+    [0, 1]  # Indices of celltype-marker genes in the gene_names array.
+    >>> celltype_dic
+    {'GeneA': 'CellTypeA', 'GeneB': 'CellTypeB'}  # Dictionary mapping marker genes to cell types.
+    """
     print('getting marker indices...')
     markers = pd.read_csv(marker_path)
     dic = dict(zip(gene_names, range(0, len(gene_names))))
@@ -34,34 +57,74 @@ def get_marker_indices(marker_path, gene_names):
 
 @nb.njit(parallel=True)
 def get_marker_matrix_norm(filtered_counts, marker_indices, marker_out, total_counts, progress_hook):
-    '''
-    returns normalized matrix of marker genes
+    """
+    Calculate and return the normalized matrix of marker genes for cell-type annotation.
+
     Args:
-        filtered_counts ndarray
-            2D array of counts post-cell-filtering
-            N-cells x N-features
-        marker_indices list
-            column indices indicating marker genes in filtered_counts matrix
-        marker_out numpy memmap
-            N-cells x len(marker_indices)
-        total_counts ndarray
-            1D array of per-cell total counts, length = N-cells
-    '''
+        filtered_counts (numpy.ndarray):
+            2D array of counts post-cell filtering (N-cells x N-features).
+        marker_indices (list):
+            List of column indices indicating marker genes in the filtered_counts matrix.
+        marker_out (numpy.memmap):
+            Memory-mapped array to store the normalized marker matrix (N-cells x len(marker_indices)).
+        total_counts (numpy.ndarray):
+            1D array of per-cell total counts, length = N-cells.
+        progress_hook (ProgressHook):
+            An object for tracking progress during computation.
+
+    Returns:
+        None
+
+    Notes:
+    ------
+    This function calculates the normalized matrix of marker genes for cell-type annotation.
+    It divides the counts of marker genes by the total counts for each cell and stores
+    the result in a memory-mapped array.
+
+    Example:
+    --------
+    >>> filtered_counts = np.array([[10, 5, 3], [8, 4, 2]], dtype='int32')
+    >>> marker_indices = [0, 2]
+    >>> marker_out = np.memmap("marker_normalized.npy", dtype='float32', mode='w+', shape=(2, 2))
+    >>> total_counts = np.array([18, 14], dtype='int32')
+    >>> progress_hook = ProgressHook(total=2)
+    >>> get_marker_matrix_norm(filtered_counts, marker_indices, marker_out, total_counts, progress_hook)
+    # Calculates and stores the normalized marker matrix.
+    """
     for i in nb.prange(filtered_counts.shape[0]):
         marker_out[i] = (filtered_counts[i][(marker_indices)])/total_counts[i]
         progress_hook.update(1)
 
 def run_ipca(marker_mat, n_components_pca, sample_size):
-    '''
-    projects from marker-gene space onto principal components
+    """
+    Run Incremental Principal Component Analysis (IPCA) on marker gene data and project cells onto principal components.
+
     Args:
-        marker_mat numpy memmap
-            N-cells x len(marker_indices)
-        n_components_pca integer
-            number of PCA components to project cells onto
-        sample_size: float
-            0< float <=1 indicating the fraction of N-cells to sample and on which to run PCA
-    '''
+        marker_mat (numpy.memmap):
+            Memory-mapped array containing marker gene data (N-cells x len(marker_indices)).
+        n_components_pca (int):
+            Number of PCA components to project cells onto.
+        sample_size (float):
+            Fraction of N-cells to sample and run PCA on (0 < float <= 1).
+
+    Returns:
+        numpy.ndarray:
+            Projected matrix containing cells projected onto principal components.
+
+    Notes:
+    ------
+    This function applies Incremental Principal Component Analysis (IPCA) to marker gene data,
+    scales the data using StandardScaler, and returns a matrix with cells projected onto
+    the specified number of principal components.
+
+    Example:
+    --------
+    >>> marker_mat = np.memmap("marker_matrix.npy", dtype='float32', mode='r', shape=(1000, 50))
+    >>> n_components_pca = 10
+    >>> sample_size = 0.5
+    >>> projected_matrix = run_ipca(marker_mat, n_components_pca, sample_size)
+    # Runs IPCA on marker gene data and projects cells onto principal components.
+    """
     print('running pca...')
     scaler = StandardScaler()
     marker_mat = scaler.fit_transform(marker_mat)
@@ -71,16 +134,37 @@ def run_ipca(marker_mat, n_components_pca, sample_size):
     return projected_matrix
 
 def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
-    '''
-    estimates gaussian mixture model based on data in PCA-space
+    """
+    Estimate a Gaussian Mixture Model (GMM) based on data in PCA space and perform clustering.
+
     Args:
-        projected_matrix ndarray
-            2d-array N-cells x N-principal components
-        n_components_gaussian integer
-            number of gaussians to model
-        sample_size: float
-            0< float <=1 indicating the fraction of N-cells to sample and on which to estimate gaussian mixture model parameters
-    '''
+        projected_matrix (numpy.ndarray):
+            2D array containing cell data projected onto principal components (N-cells x N-principal components).
+        n_components_gaussian (int):
+            Number of Gaussian components to model.
+        sample_size (float):
+            Fraction of N-cells to sample and use for estimating GMM parameters (0 < float <= 1).
+
+    Returns:
+        tuple:
+            A tuple containing two elements:
+            - predict (numpy.ndarray): Cluster labels assigned to cells.
+            - scores (numpy.ndarray): Log likelihood scores for each cell.
+
+    Notes:
+    ------
+    This function estimates a Gaussian Mixture Model (GMM) based on the data in PCA space, 
+    samples a fraction of cells for parameter estimation, performs a grid search for GMM 
+    hyperparameters, and returns cluster labels and log likelihood scores.
+
+    Example:
+    --------
+    >>> projected_matrix = np.array([[1.2, 0.5], [0.8, 0.3], [2.0, 1.2]], dtype='float32')
+    >>> sample_size = 0.5
+    >>> n_components_gaussian = 3
+    >>> predict, scores = run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian)
+    # Estimates GMM based on PCA-space data and performs clustering.
+    """
     print('estimating gaussian mixture model...')
     rand_index = np.random.choice(range(len(projected_matrix)), replace=False, size=int(sample_size*len(projected_matrix)))
     
@@ -122,16 +206,35 @@ def run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian):
     return predict, scores
 
 def get_celltype_summary_score_per_cell(unique_celltype_name, marker_out, celltype_name):
-    '''
-    get per-cell marker gene expression averages for each specified cell type label
+    """
+    Compute per-cell marker gene expression averages for each specified cell type label.
+
     Args:
-        unique_celltype_name ndarray
-            enumeration of each cell type label being considered
-        marker_out  numpy memmap
-            N-cells x len(marker_indices)
-        celltype_name ndarray
-            celltype label corresponding to each marker gene in marker_gene names (i.e. marker_out column names); length = len(marker_indices)
-    '''
+        unique_celltype_name (numpy.ndarray):
+            Enumeration of each cell type label being considered.
+        marker_out (numpy.memmap):
+            Memory-mapped array containing marker gene data (N-cells x len(marker_indices)).
+        celltype_name (numpy.ndarray):
+            Cell type label corresponding to each marker gene in marker_gene names (i.e., marker_out column names);
+            length = len(marker_indices).
+
+    Returns:
+        numpy.ndarray:
+            Array containing per-cell summary scores for each specified cell type label.
+
+    Notes:
+    ------
+    This function computes per-cell marker gene expression averages for each specified cell type label.
+    It uses marker gene data and cell type labels to calculate summary scores for each cell type.
+
+    Example:
+    --------
+    >>> unique_celltype_name = np.array(['CellTypeA', 'CellTypeB'])
+    >>> marker_out = np.memmap("marker_matrix.npy", dtype='float32', mode='r', shape=(1000, 50))
+    >>> celltype_name = np.array(['CellTypeA', 'CellTypeB', 'CellTypeA', ...], dtype='<U10')
+    >>> celltype_summary_score = get_celltype_summary_score_per_cell(unique_celltype_name, marker_out, celltype_name)
+    # Computes per-cell summary scores for specified cell type labels.
+    """
     print('computing celltype summary scores...')
     celltype_summary_score = np.empty((len(unique_celltype_name), len(marker_out)))
     for i in range(len(unique_celltype_name)):
@@ -140,18 +243,37 @@ def get_celltype_summary_score_per_cell(unique_celltype_name, marker_out, cellty
     return celltype_summary_score
       
 def get_celltype_annotations_per_group(unique_celltype_name, celltype_summary_score, predictions):
-    '''
-    assigns cell type to each group based on marker genes
+    """
+    Assign cell types to each group based on marker genes and Gaussian mixture model predictions.
+
     Args:
-        unique_celltype_name ndarray
-            enumeration of each cell type label being considered
-        celltype_summary_score  ndarray
-            per-cell marker gene expression averages for each specified cell type label
-            N-labels x N-cells
-        predictions ndarray
-            assigned gaussian based on gaussian mixture model
-            length = N-cells
-    '''
+        unique_celltype_name (numpy.ndarray):
+            Enumeration of each cell type label being considered.
+        celltype_summary_score (numpy.ndarray):
+            Per-cell marker gene expression averages for each specified cell type label (N-labels x N-cells).
+        predictions (numpy.ndarray):
+            Assigned Gaussian component based on Gaussian mixture model (length = N-cells).
+
+    Returns:
+        tuple:
+            A tuple containing two elements:
+            - annotations_dic (dict): Dictionary mapping group identifiers to assigned cell type labels.
+            - group_annotation_matrix (numpy.ndarray): Annotation matrix (N-groups x N-labels).
+
+    Notes:
+    ------
+    This function assigns cell types to each group based on marker gene expression averages
+    and Gaussian mixture model predictions. It returns a dictionary of group annotations
+    and an annotation matrix.
+
+    Example:
+    --------
+    >>> unique_celltype_name = np.array(['CellTypeA', 'CellTypeB'])
+    >>> celltype_summary_score = np.array([[0.8, 0.2], [0.5, 0.6]], dtype='float32')
+    >>> predictions = np.array([0, 1, 0, 1], dtype='int32')
+    >>> annotations_dic, group_annotation_matrix = get_celltype_annotations_per_group(unique_celltype_name, celltype_summary_score, predictions)
+    # Assigns cell types to groups based on marker genes and GMM predictions.
+    """
     print('annotating cell types...')
     cellgroup = np.unique(predictions)
     group_annotation_matrix = np.empty((len(cellgroup), len(celltype_summary_score)))
@@ -164,22 +286,37 @@ def get_celltype_annotations_per_group(unique_celltype_name, celltype_summary_sc
     return annotations_dic, group_annotation_matrix
     
 def assign_major_celltypes(marker_genes, celltype_dic, marker_out, predictions):
-    '''
-    return per-cell cell type labels
+    """
+    Assign major cell type labels to each cell based on marker genes and Gaussian mixture model predictions.
+
     Args:
-        marker_genes ndarray
-            marker_out column names
+        marker_genes (numpy.ndarray):
+            Marker gene names (marker_out column names).
+        celltype_dic (dict):
+            Dictionary assigning each predicted Gaussian label to a cell type annotation.
+        marker_out (numpy.memmap):
+            Memory-mapped array containing marker gene data (N-cells x len(marker_indices)).
+        predictions (numpy.ndarray):
+            Assigned Gaussian component based on Gaussian mixture model (length = N-cells).
 
-        celltype_dic dictionary
-            assigning each predicted gaussian label to a cell type annotation
+    Returns:
+        numpy.ndarray:
+            Array containing major cell type labels assigned to each cell.
 
-        marker_out  numpy memmap
-            N-cells x len(marker_indices)
+    Notes:
+    ------
+    This function assigns major cell type labels to each cell based on marker genes, a cell type dictionary,
+    and Gaussian mixture model predictions.
 
-        predictions ndarray
-            assigned gaussian based on gaussian mixture model
-            length = N-cells
-    '''
+    Example:
+    --------
+    >>> marker_genes = np.array(['GeneA', 'GeneB', 'GeneC'], dtype='<U17')
+    >>> celltype_dic = {'GeneA': 'CellTypeA', 'GeneB': 'CellTypeB'}
+    >>> marker_out = np.memmap("marker_matrix.npy", dtype='float32', mode='r', shape=(1000, 50))
+    >>> predictions = np.array([0, 1, 0, 1], dtype='int32')
+    >>> annotations = assign_major_celltypes(marker_genes, celltype_dic, marker_out, predictions)
+    # Assigns major cell types to each cell based on marker genes and GMM predictions.
+    """
     celltype_name = np.array([celltype_dic[marker_genes[x]] for x in range(len(marker_genes))])
     unique_celltype_name = np.unique(celltype_name)
     celltype_summary_score = get_celltype_summary_score_per_cell(unique_celltype_name, marker_out, celltype_name)
@@ -188,25 +325,49 @@ def assign_major_celltypes(marker_genes, celltype_dic, marker_out, predictions):
     return annotations
 
 def get_predictions(filtered_counts, marker_indices, marker_out, total_counts, n_components_pca, sample_size, n_components_gaussian):
-    '''
-    returns cell labels that maximize probability of the data based on a pre-defined number of gaussian components
+    """
+    Perform cell labeling based on a Gaussian Mixture Model (GMM) and principal component analysis (PCA).
+
     Args:
-       filtered_counts ndarray
-            2D array of counts post-cell-filtering
-            N-cells x N-features
-        marker_indices list
-            column indices indicating marker genes in filtered_counts matrix
-        marker_out numpy memmap
-            N-cells x len(marker_indices)
-        total_counts ndarray
-            1D array of per-cell total counts, length = N-cells
-       n_components_pca integer
-            number of PCA components to project cells onto
-       sample_size: float
-            0< float <=1 indicating the fraction of N-cells to sample for labeling
-       n_components_gaussian integer
-            number of gaussians to model
-    '''
+        filtered_counts (numpy.ndarray):
+            2D array of counts post-cell filtering (N-cells x N-features).
+        marker_indices (list):
+            List of column indices indicating marker genes in the filtered_counts matrix.
+        marker_out (numpy.memmap):
+            Memory-mapped array for storing the normalized marker matrix (N-cells x len(marker_indices)).
+        total_counts (numpy.ndarray):
+            1D array of per-cell total counts, length = N-cells.
+        n_components_pca (int):
+            Number of PCA components to project cells onto.
+        sample_size (float):
+            Fraction of N-cells to sample for labeling (0 < float <= 1).
+        n_components_gaussian (int):
+            Number of Gaussian components to model.
+
+    Returns:
+        tuple:
+            A tuple containing three elements:
+            - projected_matrix (numpy.ndarray): Matrix with cells projected onto principal components.
+            - predict (numpy.ndarray): Cluster labels assigned to cells.
+            - scores (numpy.ndarray): Log likelihood scores for each cell.
+
+    Notes:
+    ------
+    This function performs cell labeling based on a Gaussian Mixture Model (GMM) and principal component analysis (PCA).
+    It computes the normalized marker matrix, projects cells onto PCs, and assigns cluster labels using GMM.
+
+    Example:
+    --------
+    >>> filtered_counts = np.array([[10, 5, 3], [8, 4, 2]], dtype='int32')
+    >>> marker_indices = [0, 2]
+    >>> marker_out = np.memmap("marker_matrix.npy", dtype='float32', mode='w+', shape=(2, 2))
+    >>> total_counts = np.array([18, 14], dtype='int32')
+    >>> n_components_pca = 10
+    >>> sample_size = 0.5
+    >>> n_components_gaussian = 3
+    >>> projected_matrix, predict, scores = get_predictions(filtered_counts, marker_indices, marker_out, total_counts, n_components_pca, sample_size, n_components_gaussian)
+    # Performs cell labeling based on GMM and PCA.
+    """
     print('getting normalized marker matrix...')
     with ProgressBar(total=filtered_counts.shape[0]) as numba_progress:
         get_marker_matrix_norm(filtered_counts, np.array(marker_indices), marker_out, total_counts, numba_progress)
@@ -215,23 +376,59 @@ def get_predictions(filtered_counts, marker_indices, marker_out, total_counts, n
     return projected_matrix, predict, scores
     
 def get_major_annotations(marker_path, gene_names, filtered_counts, total_counts, sample_size, n_components_pca, n_components_gaussian, out_dir, infer_N_markers):
-    '''
-    return per-cell predicted cell type annotations
+    """
+    Return per-cell predicted cell type annotations based on marker genes, GMM, and PCA.
+
     Args:
-        marker_path
+        marker_path (str):
+            Path to a CSV file containing marker gene annotations.
+        gene_names (numpy.ndarray):
+            1D array containing gene names with '<U17' data type (array length = N-features).
+        filtered_counts (numpy.ndarray):
+            2D array of counts post-cell filtering (N-cells x N-features).
+        total_counts (numpy.ndarray):
+            1D array of per-cell total counts, length = N-cells.
+        sample_size (float):
+            Fraction of N-cells to sample for labeling (0 < float <= 1).
+        n_components_pca (int):
+            Number of PCA components to project cells onto.
+        n_components_gaussian (int):
+            Number of Gaussian components to model.
+        out_dir (str):
+            Output directory where results will be saved.
+        infer_N_markers (int or None):
+            Number of markers to infer for reduction and annotation. If None, prior markers will be used.
 
-        gene_names
+    Returns:
+        tuple:
+            A tuple containing seven elements:
+            - annotations (numpy.ndarray): Per-cell predicted cell type annotations.
+            - marker_out (numpy.memmap): Memory-mapped array containing the normalized marker matrix (N-cells x N-markers).
+            - projected_matrix (numpy.ndarray): Matrix with cells projected onto principal components.
+            - predict (numpy.ndarray): Cluster labels assigned to cells.
+            - scores (numpy.ndarray): Log likelihood scores for each cell.
+            - marker_genes (numpy.ndarray): Marker gene names.
+            - marker_indices (list): Column indices indicating marker genes in filtered_counts matrix.
 
-        filtered_counts
+    Notes:
+    ------
+    This function returns per-cell predicted cell type annotations based on marker genes, a Gaussian Mixture Model (GMM),
+    and Principal Component Analysis (PCA). It can either use inferred markers for reduction and annotation or use prior markers.
 
-        total_counts
-
-        sample_size
-
-        n_components_pca
-
-        n_components_gaussian
-    '''
+    Example:
+    --------
+    >>> marker_path = "marker_annotations.csv"
+    >>> gene_names = np.array(['GeneA', 'GeneB', 'GeneC'], dtype='<U17')
+    >>> filtered_counts = np.array([[10, 5, 3], [8, 4, 2]], dtype='int32')
+    >>> total_counts = np.array([18, 14], dtype='int32')
+    >>> sample_size = 0.5
+    >>> n_components_pca = 10
+    >>> n_components_gaussian = 3
+    >>> out_dir = "results"
+    >>> infer_N_markers = 10
+    >>> annotations, marker_out, projected_matrix, predict, scores, marker_genes, marker_indices = get_major_annotations(marker_path, gene_names, filtered_counts, total_counts, sample_size, n_components_pca, n_components_gaussian, out_dir, infer_N_markers)
+    # Returns cell type annotations, marker matrix, and other results.
+    """
     if infer_N_markers is not None:
         print('inferring markers for reduction & annotation...')
         marker_indices = infer_markers_for_reduction(infer_N_markers, filtered_counts)
@@ -250,6 +447,31 @@ def get_major_annotations(marker_path, gene_names, filtered_counts, total_counts
     return annotations, marker_out, projected_matrix, predict, scores, marker_genes, marker_indices
 
 def infer_markers_for_reduction(infer_N_markers, filtered_counts):
+    """
+    Infer marker genes for dimensionality reduction and annotation based on gene expression variance.
+
+    Args:
+        infer_N_markers (int):
+            Number of markers to infer for dimensionality reduction and annotation.
+        filtered_counts (numpy.ndarray):
+            2D array of counts post-cell filtering (N-cells x N-features).
+
+    Returns:
+        numpy.ndarray:
+            Array containing the indices of inferred marker genes.
+
+    Notes:
+    ------
+    This function infers marker genes for dimensionality reduction and annotation based on gene expression trends.
+    It identifies genes with high mean-variance trends and selects the top N markers for further analysis.
+
+    Example:
+    --------
+    >>> infer_N_markers = 10
+    >>> filtered_counts = np.array([[10, 5, 3], [8, 4, 2]], dtype='int32')
+    >>> marker_indices = infer_markers_for_reduction(infer_N_markers, filtered_counts)
+    # Infers marker genes for dimensionality reduction and annotation.
+    """
     mean = get_log2(np.mean(filtered_counts, axis = 0))
     var = get_log2(np.var(filtered_counts, axis = 0))
     var_predictions = localreg.localreg(mean, var)
@@ -258,6 +480,36 @@ def infer_markers_for_reduction(infer_N_markers, filtered_counts):
     return marker_indices
 
 def infer_marker_genes_per_cluster(marker_out, predict, marker_genes):
+    """
+    Infer marker genes per cluster based on fold-change (FC).
+
+    Args:
+        marker_out (numpy.memmap):
+            Memory-mapped array containing the normalized marker matrix (N-cells x N-markers).
+        predict (numpy.ndarray):
+            Cluster labels assigned to cells.
+        marker_genes (numpy.ndarray):
+            Marker gene names.
+
+    Returns:
+        tuple:
+            A tuple containing two elements:
+            - out_markers (numpy.ndarray): Marker gene names per cluster (N-clusters x n_markers).
+            - out_fc (numpy.ndarray): Fold-change values per cluster (N-clusters x n_markers).
+
+    Notes:
+    ------
+    This function infers marker genes per cluster based on fold-change (FC).
+    For each cluster, it computes the FC of marker genes for in-cluster cells compared to out-cluster cells and selects the top N markers.
+
+    Example:
+    --------
+    >>> marker_out = np.memmap("marker_matrix.npy", dtype='float32', mode='r', shape=(1000, 50))
+    >>> predict = np.array([0, 1, 0, 1], dtype='int32')
+    >>> marker_genes = np.array(['GeneA', 'GeneB', 'GeneC'], dtype='<U17')
+    >>> out_markers, out_fc = infer_marker_genes_per_cluster(marker_out, predict, marker_genes)
+    # Infers marker genes per cluster based on FC analysis.
+    """    
     n_markers = 20
     unique_predictions = np.unique(predict)
     out_fc = np.empty(shape=(len(unique_predictions), n_markers), dtype='float')
@@ -271,29 +523,28 @@ def infer_marker_genes_per_cluster(marker_out, predict, marker_genes):
     return out_markers, out_fc
 
 def get_log2(vals):
+    """
+    Compute the logarithm base 2 of non-zero values after shifting.
+
+    Args:
+        vals (numpy.ndarray):
+            1D array containing numerical values.
+
+    Returns:
+        numpy.ndarray:
+            1D array containing the logarithm base 2 of non-zero values after shifting.
+
+    Notes:
+    ------
+    This function computes the logarithm base 2 of non-zero values in the input array after shifting the values.
+    Shifting ensures that zero values are excluded from the logarithmic operation.
+
+    Example:
+    --------
+    >>> vals = np.array([0, 1, 2, 3], dtype='float32')
+    >>> log_vals = get_log2(vals)
+    # Computes the logarithm base 2 of non-zero values after shifting.
+    """  
     vals+=np.min(vals[vals!=0])
     vals = np.log2(vals)
     return vals
-
-# continue here --> save_all_data, save_data_by_celltype, qc_plots --> also think there is something wrong with the annotation function because it annotates all cells as Ast or Ex
-# before make QC plots, make sure that everything is very clear in the code and write tests
-# then use the QC plots to assess whether the metrics I am using make sense
-# then add annotate_subtypes
-
-#def annotate_subtypes(keep_cells, annotation, meta, marker_indices, n_components_pca, n_components_gaussian, sample_size, path_to_outputs):
-#    cellnames = np.unique(annotation)
-#    N = len(keep_cells)
-#    predictions = np.empty(N).astype('str')
-#    scores = np.empty(N)
-#    for i in range(len(cellnames)):
-#        name = cellnames[i]
-#        index = np.where((keep_cells.astype('bool')) & (annotation==name))[0]
-#        marker_out = np.memmap(path_to_outputs + '/marker_matrix_norm.npy', mode='w+', shape=(len(index), len(marker_indices)), dtype='float')
-#        get_marker_matrix_norm(counts, np.array(marker_indices), marker_out, total_counts, keep_cells)
-#        projected_matrix = run_ipca(marker_out, n_components_pca, sample_size)
-#        predict, scr = run_gaussian_mixture(projected_matrix, sample_size, n_components_gaussian) # make N components adjustable after score report? Or use non-parametric strategy?
-#        predictions[index] = [name + '.' + predict[x].astype('str') for x in range(len(predict))]
-#        scores[index] = scr
-#    print('concatenating metadata')
-#    meta = np.concatenate((meta, predictions[:, None], scores[:, None]), axis=1)
-#    return meta

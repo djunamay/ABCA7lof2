@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from sklearn.mixture import GaussianMixture
-from ABCA7lof2.plots import plot_filter_cells
 from numba_progress import ProgressBar
 import ipdb 
 from sklearn.mixture import GaussianMixture

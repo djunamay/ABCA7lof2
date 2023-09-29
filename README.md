@@ -199,7 +199,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 4. see *`./15-extended-figures.ipynb`* to plot extended figures
 
 ## Citation
-If you use this code in your work, please cite using the following BibTeX entry:
+As soon as this code is made open-source, you may use this code in your work, but please cite using the following BibTeX entry:
 ```
 @article{vonMaydell2023,
   doi = {10.1101/2023.09.05.556135},

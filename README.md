@@ -1,6 +1,6 @@
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
-> [!WARNING]  
+> [!WARNING This repo is not open-source]  
 > *This repo is not open-source.* You may view and fork this project, but this work otherwise comes with no permissions. Use, distribution, modification, or contribution to this project is not permitted. We will make this project open-source upon publication of our paper in a peer-reviewed journal. Thanks for your understanding!
 
 > [!IMPORTANT]  

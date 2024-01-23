@@ -181,6 +181,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 3. see *`./10-compute_stats.ipynb`* to compute gene scores and pathway enrichments 
 > 4. see *`./11-projections.ipynb`* for gene score dimensionality reduction and clustering 
 > 5. see *`./13-plotting_inputs.ipynb`* to format some data for plotting 
+> 6. see *`./19-common_variant_analysis.ipynb`* to compute DEGs for the common ABCA7 variant
 
 ### plots
 > <details>
@@ -197,6 +198,10 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 2. see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results 
 > 3. see *`./14-figures.ipynb`* to plot main figure panels 
 > 4. see *`./15-extended-figures.ipynb`* to plot extended figures
+> 5. see *`./16-lipidomics_summed_by_class_plots.ipynb`* to plot lipidomics aggregate data
+> 6. see *`./17-variant_carrier_pie_charts.ipynb`* to plot variant carrier proportions
+> 7. see *`./18-specific_pathway_analysis.ipynb`* to plot genes and pathways for targeted pathway analysis
+> 8. see *`./20-common_var_plotting.ipynb`* to plot the common variant analysis
 
 ## Citation
 As soon as this code is made open-source, you may use this code in your work, but please cite using the following BibTeX entry:

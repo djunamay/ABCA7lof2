@@ -1,6 +1,11 @@
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
-[This repo is under construction]
+> [!WARNING]  
+> **This repo is not open-source.** You may view and fork this project, but this work otherwise comes with no permissions. **You may not use, distribute, or modify any of the code that is part of this project.** We will make this project open-source upon publication of our paper in a peer-reviewed journal. For more info see [here](https://opensource.guide/legal/#are-public-github-projects-open-source). Thanks for your understanding!
+
+> [!IMPORTANT]  
+> This repo is under construction; Docstrings are still being added. Please check back soon!
+
 # A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
 
 In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we explored the impact of ABCA7 loss-of-function (LoF) variants on Alzheimer's disease (AD) by conducting single-nuclear RNA sequencing on 36 human post-mortem samples from the prefrontal cortex. We found that ABCA7 LoF variants resulted in gene expression changes across all major cell types, with the most marked alterations observed in excitatory neurons. These changes influenced lipid metabolism, mitochondrial function, DNA damage, and NF-kB signaling. Through functional assays, we confirmed elevated levels of mitochondrial dysfunction, DNA damage, and NF-kB activation in neurons. We also used mass spectrometry to reveal that ABCA7 LoF led to significant changes in the lipidome, including increased triglycerides and altered phospholipid species. Our study provides a detailed transcriptional atlas of ABCA7 LoF effects in the human brain and suggests that lipid dysregulation in neurons may be a key mechanism by which ABCA7 LoF increases the risk of AD. This GitHub repository contains all the code necessary to replicate our analyses and to explore, generate, and analyze this detailed transcriptional atlas.
@@ -194,7 +199,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 4. see *`./15-extended-figures.ipynb`* to plot extended figures
 
 ## Citation
-If you use this code in your work, please cite using the following BibTeX entry:
+As soon as this code is made open-source, you may use this code in your work, but please cite using the following BibTeX entry:
 ```
 @article{vonMaydell2023,
   doi = {10.1101/2023.09.05.556135},

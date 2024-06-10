@@ -6,11 +6,9 @@
 > [!IMPORTANT]  
 > This repo is under construction; Docstrings are still being added. Please check back soon!
 
-# A single-cell atlas of ABCA7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and DNA damage in neurons
+# A single-cell atlas of ABCA7 loss-of-function 
 
-In our [paper](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1), we explored the impact of ABCA7 loss-of-function (LoF) variants on Alzheimer's disease (AD) by conducting single-nuclear RNA sequencing on 36 human post-mortem samples from the prefrontal cortex. We found that ABCA7 LoF variants resulted in gene expression changes across all major cell types, with the most marked alterations observed in excitatory neurons. These changes influenced lipid metabolism, mitochondrial function, DNA damage, and NF-kB signaling. Through functional assays, we confirmed elevated levels of mitochondrial dysfunction, DNA damage, and NF-kB activation in neurons. We also used mass spectrometry to reveal that ABCA7 LoF led to significant changes in the lipidome, including increased triglycerides and altered phospholipid species. Our study provides a detailed transcriptional atlas of ABCA7 LoF effects in the human brain and suggests that lipid dysregulation in neurons may be a key mechanism by which ABCA7 LoF increases the risk of AD. This GitHub repository contains all the code necessary to replicate our analyses and to explore, generate, and analyze this detailed transcriptional atlas.
-
-## Data
+## Data Availability
 
 Follow these instructions to access the data generated and used as part of this study.
 
@@ -31,7 +29,7 @@ Follow these instructions to access the data generated and used as part of this 
 
 - For all processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
   
-## Analyses
+## Human Brain Analyses
 
 ### run cellranger counting
 > <details>
@@ -198,13 +196,33 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 2. see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results 
 > 3. see *`./14-figures.ipynb`* to plot main figure panels 
 > 4. see *`./15-extended-figures.ipynb`* to plot extended figures
-> 5. see *`./16-lipidomics_summed_by_class_plots.ipynb`* to plot lipidomics aggregate data
+> 5. see *`./16-lipidomics_PM.ipynb`* to plot lipidomics aggregate data
 > 6. see *`./17-variant_carrier_pie_charts.ipynb`* to plot variant carrier proportions
 > 7. see *`./18-specific_pathway_analysis.ipynb`* to plot genes and pathways for targeted pathway analysis
 > 8. see *`./20-common_var_plotting.ipynb`* to plot the common variant analysis
+> 9. see *`./21-basic_pie_charts.ipynb`* to plot the common variant analysis
+> 10. see *`./22-beta_ox_genes.ipynb`* to plot the common variant analysis
 
+## iPSC Neuronal Analyses
+
+> <details>
+> <summary>Show the methods</summary>
+> 
+> **gene-pathway graphs**
+> * Gene-pathway graph layouts were computed using the networkx Python package using the spring layout algorithm, with 10,000 iterations. Layouts were visualized using the matplotlib pyplot package in Python. 
+> * Representative pathways for each cluster were inferred from the graph, by averaging the ABCA7 LoF perturbation scores S for all genes in the cluster of interest sharing an edge with the pathway in question. Scores for pathways with intra-cluster degrees>=5 were reported in the figures. Manually picked subsets of genes with the largest scores (|S|>1) were reported in the figures. All gene statistics are reported in Data S3 and cluster assignments are reported in Data S7. 
+> </details>
+> <details>
+> <summary>1. Get the data</summary>
+> </details>  
+>
+> 2. see *`./23-seahorse.ipynb`* to visualize graph partitioning results 
+> 3. see *`./24-lipidomics-iN.ipynb`* to plot main figure panels 
+> 4. see *`./25-metabolomics-iN.ipynb`* to plot extended figures
+
+    
 ## Citation
-As soon as this code is made open-source, you may use this code in your work, but please cite using the following BibTeX entry:
+Please cite using the following BibTeX entry if you use this code in your work:
 ```
 @article{vonMaydell2023,
   doi = {10.1101/2023.09.05.556135},

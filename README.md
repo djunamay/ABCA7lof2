@@ -5,6 +5,8 @@
 
 # A single-cell atlas of ABCA7 loss-of-function 
 
+This repository contains code (and links to other code repositories) and links to raw and processed datasets to reproduce (or extend on) results from our paper.  
+
 ## Data Availability
 
 Follow these instructions to access the data generated and used as part of this study.
@@ -22,11 +24,9 @@ Follow these instructions to access the data generated and used as part of this 
 
 - For **post-mortem lipidomic stats results** and **post-mortem snRNAseq stats results**, go to [OSF](https://osf.io/vn7w2/) to download
 
-- For raw and processed **post-mortem imaging data**, go to [OSF](https://osf.io/vn7w2/) to download
+- For all processed and raw **neuronal iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
 
-- For all processed and raw **iPSC data**, go to [OSF](https://osf.io/vn7w2/) to download
-  
-## Human Brain Analyses
+## Human Brain Omics Analyses
 
 ### run cellranger counting
 > <details>
@@ -116,7 +116,7 @@ Follow these instructions to access the data generated and used as part of this 
 > <details>
 > <summary>1. Download the data</summary>
 >
-> [Download the aggregated counts matrix, rowData, and colData here](https://linktosynapse)    
+> [Download the aggregated counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705)    
 > </details>
 >
 > 2. run *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation 
@@ -200,7 +200,7 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 9. see *`./21-basic_pie_charts.ipynb`* to plot the common variant analysis
 > 10. see *`./22-beta_ox_genes.ipynb`* to plot the common variant analysis
 
-## iPSC Neuronal Analyses
+## iPSC Neuronal Omics Analyses
 
 > <details>
 > <summary>Show the methods</summary>
@@ -217,6 +217,9 @@ Per-cell-type perturbation scores (Sc) for each cluster were computed as the ave
 > 3. see *`./24-lipidomics-iN.ipynb`* to plot main figure panels 
 > 4. see *`./25-metabolomics-iN.ipynb`* to plot extended figures
 
+## iPSC Neuronal Image Analyses
+
+- Please go to this [Github Repository](https://github.com/djunamay/confocalQuant)
     
 ## Citation
 Please cite using the following BibTeX entry if you use this code in your work:

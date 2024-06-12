@@ -36,6 +36,8 @@ Follow these instructions to access the data generated and used as part of this 
 
 For detailed methods descriptions (experimental and computational) please see our paper.
 
+## Analyses
+
 ### Human Brain Omics Analyses
 
 #### To run cellranger counting:

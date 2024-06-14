@@ -75,7 +75,7 @@ For detailed methods descriptions (experimental and computational) please see ou
 > <details>
 > <summary>Input Data</summary>
 >
-> See sections **`run cellranger counting`**  and **`processed WGS data`** above to get BAM files and WGS data.
+> See sections **`To run cellranger counting:`**  and **`Data Availability`** above to get BAM files and WGS data.
 > </details>
 >
 > 1. run *`/bash_files/crossmap.sh`* to remap the vcf file
@@ -100,7 +100,7 @@ For detailed methods descriptions (experimental and computational) please see ou
 > <details>
 > <summary>Input Data</summary>
 >
-> [Download the aggregated counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705)    
+> [Download the full aggregated counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705)    
 > </details>
 >
 > 1. run *`./04-get_marker_genes.ipynb`* to get marker genes for celltype annotation 
@@ -121,6 +121,8 @@ For detailed methods descriptions (experimental and computational) please see ou
 #### To perform statistical analyses:
 > <details>
 > <summary>Input Data</summary>
+> [Download the full annotated qc'ed counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705) 
+> [Or download redacted versions (censored patient metadata) through the UCSC Single Cell Browser (coming soon)]
 > </details>
 >
 > 1. run *`./09-stats_inputs.ipynb`* to format data for input to stats analysis 
@@ -132,6 +134,7 @@ For detailed methods descriptions (experimental and computational) please see ou
 #### For plotting notebooks:
 > <details>
 > <summary>Input Data</summary>
+> [Download all the necessary input data through figshare] (coming soon)
 > </details>  
 >
 > - see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results 
@@ -148,6 +151,7 @@ For detailed methods descriptions (experimental and computational) please see ou
 #### For all iPSC Neuronal Omics Analyses:
 > <details>
 > <summary>Input Data</summary>
+> [Download all the necessary input data through figshare] (coming soon)
 > </details>  
 >
 > - see *`./23-seahorse.ipynb`* to visualize graph partitioning results 

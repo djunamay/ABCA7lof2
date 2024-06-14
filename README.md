@@ -20,17 +20,17 @@ Follow these instructions to access the data generated and used as part of this 
 > ```
 - For the raw (and annotated) **post-mortem snRNAseq data**, the raw **post-mortem lipidomic data**, and patient **metadata** go to [Synapse](https://www.synapse.org/#!Synapse:syn53461705) to request these controlled-access data
 
-- For all processed and raw **neuronal iPSC imaging data**, go to [Figshare](https://osf.io/vn7w2/) to download
+- For other data files necessary to recapitulate analyses see the respective "Input Data" tabs in the "Analysis" section
+
+- For all processed and raw **neuronal iPSC imaging data**, go to the "Example Use-Case" in [this Github Repository](https://github.com/djunamay/confocalQuant?tab=readme-ov-file#example-use-case) for instructions to download
 
 - All Lipidomic and metabolomic datasets will be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^1]
 
 - snRNAseq data can be explored on the [USCS Single Cell Browser] soon [^1]
 
-- For other all other datafiles necessary to recapitulate analyses herein, go to [Figshare](https://osf.io/vn7w2/) to download [^2]
-
 
 [^1]: Please note that some aspects of these data will be retracted to comply with controlled access regulations. For full access to these data, please visit the repository on Synapse. 
-[^2]: See below for specific details.
+
 
 ## Methods
 

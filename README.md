@@ -112,7 +112,7 @@ For detailed methods descriptions (experimental and computational) please see ou
 > <details>
 > <summary>Input Data</summary>
 >
-> [Download the gene-pathway matrix here](https://osf.io/vn7w2/)    
+> [Download all the necessary input data through figshare] (coming soon)
 > </details>
 >
 > 1. run *`./08-run_partitioning.py`* to run METIS and K\L algorithms 
@@ -121,7 +121,9 @@ For detailed methods descriptions (experimental and computational) please see ou
 #### To perform statistical analyses:
 > <details>
 > <summary>Input Data</summary>
-> [Download the full annotated qc'ed counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705) 
+>
+> [Download the full annotated and QCed counts matrix, rowData, and colData here](https://www.synapse.org/#!Synapse:syn53461705) 
+>
 > [Or download redacted versions (censored patient metadata) through the UCSC Single Cell Browser (coming soon)]
 > </details>
 >

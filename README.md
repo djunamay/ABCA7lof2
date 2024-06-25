@@ -1,6 +1,3 @@
-Markdown itself does not support highlighting text lines with a horizontal bar directly. However, you can use HTML within Markdown to achieve this effect. Below is an improved version of your README with certain sections highlighted using HTML for better visibility.
-
-```markdown
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
 > **IMPORTANT**  
@@ -216,5 +213,4 @@ Please cite our preprint using the following BibTeX entry if you use this code i
   author = {Djuna von Maydell and Shannon Wright and Julia Maeve Bonner and Ping-Chieh Pao and Gloria Suella Menchaca and Gwyneth Welch and Carles A. Boix and Hansruedi Mathys and Guillaume Leclerc and Noelle Leary and George Samaan and Manolis Kellis and Li-Huei Tsai},
   title = {A single-cell atlas of {ABCA}7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and {DNA} damage in neurons}
 }
-```
 ```

@@ -125,7 +125,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 3. **Save single cell data as SingleCellExperiment object**:
     - Run `./07-make_sce.ipynb`.
 
-### <div style="background-color:#f0f0f0; padding:10px;">To Get K/L Gene Clusters:</div>
+#### To Get K/L Gene Clusters:
 
 <details>
 <summary>Input Data</summary>
@@ -138,7 +138,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 2. **Benchmark clustering and partitioning methods**:
     - Run `./08-benchmarking_graph_partitioning.ipynb`.
 
-### <div style="background-color:#f0f0f0; padding:10px;">To Perform Statistical Analyses:</div>
+#### To Perform Statistical Analyses:
 
 <details>
 <summary>Input Data</summary>
@@ -162,27 +162,27 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 5. **Compute DEGs for the common ABCA7 variant**:
     - Run `./19-common_variant_analysis.ipynb`.
 
-### <div style="background-color:#f0f0f0; padding:10px;">To Reproduce the Common Variant Analysis:</div>
+#### To Reproduce the Common Variant Analysis:
 
-- Run `./20-common_var_plotting.ipynb` to plot the common variant analysis
+- Run `./20-common_var_plotting.ipynb` to plot the common variant analysis.
 
-.
-
-### <div style="background-color:#f0f0f0; padding:10px;">To Reproduce Lipidomic Results:</div>
+#### To Reproduce Lipidomic Results:
 
 - Run `./16-lipidomics_PM.ipynb` to plot lipidomics aggregate data for the postmortem brain.
 
-### <div style="background-color:#f0f0f0; padding:10px;">To Perform Additional Visualizations:</div>
+#### To Perform Additional Visualizations:
 
 - Run `./12-KL_clusters.ipynb` to visualize graph partitioning results.
 - Run `./14-figures.ipynb` to plot main figure panels.
 - Run `./15-extended-figures.ipynb` to plot extended figures.
-- Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
+-
+
+ Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
 - Run `./18-specific_pathway_analysis.ipynb` to plot genes and pathways for targeted pathway analysis.
 - Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
 - Run `./22-beta_ox_genes.ipynb` to plot the common variant analysis.
 
-### iPSC-Neuron Related
+#### iPSC-Neuron Related
 
 #### For All iPSC Neuronal Omics Analyses:
 

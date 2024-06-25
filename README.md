@@ -5,40 +5,63 @@
 
 # A single-cell atlas of ABCA7 loss-of-function 
 
-This repository contains code (and links to other code repositories) and links to raw and processed datasets to reproduce (or extend on) results from our paper.  
+This repository contains the main analysis code and links to raw and processed datasets, and relevant analysis pipelines, to reproduce (or extend on) results from our paper.  
 
 ## Data Availability
+
+All postmortem human data can be accessed through the Synapse AD Knowledge Portal ([syn53461705]((https://www.synapse.org/#!Synapse:syn53461705))), which also includes associated ROSMAP metadata. These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites. All iPSC-related data are accessible through links provided in our code repositories. For a complete list of data availability and download links, please refer to the code repositories listed below. Additionally, relevant processed datasets are available in the supplementary files of this manuscript.
 
 Follow these instructions to access the data generated and used as part of this study.
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
-> Then run the main.py script with the following parameters
+
+> <details>
+> <summary>Then run the main.py script with the following parameters</summary>
+>
 > ```bash
 > python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'recalibrated_variants.vcf.gz' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'annotated.coding.txt' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
 > ```
-- For the raw (and annotated) **post-mortem snRNAseq data**, the raw **post-mortem lipidomic data**, and patient **metadata** go to [Synapse](https://www.synapse.org/#!Synapse:syn53461705) to request these controlled-access data
+> </details>
+>
+- For the raw and processed **post-mortem snRNAseq data**, **post-mortem lipidomic data**, and patient **metadata** go to [Synapse](https://www.synapse.org/#!Synapse:syn53461705) to request these controlled-access data
+
+- For the raw and processed and raw **neuronal iPSC imaging data**, go to the "Example Use-Case" in [this Github Repository](https://github.com/djunamay/confocalQuant?tab=readme-ov-file#example-use-case) for instructions to download
 
 - For other data files necessary to recapitulate analyses see the respective "Input Data" tabs in the "Analysis" section
 
-- For all processed and raw **neuronal iPSC imaging data**, go to the "Example Use-Case" in [this Github Repository](https://github.com/djunamay/confocalQuant?tab=readme-ov-file#example-use-case) for instructions to download
+For curated data uploades also see:
 
-- All Lipidomic and metabolomic datasets will be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^1]
+- All Lipidomic and metabolomic datasets will also be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^1]
 
 - snRNAseq data can be explored on the [USCS Single Cell Browser] soon [^1]
 
 
 [^1]: Please note that some aspects of these data will be retracted to comply with controlled access regulations. For full access to these data, please visit the repository on Synapse. 
 
+## Code Availability
+
+All code used in this study is available on GitHub. This includes code to replicate the analyses and figure panels presented in the paper [[here]](##analyses), descriptions and code for accessing whole-genome sequencing data [[here]](https://github.com/djunamay/ROSMAPwgs), code for performing gene-pathway clustering [[here]](https://github.com/djunamay/geneclusters), and code for processing confocal images [[here]](https://github.com/djunamay/confocalQuant).
 
 ## Methods
 
 For detailed methods descriptions (experimental and computational) please see our paper.
 
-## Analyses
+## Run all analyses
 
-### Human Brain Omics Analyses
+#### <u>quickstart</u>
+
+- clone the repository and install required packages
+
+```bash
+git clone git@github.com:djunamay/ABCA7lof2.git
+pip install -r requirements.txt
+```
+
+- follow the steps below as needed
+
+#### <u>single-cell-related</u>
 
 #### To run cellranger counting:
 > <details>
@@ -133,7 +156,23 @@ For detailed methods descriptions (experimental and computational) please see ou
 > 4. run *`./13-plotting_inputs.ipynb`* to format some data for plotting 
 > 5. run *`./19-common_variant_analysis.ipynb`* to compute DEGs for the common ABCA7 variant
 
-#### For plotting notebooks:
+#### <u>ipsc-neuron-related</u>
+
+#### For all iPSC Neuronal Omics Analyses:
+> <details>
+> <summary>Input Data</summary>
+> [Download all the necessary input data through figshare] (coming soon)
+> </details>  
+>
+> - see *`./23-seahorse.ipynb`* to visualize graph partitioning results 
+> - see *`./24-lipidomics-iN.ipynb`* to plot main figure panels 
+> - see *`./25-metabolomics-iN.ipynb`* to plot extended figures
+
+#### For iPSC Neuronal Image Analyses:
+
+- Please go to this [Github Repository](https://github.com/djunamay/confocalQuant)
+    
+#### <u>plotting/visualization notebooks</u>
 > <details>
 > <summary>Input Data</summary>
 > [Download all the necessary input data through figshare] (coming soon)
@@ -149,23 +188,9 @@ For detailed methods descriptions (experimental and computational) please see ou
 > - see *`./21-basic_pie_charts.ipynb`* to plot the common variant analysis
 > - see *`./22-beta_ox_genes.ipynb`* to plot the common variant analysis
 
-### iPSC Neuron Analyses
-#### For all iPSC Neuronal Omics Analyses:
-> <details>
-> <summary>Input Data</summary>
-> [Download all the necessary input data through figshare] (coming soon)
-> </details>  
->
-> - see *`./23-seahorse.ipynb`* to visualize graph partitioning results 
-> - see *`./24-lipidomics-iN.ipynb`* to plot main figure panels 
-> - see *`./25-metabolomics-iN.ipynb`* to plot extended figures
 
-#### For iPSC Neuronal Image Analyses:
-
-- Please go to this [Github Repository](https://github.com/djunamay/confocalQuant)
-    
 ## Citation
-Please cite using the following BibTeX entry if you use this code in your work:
+Please cite our preprint using the following BibTeX entry if you use this code in your work:
 ```
 @article{vonMaydell2023,
   doi = {10.1101/2023.09.05.556135},

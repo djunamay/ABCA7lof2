@@ -86,7 +86,7 @@ For detailed methods descriptions (experimental and computational), please see o
 
 <details>
 <summary>Input Data</summary>
-See sections **To Run Cellranger Counting** and **Data Availability** above to get BAM files and WGS data.
+See sections **To Run Cellranger Counting** and **Data Availability** above to get BAM and VCF files.
 </details>
 
 1. **Remap the VCF file**:
@@ -112,7 +112,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 
 <details>
 <summary>Input Data</summary>
-<a href="https://www.synapse.org/#!Synapse:syn53461705">Download the full aggregated counts matrix, rowData, and colData here</a>
+<a href="https://www.synapse.org/#!Synapse:syn53461705">Download the raw aggregated counts matrix, rowData, and colData here</a>
 </details>
 
 1. **Get marker genes**:
@@ -129,7 +129,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 
 <details>
 <summary>Input Data</summary>
-<a href="#">Download all the necessary input data through figshare (coming soon)</a>
+<a href="https://figshare.com/s/4849db4f3c800cbcf56b">Download the K/L-related input data here</a>
 </details>
 
 1. **Run METIS and K/L algorithms**:
@@ -138,49 +138,67 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 2. **Benchmark clustering and partitioning methods**:
     - Run `./08-benchmarking_graph_partitioning.ipynb`.
 
+3. **To visualize graph partitioning results**:
+    - Run `./12-KL_clusters.ipynb` 
+
 #### To Perform Statistical Analyses:
 
 <details>
 <summary>Input Data</summary>
-<a href="https://www.synapse.org/#!Synapse:syn53461705">Download the full annotated and QCed counts matrix, rowData, and colData here</a>
-
-[Or download redacted versions (censored patient metadata) through the UCSC Single Cell Browser (coming soon)]
+<a href="https://www.synapse.org/#!Synapse:syn53461705">Download the full annotated and QCed counts matrix, rowData, and colData and/or stats_input_data_0825.rds here</a>
 </details>
+1. **Save single cell data as SingleCellExperiment object**:
+    - Run `./07-make_sce.ipynb`.
 
-1. **Format data for input to stats analysis**:
+2. **Format data for input to stats analysis**:
     - Run `./09-stats_inputs.ipynb`.
 
-2. **Compute gene scores and pathway enrichments**:
+3. **Compute gene scores and pathway enrichments**:
     - Run `./10-compute_stats.ipynb`.
+    
+#### To Perform All-Celltypes Gene Clustering
+<details>
+<summary>Input Data</summary>
+<a href="https://figshare.com/s/d02053170cb40d2ab164">Download input stats here</a>
+</details>
 
-3. **Gene score dimensionality reduction and clustering**:
+1. **Gene score dimensionality reduction and clustering**:
     - Run `./11-projections.ipynb`.
 
-4. **Format some data for plotting**:
-    - Run `./13-plotting_inputs.ipynb`.
+#### To plot some specific pathways and genes
+<details>
+<summary>Input Data</summary>
+<a href="https://www.synapse.org/#!Synapse:syn53461705">Download stats_input_data_0825.rds here</a>
+</details>
 
-5. **Compute DEGs for the common ABCA7 variant**:
-    - Run `./19-common_variant_analysis.ipynb`.
+1. **Plot specific DEGs for neurons (Part II)**
+    - Run `./18-specific_pathway_analysis.ipynb` to plot genes and pathways for targeted pathway analysis.
+2. **Plot specific DEGs for neurons (Part II)**
+    - Run `./22-beta_ox_genes.ipynb` to plot the common variant analysis.
 
 #### To Reproduce the Common Variant Analysis:
+<details>
+<summary>Input Data</summary>
+<a href="https://figshare.com/s/c944697d9ec30ab06621">Download plotting data here</a> or <a href="">Download input data for stats here</a> 
+</details>
 
-- Run `./20-common_var_plotting.ipynb` to plot the common variant analysis.
+1. **Compute DEGs for the common ABCA7 variant**:
+    - Run `./19-common_variant_analysis.ipynb`.
+    
+2. **Plot common variant analysis results**:
+    - Run `./20-common_var_plotting.ipynb`.
 
 #### To Reproduce Lipidomic Results:
+<details>
+<summary>Input Data</summary>
+<a href="https://figshare.com/s/1f861056da02a18b7d68">Download lipidome object</a> 
+</details>
 
-- Run `./16-lipidomics_PM.ipynb` to plot lipidomics aggregate data for the postmortem brain.
+1. **To get the lipidomic input object**:
+    - Run `./13-plotting_inputs.ipynb`.
 
-#### To Perform Additional Visualizations:
-
-- Run `./12-KL_clusters.ipynb` to visualize graph partitioning results.
-- Run `./14-figures.ipynb` to plot main figure panels.
-- Run `./15-extended-figures.ipynb` to plot extended figures.
--
-
- Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
-- Run `./18-specific_pathway_analysis.ipynb` to plot genes and pathways for targeted pathway analysis.
-- Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
-- Run `./22-beta_ox_genes.ipynb` to plot the common variant analysis.
+2. **To plot lipidomics aggregate data for the postmortem brain**:
+    - Run `./16-lipidomics_by_subclass.ipynb`
 
 #### iPSC-Neuron Related
 
@@ -188,16 +206,33 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 
 <details>
 <summary>Input Data</summary>
-<a href="#">Download all the necessary input data through figshare (coming soon)</a>
+<a href="https://figshare.com/s/1f861056da02a18b7d68">Download metabolic input data here</a>
 </details>
 
-- Run `./23-seahorse.ipynb` to compute and plot oxygen consumption rates.
-- Run `./24-lipidomics-iN.ipynb` to plot lipidomic related analysis results.
-- Run `./25-metabolomics-iN.ipynb` to plot metabolome related analysis results.
+1. **Analyze oxygen consumption rates**
+    - Run `./23-seahorse.ipynb`
+    
+2. **Plot lipidomic related analysis results**
+    - Run `./13-plotting_inputs.ipynb`. to get the lipidomic input object.
+    - Run `./24-lipidomics_by_subclass.ipynb`
+    - Run `./14-figures.ipynb`
+    
+3. **Plot metabolome related analysis results**
+    - Run `./25-metabolomics-iN.ipynb`
 
 #### For iPSC Neuronal Image Analyses:
 
 - Visit the [confocalQuant GitHub Repository](https://github.com/djunamay/confocalQuant).
+
+#### To Make Additional Figure Visualizations:
+
+1. **To plot figures**:
+    - Run `./14-figures.ipynb` to plot main figure panels.
+    - Run `./15-extended-figures.ipynb` to plot extended figures.
+    
+2. **To plot some additional misc. panels**:
+    - Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
+    - Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
 
 ## Citation
 

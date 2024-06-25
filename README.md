@@ -9,9 +9,9 @@ This repository contains the main analysis code and links to raw and processed d
 
 ## Data Availability
 
-All postmortem human data can be accessed through the Synapse AD Knowledge Portal ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)), which also includes associated ROSMAP metadata[^1]. All iPSC-related data are accessible through links provided [below](#ipsc-neuron-related). 
+- All postmortem human data can be accessed through the Synapse AD Knowledge Portal ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)), which also includes associated ROSMAP metadata[^1]. 
 
-Follow these instructions to access the data generated and used as part of this study:
+- All iPSC-related data are accessible through links provided [below](#ipsc-neuron-related). 
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 
@@ -25,11 +25,8 @@ Follow these instructions to access the data generated and used as part of this 
 > ```
 > </details>
 >
-- For the raw and processed **post-mortem snRNAseq data**, **post-mortem lipidomic data**, and patient **metadata** go to [Synapse](https://www.synapse.org/#!Synapse:syn53461705) to request these controlled-access data
 
-- For the raw and processed and raw **neuronal iPSC imaging data**, go to the "Example Use-Case" in [this Github Repository](https://github.com/djunamay/confocalQuant?tab=readme-ov-file#example-use-case) for instructions to download
-
-- For other data files necessary to recapitulate analyses see the respective "Input Data" tabs in the "Analysis" section
+- For other data files necessary to recapitulate analyses see the respective `Input Data` tabs in the [Run all analyses](#run-all-analyses) section
 
 For curated data uploades also see:
 

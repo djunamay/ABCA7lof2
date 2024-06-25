@@ -31,7 +31,7 @@ For curated data uploades also see:
 
 - All Lipidomic and metabolomic datasets will also be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^2]
 
-- snRNAseq data can be explored on the [USCS Single Cell Browser] soon [^2]
+- snRNAseq data can be explored on the [USCS Single Cell Browser](https://cells.ucsc.edu/) soon [^2]
 
 
 [^1]: These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites. 
@@ -58,6 +58,10 @@ For detailed methods descriptions (experimental and computational) please see ou
 git clone git@github.com:djunamay/ABCA7lof2.git
 pip install -r requirements.txt
 ```
+
+- other packages
+
+mksquashfs version 4.5
 
 - follow the steps below as needed
 
@@ -156,6 +160,21 @@ pip install -r requirements.txt
 > 4. run *`./13-plotting_inputs.ipynb`* to format some data for plotting 
 > 5. run *`./19-common_variant_analysis.ipynb`* to compute DEGs for the common ABCA7 variant
 
+#### To reproduce the common variant analysis:
+> - see *`./20-common_var_plotting.ipynb`* to plot the common variant analysis
+
+#### To reproduce lipidomic results
+> - see *`./16-lipidomics_PM.ipynb`* to plot lipidomics aggregate data for the postmortem brain
+
+#### To perform some additional visualizations
+> - see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results 
+> - see *`./14-figures.ipynb`* to plot main figure panels 
+> - see *`./15-extended-figures.ipynb`* to plot extended figures
+> - see *`./17-variant_carrier_pie_charts.ipynb`* to plot variant carrier proportions
+> - see *`./18-specific_pathway_analysis.ipynb`* to plot genes and pathways for targeted pathway analysis
+> - see *`./21-basic_pie_charts.ipynb`* to plot the common variant analysis
+> - see *`./22-beta_ox_genes.ipynb`* to plot the common variant analysis
+
 #### <u>ipsc-neuron-related</u>
 
 #### For all iPSC Neuronal Omics Analyses:
@@ -164,30 +183,14 @@ pip install -r requirements.txt
 > [Download all the necessary input data through figshare] (coming soon)
 > </details>  
 >
-> - see *`./23-seahorse.ipynb`* to visualize graph partitioning results 
-> - see *`./24-lipidomics-iN.ipynb`* to plot main figure panels 
-> - see *`./25-metabolomics-iN.ipynb`* to plot extended figures
+> - see *`./23-seahorse.ipynb`* to compute and plot oxygen consumption rates 
+> - see *`./24-lipidomics-iN.ipynb`* to plot lipidomic related analysis results
+> - see *`./25-metabolomics-iN.ipynb`* to plot metabolome related analysis results
 
 #### For iPSC Neuronal Image Analyses:
 
 - Please go to this [Github Repository](https://github.com/djunamay/confocalQuant)
     
-#### <u>plotting/visualization notebooks</u>
-> <details>
-> <summary>Input Data</summary>
-> [Download all the necessary input data through figshare] (coming soon)
-> </details>  
->
-> - see *`./12-KL_clusters.ipynb`* to visualize graph partitioning results 
-> - see *`./14-figures.ipynb`* to plot main figure panels 
-> - see *`./15-extended-figures.ipynb`* to plot extended figures
-> - see *`./16-lipidomics_PM.ipynb`* to plot lipidomics aggregate data
-> - see *`./17-variant_carrier_pie_charts.ipynb`* to plot variant carrier proportions
-> - see *`./18-specific_pathway_analysis.ipynb`* to plot genes and pathways for targeted pathway analysis
-> - see *`./20-common_var_plotting.ipynb`* to plot the common variant analysis
-> - see *`./21-basic_pie_charts.ipynb`* to plot the common variant analysis
-> - see *`./22-beta_ox_genes.ipynb`* to plot the common variant analysis
-
 
 ## Citation
 Please cite our preprint using the following BibTeX entry if you use this code in your work:

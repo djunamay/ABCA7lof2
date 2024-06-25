@@ -9,9 +9,9 @@ This repository contains the main analysis code and links to raw and processed d
 
 ## Data Availability
 
-All postmortem human data can be accessed through the Synapse AD Knowledge Portal ([syn53461705]((https://www.synapse.org/#!Synapse:syn53461705))), which also includes associated ROSMAP metadata. These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites. All iPSC-related data are accessible through links provided in our code repositories. For a complete list of data availability and download links, please refer to the code repositories listed below. Additionally, relevant processed datasets are available in the supplementary files of this manuscript.
+All postmortem human data can be accessed through the Synapse AD Knowledge Portal ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)), which also includes associated ROSMAP metadata[^1]. All iPSC-related data are accessible through links provided [below](#ipsc-neuron-related). 
 
-Follow these instructions to access the data generated and used as part of this study.
+Follow these instructions to access the data generated and used as part of this study:
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 
@@ -33,12 +33,13 @@ Follow these instructions to access the data generated and used as part of this 
 
 For curated data uploades also see:
 
-- All Lipidomic and metabolomic datasets will also be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^1]
+- All Lipidomic and metabolomic datasets will also be available through the [MetaboLights](https://www.ebi.ac.uk/metabolights/index) database [^2]
 
-- snRNAseq data can be explored on the [USCS Single Cell Browser] soon [^1]
+- snRNAseq data can be explored on the [USCS Single Cell Browser] soon [^2]
 
 
-[^1]: Please note that some aspects of these data will be retracted to comply with controlled access regulations. For full access to these data, please visit the repository on Synapse. 
+[^1]: These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites. 
+[^2]: Please note that some aspects of these data will be retracted to comply with controlled access regulations. For full access to these data, please visit the repository on Synapse. 
 
 ## Code Availability
 

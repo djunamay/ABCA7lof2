@@ -147,6 +147,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 <summary>Input Data</summary>
 <a href="https://www.synapse.org/#!Synapse:syn53461705">Download the full annotated and QCed counts matrix, rowData, and colData and/or stats_input_data_0825.rds here</a>
 </details>
+
 1. **Save single cell data as SingleCellExperiment object**:
     - Run `./07-make_sce.ipynb`.
 
@@ -171,7 +172,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 <a href="https://www.synapse.org/#!Synapse:syn53461705">Download stats_input_data_0825.rds here</a>
 </details>
 
-1. **Plot specific DEGs for neurons (Part II)**
+1. **Plot specific DEGs for neurons (Part I)**
     - Run `./18-specific_pathway_analysis.ipynb` to plot genes and pathways for targeted pathway analysis.
 2. **Plot specific DEGs for neurons (Part II)**
     - Run `./22-beta_ox_genes.ipynb` to plot the common variant analysis.
@@ -191,7 +192,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 #### To Reproduce Lipidomic Results:
 <details>
 <summary>Input Data</summary>
-<a href="https://figshare.com/s/1f861056da02a18b7d68">Download lipidome object</a> 
+<a href="https://figshare.com/s/1f861056da02a18b7d68">Download metabolic input data</a> 
 </details>
 
 1. **To get the lipidomic input object**:

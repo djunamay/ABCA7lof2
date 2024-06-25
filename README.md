@@ -1,3 +1,6 @@
+Markdown itself does not support highlighting text lines with a horizontal bar directly. However, you can use HTML within Markdown to achieve this effect. Below is an improved version of your README with certain sections highlighted using HTML for better visibility.
+
+```markdown
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
 
 > **IMPORTANT**  
@@ -125,7 +128,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 3. **Save single cell data as SingleCellExperiment object**:
     - Run `./07-make_sce.ipynb`.
 
-#### To Get K/L Gene Clusters:
+### <div style="background-color:#f0f0f0; padding:10px;">To Get K/L Gene Clusters:</div>
 
 <details>
 <summary>Input Data</summary>
@@ -138,7 +141,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 2. **Benchmark clustering and partitioning methods**:
     - Run `./08-benchmarking_graph_partitioning.ipynb`.
 
-#### To Perform Statistical Analyses:
+### <div style="background-color:#f0f0f0; padding:10px;">To Perform Statistical Analyses:</div>
 
 <details>
 <summary>Input Data</summary>
@@ -162,22 +165,22 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 5. **Compute DEGs for the common ABCA7 variant**:
     - Run `./19-common_variant_analysis.ipynb`.
 
-#### To Reproduce the Common Variant Analysis:
+### <div style="background-color:#f0f0f0; padding:10px;">To Reproduce the Common Variant Analysis:</div>
 
-- Run `./20-common_var_plotting.ipynb` to plot the common variant analysis.
+- Run `./20-common_var_plotting.ipynb` to plot the common variant analysis
 
-#### To Reproduce Lipidomic Results:
+.
+
+### <div style="background-color:#f0f0f0; padding:10px;">To Reproduce Lipidomic Results:</div>
 
 - Run `./16-lipidomics_PM.ipynb` to plot lipidomics aggregate data for the postmortem brain.
 
-#### To Perform Additional Visualizations:
+### <div style="background-color:#f0f0f0; padding:10px;">To Perform Additional Visualizations:</div>
 
 - Run `./12-KL_clusters.ipynb` to visualize graph partitioning results.
 - Run `./14-figures.ipynb` to plot main figure panels.
 - Run `./15-extended-figures.ipynb` to plot extended figures.
--
-
- Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
+- Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
 - Run `./18-specific_pathway_analysis.ipynb` to plot genes and pathways for targeted pathway analysis.
 - Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
 - Run `./22-beta_ox_genes.ipynb` to plot the common variant analysis.
@@ -213,4 +216,5 @@ Please cite our preprint using the following BibTeX entry if you use this code i
   author = {Djuna von Maydell and Shannon Wright and Julia Maeve Bonner and Ping-Chieh Pao and Gloria Suella Menchaca and Gwyneth Welch and Carles A. Boix and Hansruedi Mathys and Guillaume Leclerc and Noelle Leary and George Samaan and Manolis Kellis and Li-Huei Tsai},
   title = {A single-cell atlas of {ABCA}7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and {DNA} damage in neurons}
 }
+```
 ```

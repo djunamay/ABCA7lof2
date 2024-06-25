@@ -15,16 +15,15 @@ This repository contains the main analysis code and links to raw and processed d
 
 - For the processed **WGS data**, follow instructions in the [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs) repository
 
-> <details>
-> <summary>Then run the main.py script with the following parameters</summary>
->
-> ```bash
-> python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'recalibrated_variants.vcf.gz' --extract_HIGHandMED_annotations False --download True
-> python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'annotated.coding.txt' --extract_HIGHandMED_annotations False --download True
+<details>
+<summary>Then run the main.py script with the following parameters</summary>
+```bash
+python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'recalibrated_variants.vcf.gz' --extract_HIGHandMED_annotations False --download True
+python main.py --outdir './raw_data/ROSMAP_WGS' --username <USERNAME> --pw <PASSWORD> --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extension 'annotated.coding.txt' --extract_HIGHandMED_annotations False --download True
 > python main.py --outdir './raw_data/ROSMAP_WGS' --gene_list "['SORL1', 'TREM2', 'ABCA7', 'ATP8B4', 'ABCA1', 'ADAM10']" --extract_HIGHandMED_annotations True --download False
-> ```
-> </details>
->
+```
+</details>
+
 
 - For other data files necessary to recapitulate analyses see the respective `Input Data` tabs in the [Run all analyses](#run-all-analyses) section
 
@@ -40,7 +39,10 @@ For curated data uploades also see:
 
 ## Code Availability
 
-All code used in this study is available on GitHub. This includes code to replicate the analyses and figure panels presented in the paper [[here]](##analyses), descriptions and code for accessing whole-genome sequencing data [[here]](https://github.com/djunamay/ROSMAPwgs), code for performing gene-pathway clustering [[here]](https://github.com/djunamay/geneclusters), and code for processing confocal images [[here]](https://github.com/djunamay/confocalQuant).
+- [replicate the analyses and figure panels presented in the paper](#run-all-analyses)
+- [accessing whole-genome sequencing data](https://github.com/djunamay/ROSMAPwgs)
+- [performing gene-pathway clustering](https://github.com/djunamay/geneclusters)
+- [processing confocal images](https://github.com/djunamay/confocalQuant).
 
 ## Methods
 

@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.decomposition import IncrementalPCA
 from sklearn.mixture import GaussianMixture
 from ABCA7lof2.qc import filter_cells_by_major_annotation
-from ABCA7lof2.setup import process_metadata
 from numba_progress import ProgressBar
 import localreg
 from ABCA7lof2.qc import gmm_bic_score

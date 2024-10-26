@@ -24,16 +24,16 @@ This repository contains the main analysis code and links to raw and processed d
 
 ## Data Availability
 
-| Origin | Data Type                          | Raw          | Processed    | Figure Data            | Interactive                                      | Readme |
-|--------|------------------------------------|--------------|--------------|------------------------|--------------------------------------------------|--------|
-| 🟦 Human | snRNAseq                           | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | [Broad Single Cell Portal](https://cells.ucsc.edu/)          | [Click](#) |
-| 🟦 Human | metadata                           | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | N/A                                              | [Click](#) |
-| 🟦 Human | whole genome sequencing | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link) | N/A | [wgs_readme.md](data_readmes/wgs_readme.md) |
-| 🟦 Human | LC-MS                              | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)          | [Click](#) |
-| 🟩  iPSC | LC-MS                              | [dryad](add/link) | [dryad](add/link) | [dryad](add/link)         | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)           | [Click](#) |
-| 🟩  iPSC | confocal images                    | [dryad](add/link) | [dryad](add/link) | [dryad](add/link)         | N/A                                              | [Click](#) |
-| 🟩  iPSC | oxygen consumption rates           | [dryad](add/link) | [dryad](add/link) | [dryad](add/link)         | N/A                                              | [Click](#) |
-| 🟩  iPSC | biochemical assays                 | [dryad](add/link) | [dryad](add/link) | [dryad](add/link)         | N/A                                              | [Click](#) |
+| Origin | Data Type                          | Raw                                                              | Processed                                                        | Figure Data          | Interactive                                              | Readme                               |
+|--------|------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|----------------------|----------------------------------------------------------|--------------------------------------|
+| 🟦 Human | snRNAseq                           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | [Click](https://cells.ucsc.edu/)                         | [Click](#)                           |
+| 🟦 Human | metadata                           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟦 Human | whole genome sequencing             | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | N/A                                                      | [Click](data_readmes/wgs_readme.md)  |
+| 🟦 Human | LC-MS                              | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
+| 🟩  iPSC | LC-MS                              | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
+| 🟩  iPSC | confocal images                    | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟩  iPSC | oxygen consumption rates           | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟩  iPSC | biochemical assays                 | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
 
 > **N.B.**  
 > Regarding data deposited on Synapse ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)). These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites.
@@ -90,7 +90,7 @@ This repository contains the main analysis code and links to raw and processed d
 - Run `./05-single_cell_qc_anno.ipynb` to run celltype quality control and annotation.
 - Run `./06-umaps.ipynb` to generate UMAPs.
 
-## Compute Statistics
+## ABCA7 loss-of-function gene statistics
 > **<u>Data</u>**  
 > - Follow [ABCA7 loss-of-function snRNAseq QC & Annotation](#abca7-loss-of-function-snrna-qc--annotation) above.
 > - Alternatively, access the QC'ed aggregated counts matrix, rowData, and colData [here](https://www.synapse.org/#!Synapse:syn53461705). 
@@ -99,7 +99,7 @@ This repository contains the main analysis code and links to raw and processed d
 - Run `./09-stats_inputs.ipynb` to format data for input to stats analysis.
 - Run `./10-compute_stats.ipynb`.
 
-## Gene and Pathway Statistics
+## ABCA7 loss-of-function gene and pathway statistics
 > **<u>Data</u>**  
 > - Follow [Compute Statistics](#compute-statistics) above.
 > - Or, access the stats_input_data_0825.rds [here](https://figshare.com/s/c944697d9ec30ab06621).
@@ -114,7 +114,7 @@ This repository contains the main analysis code and links to raw and processed d
     > - Follow 
     - Run `./19-common_variant_analysis.ipynb`.
     - Run `./20-common_var_plotting.ipynb`.
-- #### MD simulations
+- #### Molecular Dynamics simulations
     > **<u>Data</u>**  
 
 ## LC-MS Analyses
@@ -130,11 +130,11 @@ This repository contains the main analysis code and links to raw and processed d
     - Run `./14-figures.ipynb` to plot figures.
     - Run `./25-metabolomics-iN.ipynb` to analyze iPSC-neuron metabolomics data.
 
-## Oxygen Consumption Rates
+## Oxygen Consumption Rates analysis
     > **<u>Data</u>**  
     - Run `./23-seahorse.ipynb`.
     
-## Confocal Imaging
+## Confocal Imaging analysis
 > **<u>Data</u>**  
 > - Visit the [confocalQuant GitHub Repository](https://github.com/djunamay/confocalQuant).
 

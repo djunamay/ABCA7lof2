@@ -8,7 +8,7 @@
 This repository contains the main analysis code and links to raw and processed datasets, and relevant analysis pipelines, to reproduce (or extend on) results from our paper.
 
 ## Quickstart
-- ### Clone the repository and install required packages:
+- #### Clone the repository and install required packages:
     ```bash
     git clone git@github.com:djunamay/ABCA7lof2.git
     cd ABCA7lof2
@@ -16,9 +16,11 @@ This repository contains the main analysis code and links to raw and processed d
     ```
     - Ensure `mksquashfs` version 4.5 is installed on your system.
 
-- ### See Data Availability below for how to access the data.
+- #### See Data Availability below for links to the data.
 
-- ### See Code Availability for a guide on reproducing the results.
+- #### See Code Availability for a guide on reproducing the results. 
+    - Each section is intended to be optionally run independently of the others. 
+    - Information on accessing the input data for a given analysis is provided at the beginning of each section.
 
 ## Data Availability
 
@@ -77,39 +79,34 @@ This repository contains the main analysis code and links to raw and processed d
         ```
     - Run `sample_swap_make_exec.ipynb` to make the text file to iterate through.
     - Run `sample_swap.sh`.
-    - Run `./02-sample_swap.ipynb` to visualize sample swap results.
 
-## ABCA7 loss-of-function snRNAseq analysis
+## ABCA7 loss-of-function snRNAseq QC & Annotation
 > **<u>Data</u>**  
 > - Follow [Get single cell BAM files](#get-single-cell-bam-files) above.
 > - Then aggregate all the count files by running `./03-aggregate.ipynb`.
 > - Alternatively, access the raw aggregated counts matrix, rowData, and colData [here](https://www.synapse.org/#!Synapse:syn53461705).
+    
+- Run `./04-get_marker_genes.ipynb` to get marker genes.
+- Run `./05-single_cell_qc_anno.ipynb` to run celltype quality control and annotation.
+- Run `./06-umaps.ipynb` to generate UMAPs.
 
-- #### To Perform Celltype Annotation & QC:
-    - Run `./04-get_marker_genes.ipynb` to get marker genes.
-    - Run `./05-single_cell_qc_anno.ipynb` to run celltype quality control and annotation.
-    - Run `./06-umaps.ipynb` to generate UMAPs.
-    - Run `./07-make_sce.ipynb` to save single cell data as SingleCellExperiment object.
+## Compute Statistics
+> **<u>Data</u>**  
+> - Follow [ABCA7 loss-of-function snRNAseq QC & Annotation](#abca7-loss-of-function-snrna-qc--annotation) above.
+> - Alternatively, access the QC'ed aggregated counts matrix, rowData, and colData [here](https://www.synapse.org/#!Synapse:syn53461705). 
 
-- #### To perform ABCA7 loss-of-function-associated statistical analyses:
-    - Run `./09-stats_inputs.ipynb` to format data for input to stats analysis.
+- Run `./07-make_sce.ipynb` to save single cell data as SingleCellExperiment object.
+- Run `./09-stats_inputs.ipynb` to format data for input to stats analysis.
+- Run `./10-compute_stats.ipynb`.
 
 ## Gene and Pathway Statistics
 > **<u>Data</u>**  
-> - Follow [snRNAseq analysis](#snrna-analysis) above.
-> - Alternatively, access the QC'ed aggregated counts matrix, rowData, and colData [here](https://www.synapse.org/#!Synapse:syn53461705). 
+> - Follow [Compute Statistics](#compute-statistics) above.
 > - Or, access the stats_input_data_0825.rds [here](https://figshare.com/s/c944697d9ec30ab06621).
-
-- #### Compute gene scores and pathway enrichments:
-    - Run `./10-compute_stats.ipynb`.
-
-- #### Gene score dimensionality reduction and clustering:
-    - Run `./11-projections.ipynb`.
-
-- #### K/L Gene Clustering
-    - Run `./08-run_partitioning.py` to run METIS and K/L algorithms.
-    - Run `./08-benchmarking_graph_partitioning.ipynb` to benchmark clustering and partitioning methods.
-    - Run `./12-KL_clusters.ipynb` to visualize graph partitioning results.
+- Run `./11-projections.ipynb`.
+- Run `./08-run_partitioning.py` to run METIS and K/L algorithms.
+- Run `./08-benchmarking_graph_partitioning.ipynb` to benchmark clustering and partitioning methods.
+- Run `./12-KL_clusters.ipynb` to visualize graph partitioning results.
 
 ## ABCA7 Ala1527Gly analysis
 - #### snRNAseq analyses
@@ -141,25 +138,70 @@ This repository contains the main analysis code and links to raw and processed d
 > **<u>Data</u>**  
 > - Visit the [confocalQuant GitHub Repository](https://github.com/djunamay/confocalQuant).
 
-## Plotting Figures
+## Plot Results
 > **<u>Data</u>**  
-    - Run `./14-figures.ipynb` to plot main figure panels.
-    - Run `./15-extended-figures.ipynb` to plot extended figures.    
-    - Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
-    - Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
+> Follow steps above or download figure input data.
+- Run `./02-sample_swap.ipynb` to visualize sample swap results.
+- Run `./14-figures.ipynb` to plot main figure panels.
+- Run `./15-extended-figures.ipynb` to plot extended figures.    
+- Run `./17-variant_carrier_pie_charts.ipynb` to plot variant carrier proportions.
+- Run `./21-basic_pie_charts.ipynb` to plot the common variant analysis.
 
 ## Citation
 
 Please cite our preprint using the following BibTeX entry if you use this code in your work:
 
 ```bibtex
-@article{vonMaydell2023,
-  doi = {10.1101/2023.09.05.556135},
-  url = {https://doi.org/10.1101/2023.09.05.556135},
-  year = {2023},
-  month = sep,
-  publisher = {Cold Spring Harbor Laboratory},
-  author = {Djuna von Maydell and Shannon Wright and Julia Maeve Bonner and Ping-Chieh Pao and Gloria Suella Menchaca and Gwyneth Welch and Carles A. Boix and Hansruedi Mathys and Guillaume Leclerc and Noelle Leary and George Samaan and Manolis Kellis and Li-Huei Tsai},
-  title = {A single-cell atlas of {ABCA}7 loss-of-function reveals lipid disruptions, mitochondrial dysfunction and {DNA} damage in neurons}
+@UNPUBLISHED{Von_Maydell2023-ce,
+  title    = "Single-cell atlas of {ABCA7} loss-of-function reveals impaired
+              neuronal respiration via choline-dependent lipid imbalances",
+  author   = "von Maydell, Djuna and Wright, Shannon and Bonner, Julia Maeve
+              and Staab, Colin and Spitaleri, Andrea and Liu, Liwang and Pao,
+              Ping-Chieh and Yu, Chung Jong and Scannail, Aine Ni and Li,
+              Mingpei and Boix, Carles A and Mathys, Hansruedi and Leclerc,
+              Guillaume and Menchaca, Gloria Suella and Welch, Gwyneth and
+              Graziosi, Agnese and Leary, Noelle and Samaan, George and Kellis,
+              Manolis and Tsai, Li-Huei",
+  abstract = "AbstractLoss-of-function (LoF) variants in the lipid transporter
+              ABCA7 significantly increase the risk of Alzheimer's disease
+              (odds ratio ∼2), yet the pathogenic mechanisms and the neural
+              cell types affected by these variants remain largely unknown.
+              Here, we performed single-nuclear RNA sequencing of 36
+              humanpost-mortemsamples from the prefrontal cortex of 12 ABCA7
+              LoF carriers and 24 matched non-carrier control individuals.
+              ABCA7 LoF was associated with gene expression changes in all
+              major cell types. Excitatory neurons, which expressed the highest
+              levels of ABCA7, showed transcriptional changes related to lipid
+              metabolism, mitochondrial function, cell cycle-related pathways,
+              and synaptic signaling. ABCA7 LoF-associated transcriptional
+              changes in neurons were similarly perturbed in carriers of the
+              common AD missense variant ABCA7 p.Ala1527Gly (n = 240 controls,
+              135 carriers), indicating that findings from our study may extend
+              to large portions of the at-risk population. Consistent with
+              ABCA7's function as a lipid exporter, lipidomic analysis of
+              isogenic iPSC-derived neurons (iNs) revealed profound
+              intracellular triglyceride accumulation in ABCA7 LoF, which was
+              accompanied by a relative decrease in phosphatidylcholine
+              abundance. Metabolomic and biochemical analyses of iNs further
+              indicated that ABCA7 LoF was associated with disrupted
+              mitochondrial bioenergetics that suggested impaired lipid
+              breakdown by uncoupled respiration. Treatment of ABCA7 LoF iNs
+              with CDP-choline (a rate-limiting precursor of
+              phosphatidylcholine synthesis) reduced triglyceride accumulation
+              and restored mitochondrial function, indicating that ABCA7
+              LoF-induced phosphatidylcholine dyshomeostasis may directly
+              disrupt mitochondrial metabolism of lipids. Treatment with
+              CDP-choline also rescued intracellular amyloid$\beta$-42 levels
+              in ABCA7 LoF iNs, further suggesting a link between ABCA7 LoF
+              metabolic disruptions in neurons and AD pathology. This study
+              provides a detailed transcriptomic atlas of ABCA7 LoF in the
+              human brain and mechanistically links ABCA7 LoF-induced lipid
+              perturbations to neuronal energy dyshomeostasis. In line with a
+              growing body of evidence, our study highlights the central role
+              of lipid metabolism in the etiology of Alzheimer's disease.",
+  journal  = "bioRxiv",
+  month    =  sep,
+  year     =  2023
 }
+
 ```

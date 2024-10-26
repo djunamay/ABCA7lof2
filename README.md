@@ -12,7 +12,7 @@ This repository contains the main analysis code and links to raw and processed d
 | Origin | Data Type                          | Raw          | Processed    | Figure Data | Interactive |
 |--------|------------------------------------|--------------|--------------|-------------|-------------|
 | 🟦 Human | snRNAseq | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | [Broad Single Cell Portal](https://cells.ucsc.edu/)          |
-| 🟦 Human  | metadata | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [10.5061/dryad.zcrjdfnn5](add/link)         | N/A          |
+| 🟦 Human  | metadata | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | N/A          |
 | 🟦 Human | whole genome sequencing | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | N/A          |
 | 🟦 Human | Lipidomic and Metabolomic Datasets | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [dryad](add/link)         | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)          |
 | 🟩  iPSC |  Lipidomic and Metabolomic Datasets                   | [dryad](add/link)           | [dryad](add/link)   | [dryad](add/link)           | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)           |

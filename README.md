@@ -1,4 +1,4 @@
-[![bioRxiv](https://img.shields.io/badge/bioRxiv-202023.09.05-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v1)
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-2024.07.28-b31b1b.svg?style=flat-square)](https://www.biorxiv.org/content/10.1101/2023.09.05.556135v2)
 
 > **IMPORTANT**  
 > This repo is under construction; Docstrings are still being added. Please check back soon!
@@ -8,6 +8,17 @@
 This repository contains the main analysis code and links to raw and processed datasets, and relevant analysis pipelines, to reproduce (or extend on) results from our paper.
 
 ## Data Availability
+
+| Origin | Data Type                          | Raw          | Processed    | Figure Data | Interactive |
+|--------|------------------------------------|--------------|--------------|-------------|-------------|
+| 🟦 Human | snRNAseq | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [10.5061/dryad.zcrjdfnn5](add/link)         | [Broad Single Cell Portal](https://cells.ucsc.edu/)          |
+| 🟦 Human  | metadata | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [10.5061/dryad.zcrjdfnn5](add/link)         | N/A          |
+| 🟦 Human | whole genome sequencing | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [10.5061/dryad.zcrjdfnn5](add/link)         | N/A          |
+| 🟦 Human | Lipidomic and Metabolomic Datasets | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [syn53461705](https://www.synapse.org/#!Synapse:syn53461705) | [10.5061/dryad.zcrjdfnn5](add/link)         | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)          |
+| 🟩  iPSC |  Lipidomic and Metabolomic Datasets                   | [10.5061/dryad.zcrjdfnn5](add/link)           | [10.5061/dryad.zcrjdfnn5](add/link)   | [10.5061/dryad.zcrjdfnn5](add/link)           | [MetaboLights](https://www.ebi.ac.uk/metabolights/index)           |
+| 🟩  iPSC | confocal microscopy                      | [10.5061/dryad.zcrjdfnn5](add/link)           | [10.5061/dryad.zcrjdfnn5](add/link)   | [10.5061/dryad.zcrjdfnn5](add/link)           | N/A          |
+| 🟩  iPSC | oxygen consumption rates                      | [10.5061/dryad.zcrjdfnn5](add/link)           | [10.5061/dryad.zcrjdfnn5](add/link)   | [10.5061/dryad.zcrjdfnn5](add/link)           | N/A          |
+| 🟩  iPSC | biochemical assays                   | [10.5061/dryad.zcrjdfnn5](add/link)           | [10.5061/dryad.zcrjdfnn5](add/link)   | [10.5061/dryad.zcrjdfnn5](add/link)           | N/A          |
 
 - **Postmortem Human Data**: Accessible through the Synapse AD Knowledge Portal ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)), which also includes associated ROSMAP metadata[^1].
 - **iPSC-Related Data**: Accessible through links provided [below](#ipsc-neuron-related).
@@ -201,7 +212,7 @@ See sections **To Run Cellranger Counting** and **Data Availability** above to g
 2. **To plot lipidomics aggregate data for the postmortem brain**:
     - Run `./16-lipidomics_by_subclass.ipynb`
 
-#### iPSC-Neuron Related
+### iPSC-Neuron Related
 
 #### For All iPSC Neuronal Omics Analyses:
 

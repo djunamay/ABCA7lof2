@@ -16,39 +16,41 @@ This repository contains the main analysis code and links to raw and processed d
     ```
     - Ensure `mksquashfs` version 4.5 is installed on your system.
 
-- #### See Data Availability below for links to the data.
+- #### See Data Availability sectionbelow for links to the data.
 
-- #### See Code Availability for a guide on reproducing the results. 
+- #### See Code Availability section below for a guide on reproducing the results. 
     - Each section is intended to be optionally run independently of the others. 
     - Information on accessing the input data for a given analysis is provided at the beginning of each section.
 
 ## Data Availability
 
-| Origin | Data Type                          | Raw                                                              | Processed                                                        | Figure Data          | Interactive                                              | Readme                               |
+| System | Data Type                          | Raw                                                              | Processed                                                        | Figure Data          | Interactive                                              | Readme                               |
 |--------|------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|----------------------|----------------------------------------------------------|--------------------------------------|
-| 🟦 Human | snRNAseq                           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | [Click](https://cells.ucsc.edu/)                         | [Click](#)                           |
-| 🟦 Human | metadata                           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | N/A                                                      | [Click](#)                           |
-| 🟦 Human | whole genome sequencing             | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | N/A                                                      | [Click](data_readmes/wgs_readme.md)  |
-| 🟦 Human | LC-MS                              | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
-| 🟩  iPSC | LC-MS                              | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
-| 🟩  iPSC | confocal images                    | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
-| 🟩  iPSC | oxygen consumption rates           | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
-| 🟩  iPSC | biochemical assays                 | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟦 Human postmortem | snRNAseq fastq                           | [*.fastq.gz](https://www.synapse.org/Synapse:syn53468871)           | N/A           | N/A    | N/A                         | [Click](#)                           |
+| 🟦 Human postmortem | snRNAseq counts                           | [raw_*](https://www.synapse.org/Synapse:syn53468873)           | [qc_*](https://www.synapse.org/#!Synapse:syn53461705)           |  [Click](add/link/dryad)    | [Click](https://broad)                         | [Click](#)                           |
+| 🟦 Human postmortem | metadata                           | [raw_rowData.csv](https://www.synapse.org/#!Synapse:syn53461705)           | [qc_rowData.csv](add/link)    |  [Click](#)                                                        | N/A                           |
+| 🟦 Human postmortem | whole genome sequencing             | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](https://www.synapse.org/#!Synapse:syn53461705)           | [Click](add/link)    | N/A                                                      | [Click](data_readmes/wgs_readme.md)  |
+| 🟦 Human postmortem | LC-MS                              | [*.raw](https://www.synapse.org/Synapse:syn53468872)           | [*.csv / *.xlsx](https://www.synapse.org/Synapse:syn53468872)           | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
+| 🟩  iPSC neuron | LC-MS                              | [*.raw](add/link)                                                | [*.csv / *.xlsx](add/link)                                                 | [Click](add/link)    | [Click](https://www.ebi.ac.uk/metabolights/index)        | [Click](#)                           |
+| 🟩  iPSC neuron | confocal images                    | [*.raw](add/link)                                                 | [*.csv / *.xlsx](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟩  iPSC neuron | oxygen consumption rates           | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
+| 🟩  iPSC neuron | biochemical assays                 | [Click](add/link)                                                 | [Click](add/link)                                                 | [Click](add/link)    | N/A                                                      | [Click](#)                           |
 
 > **N.B.**  
 > Regarding data deposited on Synapse ([syn53461705](https://www.synapse.org/#!Synapse:syn53461705)). These data are subject to controlled access in compliance with human privacy regulations. To obtain the data, a data use agreement (DUA) must be completed. This requirement ensures the anonymity of ROSMAP study participants. A DUA can be established with either the Rush University Medical Center (RUMC) or SAGE, the organization that manages Synapse. The necessary forms are available for download on their respective websites.
 
 ## Code Availability
 
-| Data Type                | Analysis Type                    | Repository Link                                           |
-|--------------------------|-----------------------------------|-----------------------------------------------------------|
-| General Analysis         | Replicate Analyses and Figures    | [Run All Analyses](#run-all-analyses)                     |
-| Whole Genome Sequencing  | Access Whole-Genome Sequencing    | [ROSMAPwgs](https://github.com/djunamay/ROSMAPwgs)        |
-| Genetic Variant Analysis | Get single cell BAM files         | [Get single cell BAM files](#get-single-cell-bam-files)   |
-| ABCA7 snRNAseq Analysis  | Perform Celltype Annotation & QC  | [ABCA7 loss-of-function snRNAseq analysis](#abca7-loss-of-function-snrnaseq-analysis) |
-| Gene and Pathway Stats   | Compute gene scores and pathway enrichments | [Gene and Pathway Statistics](#gene-and-pathway-statistics) |
-| Gene-Pathway             | Perform Gene-Pathway Clustering   | [geneclusters](https://github.com/djunamay/geneclusters)  |
-| Confocal Imaging         | Process Confocal Images           | [confocalQuant](https://github.com/djunamay/confocalQuant) |
+| Analysis                                         | Related Figures                                |
+|--------------------------------------------------|------------------------------------------------|
+| [Genetic variant analysis](#genetic-variant-analysis)            |                                                |
+| [ABCA7 loss-of-function snRNAseq QC & Annotation](#abca7-loss-of-function-snrna-qc--annotation)   | Access Whole-Genome Sequencing                  |
+| [ABCA7 loss-of-function gene statistics](#abca7-loss-of-function-gene-statistics)                          | Perform Celltype Annotation & QC                |
+| [ABCA7 loss-of-function pathway statistics](#abca7-loss-of-function-pathway-statistics)                           | Compute gene scores and pathway enrichments     |
+| [ABCA7 Ala1527Gly analysis](#abca7-ala1527gly-analysis)                                     | Perform Gene-Pathway Clustering                 |
+| [LC-MS Analyses](#lc-ms-analyses)                                 | Process Confocal Images                         |
+| [Oxygen Consumption Rates analysis](#oxygen-consumption-rates-analysis)                                 | Process Confocal Images                         |
+| [Confocal Imaging analysis](#confocal-imaging-analysis)                                 | Process Confocal Images                         |
 ## Genetic variant analysis
 
 - #### Get single cell BAM files:
@@ -99,7 +101,7 @@ This repository contains the main analysis code and links to raw and processed d
 - Run `./09-stats_inputs.ipynb` to format data for input to stats analysis.
 - Run `./10-compute_stats.ipynb`.
 
-## ABCA7 loss-of-function gene and pathway statistics
+## ABCA7 loss-of-function pathway statistics
 > **<u>Data</u>**  
 > - Follow [Compute Statistics](#compute-statistics) above.
 > - Or, access the stats_input_data_0825.rds [here](https://figshare.com/s/c944697d9ec30ab06621).
@@ -131,8 +133,8 @@ This repository contains the main analysis code and links to raw and processed d
     - Run `./25-metabolomics-iN.ipynb` to analyze iPSC-neuron metabolomics data.
 
 ## Oxygen Consumption Rates analysis
-    > **<u>Data</u>**  
-    - Run `./23-seahorse.ipynb`.
+> **<u>Data</u>**  
+- Run `./23-seahorse.ipynb`.
     
 ## Confocal Imaging analysis
 > **<u>Data</u>**  

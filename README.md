@@ -105,6 +105,8 @@ This repository contains the main analysis code and links to raw and processed d
 > **<u>Data</u>**  
 > - Follow [Compute Statistics](#compute-statistics) above.
 > - Or, access the stats_input_data_0825.rds [here](https://figshare.com/s/c944697d9ec30ab06621).
+# git clone and pip install geneclusters
+
 - Run `./11-projections.ipynb`.
 - Run `./08-run_partitioning.py` to run METIS and K/L algorithms.
 - Run `./08-benchmarking_graph_partitioning.ipynb` to benchmark clustering and partitioning methods.
@@ -138,8 +140,12 @@ This repository contains the main analysis code and links to raw and processed d
     
 ## Confocal Imaging analysis
 > **<u>Data</u>**  
-> - Visit the [confocalQuant GitHub Repository](https://github.com/djunamay/confocalQuant).
-
+ ```bash
+git clone git@github.com:djunamay/confocalQuant.git
+# pip install it
+# create env
+# run the following:
+ ```
 ## Plot Results
 > **<u>Data</u>**  
 > Follow steps above or download figure input data.

@@ -1,0 +1,84 @@
+% main.tex
+\documentclass{article}
+
+% Load the preamble from the separate file
+\input{preamble.tex}
+
+\begin{document}
+
+\label{sec:abstract}
+\input{sections/title_page}
+
+\begin{center}
+\subsubsection*{Abstract}
+\end{center}
+\label{sec:abstract}
+\input{sections/abstract}
+\clearpage
+
+\linenumbers
+
+\section{Introduction}
+\label{sec:introduction}
+\input{sections/introduction}
+
+\section{Results}
+\label{sec:results}
+\input{sections/results}
+
+\section{Discussion}
+\label{sec:discussion}
+\input{sections/discussion}
+\clearpage
+
+\label{sec:acknowledgments}
+\input{sections/acknowledgements}
+\clearpage
+
+\section{Main Figures}
+\label{sec:figures}
+\input{./main_figures.tex}
+\clearpage
+
+\label{sec:supplementary}
+\input{./appendix/title.tex}
+\clearpage
+
+
+\section{Materials and Methods}
+\label{sec:materials_and_methods}
+\input{./appendix/methods_postmortem.tex}
+\input{./appendix/methods_iPSC.tex}
+\input{./appendix/methods_comp_singlecell.tex}
+\input{./appendix/methods_comp_image.tex}
+\input{./appendix/methods_comp_MD.tex}
+\input{./appendix/methods_comp_lcms.tex}
+\input{./appendix/other_comp_methods.tex}
+\clearpage
+
+\section{Supplementary Text}
+\label{sec:supplementary_text}
+\input{./appendix/description_variables.tex}
+\clearpage
+\input{./appendix/KL_clustering.tex}
+\clearpage
+\input{./appendix/molecular_dynamics.tex}
+\clearpage
+
+\section{Supplementary Figures}
+\label{sec:supplementary_figures}
+\input{./appendix/supplementary_figures.tex}
+\clearpage
+
+\section{Supplementary Tables}
+\label{sec:supplementary_tables}
+\input{./appendix/supplementary_tables.tex}
+\clearpage
+
+\section{Extended Data}
+\label{sec:extended_data}
+\input{./appendix/extended_data.tex}
+\clearpage
+
+\printbibliography
+\end{document}

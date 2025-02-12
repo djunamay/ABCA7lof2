@@ -1,0 +1,91 @@
+\begin{figure}[ht]
+    \centering
+    %\includegraphics[width=\textwidth]{figS1.png}
+    \caption{
+        \textbf{Single-nuclear RNA-sequencing Atlas of Human Post-mortem Prefrontal Cortex Reveals Cell Type-specific Gene Changes in ABCA7 LoF.}\\[1ex]
+        (A) Overview of ABCA7 gene structure with the location of variants represented in this study (average minor allele frequency for depicted variants is < 1\%). Exons are depicted as black rectangles, and introns as black lines. The pie chart indicates the frequency of ABCA7 PTC-variant-carriers within the ROSMAP cohort. 
+        (B) ABCA7 protein levels (log2(abundance)) from post-mortem human prefrontal cortex in all available controls ($N=180$) vs. ABCA7 LoF carriers ($N=5$). P-value computed by Wilcoxon rank sum test. Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+        (C) Overview of human cohort for snRNA-seq (Created with BioRender.com). 
+        (D) Overview of snRNA-seq cohort metadata for 32 individuals. 
+        (E) 2D UMAP projection of per-cell gene expression values and their transcriptionally defined cell type. 
+        (F) 2D UMAP projection of ABCA7 LoF gene perturbation scores ($S = -\log_{10}(\text{p-value}) \times \text{sign}(\log_2(\text{fold change}))$); Red = $S>1.3$, Blue = $S<-1.3$; Point size indicates $|S|$). Up to top 20 genes by $|S|$ are labeled. 
+        (G) Genes in 2D UMAP space colored by cluster assignment (Gaussian mixture model; see Methods) with per-cluster pathway enrichments shown (GO BP, hypergeometric enrichment, $p<0.01$). 
+        (H) Cell type-specific gene cluster scores ($SC = \text{mean}(S_i)$, for genes $i$ in cluster $c$). * indicates permutation FDR-adjusted p-value $< 0.01$ and $|SC| > 0.25$.
+    }
+    \label{fig:main_atlas}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    %\includegraphics[width=\textwidth]{figS1.png}
+    \caption{
+        \textbf{Transcriptional Perturbations in Excitatory Neurons in ABCA7 LoF and ABCA7 p.Ala1527Gly Variant Carriers.}\\[1ex]
+        (A) 2D UMAP projection of individual cells colored by log(Exp), where Exp represents log-normalized ABCA7 expression values. 
+        (B) Kernighan-Lin (K/L) clustering on leading edge genes from pathways perturbed in ABCA7 LoF excitatory neurons, where $p<0.05$. Colors indicate distinct K/L gene clusters, which are numbered from 0 to 7. 
+        (C) Gaussian kernel density estimate plots of gene scores $S$ for genes belonging to a given gene cluster. $S>0$ indicates upregulation in ABCA7 LoF. Solid lines indicate distribution means. 
+        (D) Representative pathways that annotate the largest number of genes within a cluster (i.e., with the highest intra-cluster connectivity) shown per-cluster. 
+        (E) Schematic indicating the genomic location of the p.Ala1527Gly codon change. A purple arrow indicates the location of the missense variant in the ABCA7 gene. Minor allele frequency shown to the right. 
+        (F) Overview of snRNA-seq cohort of ABCA7 p.Ala1527Gly carriers (homozygous and heterozygous) vs. control non-carriers (minor allele frequency approx. 18\%). 
+        (G) Perturbation of ABCA7 LoF-associated gene clusters from (B-D) in excitatory neurons of p.Ala1527Gly variant-carriers vs. non-carrier controls, computed by FGSEA. Top $p$-values ($p<0.1$) are indicated. $S>0$ indicates upregulation in carriers. 
+        (H) Distributions of gene scores $S$ for genes belonging to a given gene cluster for ABCA7 p.Ala1527Gly (no fill) or ABCA7 LoF-variants (solid fill). $S>0$ indicates upregulation in ABCA7 variant. * indicates FGSEA $p$-value<0.1 from (G). Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+        (I) Closed conformation ABCA7 protein structure. ABCA7 domain between residues 1517 and 1756 used for simulations is shown in yellow. Lipid bilayer shown in orange. 
+        (J) Expanded yellow domain (inset from I), with A1527 variant (light grey) and G1527 variant (purple). 
+        (K) Expanded inset from J with residues of interest rendered. 
+        (L) Root mean squared deviations of closed conformation domains from J with A1527 (light grey) or G1527 (purple) under simulation. Structural deviations over time were computed with respect to reference closed conformation from J. Violin plot inset indicates average $C_\alpha$ atom positional fluctuations over time. 
+        (M) Projection of $C_\alpha$ atom positional fluctuations under simulation onto the first two principal components, for closed conformation domain from J with A1527 (top, light grey) or G1527 (bottom, purple). 
+    }
+    \label{fig:main_excitatory}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    %\includegraphics[width=\textwidth]{figS1.png}
+    \caption{
+        \textbf{ABCA7 LoF Neurons Have Neutral Lipid Accumulation and Phospholipid Imbalances.}\\[1ex]
+        (A) Volcano plot showing the distribution of lipid species by log-fold-change and log-p-value, where log-fold-change > 0 indicates up-regulation in ABCA7 LoF post-mortem PFC (N=8) vs. Control (N=8). A subset of lipid species is labeled ($p<0.1$ \& logFC>0.5 (red) or logFC<-0.5 (blue)) (p-values by independent sample t-test). 
+        (B) Overview of two iPSC-derived isogenic neuronal lines carrying ABCA7 LoF variants. ABCA7 gene map depicts exons (black rectangles) and introns (black lines). 
+        (C) CRISPR-Cas9 was used to generate an ABCA7 LoF isogenic iPSC line by introducing a premature termination codon into exon 3 or exon 15 (ABCA7 p.Glu50fs*3, blue or p.Tyr622*, orange, respectively). 
+        (D) Example MAP2 staining of 2-week-old p.Tyr622* iNs. 
+        (E) Representative sweeps show action potentials elicited by 800 ms of current injections in patched 4-week-old iNs. 
+        (F) Summary of action potential frequency (means ± SEM) elicited with different amounts of injected current in 4-week-old iNs. 
+        (G) Projection of control and ABCA7 p.Glu50fs*3 lipidomes (per-sample z-scaled peak areas; $N=6$ per genotype) onto the first two principal components from lipid space. Fraction of explained variance shown along each axis. 
+        (H) Volcano plot showing perturbed lipid species by class (p-values by independent sample t-test). 
+        (I) Overview of perturbed lipid species by lipid subclass. $U =$ number of lipids in that subclass where $p<5 \times 10^{-3}$ \& fold-change > 0. $D =$ number of lipids in that subclass where $p<5 \times 10^{-3}$ \& fold-change < 0. $T = U + D$. \% = ($T/N$)$\times 100$, where $N =$ total number of lipids in a given subclass (p-values by independent sample t-test; $N=6$ per genotype). (J,K) Volcano plot showing the distribution of triglyceride (TG) species 
+        (J) and phosphatidylcholine (PC) species (K) by log-fold-change and log-p-value, where log-fold-change > 0 indicates up-regulation in p.Glu50fs*3 ($N=6$) vs. WT ($N=6$) iPSC-derived neurons. A subset of lipid species is labeled ($p<0.05$ \& logFC>2 (red) or logFC<-2 (blue)) (p-values by independent sample t-test). 
+        (L) Schematic of metabolic link between TG, monoglyceride (MG), and diglyceride (DG). 
+        (M-Q) Relative abundance of select lipid species in p.Glu50fs*3 iN ($N=6$) and WT iN ($N=6$) (p-values by independent sample t-test). Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). (R) Schematic from (L) overlaid with abundance changes in p.Glu50fs*3 iNs vs. WT iNs. Schematics in (C, L, R) created with BioRender.com.
+    }
+    \label{fig:main_lipids}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    %\includegraphics[width=\textwidth]{figS1.png}
+    \caption{
+        \textbf{ABCA7 LoF Impairs Regulation of Mitochondrial Uncoupling and Carbon Flux in Neurons.}\\[1ex]
+        (A) Projection of WT and p.Glu50fs*3 metabolomes (per-sample z-scaled normalized peak areas; $N=6$ per genotype) onto the first two principal components from metabolite space. Fraction of explained variance shown along each axis. The dotted red line separating the two genotypes indicates the median PC1 value. 
+        (B) Volcano plot indicating differentially regulated metabolites by log2-fold-change and log10(p-value), where log2(FC) > 0 indicates increased abundance in p.Glu50fs*3 vs. WT. Top up- and down-regulated metabolites are shown in red and blue, respectively (p-values by independent sample t-test). 
+        (C) Abundance of carnitine species in WT vs. p.Glu50fs*3 iNs. 
+        (D) Correlation of carnitine species abundance (normalized peak areas by LC-MS) and monoglyceride (MG) abundance (peak areas by LC-MS) from matched metabolomic-lipidomic samples. Grey points indicate WT iNs ($N=6$). Blue points indicate p.Glu50fs*3 iNs ($N=6$). The equation indicates the linear function fit. Grey error bar indicates 95\% confidence interval. 
+        (E) Schematic indicating the relationship between oxygen consumption as a measure of proton current (I), which sustains the proton motive force ($\Delta p$; voltage (V)). Regulation of ATP synthase and uncoupling protein (UCP) activity modifies resistance (R) and depletes $\Delta p$. 
+        (F) Schematic indicating how relative uncoupling is computed from oxygen consumption rate (OCR). Remaining oxygen consumption after pharmacological inhibition of ATP synthase gives the proportion of basal oxygen consumption attributed to proton leak. 
+        (G) Relative uncoupling quantified by Seahorse oxygen consumption assay (see Methods) in 4-week-old WT vs. ABCA7 LoF iNs. P-values computed by independent sample t-test. $N$ wells = 18 (WT), 17 (p.Tyr622*), 13 (p.Glu50fs*3) across two independent differentiation batches and Seahorse experiments (see Figure~\ref{fig:snRNA_cohort}1E). 
+        (H) Left: Quantification of neuronal HCS MitoHealth dye fluorescence intensity as a measure of mitochondrial membrane potential. P-values computed by linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N=8$ (WT), 11 (p.Tyr622*), 9 wells (p.Glu50fs*3) (3000 cells per condition) from three independent differentiation batches (see Figure~\ref{fig:snRNA_cohort}1F). Individual data points indicate per-well averages of cell-level intensities. Right: Representative images per condition as mean-intensity projections of the entire image (NeuN+) and within NeuN+ volumes considered for quantification (MitoHealth, Hoechst). Representative images for the MitoHealth channel were processed with condition-wide percentile-based background subtraction and thresholding. Representative images of cell soma underwent per-image percentile-based background subtraction and thresholding, reflecting the segmentation methodology. For (C, G, H) boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+    }
+    \label{fig:main_mitochondrial}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    %\includegraphics[width=\textwidth]{figS1.png}
+    \caption{
+        \textbf{Supplementation with CDP-choline Reduces Neutral Lipid Accumulation, Restores Mitochondrial Function, and Reduces Amyloid Pathology in ABCA7 LoF Neurons.}\\[1ex]
+        (A) Left: Representative images per condition as mean-intensity projections of the entire image (NeuN+) and within NeuN+ volumes considered for quantification (LipidSpot, PLIN2). Right: Quantification of neuronal LipidSpot dye fluorescence intensity. P-values computed by linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N = 16$ (p.Tyr622* + H2O), $21$ wells (p.Tyr622* + CDP-choline) (5419 cells per condition) from three independent differentiation batches of 4-week-old iNs treated for 2 weeks (see Figure~\ref{fig:snRNA_cohort}2B). 
+        (B) Relative mitochondrial uncoupling, quantified by Seahorse oxygen consumption assay for 4-week-old p.Tyr622* iNs treated with CDP-choline or vehicle control for 2 weeks. Relative uncoupling gives the proportion of basal oxygen consumption attributed to uncoupled proton leak. P-values computed by independent sample t-test. $N$ wells = 6 (p.Tyr622* + H2O), 8 (p.Tyr622* + CDP-choline). 
+        (C) Left: Representative images per condition as mean-intensity projections of the entire image (NeuN+) and within NeuN+ volumes considered for quantification (MitoHealth, Hoechst). Right: Quantification of neuronal HCS MitoHealth dye fluorescence intensity as a measure of mitochondrial membrane potential. P-values computed by linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N = 11$ (p.Tyr622* + H2O; datapoints from Figure~\ref{fig:main_mitochondrial}H), 12 wells (p.Tyr622* + CDP-choline) (3929 cells per condition) from three independent differentiation batches of 4-week-old iNs treated for 2 weeks (see Figure~\ref{fig:snRNA_cohort}2F). 
+        (D) Left: Representative images per condition as mean-intensity projections of the entire image (NeuN+) and projections within NeuN+ volumes considered for quantification (Aβ42). Right: Quantification of neuronal Aβ42 fluorescence intensity. P-values computed by linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N = 8$ (p.Tyr622* + H2O; datapointes from Figure~\ref{fig:quantification_Abeta42_iPSC_neurons}A) (1466 cells), 7 wells (p.Tyr622* + CDP-choline) (1102 cells) from 4-week-old iNs treated for 2 weeks. 
+        (E) Left: Representative images per condition as mean-intensity projections of the entire image (NeuN+) and within NeuN+ volumes considered for quantification (β-secretase). Right: Quantification of neuronal β-secretase fluorescence intensity. P-values computed by linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N = 4$ (p.Tyr622* + H2O) (3107 cells), 4 wells (p.Tyr622* + CDP-choline) (2829 cells) from 4-week-old iNs treated for 2 weeks. 
+        (F) Proposed model of ABCA7 dysfunction in neurons: ABCA7 loss-of-function (LoF) induces a compositional shift away from phosphatidylcholines (PCs) (1,2), which may directly increase triglycerides (TGs) by increasing precursor availability (3, 4) or indirectly by impairing lipid droplet processing (5) and mitochondrial uncoupling (6). Impaired uncoupling can lead to multiple detrimental cellular effects, including a decreased ability to meet the cell’s energy demand, impaired regulation of carbon breakdown via oxidative phosphorylation (OXPHOS), and increased oxidative stress (7). Abbreviations: DG = diglyceride, TG = triglyceride, MG = monoglyceride, PC = phosphatidylcholine, ROS = reactive oxygen species. For (A-E),  + = treated with CDP-choline. - = treated with vehicle control. Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). For (A, C-E), individual data points indicate per-well averages of cell-level intensities. Representative images for the quantified channel were processed with condition-wide percentile-based background subtraction and thresholding. Representative images of cell soma underwent per-image percentile-based background subtraction and thresholding, reflecting the segmentation methodology. Schematic in (F) created with Biorender.com.
+    }
+    \label{fig:main_choline}
+\end{figure}

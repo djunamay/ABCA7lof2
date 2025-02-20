@@ -34,10 +34,14 @@
 % \input{sections/acknowledgements}
 % \clearpage
 
-% \section{Main Figures}
-% \label{sec:figures}
-% \input{./main_figures.tex}
-% \clearpage
+\newgeometry{left=.5in, right=.5in, top=.5in, bottom=.5in} % adjust as desired
+
+\section{Main Figures}
+\label{sec:figures}
+\input{./main_figures.tex}
+\clearpage
+
+\restoregeometry
 
 % \label{sec:supplementary}
 % \input{./appendix/title.tex}
@@ -62,11 +66,14 @@
 % \clearpage
 % \input{./appendix/molecular_dynamics.tex}
 % \clearpage
+\newgeometry{left=.5in, right=.5in, top=.5in, bottom=.5in} % adjust as desired
 
 \section{Supplementary Figures}
 \label{sec:supplementary_figures}
 \input{./appendix/supplementary_figures.tex}
 \clearpage
+
+\restoregeometry
 
 % \section{Supplementary Tables}
 % \label{sec:supplementary_tables}
@@ -79,4 +86,16 @@
 % \clearpage
 
 \printbibliography
+
+% \clearpage
+% \input{./reviewer_responses/summary_response.tex}
+% \clearpage
+% \input{./reviewer_responses/reviewer_1.tex}
+% \clearpage
+% \input{./reviewer_responses/reviewer_2.tex}
+% \clearpage
+% \input{./reviewer_responses/reviewer_3.tex}
+% \clearpage
+% \input{./reviewer_responses/reviewer_4.tex}
+
 \end{document}

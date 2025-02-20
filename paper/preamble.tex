@@ -123,3 +123,13 @@
 
 \usepackage{etoc}
 \usepackage{lineno}
+
+\usepackage{subcaption}
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+\captionsetup[subfigure]{
+  labelformat=simple,
+  labelsep=colon,
+  justification=raggedright,
+  singlelinecheck=off
+}
+\usepackage{subcaption}

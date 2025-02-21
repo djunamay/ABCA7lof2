@@ -1,0 +1,95 @@
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\clearpage
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/snRNA_cohort.tex}
+\clearpage
+
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/snRNA_batch_quality.tex}
+\clearpage
+
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/snRNA_annotation.tex}
+\clearpage
+
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/snRNAseq_gene_scores.tex}
+\clearpage
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/abca7_expression.tex}
+\clearpage
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/benchmarking_clustering.tex}
+\clearpage
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/md_simulations.tex}
+\clearpage
+
+
+\begin{figure}[ht]
+    %\centerline{\includegraphics[width=\textwidth]{./extended_plots/lipid_mitochondrial_perturbations.pdf}}
+    \caption{
+        \textbf{Lipid and Mitochondrial Transcriptional Perturbations in Excitatory Neurons from Human ABCA7 LoF Variant-Carriers vs. Non-Carriers.}\\[1ex]
+        (A) Lipid synthesis and storage pathways perturbed in ABCA7 LoF excitatory neurons vs. control as measured by snRNA-seq on the post-mortem human PFC. Enrichments of biological processes were computed using FGSEA. Red = enrichment > 0, Blue = enrichment < 0. * = $p<0.05$. 
+        (B) Schematic model showing anabolic processes feeding from the TCA cycle towards fatty acid (FA) and triglyceride (TG) synthesis. DG = diacylglyceride, PA = phosphatidic acid, PC = phosphatidylcholine, PE = phosphatidylethanolamine, PS = phosphatidylserine. * = differentially expressed in ABCA7 LoF vs. control excitatory neurons from post-mortem human brain at $p<0.05$ and $\log\text{FC}<0$. 
+        (C) 𝛽-oxidation and TCA pathways perturbed in ABCA7 LoF excitatory neurons vs. control as measured by snRNA-seq on the post-mortem human PFC. Enrichments of biological processes were computed using FGSEA. Red = enrichment > 0, Blue = enrichment < 0. * = $p<0.05$. 
+        (D) Schematic model showing catabolic processes feeding into the TCA cycle and oxidative phosphorylation with key genes from (C) highlighted in red or blue. * = $p<0.05$. For (A, C,) boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+        (E, F) Transcript levels of ACLY (E) and SCP2 (F) assessed in post-mortem human PFC by RNAscope. Transcript counts per SLC17A7+ cell are reported in each bar chart. $N = 8$ individuals per genotype. Per-cell Wilcoxon rank-sum p-values are reported.
+    }
+    \label{fig:lipid_mitochondrial_perturbations}
+\end{figure}
+
+\begin{figure}[ht]
+    \centerline{\includegraphics[width=\textwidth]{./extended_plots/differentiating_iPSC_neurons.pdf}}
+    \caption{
+        \textbf{Differentiating and Profiling iPSC-Derived Neurons Harboring ABCA7 PTC Variants.}\\[1ex]
+        (A) Sanger sequencing chromatogram confirming single nucleotide insertion in ABCA7 exon 3 to introduce a premature termination codon into the isogenic iPSC line ABCA7 p.Glu50fs*3 using CRISPR-Cas9 gene editing. 
+        (B) Sanger sequencing chromatogram confirming patient single nucleotide polymorphism in ABCA7 exon 15 to introduce a premature termination codon into the isogenic iPSC line ABCA7 p.Tyr622* using CRISPR-Cas9 gene editing. 
+        (C) Normal karyotypes were observed for control, ABCA7 p.Glu50fs*3, and ABCA7 p.Tyr622* isogenic iPSC lines. 
+        (D) iPSCs were plated at low density for NGN2 viral transduction. Expression of NGN2 was driven by doxycycline (DOX) induction with puromycin (PURO) selection, then re-plated to match neuronal densities. Neurons were maintained for 4 weeks (DIV 28) before experimentation (Created with BioRender.com). 
+        (E) Neuronal marker gene expression in 2 and 4-week matured iNs. 
+        (F) Representative sweeps of whole-cell current flow of inward (upper panel) and outward (lower panel) current recordings from WT 4-week-old neurons. 
+        (G) Quantification of (F). 
+        (H) Resting membrane potential (mV) of 4-week-old WT, ABCA7 p.Tyr622*, and ABCA7 p.Glufs*3 neurons. 
+        (I) Rheobase (pA) of 4-week-old WT, ABCA7 p.Tyr622*, and ABCA7 p.Glufs*3 neurons. 
+        (J) Action potential frequency of 4-week-old WT, ABCA7 p.Tyr622*, and ABCA7 p.Glufs*3 neurons with indicated current injections. For panels F-J: WT: $n=24$; Y622: $n=13$; G2: $n=23$. For all panels: $P*<0.05$, $P***<0.001$. Graphs are mean ± SEM.
+    }
+    \label{fig:differentiating_iPSC_neurons}
+\end{figure}
+
+\begin{figure}[ht]
+   % \centerline{\includegraphics[width=\textwidth]{./extended_plots/quantification_Abeta42_iPSC_neurons.pdf}}
+    \caption{
+        \textbf{Quantification of Aβ42 in iPSC-Derived Neurons Harboring ABCA7 PTC Variants.}\\[1ex]
+        (A) Quantification of neuronal Aβ42 fluorescence intensity. P-values were computed by a linear mixed-effects model on per-NeuN+ volume averages, including well-of-origin as a random effect. $N = 16$ (WT; 2261 cells), $N=8$ (p.Tyr622*; 1466 cells), $N=6$ wells (p.Glu50fs*3; 999 cells) from 4-week-old iNs. Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). Individual data points represent per-well averages of cell-level intensities. 
+        (B) Representative images per condition showing mean-intensity projections of the entire image (NeuN+) and projections within NeuN+ volumes considered for quantification (Aβ42). Representative images for the Aβ42 channel were processed with condition-wide percentile-based background subtraction and thresholding. Representative images of cell soma underwent per-image percentile-based background subtraction and thresholding, reflecting the segmentation methodology.
+    }
+    \label{fig:quantification_Abeta42_iPSC_neurons}
+\end{figure}
+
+\begin{figure}[ht]
+   % \centerline{\includegraphics[width=\textwidth]{./extended_plots/lipidomic_analysis_iPSC_neurons.pdf}}
+    \caption{
+        \textbf{Lipidomic Analysis in ABCA7 LoF vs. Control iNs.}\\[1ex]
+        (A) Pairwise Pearson correlation of iN lipidomic profiles. 
+        (B) Correlation of lipidomic scores ($S = \text{sign}(\log(\text{fold-change})) \times -\log_{10}(\text{p-value})$, T-test) between WT and ABCA7 p.Glu50fs*3 iNs by batch. Top consistent triglyceride (TG), phosphatidylcholine (PC), and ceramide (Cer) lipid changes, where $|S| > 1.3$ in both batches, shown in green. Grey error bar indicates 95\% confidence interval for simple linear model fit. 
+        (C) Relative TG and PC abundances in post-mortem human brain. Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+        (D) Correlation of metabolomic scores (computed and plotted as in B) for both differentiation batches. 
+        (E) Average expression and nonzero detection rate of select lipid oxidation genes in major cell types in the human brain, assessed by snRNA-seq of post-mortem PFC.
+    }
+    \label{fig:lipidomic_analysis_iPSC_neurons}
+\end{figure}
+
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/mitochondrial_o2_consumption.tex}
+\clearpage
+
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/mitochondrial_mmp.tex}
+\clearpage
+
+\begin{figure}[ht]
+   % \centerline{\includegraphics[width=\textwidth]{./extended_plots/lipid_mitochondrial_effects_CDP_choline.pdf}}
+    \caption{
+        \textbf{Lipid and Mitochondrial Effects of Treatment with CDP-choline.}\\[1ex]
+        (A) Per-cell correlation of average PLIN2 and LipidSpot fluorescent intensities shown as a density plot. 
+        (B) Per-batch LipidSpot fluorescence intensities (related to Figure~\ref{fig:main_choline}A) in ABCA7 p.Tyr622* iNs treated with CDP-choline or H20 vehicle control. X-axis indicates z-scaled log-fluorescence intensity. 
+        (C) Example oxygen consumption rate (OCR) curves used for analysis in Figure~\ref{fig:main_choline}. The line plot indicates the per-condition mean estimator, and the error bars indicate the 95\% confidence interval. 
+        (D) Representative per-well traces from (C). 
+        (E) Quantification of SRC from curves in (D). P-values computed by independent sample t-test. $N$ wells = 6 (p.Tyr622* + H20), 8 (p.Tyr622* + CDP-choline). Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+        (F) Per-batch cell-level MioHealth fluorescence intensities (related to Figure~\ref{fig:main_choline}C) in ABCA7 p.Tyr622* iNs treated with CDP-choline or H20 vehicle control. X-axis indicates z-scaled fluorescence intensity.
+    }
+    \label{fig:lipid_mitochondrial_effects_CDP_choline}
+\end{figure}

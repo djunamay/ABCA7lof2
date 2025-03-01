@@ -1,94 +1,338 @@
-\begin{table}[ht]
-    \centering
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+\clearpage
+\begin{longtable}{p{3cm} p{3cm} p{3cm} p{2cm} p{2.5cm} p{0.5cm}}
     \caption{Annotation of ABCA7 loss of function variants used in this study.}
-    %\resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}llllll@{}}
-    \toprule
-    \textbf{rsID}          & \textbf{HGVS.c}           & \textbf{HGVS.p}    & \textbf{Annotation}                                                           & \textbf{AD association}                                                                   & \textbf{N in cohort} \\ \midrule
+    \hline
+    \textbf{rsID}          & \textbf{HGVS.c}           & \textbf{HGVS.p}    & \textbf{Annotation}                                                           & \textbf{AD association}                                                                   & \textbf{N in cohort} \\
+    \hline
+    \hline
     rs113809142            & c.4416+2T>G               & NA                 & splice donor variant \cite{Allen2017-ch}                                      & Steinberg et al (2015), Nature Genetics, Table 1 \cite{Steinberg2015-wy}                   & 1 \\
+    \hline
     rs200538373            & c.5570+5G>C               & NA                 & splice region variant \cite{Allen2017-ch,Steinberg2015-wy}                    & Steinberg et al (2015), Nature Genetics, Table 1 \cite{Steinberg2015-wy}                   & 4 \\
+    \hline
     rs538591288            & c.4208delT                & p.Leu1403fs        & frameshift variant \cite{Allen2017-ch}                                        & Steinberg et al (2015), Nature Genetics, Table 1 \cite{Steinberg2015-wy}                   & 1 \\
+    \hline
     rs547447016            & c.2126\_2132delAGCAGGG    & p.Glu709fs         & frameshift variant \cite{Allen2017-ch}                                        & Steinberg et al (2015), Nature Genetics, Table 1 \cite{Steinberg2015-wy}                   & 4 \\
+    \hline
     rs201060968            & c.3641G>A                & p.Trp1214*         & stop gained                                                                   & NA                                                                                        & 1 \\
-    19\_1053362\_G\_A       & c.3255G>A                & p.Trp1085*         & stop gained                                                                   & NA                                                                                        & 1 \\ \bottomrule
-    \end{tabular}
+    \hline
+    19\_1053362\_G\_A       & c.3255G>A                & p.Trp1085*         & stop gained                                                                   & NA                                                                                        & 1 \\
+    \hline
     \label{tab:annotation_abca7}
-\end{table}
+\end{longtable}
 
-\begin{table}[ht]
-    \centering
-    \caption{External datasets used.}
-    %\resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{Description} & \textbf{Access} & \textbf{Reference} \\ \midrule
-    Post-mortem human PFC proteomic data & \url{https://www.synapse.org/\#!Synapse:syn21449368} & \cite{Johnson2020-ub} \\
-    Reference 1: Cell type specific marker genes for human brain & \url{https://osf.io/vn7w2/} & \cite{Wang2018-eq} \\
-    Reference 2: Cell type specific marker genes for human brain & \url{https://osf.io/vn7w2/} & \cite{Franzen2019-we} \\
-    Gene Ontology Biological Process 2023 & \url{https://maayanlab.cloud/Enrichr/\#libraries} & NA \\
-    NeuN+/- bulk RNA-sequencing from post-mortem human brain & \url{https://osf.io/vn7w2/} & \cite{Welch2022-aa} \\
-    WikiPathways 2019 Human & \url{https://maayanlab.cloud/Enrichr/\#libraries} & NA \\
-    snRNAseq from postmortem human PFC from p.Ala1527Gly variant-carriers and controls & \url{https://www.synapse.org/\#!Synapse:syn52293417} & \cite{Mathys2023-kg} \\ \bottomrule
-    \end{tabular}
-    %}
-    \label{tab:external_datasets}
-\end{table}
-
-\begin{table}[ht]
-    \centering
-    \caption{Antibodies used.}
-    %\resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{Antibody name}                & \textbf{Company}      & \textbf{Catalog No.} \\ \midrule
-    NeuN                                  & Synaptic Systems      & 266004               \\
-    Tuj1                                  & BioLegend             & MMS-435P             \\
-    SM312 (pan-axonal marker)             & Biolegend             & 837904               \\
-    MAP2                                  & Biolegend             & 822501               \\
-    PLIN2                                 & Proteintech           & 15294-1-AP           \\
-    A\(\beta\)42 (12F4)                   & BioLegend             & 805503               \\
-    BACE                                  & Millipore             & MAB5308              \\ \bottomrule
-    \end{tabular}
-    %}
-    \label{tab:antibodies_used}
-\end{table}
-
-\begin{table}[ht]
-    \centering
+\clearpage
+\begin{longtable}{p{6cm} p{9cm}}
     \caption{PCR/Sanger sequencing (SS) primers.}
-    %\resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}ll@{}}
-    \toprule
-    \textbf{Primer} & \textbf{Sequence} \\ \midrule
+    \hline
+    \textbf{Primer} & \textbf{Sequence} \\
+    \hline
+    \hline
     rs547447016\_FOR              & 5’-ACGCTGGCCTGGATCTACTC-3’ \\
+    \hline
     rs547447016\_REV              & 5’-TGCATGCGTGTGCCAAGAAG-3’ \\
+    \hline
     chr19.1053362G>A\_rs201060968\_FOR   & 5’-CTGAAGCACCCCTTTGTCCAC-3’ \\
+    \hline
     chr19.1053362G>A\_rs201060968\_REV   & 5’-GAAAGCGCTTGAGAAGCAGGG-3’ \\
+    \hline
     chr19.1053362G>A\_REV\_SS      & 5’-GCTGCTCATAAACACGCTATTCATCCTTC-3’ \\
+    \hline
     rs201060968\_FOR\_SS          & 5’-CATTGCTGGCCTAGACGTAA-3’ \\
+    \hline
     ABCA7\_p.Glu50fs*3\_FOR       & 5’-GTGACGAAAGCGTTAAGCCC-3’ \\
+    \hline
     ABCA7\_p.Glu50fs*3\_REV       & 5’-GCAGTGGCTTGTTTGGGAAG-3’ \\
+    \hline
     ABCA7\_p.Tyr622*\_FOR         & 5’-CTGGTTCTGGTGCTCAAG-3’ \\
-    ABCA7\_p.Tyr622*\_REV         & 5’-CCTACGGCAGACGTCTTCAG-3’ \\ \bottomrule
-    \end{tabular}
-    %}
+    \hline
+    ABCA7\_p.Tyr622*\_REV         & 5’-CCTACGGCAGACGTCTTCAG-3’ \\
     \label{tab:pcr_primers}
-\end{table}
+\end{longtable}
 
-\begin{table}[ht]
-    \centering
+\clearpage
+\begin{longtable}{p{5cm} p{5cm} p{5cm}}
     \caption{Experimentally-determined 3D ABCA7 structures used in molecular dynamics simulations.}
-    %\resizebox{\textwidth}{!}{%
-    \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{System}    & \textbf{PDB ID} & \textbf{State} \\ \midrule
+    \hline
+    \textbf{System}    & \textbf{PDB ID} & \textbf{State} \\
+    \hline
+    \hline
     CLOSE-G1527        & 8EOP           & HOLO         \\
+    \hline
     CLOSE-A1527        & 8EOP           & HOLO         \\
+    \hline
     OPEN-G1527         & 8EE6           & APO          \\
-    OPEN-A1527         & 8EE6           & APO          \\ \bottomrule
-    \end{tabular}
-    %}
+    \hline
+    OPEN-A1527         & 8EE6           & APO          \\
+    \hline
     \label{tab:abca7_structures}
-\end{table}
+\end{longtable}
 
-	
+% \begin{table}[ht]
+%     \centering
+    %\resizebox{\textwidth}{!}{
+\clearpage
+\begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
+    \caption{Cluster 2 genes for p.Tyr622* vs WT bulk RNA-seq}
+    \hline
+    \textbf{Gene} & \textbf{Name} & \textbf{Function} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
+    \hline
+    \hline
+    MVD    & Mevalonate Diphosphate Decarboxylase      & Catalyzes a key decarboxylation step in the mevalonate pathway for cholesterol and isoprenoid synthesis. & -0.806566 & $6.153354\times10^{-7}$ & 0.000101 \\
+    \hline
+    SQLE   & Squalene Epoxidase                       & Converts squalene to oxidosqualene in cholesterol biosynthesis.  & -0.658307 & $2.820266\times10^{-6}$ & 0.000311 \\
+    \hline
+    MSMO1  & Methylsterol Monooxygenase 1             & Involved in cholesterol biosynthesis; catalyzes conversion of methylsterols. & -0.559031 & $2.906982\times10^{-5}$ & 0.001650 \\
+    \hline
+    LSS    & Lanosterol Synthase                      & Catalyzes conversion of oxidosqualene to lanosterol in cholesterol synthesis.  & -0.931772 & $3.693352\times10^{-5}$ & 0.001908 \\
+    \hline
+    SC5D   & Sterol-C5-Desaturase                     & Catalyzes a desaturation step in the cholesterol biosynthetic pathway. & -0.478859 & $4.171666\times10^{-5}$ & 0.002105 \\
+    \hline
+    LDLR   & Low-Density Lipoprotein Receptor         & Mediates the uptake of cholesterol-rich LDL particles.  & -0.844660 & $4.693678\times10^{-5}$ & 0.002272 \\
+    \hline
+    IDI1   & Isopentenyl-Diphosphate Delta Isomerase 1 & Catalyzes the isomerization in the isoprenoid biosynthesis pathway.  & -0.446118 & $8.553648\times10^{-5}$ & 0.003343 \\
+    \hline
+    FABP3  & Fatty Acid Binding Protein 3             & Binds and transports long-chain fatty acids in muscle tissue.  & -1.098855 & $1.068285\times10^{-4}$ & 0.003844 \\
+    \hline
+    MVK    & Mevalonate Kinase                        & Phosphorylates mevalonate in the cholesterol biosynthesis pathway.  & -0.665975 & $1.202561\times10^{-4}$ & 0.004201 \\
+    \hline
+    HMGCR  & 3-Hydroxy-3-Methylglutaryl-CoA Reductase  & The rate-limiting enzyme in cholesterol synthesis.  & -0.698146 & $1.667677\times10^{-4}$ & 0.005242 \\
+    \hline
+    NR3C1  & Nuclear Receptor Subfamily 3 Group C Member 1 & Glucocorticoid receptor involved in metabolism and stress response.  & -0.717633 & $2.626547\times10^{-4}$ & 0.006891 \\
+    \hline
+    RXRG   & Retinoid X Receptor Gamma                 & Nuclear receptor participating in retinoid signaling.  & -0.651401 & $2.731321\times10^{-4}$ & 0.007053 \\
+    \hline
+    SCD    & Stearoyl-CoA Desaturase                   & Introduces double bonds into saturated fatty acids.  & -0.666539 & $2.888673\times10^{-4}$ & 0.007302 \\
+    \hline
+    PPARD  & Peroxisome Proliferator-Activated Receptor Delta & Regulates fatty acid oxidation and energy homeostasis.  & -0.975431 & $3.589912\times10^{-4}$ & 0.008538 \\
+    \hline
+    HMGCS1 & 3-Hydroxy-3-Methylglutaryl-CoA Synthase 1 & Catalyzes the formation of HMG-CoA, a precursor in cholesterol synthesis.  & -0.508775 & $6.915444\times10^{-4}$ & 0.013011 \\
+    \hline
+    SEC23B & SEC23 Homolog B                         & Component of COPII vesicle coat involved in ER-to-Golgi protein transport.  & -0.423668 & $1.117650\times10^{-3}$ & 0.017498 \\
+    \hline
+    MED15  & Mediator Complex Subunit 15              & Part of the mediator complex that regulates transcription.  & -0.446544 & $1.664102\times10^{-3}$ & 0.022250 \\
+    \hline
+    SCARB1 & Scavenger Receptor Class B Member 1       & Mediates the selective uptake of HDL cholesterol.  & -0.480191 & $1.681501\times10^{-3}$ & 0.022369 \\
+    \hline
+    PDIA2  & Protein Disulfide Isomerase Family A Member 2 & Facilitates protein folding in the endoplasmic reticulum.  & -0.607056 & $1.705803\times10^{-3}$ & 0.022509 \\
+    \hline
+    NR1H2  & Nuclear Receptor Subfamily 1 Group H Member 2 & (LXR$\beta$) Regulates cholesterol and fatty acid metabolism.  & -0.401447 & $2.479408\times10^{-3}$ & 0.028861 \\
+    \hline
+    LPIN1  & Lipin 1                                  & Enzyme involved in lipid metabolism and acts as a transcriptional co-regulator.  & -0.377781 & $4.185350\times10^{-3}$ & 0.038889 \\
+    \hline
+    PCK2   & Phosphoenolpyruvate Carboxykinase 2        & Mitochondrial enzyme involved in gluconeogenesis.  & -0.814855 & $4.974208\times10^{-3}$ & 0.042986 \\
+    \hline
+    SEC24D & SEC24 Homolog D                         & Component of the COPII vesicle coat important for cargo selection.  & -0.740107 & $5.675430\times10^{-3}$ & 0.046082 \\
+    \hline
+    SREBF1 & Sterol Regulatory Element Binding Transcription Factor 1 & Regulates genes involved in lipid synthesis.  & -0.631129 & $7.524154\times10^{-3}$ & 0.054031 \\
+    \hline
+    FDFT1  & Farnesyl-Diphosphate Farnesyltransferase 1 & Also known as squalene synthase; catalyzes the first committed step in cholesterol synthesis.  & -0.258286 & $7.811542\times10^{-3}$ & 0.055271 \\
+    \hline
+    FDPS   & Farnesyl Diphosphate Synthase             & Synthesizes farnesyl diphosphate for isoprenoid biosynthesis.  & -0.304220 & $8.438325\times10^{-3}$ & 0.057433 \\
+    \hline
+    INSIG2 & Insulin Induced Gene 2                    & Regulates cholesterol synthesis by retaining SREBPs in the ER.  & -0.327084 & $8.490017\times10^{-3}$ & 0.057576 \\
+    \hline
+    CPT2   & Carnitine Palmitoyltransferase 2           & Converts acyl-carnitine to acyl-CoA in fatty acid oxidation.  & -0.408324 & $1.141812\times10^{-2}$ & 0.068793 \\
+    \hline
+    PLTP   & Phospholipid Transfer Protein             & Transfers phospholipids among lipoproteins and modulates HDL metabolism.  & -0.412457 & $1.214504\times10^{-2}$ & 0.071001 \\
+    \hline
+    LPL    & Lipoprotein Lipase                        & Hydrolyzes triglycerides in lipoproteins, releasing fatty acids.  & -0.539894 & $2.524848\times10^{-2}$ & 0.110399 \\
+    \hline
+    ACAA1  & Acetyl-CoA Acyltransferase 1              & Involved in peroxisomal $\beta$-oxidation of fatty acids.  & -0.226781 & $2.587491\times10^{-2}$ & 0.112059 \\
+    \hline
+    DDIT3  & DNA Damage Inducible Transcript 3         & Stress-induced transcription factor that promotes apoptosis.  & 0.180208  & $9.264319\times10^{-2}$ & 0.241510 \\
+    \hline
+    NR1H3  & Nuclear Receptor Subfamily 1 Group H Member 3 & (LXR$\alpha$) Regulates cholesterol and fatty acid metabolism.  & 0.226723  & $1.909281\times10^{-1}$ & 0.376065 \\
+    \hline
+    \label{tab:cluster2_genes_y622}
+\end{longtable}
+
+\clearpage
+\begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
+    \caption{Cluster 0 genes for p.Tyr622* vs WT bulk RNA-seq}
+    \hline
+    \textbf{Gene} & \textbf{Full Gene Name} & \textbf{Description} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
+    \hline
+    \hline
+    ATP6AP2 & ATPase H$^+$ Transporting Accessory Protein 2 & Functions as a prorenin receptor and is involved in vacuolar ATPase activity and cellular signaling. & 0.500397 & 0.000014 & 0.000907 \\
+    \hline
+    NDUFA1 & NADH:Ubiquinone Oxidoreductase Subunit A1 & A component of mitochondrial Complex I, contributing to electron transport. & 0.549808 & 0.001044 & 0.016825 \\
+    \hline
+    NDUFS4 & NADH:Ubiquinone Oxidoreductase Fe-S Protein 4 & An accessory subunit of Complex I; mutations can cause mitochondrial disorders. & 0.413792 & 0.001775 & 0.023121 \\
+    \hline
+    NDUFA4 & NADH:Ubiquinone Oxidoreductase Subunit A4 & Part of Complex I, playing a role in mitochondrial electron transport. & 0.536592 & 0.003587 & 0.035867 \\
+    \hline
+    NDUFAF2 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 2 & Involved in the assembly and stabilization of mitochondrial Complex I. & 0.430684 & 0.005764 & 0.046552 \\
+    \hline
+    NDUFC2 & NADH:Ubiquinone Oxidoreductase Subunit C2 & A structural component of Complex I required for proper electron transport. & 0.383357 & 0.007852 & 0.055362 \\
+    \hline
+    NDUFA12 & NADH:Ubiquinone Oxidoreductase Subunit A12 & Contributes to the assembly and function of mitochondrial Complex I. & 0.417669 & 0.011581 & 0.069300 \\
+    \hline
+    TMEM126B & Transmembrane Protein 126B & Plays a role in the assembly of mitochondrial Complex I. & 0.285170 & 0.012550 & 0.072104 \\
+    \hline
+    NDUFB3 & NADH:Ubiquinone Oxidoreductase Subunit B3 & A peripheral subunit of Complex I, involved in electron transport. & 0.432966 & 0.014125 & 0.077284 \\
+    \hline
+    NDUFAF6 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 6 & Contributes to the assembly of Complex I in mitochondria. & 0.216284 & 0.025872 & 0.112059 \\
+    \hline
+    NDUFS5 & NADH:Ubiquinone Oxidoreductase Subunit S5 & A component of Complex I involved in electron transfer. & 0.424571 & 0.028080 & 0.117541 \\
+    \hline
+    NDUFB11 & NADH:Ubiquinone Oxidoreductase Subunit B11 & Essential for the stability and function of Complex I. & 0.365850 & 0.038461 & 0.141634 \\
+    \hline
+    TMEM70 & Transmembrane Protein 70 & Involved in the assembly of mitochondrial ATP synthase. & 0.209582 & 0.041929 & 0.148586 \\
+    \hline
+    NDUFA5 & NADH:Ubiquinone Oxidoreductase Subunit A5 & A component of Complex I contributing to the electron transport chain. & 0.199476 & 0.044831 & 0.155062 \\
+    \hline
+    NDUFAB1 & NADH:Ubiquinone Oxidoreductase Subunit AB1 & Also known as mitochondrial acyl carrier protein; part of Complex I and involved in fatty acid metabolism. & 0.316403 & 0.048178 & 0.162527 \\
+    \label{tab:cluster0_genes_y622}
+\end{longtable}
+
+\clearpage
+\begin{longtable}{p{4cm} p{2cm} p{1.5cm} p{1.5cm} p{6cm}}
+    \caption{mito genes for p.Tyr622* vs WT bulk RNA-seq} \\
+    \hline
+    \textbf{Term} & \textbf{score} & \textbf{P-value} & \textbf{FDR} & \textbf{Genes} \\
+    \hline
+    \hline
+    Apoptosis & 1.900274 & 0.012581 & 0.415774 & BID; CASP3; CYCS; BCL2L1; BIK \\
+    \hline
+    OXPHOS & 1.894438 & 0.012752 & 0.415774 & NDUFA4; TMEM126A; ATP5MG; SDHAF2; NDUFA1; COX6A1; COX14; CYCS; COA4; NDUFS4; ATP5PB; ATP5MC3; NDUFAF2; MT-ND2 \\
+    \hline
+    Protein import and sorting & 1.755279 & 0.017568 & 0.415774 & TIMM8A; TIMM10; DNAJC19; SAMM50; TIMM23; TOMM22 \\
+    \hline
+    OXPHOS subunits & 1.552584 & 0.028017 & 0.477391 & NDUFA4; ATP5MG; NDUFA1; COX6A1; CYCS; NDUFS4; ATP5PB; ATP5MC3; MT-ND2 \\
+    \hline
+    Mitochondrial dynamics and surveillance & 1.473414 & 0.033619 & 0.477391 & BID; ATP5MG; SAMM50; CASP3; CYCS; BCL2L1; FUNDC1; BIK; FUNDC2 \\
+    \hline
+    Amino acid metabolism & -1.374004 & 0.042267 & 0.263353 & DLST; COMT; SLC25A44; MAOA; ABAT; SFXN3; GCAT; ALDH5A1; MCCC2; AADAT \\
+    \hline
+    Detoxification & -1.395286 & 0.040245 & 0.263353 & EPHX2; DHRS2; CYB5B; CAT; TXNRD2; MAOA; CYB5R3 \\
+    \hline
+    EF hand proteins & -1.441227 & 0.036205 & 0.263353 & RHOT2; SLC25A23; SLC25A25 \\
+    \hline
+    Lipid metabolism & -1.441792 & 0.036158 & 0.263353 & EPHX2; SLC25A1; ACADVL; GPAT2; CPT1C; ACADL; IDI1; ACP6; CROT; CYB5R3; CYP27A1; ACAD10 \\
+    \hline
+    Amidoxime reducing complex & -1.576863 & 0.026493 & 0.238440 & CYB5R3; CYB5B \\
+    \hline
+    Vitamin metabolism & -1.639877 & 0.022915 & 0.232016 & MMAB; DHRS4; PLPBP; PNPO; RFK; PC; SFXN3 \\
+    \hline
+    Gluconeogenesis & -1.844185 & 0.014316 & 0.165654 & PCK2; PC; SLC25A1 \\
+    \hline
+    Catechol metabolism & -1.857772 & 0.013875 & 0.165654 & COMT; MAOA \\
+    \hline
+    TCA-associated & -1.887037 & 0.012971 & 0.165654 & ACLY; PCK2; PC; SLC25A1 \\
+    \hline
+    ABC transporters & -2.026052 & 0.009418 & 0.165654 & ABCB6; ABCD2; ABCB8 \\
+    \hline
+    Xenobiotic metabolism & -2.103329 & 0.007883 & 0.165654 & EPHX2; DHRS2; CYB5B; MAOA; CYB5R3 \\
+    \hline
+    Vitamin B6 metabolism & -2.314663 & 0.004845 & 0.165654 & PNPO; PLPBP \\
+    \hline
+    Metabolism & -4.519649 & 0.000030 & 0.002448 & NMNAT3; DHRS4; CAT; GPAT2; DLAT; FECH; PNPO; SLC25A25; MCCC2; MMAB; COQ9; SLC25A1; PLPBP; ACLY; TXNRD2; ABAT; RFK; TK2; PC; IDI1; PCK2; EPHX2; DHRS2; ACADVL; IDH2; CPT1C; CROT; ALDH5A1; AADAT; ACAD10; TSTD1; CYB5B; DLST; SLC25A44; ABCB6; GATM; SLC25A23; MAOA; ACADL; SFXN3; ACP6; GCAT; COMT; CYP27A1; CYB5R3 \\
+    \label{tab:y622_mito_genes}
+\end{longtable}
+\clearpage
+
+\begin{longtable}{p{4cm} p{2cm} p{1.5cm} p{1.5cm} p{6cm}}
+    \caption{choline genes for p.Tyr622* vs WT bulk RNA-seq} \\
+    \hline
+    \textbf{Term} & \textbf{score} & \textbf{P-value} & \textbf{FDR} & \textbf{Genes} \\
+    \hline
+    \hline
+    EF hand proteins & 4.457699 & 0.000035 & 0.003451 & SLC25A12; SLC25A23; SLC25A25; EFHD1; MICU2; SLC25A13; MICU3; SLC25A24 \\
+    \hline
+    Small molecule transport & 3.256577 & 0.000554 & 0.027418 & ABCB10; SLC25A25; MPV17L; ABCD3; ABCD1; SLC25A12; SLC25A1; SLC25A13; MICU3; SFXN1; SLC25A29; SLC25A39; SLC25A43; MICU2; SFXN5; STARD7; SLC25A24; ABCD2; SLC25A15; SLC25A22; SLC25A23; VDAC1; MPV17 \\
+    \hline
+    Calcium homeostasis & 3.079591 & 0.000833 & 0.027474 & SLC25A12; SLC25A23; SLC25A25; EFHD1; VDAC1; LETM1; SLC25A13; MICU2; MICU3; SLC25A24 \\
+    \hline
+    Metabolism & 2.846777 & 0.001423 & 0.033450 & ABCB10; NT5DC2; ACSL6; ME3; CS; SLC25A12; PDSS2; HSD17B4; ACLY; TK2; ALDH3A2; IDI1; NADK2; ACADS; CPT2; STARD7; AADAT; ACAD10; AK3; NNT; SOD2; CHCHD7; SLC25A23; OGDH; NMNAT3; MT-CO1; GLS; GPAT2; SLC25A25; OAT; D2HGDH; SLC25A1; ABAT; RFK; SFXN1; ALDH1B1; OXCT1; TST; HIBCH; FHIT; FH; GLYCTK; LACTB; PNPO; SERAC1; ME2; GSR; AGPAT5; PCK2; SLC25A29; EPHX2; GLDC; SFXN5; PDK3; ALDH5A1; SPHK2; SLC25A24; TSTD1; MTFMT; ACP6; NT5M; ALDH9A1; GCAT; KMO; ECI1; CAT; DLAT; COQ2; PPM1K; PRXL2A; MCCC2; CISD3; SPTLC2; SLC25A13; SLC25A15; FASN; ALDH7A1; DLST; GATM; AK4; ACADSB \\
+    \hline
+    Signaling & 2.772263 & 0.001689 & 0.033450 & NLRX1; SLC25A12; PPTC7; SLC25A23; SLC25A25; EFHD1; VDAC1; LETM1; MACROD1; SLC25A13; MICU2; PDE2A; MICU3; SLC25A24; DELE1 \\
+    \hline
+    TCA-associated & 2.563737 & 0.002731 & 0.045055 & SLC25A1; ACLY; ME2; SFXN5; ME3; D2HGDH; PCK2 \\
+    \hline
+    Fusion & 2.466941 & 0.003412 & 0.048261 & OPA1; MIGA2; MFN2; MIGA1; MFN1 \\
+    \hline
+    Carbohydrate metabolism & 1.960909 & 0.010942 & 0.123756 & OXCT1; CS; SLC25A12; SLC25A1; FH; DLAT; ACLY; ME2; GLYCTK; DLST; OGDH; SLC25A13; ME3; SFXN5; PDK3; D2HGDH; PCK2 \\
+    \hline
+    Organelle contact sites & 1.856642 & 0.013911 & 0.123756 & FKBP8; SPIRE1; MIGA2; MFN2; MFN1; VDAC1 \\
+    \hline
+    ABC transporters & 1.852052 & 0.014059 & 0.123756 & ABCB10; ABCD1; ABCD2; ABCD3 \\
+    \hline
+    Phospholipid metabolism & 1.850381 & 0.014113 & 0.123756 & GPAT2; SERAC1; SPTLC2; LACTB; ACP6; STARD7; AGPAT5; SPHK2 \\
+    \hline
+    Amino acid metabolism & 1.823889 & 0.015001 & 0.123756 & GLS; OAT; PPM1K; MCCC2; SLC25A12; ABAT; SLC25A13; SFXN1; SLC25A29; GLDC; ALDH5A1; AADAT; HIBCH; ALDH9A1; SLC25A15; ALDH7A1; DLST; GCAT; ACADSB; KMO \\
+    \hline
+    Nucleotide metabolism & 1.357357 & 0.043918 & 0.334453 & AK3; NT5DC2; SLC25A23; SLC25A25; GATM; AK4; TK2; NT5M; SLC25A24; FHIT \\
+    \hline
+    OXPHOS assembly factors & -1.423365 & 0.037725 & 0.363536 & FOXRED1; TIMMDC1; COA3; COA6; COX7A2L; SDHAF3; FMC1; COX16; RAB5IF; NDUFAF6; SDHAF2; SURF1; TIMM21; BCS1L; COA7; NDUFAF1; COX14; LYRM2; TMEM70 \\
+    \hline
+    Protein import and sorting & -1.445375 & 0.035861 & 0.363536 & MTX2; TIMM8A; TIMM23; TIMM17B; TIMM10; UQCRC1; DNAJC19; PMPCA; TIMM8B; MTX1; TIMM21; TIMM22; TOMM5; GRPEL1 \\
+    \hline
+    CIII subunits & -1.603039 & 0.024944 & 0.293782 & UQCR10; CYC1; UQCRH; UQCRC1; UQCRFS1 \\
+    \hline
+    mtRNA granules & -1.605563 & 0.024799 & 0.293782 & MRPL47; ERAL1; MTPAP; ALKBH1; PTCD2; MRPS7; TFB1M; TRUB2; RMND1; TRMT10C \\
+    \hline
+    CII subunits & -1.645356 & 0.022628 & 0.293782 & SDHD; SDHC; SDHB \\
+    \hline
+    Complex II & -2.114075 & 0.007690 & 0.135856 & SDHAF2; SDHAF3; SDHC; SDHB; SDHD \\
+    \hline
+    OXPHOS subunits & -2.580372 & 0.002628 & 0.055714 & UQCR10; ATP5MG; SDHB; ATP5PB; UQCRH; NDUFA10; COX5B; COX7A2L; NDUFB3; NDUFA4; CYC1; SDHD; MT-ND4L; UQCRFS1; ATP5IF1; NDUFA1; NDUFV1; COX6A1; NDUFB8; ATP5F1A; SDHC; NDUFB6; NDUFA6; NDUFS4; COX7A2; UQCRC1; NDUFS2; ATP5F1C \\
+    \hline
+    Mitochondrial central dogma & -2.864986 & 0.001365 & 0.036163 & MRPL4; MRPL18; COA3; MTRES1; MRPL46; MTIF3; MRPS23; MRPL37; MRPL45; MRPL36; TRUB2; MRPS10; MRPL24; PTCD2; MRPL40; MRPS18C; UNG; TFB1M; METTL5; MRPS12; MRPL14; GATC; MRPL34; MRPL32; MRPL16; TSFM; MTPAP; MRPL47; APEX1; MRPS21; ALKBH1; TEFM; MRPL55; MRPL39; MRPS7; MRPS26; MRPL22; TIMM21; MRPL15; MTERF2; NGRN; MRPS18A; TRMT10C; MTERF1; ERAL1; MRM3; COX14; MRPS31; MRPL13; PTCD3; MRPS14; DAP3; MTERF3; MRPL27; MRPS28; RARS2; MRPS18B; RMND1; MRPS15 \\
+    \hline
+    OXPHOS & -3.420637 & 0.000380 & 0.013414 & UQCR10; FOXRED1; TIMMDC1; ATP5MG; COA3; SDHB; ATP5PB; UQCRH; NDUFA10; COX5B; COA6; COX7A2L; NDUFB3; NDUFA4; CYC1; SDHAF3; FMC1; SDHD; MT-ND4L; UQCRFS1; ATP5IF1; RAB5IF; COX16; NDUFAF6; SDHAF2; SURF1; NDUFV1; NDUFA1; COX6A1; TIMM21; NDUFB8; BCS1L; COA7; NDUFA12; NDUFAF1; ATP5F1A; COX14; SDHC; NDUFA6; NDUFB6; LYRM2; NDUFS4; COX7A2; UQCRC1; TMEM70; NDUFS2; ATP5F1C \\
+    \hline
+    Translation & -4.653989 & 0.000022 & 0.001176 & MRPL4; MRPL18; COA3; MTRES1; MRPL46; MTIF3; MRPS23; MRPL37; MRPL45; MRPL36; MRPS10; MRPL24; MRPL40; MRPS18C; TFB1M; MRPS12; MRPL14; GATC; MRPL34; MRPL32; MRPL16; TSFM; MRPL47; MRPS21; MRPL55; MRPL39; MRPS7; MRPS26; MRPL22; TIMM21; MRPL15; NGRN; MRPS18A; ERAL1; MRM3; COX14; MRPS31; MRPL13; PTCD3; DAP3; MRPS14; MTERF3; MRPL27; MRPS18B; RARS2; MRPS28; RMND1; MRPS15 \\
+    \hline
+    Mitochondrial ribosome & -6.408523 & 0.000000 & 0.000041 & MRPL4; MRPL18; MRPL46; MRPS23; MRPL37; MRPL45; MRPL36; MRPS10; MRPL24; MRPL40; MRPS18C; MRPS12; MRPL14; MRPL34; MRPL32; MRPL16; MRPL47; MRPS21; MRPL55; MRPL39; MRPS7; MRPS26; MRPL22; MRPL15; MRPS18A; MRPS31; MRPL13; PTCD3; DAP3; MRPS14; MRPL27; MRPS18B; MRPS28; MRPS15 \\
+    \hline
+    \label{tab:choline_mito_genes}
+\end{longtable}
+
+\clearpage
+\begin{longtable}{p{6cm} p{6cm} p{3cm}}
+    \caption{External datasets used.}
+    \hline
+    \textbf{Description} & \textbf{Access} & \textbf{Reference} \\ 
+    \hline
+    \hline
+    Post-mortem human PFC proteomic data & \url{https://www.synapse.org/\#!Synapse:syn21449368} & \cite{Johnson2020-ub} \\
+    \hline
+    Reference 1: Cell type specific marker genes for human brain & \url{https://osf.io/vn7w2/} & \cite{Wang2018-eq} \\
+    \hline
+    Reference 2: Cell type specific marker genes for human brain & \url{https://osf.io/vn7w2/} & \cite{Franzen2019-we} \\
+    \hline
+    Gene Ontology Biological Process 2023 & \url{https://maayanlab.cloud/Enrichr/\#libraries} & NA \\
+    \hline
+    NeuN+/- bulk RNA-sequencing from post-mortem human brain & \url{https://osf.io/vn7w2/} & \cite{Welch2022-aa} \\
+    \hline
+    WikiPathways 2019 Human & \url{https://maayanlab.cloud/Enrichr/\#libraries} & NA \\
+    \hline
+    snRNAseq from postmortem human PFC from p.Ala1527Gly variant-carriers and controls & \url{https://www.synapse.org/\#!Synapse:syn52293417} & \cite{Mathys2023-kg} \\ 
+    \hline
+    Human MioCarta3.0 & \url{https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways} & NA \\
+    \hline
+    \label{tab:external_datasets}
+\end{longtable}
+
+\clearpage
+\begin{longtable}{p{5cm} p{5cm} p{5cm}}
+    \caption{Antibodies used.}
+    \hline
+    \textbf{Antibody name}                & \textbf{Company}      & \textbf{Catalog No.} \\
+    \hline
+    \hline
+    NeuN                                  & Synaptic Systems      & 266004               \\
+    \hline
+    Tuj1                                  & BioLegend             & MMS-435P             \\
+    \hline
+    SM312 (pan-axonal marker)             & Biolegend             & 837904               \\
+    \hline
+    MAP2                                  & Biolegend             & 822501               \\
+    \hline
+    \label{tab:antibodies_used}
+\end{longtable}
+
+    
+    

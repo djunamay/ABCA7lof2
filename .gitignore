@@ -1,6 +1,18 @@
 # FROM: https://github.com/github/gitignore/blob/main/Python.gitignore
 #
 # Byte-compiled / optimized / DLL files
+# Ignore everything
+*
+
+# But not directories – so Git can recurse into them
+!*/
+
+# Unignore allowed file types (in any directory)
+!**/*.ipynb
+!**/*.py
+!**/*.sh
+!**/*.tex
+
 __pycache__/
 *.py[cod]
 *$py.class

@@ -30,9 +30,9 @@ def compute_integral(temp, last_point, measure):
     b = compute_b(point1, slope)
     return integrate(point1, point2, slope, b)
 
-def compute_seahorse_measures_per_well_long_run(well_id, df_sub):
+def compute_seahorse_measures_per_well_long_run(well_id, df_sub, value='OCR'):
     temp = df_sub[df_sub['Well']==well_id]
-    integrals = [compute_integral(temp, x, 'OCR') for x in range(2,16)]
+    integrals = [compute_integral(temp, x, value) for x in range(2,16)]
     
     
     non_mito = np.sum(integrals[12:14])

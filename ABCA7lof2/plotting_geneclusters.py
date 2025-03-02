@@ -57,10 +57,12 @@ def plot_single_cluster(col, pos_curr, types_curr, names_curr, cluster_name, sel
     #plt.text(x, y, labels,  bbox=props, c = col, fontsize = 10, zorder=6, style = "italic")
     plt.text(x, y+(0.045*(n+1)), cluster_name,  bbox=props, c = 'black', fontsize = 15, zorder=6, weight = "normal")
 
-def get_le_clusters(le_path, celltype, mat, seed, Ngenes):
-    leading_edge = pd.read_csv(le_path, index_col=0)
-    #P = set(fgsea[fgsea['x']==celltype]['pathway'])
-    S = set(leading_edge['gene'])
+def get_le_clusters(le_path, celltype, mat, seed, Ngenes, S=None):
+
+    if S is None:
+        leading_edge = pd.read_csv(le_path, index_col=0)
+        #P = set(fgsea[fgsea['x']==celltype]['pathway'])
+        S = set(leading_edge['gene'])
 
     col_index = np.where([x in S for x in mat.columns])[0]
     mat_sub = mat.iloc[:,col_index]
@@ -124,7 +126,7 @@ def plot_graph(layout, pos, graph, cur_labels, unique_clusters, colors, out_path
     plt.figure(figsize = (7,5))
 
     # plot by cluster color
-    np.save('./processed_data/single_cell/ex_pathway_coords.csv', pos)
+    #np.save('./processed_data/single_cell/ex_pathway_coords.csv', pos)
     plot_edges(layout, graph, pos)
     plot_nodes(graph, [], pos, cur_labels, unique_clusters, colors, 100)
     a = plt.gca()
@@ -153,7 +155,7 @@ def get_representative_name_per_cluster(bipartite_mat, colnames_mat, rownames_ma
 # get rep names
 
 
-def plot_rep_names(pos, unique_clusters, colors, mat_sub, frame, out_path, N):
+def plot_rep_names(pos, unique_clusters, colors, mat_sub, frame, out_path, N, cur_labels):
     import re
     from adjustText import adjust_text
     colnames = np.array(mat_sub.columns)

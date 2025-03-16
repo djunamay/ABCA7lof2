@@ -1,17 +1,20 @@
-\begin{figure}[ht]
+\begin{figure}[H]
     %ROW 1
     \begin{subfigure}[t]{.6\textwidth}
         \caption{}
         \includegraphics[width=\textwidth]{./extended_plots/choline_media_lcms.png}        
     \end{subfigure}
-    \begin{subfigure}[t]{.35\textwidth}
+    \begin{subfigure}[t]{.4\textwidth}
         \caption{}
         \includegraphics[width=\textwidth]{./extended_plots/choline_in_cells_lcms.png}        
     \end{subfigure}
-    %ROW 2
-    \begin{subfigure}[t]{.25\textwidth}
+    \begin{subfigure}[t]{.2\textwidth}
         \caption{}
         \includegraphics[width=\textwidth]{./extended_plots/choline_synth_genes.png}        
+    \end{subfigure}
+    \begin{subfigure}[t]{.2\textwidth}
+        \caption{}
+        \includegraphics[width=\textwidth]{./extended_plots/choline_lpcat.png}        
     \end{subfigure}
     \begin{subfigure}[t]{.35\textwidth}
         \caption{}
@@ -42,29 +45,20 @@
         \includegraphics[width=\textwidth]{./extended_plots/mitohealth_choline.png}        
     \end{subfigure}
     \caption{
-         \textbf{CDP-choline treatment in iN.}\\[1ex]
-         (A) Per-cell correlation of average PLIN2 and LipidSpot fluorescent intensities shown as a density plot. 
-         (B) Per-batch LipidSpot fluorescence intensities (related to Figure~\ref{fig:main_choline}A) in ABCA7 p.Tyr622* iNs treated with CDP-choline or H20 vehicle control. X-axis indicates z-scaled log-fluorescence intensity. 
-         (C) Example oxygen consumption rate (OCR) curves used for analysis in Figure~\ref{fig:main_choline}. The line plot indicates the per-condition mean estimator, and the error bars indicate the 95\% confidence interval. 
-         (D) Representative per-well traces from (C). 
-         (E) Quantification of SRC from curves in (D). P-values computed by independent sample t-test. $N$ wells = 6 (p.Tyr622* + H20), 8 (p.Tyr622* + CDP-choline). Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
-         (F) Per-batch cell-level MioHealth fluorescence intensities (related to Figure~\ref{fig:main_choline}C) in ABCA7 p.Tyr622* iNs treated with CDP-choline or H20 vehicle control. X-axis indicates z-scaled fluorescence intensity.
+         \textbf{Effects of CDP-choline treatment in p.Tyr622* iNs.}\\
      }
-     \label{fig:lipid_mitochondrial_effects_CDP_choline}
- \end{figure}
-
- 
-
-    % \begin{subfigure}[t]{.3\textwidth}
-    %     \caption{}
-    %     \includegraphics[width=\textwidth]{./main_plots/volcano_all_species_choline.png}        
-    % \end{subfigure}
-    % \begin{subfigure}[t]{.2\textwidth}
-    %     \caption{}
-    %     \includegraphics[width=\textwidth]{./extended_plots/desaturase_genes.png}        
-    % \end{subfigure}
-    % \begin{subfigure}[t]{.2\textwidth}
-    %     \caption{}
-    %     \includegraphics[width=\textwidth]{./extended_plots/desaturase_genes_e3_v_y622.png}        
-    % \end{subfigure}
-    % \par
+     \label{fig:choline_treatment}
+\end{figure}
+\begin{itemize}
+    \item[\textbf{(A)}] Choline metabolites detected in the media by targeted LCMS.
+    \item[\textbf{(B)}] Choline metabolite detected in the cells by targeted LCMS.
+    \item[\textbf{(C)}] Select choline synthesis and transport differentially expressed in p.Tyr622* +/- CDP-choline iNs.
+    \item[\textbf{(D)}] LPCAT gene changes in in p.Tyr622* +/- CDP-choline iNs.
+    \item[\textbf{(E)}] Fold-changes distribution of phosphatidylcholine species in p.Tyr622* +/- CDP-choline iNs by chain length and saturation.
+    \item[\textbf{(F)}] Correlation of differentially expressed genes in p.Tyr622* +/- CDP-choline iNs and p.Tyr622* vs WT iNs.
+    \item[\textbf{(G)}] Correlation of differentially expressed genes in p.Tyr622* +/- CDP-choline iNs and p.Glu50fs*3 vs WT iNs - mitochondrial genes only.
+    \item[\textbf{(H)}] Example oxygen consumption rate (OCR) curves used for analysis in Fig. 5. The line plot indicates the per-condition mean estimator, and the error bars indicate the 95\% confidence interval. 
+    \item[\textbf{(I)}] Representative per-well traces from (H).
+    \item[\textbf{(J)}] Quantification of SRC from curves in (I). P-values computed by independent sample t-test.  wells = 6 (p.Tyr622* + H20), 8 (p.Tyr622* + CDP-choline). Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
+    \item[\textbf{(K)}] Per-batch cell-level MioHealth fluorescence intensities in ABCA7 p.Tyr622* iNs treated with CDP-choline or H20 vehicle control. X-axis indicates z-scaled fluorescence intensity.
+\end{itemize}

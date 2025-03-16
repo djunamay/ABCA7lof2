@@ -1,4 +1,4 @@
-\begin{figure}[ht]
+\begin{figure}[H]
     \begin{subfigure}[t]{.3\textwidth}
         \caption{}
         \includegraphics[width=\textwidth]{./main_plots/g2_kl_clusters_network.pdf}        
@@ -24,12 +24,14 @@
         \includegraphics[width=\textwidth]{./extended_plots/correlation_with_other_RNAseq_batch.png}        
     \end{subfigure}
     \caption{
-        \textbf{Bulk RNAseq data in iN.}\\[1ex]
-        (A) Lipid synthesis and storage pathways perturbed in ABCA7 LoF excitatory neurons vs. control as measured by snRNA-seq on the post-mortem human PFC. Enrichments of biological processes were computed using FGSEA. Red = enrichment > 0, Blue = enrichment < 0. * = $p<0.05$. 
-        (B) Schematic model showing anabolic processes feeding from the TCA cycle towards fatty acid (FA) and triglyceride (TG) synthesis. DG = diacylglyceride, PA = phosphatidic acid, PC = phosphatidylcholine, PE = phosphatidylethanolamine, PS = phosphatidylserine. * = differentially expressed in ABCA7 LoF vs. control excitatory neurons from post-mortem human brain at $p<0.05$ and $\log\text{FC}<0$. 
-        (C) 𝛽-oxidation and TCA pathways perturbed in ABCA7 LoF excitatory neurons vs. control as measured by snRNA-seq on the post-mortem human PFC. Enrichments of biological processes were computed using FGSEA. Red = enrichment > 0, Blue = enrichment < 0. * = $p<0.05$. 
-        (D) Schematic model showing catabolic processes feeding into the TCA cycle and oxidative phosphorylation with key genes from (C) highlighted in red or blue. * = $p<0.05$. For (A, C,) boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
-        (E, F) Transcript levels of ACLY (E) and SCP2 (F) assessed in post-mortem human PFC by RNAscope. Transcript counts per SLC17A7+ cell are reported in each bar chart. $N = 8$ individuals per genotype. Per-cell Wilcoxon rank-sum p-values are reported.
+        \textbf{Bulk RNAseq data in iN.}\\
     }
     \label{fig:bulk_RNAseq_supplement}
 \end{figure}
+\begin{itemize}
+    \item[\textbf{(A)}] Kernighan-Lin (K/L) clustering of leading-edge genes from pathways perturbed in p.Glu50fs* vs. WT iNs (p-adjusted < 0.05). Colors indicate distinct K/L gene clusters, which are assigned cluster p.Tyr622* labels if they significantly overlap with p.Tyr622*-identified clusters based on Jaccard analysis in (B). Otherwise, they are labeled with a 'G' prefix.
+    \item[\textbf{(B)}] Heatmap showing Jaccard index-based overlap between K/L clusters from p.Glu50fs* vs. WT iNs and p.Tyr622*-identified clusters.
+    \item[\textbf{(C)}] Heatmap showing Jaccard index-based overlap between K/L clusters from postmortem-identified clusters and p.Glu50fs*-identified clusters.
+    \item[\textbf{(D)}] Left: Gaussian kernel density estimate plots of gene scores $S$ for genes within each cluster ($S>0$ indicates upregulation in ABCA7 LoF). Solid lines represent distribution means. Right: Top representative pathways associated with the highest intra-cluster connectivity.
+    \item[\textbf{(E)}] Correlation of per-gene perturbation scores ($S = -\log_{10}(\text{p-value}) \times \text{sign}(\log_2(\text{fold change}))$) between p.Glu50fs* vs. WT and p.Tyr622* vs. WT iNs for mitochondrial-localized genes.
+\end{itemize}

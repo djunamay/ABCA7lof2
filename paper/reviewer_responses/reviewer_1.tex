@@ -2,42 +2,44 @@
 In this manuscript, von Maydell et al. analyzed the single nucleus transcriptomes of AD patients with or without ABCA7 LoF mutations and found that ABCA7 LoF affects pathways including lipid metabolism, mitochondrial function, and others. Through cross validation with other datasets and using iPSC-derived neurons, the authors showed that ABCA7 LoF led to lipid accumulation and a decrease in mitochondrial uncoupling in neurons. Modulating ABCA7 LoF through CDP-choline treatment may reverse these effects.
 While the study provides novel evidence of the important roles that phosphatidylcholine disruption plays in AD pathogenesis, some key information is missing. Detailed comments are listed below.
 
-\textcolor{blue}{We thank this reviewer.. Comments by this reviewer have led us to revise and address the following points:}
-\begin{itemize}
-	\item \textcolor{blue}{Lipidomic analysis.}
-\end{itemize}
-
+\textcolor{blue}{We thank the reviewer for their encouraging comments and constructive suggestions.}
 
 Fig. 1F, what are the genes overlapping in the different cell types? are these changes relevant for the risk of ABCA7 LOF on AD? The thresholds of the volcano plots should be indicated.
 
-\textcolor{blue}{We now provide a supplementary heat map indicating overlapping genes between cell types in Figure S3 and shown below. Indeed, we find…We realize that the panels in Figure 1F may appear to be volcano plots. To clarify this, we have now provided axis labels indicating the UMAP dimensions. We underline in the figure legend the red and blue color threshold cut-offs and have made the color legend horizontal to improve readability.}
+\textcolor{blue}{We added a supplementary heat map showing overlapping genes across cell types (Figure~\ref{fig:snRNAseq_gene_scores_2}A). For visualization purposes, we included only genes significantly perturbed (p<0.05) in ABCA7 loss-of-function (LoF) brains in at least two cell types. Figure~\ref{fig:snRNAseq_gene_scores_2}B provides functional annotations for these genes, grouping them into key categories. These categories highlight pathways consistently identified in our study, such as lipid metabolism, mitochondrial function, and DNA damage response, suggesting these pathways may contribute to Alzheimer's disease risk linked to ABCA7 LoF in other cell types, in addition to neurons.}
+
+\textcolor{blue}{We appreciate the reviewer's comment. However, these plots represent projections of differentially expressed gene scores across major cell types for simplified visualization and comparison in 2D space, rather than standard volcano plots. To clearly distinguish them from volcano plots, we have now added axis labels indicating the UMAP dimensions.}
 
 Fig. 1G, it is not clear how the clusters were defined and genes under each pathway/cluster were selected. PCA the and thresholds of volcano plots should be provided.
 
-\textcolor{blue}{To clarify how the analysis was performed we now improve our explanation in the text and reference to Figure S3A in the main text.We have now added a clarifying annotation to the example pathways and genes to indicate significance level cutoffs.}
+\textcolor{red}{Clarify in text.}
 
 Fig. 3E-F, the data of the 3 iNs should be provided.
 
-\textcolor{blue}{Please see supplementary Figure S8, where we have also now included representative traces for all three genotypes.}
+\textcolor{blue}{We have now included the data for all three lines in Figure~\ref{fig:iN_phenotypes}A,B}.
 
 Fig. S9. The increase of Aβ42 is not evident, Amyloid accumulation should be confirmed with another method like immunoblotting or ELISA. Images with more cells within the same ROI should be provided, for example like in Fig.4H. Same applies to Fig 5A, 5D and 5E.
 
-\textcolor{blue}{Amyloid production in iNs is low due to .. We confirm an increase in soluble Abeta species by ELISA on the media for iNs. However, ELISA results confirm that Abeta concentrations in the media are low, which is expected for neurons of this age and may make it difficult to robustly assess pathology-related phenotypes. In line with another reviewer’s comments, we have now aged our iNs in the form of neurospheroids and performed ELISA on the media of circa 5 month old neurospheroids, where we see increases in Ab40 and 42 at multiple time points.We have now replaced the Abeta IHC data from Fig. S9 with neurospheroid ELISA dataWe now ensure that all representative images are provided at the same magnification with approximately similar number of ROIs per image.}
+\textcolor{blue}{We confirmed increased soluble Aβ40 and Aβ42 levels by ELISA in media from ABCA7 LoF iNs compared to WT iNs (Figure~\ref{fig:differentiating_iPSC_neurons}H). However, since secreted Aβ levels were low at this early developmental stage, we also differentiated WT, p.Tyr622*, and p.Glu50fs*3 lines into dorsal cortical spheroids and repeated ELISA experiments at a more mature stage (six months). These results similarly showed elevated soluble Aβ42 and 40 species, now presented in Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}B. We have now removed the immunostaining of Aβ42.}
 
 Is the number of up- and down-regulated PCs highlighted in Fig. 3K the sameas in Fig.3I.
 
-\textcolor{blue}{We thank the reviewer for pointing out this inconsistency. We have updated the figure to highlight the same number of species consistently throughout.}
+\textcolor{blue}{We thank the reviewer for highlighting this inconsistency. We have now revised the relevant panels, consistently applying the criteria of adjusted p-value < 0.05 and absolute log2 fold change > 1. These updated data are presented in Figure~\ref{fig:main_lipids}A,B,D,E, addressing feedback from other reviewers as well.}
 
 Line 365-380, the lipidomics analysis is unclear, oversimplified, and seemingly biased which I am afraid may affect accurate data interpretation. Here are my comments: 1) in Fig. 3I, the PC lipid species display 13 up- and 8 down-regluated species, but in Fig. 3Q, the relative PC abundance in total is even decreased, the two results are contradictory. 2) which PC lipid species were selected to calculate the ratio of PC:TG. TG species are uniformly increased, which can predominantly drive the decrease in this ratio, likely not specifically related to PC. 3) For MG and DG, when nearly no lipids in each class are significantly changed, interpreting the relative abundance of the entire lipid class is difficult and highly speculative. Based on the lipdidomics results, TG seems to accumulate and the complex changes in PC and other lipids are suggestive. But the conclusion that diglycerides are less often converted into phosphatidylcholine and more often into triglycerides in the presence of ABCA LoF is highly speculative. It is important here to measure lipid flux using istope tracers to confirm the conclusion.
 
-\textcolor{blue}{We have improved this analysis and addressed the reviewer’s comments in the following ways:}
-\begin{itemize}
-	\item \textcolor{blue}{We have removed the MG and DG results.}
-	\item \textcolor{blue}{We maintain that the ratios of PC:TG are important and well-established markers of lipid droplet accumulation and processing. When the amount of PC does not properly track with TG this can affect LD biogenesis and catabolism. However, we agree that the presentation of relative total lipid abundances is perhaps misleading and fails to capture the complexities of PC-related changes.}
-	\item \textcolor{blue}{We still think our focus on TG and PCs is justified, given the number of observed changes, and their well-established relationship, as well as ABCA7’s phospholipid efflux activity.}
-	\item \textcolor{blue}{We have now removed the relative abundance panels (Fig. 3 L-R) and focus on dissecting the types of perturbed lipid species (TG and PCs) with regard to length and saturation.}
-	\item \textcolor{blue}{This analysis provides a more complete picture of the data, suggesting …}
-\end{itemize}
+\textcolor{blue}{We agree with the reviewer that our initial analysis was overly complex and that emphasizing lipid ratios could lead to misinterpretation. To address these concerns, we substantially revised our lipidomics analysis comparing p.Glu50fs3 vs. WT iNs and included an additional lipidomics experiment using the second ABCA7 LoF line (p.Tyr622 vs. WT iNs). We removed relative abundance analyses and now clearly highlight differences at the individual lipid species level. We believe that these changes have allowed for a more nuanced evaluation of phosphatidylcholine changes, which we discuss in detail below.}
+The reviewer's comments promted us to take a closer look at the PC changes and we think this has substantially improved the manuscript.
+
+\textcolor{blue}{Regarding comment 1), we agree with the reviewer that phosphatidylcholine changes are complex, with many species showing increased abundance. To clarify this complexity, we now provide a detailed analysis of phosphatidylcholine species stratified by fatty acid saturation profiles (Figure~\ref{fig:main_lipids}D,E). Our analysis revealed that up-regulated phosphatidylcholine species were significantly enriched in saturated and mono-unsaturated fatty acids, whereas down-regulated species were enriched in poly-unsaturated fatty acids. We believe that this analysis now better captures the complexity of phosphatidylcholine changes in ABCA7 LoF neurons.}
+
+\textcolor{blue}{Regarding comments 2 and 3), we removed the relative abundance panels (Fig. 3 L–R) and replaced them with clear visualizations of individual lipid species grouped by major lipid categories (Figure~\ref{fig:main_lipids}A,B). These revised panels emphasize specific lipid species instead of generalized lipid classes, addressing the reviewer’s concern about potential misinterpretation—particularly the apparent reduction in phosphatidylcholine, which - as the reviewer correctly pointed out - likely resulted from a substantial increase in the measured long-chaingtriglycerides. We no longer report abundances by class, but by individual lipid species to provide a more unbiased discussion of the data and have updated the text to reflect this.}
+
+\textcolor{blue}{The lipidomic results aren now discussed in the subsection "ABCA7 LoF induces phosphatidylcholine imbalance in neurons", which now reads as follows [page~\pageref{quoteA-label}]:}
+\begin{quote}
+	\quoteA\\\\
+	\quoteB
+\end{quote}
 
 Line 380: it is Fig. S10C (instead of Fig. S9C). Furthermore, the observed trends in TG and PC levels in human samples is minimal and not significant to suggest increased TG and decreased PC levels in ABCA7 LoF carriers. These data should be removed.
  
@@ -45,30 +47,51 @@ Line 380: it is Fig. S10C (instead of Fig. S9C). Furthermore, the observed trend
 
 The increase of TG in ABCA7 LoF should be confirmed by lipid staining.
 
+\textcolor{blue}{Our LCMS data for p.Glu50fs3 demonstrate an increase in long-chain triglyceride (TG) species, consistent with TG accumulation previously reported in iPSC-derived cells, including induced neurons (iNs), across various disease contexts (Wyss et al., Maeve et al.). However, these specific long-chain TG species were not detected in a subsequent LCMS experiment with p.Tyr622 iNs (Figure~\ref{fig:main_lipids}C vs. Figure~\ref{fig:main_lipids}I), possibly due to their inherent instability or technical variability between experimental runs. Attempts to confirm TG accumulation via LipidSpot staining in both p.Glu50fs3 and p.Tyr622 iNs were unsuccessful, likely because neurons form smaller lipid droplets or alternatively store TGs in lysosomal compartments, in agreement with recent literature. Consequently, we have refined our discussion to emphasize the consistent and robust increase in saturated phosphatidylcholine species observed across both cell lines. We now approach the observed changes in TG species with greater nuance.}
+
 Fig. 4A: In the PCA analysis, PC1 and PC2 explain only 0.18\% and 0.15\% of the variations, which are extremely low. Was it a mistake? If not, this indicates that the differences between the two groups are not actually captured by PC1 and PC2. The authors should review their analysis and consider testing other dimension reduction methods.
 
-\textcolor{blue}{We thank the reviewer for pointing out this error. PC1 and PC2 explain 18\% and 15\% of the variance, respectively, not 0.18\% and 0.15\% as indicated in the figure. We have now corrected this figure panel.}
+\textcolor{blue}{We thank the reviewer for pointing out this error. PC1 and PC2 explain 18\% and 15\% of the variance, respectively, not 0.18\% and 0.15\% as indicated in the figure. We have now corrected this panel.}
 
 Fig. 4B, what were the upregulated metabolites?
 
-\textcolor{blue}{We could not annotate the upregulated metabolites with high confidence. We decided to focus our analysis only on metabolites that could be annotated with the following annotations: “….” and not report metabolite names with lower confidence annotations.}
+\textcolor{blue}{Due to inherent limitations associated with LCMS, typically only a small fraction of detected metabolites can be reliably annotated with high confidence; in this specific analysis, none of the up-regulated metabolites could be annotated confidently. While these data are intriguing, we recognize they have been a source of confusion for reviewers. Therefore, we have limited our discussion of these findings to the supplementary materials. We highlight that notable differences exist in metabolite composition between the two cell lines, however, future studies are necessary to thoroughly characterize and understand these differences.}
 
 Fig. 4D, what is the significance of the correlation. If the dots in each group in the correlation plots represent technical replicates, the aggregated data (mean or median) should be used here.
 
-\textcolor{blue}{Another reviewer had similar concerns about the interpretation / meaning of these plots and we have now removed them.}
+\textcolor{blue}{Another reviewer expressed similar concerns regarding the interpretation and clarity of these plots, and asked us to remove these plots.}
 
 Fig. 4E, how OCR data were normalized should be explained.
 
-\textcolor{blue}{We intentionally only report internally normalized parameters as these should correct for differences in cell and mitochondrial number. All other measures can be explained by differences in cell or mitochondrial number. Because we have empirically observed differences in cell growth between lines, we decided to report internally-normalized metrics, as recommended here [REF].}
+\textcolor{blue}{We have now updated the text to more clearly explain this point[page~\pageref{quoteC-label}]:}
+\begin{quote}
+	\quoteC
+\end{quote}
 
 Line 457-459, CDP-choline cannot be directly taken up by cells. Although cells may uptake its hydrolyzed products, it remains important to confirm the cellular increase of CDP-choline.
+
+\textcolor{blue}{We thank the reviewer for raising this important point. We have now performed the following additional experiments to examine intracellular CDP-choline increases following CDP-choline treatment.}
+
+\textcolor{blue}{We have now updated the text with a detailed discussion of these results[page~\pageref{quoteD-label}]:}
+\begin{quote}
+	\quoteD
+\end{quote}
+
 
 Line 453-455, from the data provided, it is unclear how PC and mitochondrial function are linked in ABCA7 LoF. Few questions remain to be addressed,
 \begin{itemize}
 	\item whether the change of PC affects mitochondrial membrane structure in ABCA7 LOF?
+
 	\item whether CDP-choline increases cellular PC levels and whether this increase affects mitochondrial membrane structure in ABCA7 LoF?
+	
 	\item Whether CDP-choline specifically decreases the TG species that accumulate in ABCA7 LoF or affects different groups of TGs also remains to be determined.
 \end{itemize}
+
+\textcolor{blue}{Regarding item # 1; We have tried to address the structural question using three methods but have run into some technical issues. 1) TEM images, 2) Expansion microscopy, 3) mitotracker. We can show the mitotracker data here but say that additional difficulty is due to the mitochondrial membrane potential phenotype.}
+
+\textcolor{blue}{Regarding item # 2; We have now performed LCMS analysis on p.Tyr622* iNs after CDP-choline treatment and observe an increase in several phosphatidylcholine species upon treatment, increasing saturated and unsaturated species. LPCAT and saturation link to mitochondrial membrane. We do not know for sure but we provide a discussion of this.}
+
+\textcolor{blue}{Regarding item # 3; We observe a modest decrease in TG species upon CDP-choline treatment. However, we have softened discussion on this because..}
 
 Are the dyes used in Fig. 4H and Fig.5C the same? If different, both should be examined in Fig. 4H and 5C.
 
@@ -76,8 +99,13 @@ Are the dyes used in Fig. 4H and Fig.5C the same? If different, both should be e
 
 Line 479-487: The clearance of amyloid-β by CDP-choline is interesting yet perplexing. In the secretase model, it is unclear whether the clearance is related to the mitochondrial membrane or the membranes of other organelles via TAG or PC. More importantly, it is unclear whether the mechanisms involving TG and PC are actually causal for ABCA7 LOF-associated AD phenotypes or risk, and whether CDP-choline has therapeutic potential for AD. A mouse model of ABCA7 LOF-induced AD is necessary to address these questions.
 
-\textcolor{blue}{We cannot answer these questions completely. However, our new data suggest …While a mouse model would be intriguing, we worry about the low homology of ABCA7 between human and mouse and previously reported expression differences between the two systems. We think the iPSCs are ..}
+\textcolor{blue}{We have now provided additional evidence indicating very good overlap between the postmortem and the iN signatures, and quantitative support that CDP-choline reverses transcriptional and metabolic signature of ABCA7 LoF. Our additional experiments support that CDP-choline treatment increases substrate availability for phosphatidylcholine synthesis, and indeed increases phosphatidylcholine levels, in line with previous work. And we uncover phosphatidylcholine imbalances in ABCA7 LoF. And ABCA7's role as a phosphatidylcholine transporter.. alltogether strongly suggest that PC is causal. Our additional investigations have not supported as strong a role for TG. Given how ubiquitous PC is and saturation phenotype ...}
+
+\textcolor{blue}{On the therapeutic potential of CDP-choline}.
+
+\textcolor{blue}{On using a mouse model to assess this.}
 
 Line 161-164, line 215-217, line 256-260, across many datasets, DNA damage/repair pathways were detected; this was not explored further. Yet DNA damage/repair is closely related to lipid dysregulation and protein aggregation, it is therefore interesting to explore whether DNA damage/repair was involved in the phenotypic changes upon ABCA7 LoF.
 
-\textcolor{blue}{While this is a very interesting point, we have not had the resources to follow up on this angle beyond confirming by COMET assay increased levels of DNA damage in the LoF neurons. We hypothesize that these DNA damage phenotypes - which are prevalent in AD brains - are perhaps downstream of other phenotypes we focus on in our paper. Our study suggests one mechanism by which genetic variants may induce AD-related phenotypes, such as DNA damage.}
+\textcolor{blue}{We appreciate the reviewer highlighting this interesting point. This comment prompted us to investigate whether Because measurement of reactive oxygen species (ROS)—which can directly contribute to DNA damage—would provide a link between mitochondrial dysfunction (including impaired regulation of uncoupling) and downstream perturbations, including DNA damage, we have now performed Cellrox staining incorporated this ROS analysis into the manuscript in Figure~\ref{fig:main_mitochondrial}J and Figure~\ref{fig:main_choline}J. We observe a significant increase in ROS in ABCA7 LoF neurons and that treatment with CDP-choline reverses this phenotype. And now add a discussion of this to the results. This more fully ties together ..}
+	

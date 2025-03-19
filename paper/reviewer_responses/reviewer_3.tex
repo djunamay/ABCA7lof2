@@ -1,19 +1,89 @@
 \subsubsection{Referee \#3 (Remarks to the Author)}
 The manuscript by Maydell et al to sheds light on how ABCA7 loss of functon(lof) may contribute to AD pathogenesis. ABCA7 lof variants are associated with an increased risk of Alzheimer's Disease (AD). The mechanisms by which these variants contribute to AD are not well understood. The current study aims to uncover the pathogenic mechanisms and affected neural cell types associated with ABCA7 LoF variants through single-nuclear RNA sequencing (snRNAseq) of human brain samples. The authors analyzed 36 post-mortem samples from the prefrontal cortex, including 12 ABCA7 LoF carriers and 24 matched non-carrier controls. They performed snRNAseq to examine gene expression changes in various neural cell types. ABCA7 LoF variants led to transcriptional changes in all major brain cell types, particularly excitatory neurons, affecting pathways related to lipid metabolism, mitochondrial function, cell cycle, and synaptic signaling. From lipidomic analysis ABCA7 LoF neurons showed intracellular triglyceride accumulation and decreased phosphatidylcholine levels. In metabolomic analysis. disrupted mitochondrial bioenergetics indicated impaired lipid breakdown by uncoupled respiration in ABCA7 LoF neurons. Treatment with CDP-choline, a precursor of phosphatidylcholine synthesis, reduced triglyceride accumulation, restored mitochondrial function, and decreased intracellular amyloid β-42 levels in ABCA7 LoF neurons. Also, the study generated a detailed transcriptomic atlas of ABCA7 LoF in the human brain, revealing cell type-specific gene expression changes and pathway perturbations. The therapeutic potential of CDP-choline in mitigating these effects highlights a possible intervention strategy. The comprehensive transcriptomic atlas derived from human patient/donor samples serves as a valuable resource for future studies exploring the role of lipid metabolism in AD pathology.
-Overall, however, it is unclear whether the results constitute a fundamental advance in our mechanistic understanding of human ABCA7 dysfunction beyond correlating it with a myriad of lipid and fatty acid homeostatic/metabolic pathways. Many of these correlations are confirmatory, having been reported for ABCA7 lof mouse / cellular models. Considering the readouts for the experiments performed are indirect, it is unclear whether the phenotypic observations are directly stemming from ABCA7 dysfunction. In the absence biochemical validation at the protein level, the results do little to provide specifics of ABCA7 functionality in framework of AD progression and the manuscript would be more suited for a specialized audience. The description of residue 1527 could also be clarified considering:
+
+\textcolor{blue}{We thank the reviewer for their comments, which we try to address point by point below.}
+
+Overall, however, it is unclear whether the results constitute a fundamental advance in our mechanistic understanding of human ABCA7 dysfunction beyond correlating it with a myriad of lipid and fatty acid homeostatic/metabolic pathways. Many of these correlations are confirmatory, having been reported for ABCA7 lof mouse / cellular models. 
+
+\textcolor{blue}{
+
+Considering the readouts for the experiments performed are indirect, it is unclear whether the phenotypic observations are directly stemming from ABCA7 dysfunction. 
+\textcolor{blue}{We respectfully disagree that the readouts from the experiments performed are indirect. Isogenically-matched cell lines are frequently used to dissect ....}
+
+In the absence biochemical validation at the protein level, the results do little to provide specifics of ABCA7 functionality in framework of AD progression and the manuscript would be more suited for a specialized audience. The description of residue 1527 could also be clarified considering:
 
 In this manuscript, A1527G is listed as a missense variant whereas the canonical sequence of human ABCA7 (uniprot ID Q8IZY2) is G1527. G1527A has been reported to be a benign or mildly protective variant. The equivalent residue in mouse ABCA7 is indeed an A, but the authors need to clarify if they believe there is a mistake in the annotation for the human protein sequence. Their MD analysis, which compares the effect of an A or G at this position would still be valid if one considers an A in this position is ‘protective.’
 
-ABCA7 was captured in multiple conformations by cryo-EM and its conformational transitions were shown to involve largely rigid body movements and significant contributions from bilayer lipids that are not considered here. The rationale for a G in this position, which is a flexible region between the ECD and TMD, leading to significant disruptions in the ability for of the transporter to adopt a closed conformation for lipid extrusion is tenuous considering it would allow for the same backbone torsion angles, with TMD closure dictated by binding of ATP. Additionally, the experimental structures and in vitro analysis by Le et al, EMBO J 2023 were done using transporters with the canonical G1527 matching Q8IZY2, showing that the protein produced displayed the expected conformational spectrum upon ATP binding.
+\textcolor{blue}{The reviewer correctly points out that the canonical human ABCA7 reference sequence (UniProt ID Q8IZY2) contains Gly1527, which is indeed the risk-associated variant. Because this allele is represented in the reference genome, the more common Ala1527 allele is sometimes described as protective. However, this is a semantic issue arising from the arbitrary choice of reference genome allele, rather than a biological one. We agree that our molecular dynamics analyses remain valid regardless of annotation, as they clearly demonstrate structural differences between the two variants. For clarity and intuitive interpretation, we prefer to describe the minor Gly1527 allele as conferring increased Alzheimer's disease risk relative to the more common Ala1527 allele. We have now clarified this point in the text on page~\pageref{quoteL-label}}
 
-\begin{enumerate}
-    \item \textcolor{blue}{Our simulations were performed in a lipid membrane, but we only considered a single domain in the simulations. We do not compare open vs closed conformations, but the local effect of G1527, which does not trigger these overall conformational effects mentioned by the reviewer}
-    \item \textcolor{blue}{Ramachandran plot of the residues A/G1527 over time to demonstrate that this reasoning is somewhat flawed. We are not saying ABCA7 G1527 cannot achieve the same conformation as ABCA7 A1527 (as indicated by CryoEM), but that ABCA7 G1527 likely explores multiple conformations, while A1527 stays in predominantly one conformation.}
-    \item \textcolor{blue}{Secondary structure calculations over time to demonstrate that G1527 reduce the alpha helix content with respect to A1527}
-    \item \textcolor{blue}{The cryoEM structure also indicate that the G1527 region is strongly flexible in the closed conformation.}
-    \item \textcolor{blue}{G1527 in 8EOP (holo closed) has lost the alpha helix structure which is present in the 8EE6 (apo open). This is clear if we overlap ABCA1 and ABCA4 onto ABCA7, where in ABCA1 and ABCA4 the alpha helix is still present in the holo-closed conformations.}
-\end{enumerate}
+\begin{quote}
+	\textcolor{blue}{"}\quoteL\textcolor{blue}{"}\\
+\end{quote}
+
+ABCA7 was captured in multiple conformations by cryo-EM and its conformational transitions were shown to involve largely rigid body movements and significant contributions from bilayer lipids that are not considered here. 
+
+\textcolor{blue}{We thank the reviewer for this important point. While our molecular dynamics simulations were indeed performed within a lipid bilayer environment, we used a localized domain rather than the full-length transmembrane region for our simulations. The reviewer correctly notes that global ABCA7 conformational transitions involve large-scale rigid-body rearrangements and depend significantly on bilayer lipids, as previously demonstrated in \cite{Le2023-on}. Our simulations, however, specifically examine the local structural effects introduced by the p.Ala1527Gly variant, rather than global domain rearrangements. We have now clarified this distinction and noted the lipid bilayer evironment in the results text on page~\pageref{quoteP-label}}
+
+\begin{quote}
+	\textcolor{blue}{"}\quoteP\textcolor{blue}{"}\\
+\end{quote}
+
+The rationale for a G in this position, which is a flexible region between the ECD and TMD, leading to significant disruptions in the ability for of the transporter to adopt a closed conformation for lipid extrusion is tenuous considering it would allow for the same backbone torsion angles, with TMD closure dictated by binding of ATP. 
+
+\textcolor{blue}{We thank the reviewer for raising this important point. Indeed, ATP binding at the nucleotide-binding domain drives ABCA7’s global transition into the closed state necessary for lipid transfer. Our simulations do not imply that the Gly1527 variant is incapable of adopting the closed conformation; rather, we identify substantial differences in local flexibility and secondary structure stability between the Gly1527 and Ala1527 variants specifically within this closed, ATP-bound state (both open ATP-unbound and closed ATP-bound structures were simulated). Additional molecular dynamics analyses—now detailed in supplementary materials—reveal that the enhanced local flexibility introduced by Gly1527 significantly affects the stability of nearby secondary structure elements within the closed conformation, potentially altering the efficiency of lipid extrusion.}
+
+\textcolor{blue}{Further supporting this interpretation, recent experimental data from Fang et al. (2025) \cite{Fang2025} show that the Ala1527 variant has increased ATPase activity and phospholipid transport relative to the Gly1527 variant (Figure 3D,E in \cite{Fang2025}). Thus, the risk-associated Gly1527 variant appears to reduce ATP hydrolysis and phospholipid translocation efficiency. Together with these experimental findings, our simulations provide structural insight into how local conformational differences at residue 1527 impact ABCA7’s lipid transport function.}
+
+\textcolor{blue}{We have now clarified these points and provide additional analyses to support the presence of local conformational differences specific to the closed conformation in the supplementary text (page~\pageref{quoteM-label}):}
+\begin{quote}
+	\textcolor{blue}{"}\quoteM\\\\
+    \quoteN\\\\
+    \quoteO\textcolor{blue}{"}
+\end{quote}
+
+Additionally, the experimental structures and in vitro analysis by Le et al, EMBO J 2023 were done using transporters with the canonical G1527 matching Q8IZY2, showing that the protein produced displayed the expected conformational spectrum upon ATP binding.
+
+\textcolor{blue}{The reviewer correctly notes that both Le et al. (EMBO J, 2023) and Fang et al. (2025) \cite{Fang2025} employed the canonical Gly1527 ABCA7 sequence, confirming that ABCA7 adopts the expected closed conformation upon ATP binding, consistent with related transporters ABCA1 and ABCA4. However, our analyses suggest that the Ala1527 substitution brings ABCA7 even closer in local structural similarity to ABCA1 and ABCA4. We have now conducted additional comparative analyses, included below, showing that ABCA1 and ABCA4, as well as the ABCA7 Ala1527 variant, maintain a similar $\alpha$-helical region in the closed conformation—a structural feature disrupted by the Gly1527 variant. We show these plots below.}
 
 (Minor): The experimental structures were determined by single particle Cryo-EM, not crystallography as the authors state on lines 266-267.
 
 \textcolor{blue}{We thank the reviewer for pointing out this oversight and have edited the text accordingly.}
+
+
+
+
+
+
+
+% First, we analyzed backbone dihedral angles (phi/psi; ϕ/ψ) for residues 1517–1537, focusing specifically on residue 1527. In the open conformation, residue Gly1527 consistently occupies the $\alpha$-helix region of the Ramachandran plot throughout the simulation. In contrast, Ala1527 shows two distinct populations within the $\alpha$-helix region (Figure~\ref{fig:md_simulations_2}A), suggesting subtle differences in the local conformational landscapes, yet overall preservation of the $\alpha$-helical structure. These observations align with our previous global MD simulations, indicating similar conformational behavior between the variants in the open state.
+
+% In the closed conformation, notable structural differences emerge: the Ala1527 variant populates two preferred conformations—one within the $\alpha$-helical region and another shifted toward the $\beta$-structure region—while Gly1527 explores a broader distribution of dihedral angles, indicative of greater structural flexibility (Figure~\ref{fig:md_simulations_2}A,B). This is consistent with our earlier global analyses, emphasizing that structural differences between variants become pronounced specifically in the closed conformation, with Gly1527 exhibiting greater conformational flexibility compared to Ala1527.
+
+% To complement the backbone angle analysis, we also performed a detailed assessment of secondary structure stability over the simulation time. In the open state, secondary structure content was comparable between the two variants, with similar $\alpha$-helical character (Figure~\ref{fig:md_simulations_2}C). However, upon transitioning to the closed state, both variants showed substantial loss of $\alpha$-helical content across residues 1517–1537. However, residues 1520–1525 retained partial $\alpha$-helical structure much more robustly in the Ala1527 variant compared to Gly1527 (Figure~\ref{fig:md_simulations_2}C).
+
+% Together, these data suggest that the mutation influences the structural stability and conformational transitions of the transporter, potentially affecting its ability to adopt the closed state necessary for lipid extrusion. These findings indicate that the flexibility imparted by glycine in this region may indeed play a role in modulating the transporter’s conformational equilibrium, beyond the direct influence of ATP binding.
+
+
+% The recent paper \cite{Fang2025} proposes that upon ATP binding, ABCA7 shifts to its closed conformation, adopting a conformation that allows phospholipid presentation to apolipoproteins. ATP is subsequently hydrolyzed to move back to the open conformation. 
+
+% Figure S1F shows that phosphatidylserine translocation by ABCA7 is decreased when the ATP catalytic domains are mutated, this protein has almost abolished ATPase actiivty, indicating that the ATP hydrolysis is needed in the final step of substrate translocation. 
+
+% They also find that ATPase activity stimulated by APOE3 and phosphatidylserine is significantly increased in p.Ala1527 vs Gly, as well as the relative PS transport is increased. 
+
+
+% We have included discussion of these additional analyses in the supplementary material of the revised manuscript.
+
+
+% \textcolor{blue}{We do not claim that the G1527 variant is not able to adopt the closed conformation in response to ATP binding. However, our analysis indicates profound differences in the local conformational landscape between the two variants within the closed conformation. To further examine local conformational fluctuations and the persistence of secondary structures beyond the global conformational changes presented previously, we have now conducted additional molecular dynamics (MD) simulations on both open and closed conformations of ABCA7 variants p.Ala1527 and p.Gly1527, which are now included in the supplementary text. The impact of this increased flexibility is indeed not on ATP binding or adoption of the closed conformation, but on changes to local secondary structure within the closed state (an ATP-dependent rearrangement of the transmembrane domain required for lipid extrusion).}
+
+% \textcolor{blue}{As correctly highlighted by the reviewer, ATP binding to the nucleotide-binding domain triggers ABCA7’s global conformational transition to a closed state, facilitating phospholipid transfer to apolipoproteins. Importantly, recent experimental findings by Fang et al. (2025) \cite{Fang2025} demonstrate that mutation of both ATPase catalytic sites—which abolishes ATP hydrolysis—results in decreased phospholipid translocation (Figure S1F in \cite{Fang2025}). This indicates that not only ATP binding but also ATP hydrolysis is crucial for lipid transport. Fang et al. also specifically examined the p.Gly1527Ala variant relative to the canonical Gly1527 reference and observed significantly increased ATPase activity (stimulated by APOE3 and phosphatidylserine) and enhanced phospholipid transport with Ala1527 (Figure 3D,E in \cite{Fang2025}). By inference, these findings imply that the risk-associated Gly1527 variant has reduced ATP hydrolysis and lipid translocation activity. Our molecular dynamics simulations, which reveal distinct differences in the local conformational landscape between Gly1527 and Ala1527 in the closed conformation, provide a structural explanation for these experimentally observed functional differences.}
+
+% \textcolor{blue}{Our simulations were performed in a lipid membrane, but we only considered a single domain in the simulations. We do not compare open vs closed conformations, but the local effect of G1527, which does not trigger these overall conformational effects mentioned by the reviewer}
+
+% \textcolor{blue}{Ramachandran plot of the residues A/G1527 over time to demonstrate that this reasoning is somewhat flawed. We are not saying ABCA7 G1527 cannot achieve the same conformation as ABCA7 A1527 (as indicated by CryoEM), but that ABCA7 G1527 likely explores multiple conformations, while A1527 stays in predominantly one conformation.}
+
+% \textcolor{blue}{Secondary structure calculations over time to demonstrate that G1527 reduce the alpha helix content with respect to A1527}
+
+% \textcolor{blue}{The cryoEM structure also indicate that the G1527 region is strongly flexible in the closed conformation.}
+
+% \textcolor{blue}{G1527 in 8EOP (holo closed) has lost the alpha helix structure which is present in the 8EE6 (apo open). This is clear if we overlap ABCA1 and ABCA4 onto ABCA7, where in ABCA1 and ABCA4 the alpha helix is still present in the holo-closed conformations.}

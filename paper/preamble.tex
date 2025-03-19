@@ -1,9 +1,11 @@
 % Options for packages loaded elsewhere
+\usepackage{xcolor}
+% In your preamble, open an output file:
+
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 
 % Basic packages
-\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
 
 % Remove section numbering
@@ -72,12 +74,12 @@
 \def\fps@figure{htbp}
 
 % Load color and highlighting packages for LuaTeX vs. others
-\ifLuaTeX
-  \usepackage{luacolor}
-  \usepackage[soul]{lua-ul}
-\else
-  \usepackage{soul}
-\fi
+% \ifLuaTeX
+%   \usepackage{luacolor}
+%   \usepackage[soul]{lua-ul}
+% \else
+%   \usepackage{soul}
+% \fi
 
 % Prevent overfull lines
 \setlength{\emergencystretch}{3em}

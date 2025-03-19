@@ -1,12 +1,21 @@
-\subsubsection*{Referee #4 (Remarks to the Author)}
+\subsubsection*{Referee \#4 (Remarks to the Author)}
 
 The study by Maydell et al investigates the impact of ABCA7 LoF mutations on gene expression in patient brains with follow-up functional in vitro experiments in human neurons. The authors first performed snRNA-seq analysis to show that ABCA7 LoF cells in the brain have perturbed lipid metabolism and mitochondrial function, which might contribute to impaired neurotransmission. The authors showed that principal neurons in the affected cortex have the largest impairments at transcriptomic level, which they also cross-validated by multiple other published high-throughput datasets. The authors then moved to culture experiments to reveal the molecular mechanisms of lipid metabolism and mitochondrial dysfunction and how these processes can lead to AD pathology. Overall, this manuscript is one of the rare examples when single-cell transcriptomics data is followed by multiple complementary analysis, including functional experiments. Thus, the authors did not stop at hypothesis generating by single-cell analysis and performed extensive functional validation of their hypotheses. The level of the findings and novelty are of high importance and the manuscript can be accepted in Nature upon addressing several major and minor issues.
 
+\textcolor{blue}{We thank the reviewer for their positive assessment and constructive suggestions!}
+
 \textbf{Major issues:}
 
-Although the authors tried to address batch-related effects in their snRNA-seq data, the analysis is rather superficial. Below are several batch-associated issues that should be addressed. As we understand, based on Methods section, there are 3 batches, not 2: 2 batches in batch #1 (this study), 1 batch in batch #2 (2019 study). Thus, the batch effects should be re-analyzed and shown for 3 batches, not 2.
+Although the authors tried to address batch-related effects in their snRNA-seq data, the analysis is rather superficial. Below are several batch-associated issues that should be addressed. As we understand, based on Methods section, there are 3 batches, not 2: 2 batches in batch \#1 (this study), 1 batch in batch \#2 (2019 study). Thus, the batch effects should be re-analyzed and shown for 3 batches, not 2.
 
-\textcolor{red}{Do this}
+\textcolor{blue}{We apologize for the confusion caused by our previous wording, which inadvertently implied that Batch \#1 consisted of two separate batches. In reality, Batch \#1 is a single, consistent batch where all samples underwent identical processing and library preparation. The samples were distributed across two lanes and sequenced twice on separate flow cells solely to enhance sequencing depth and overall data quality. We have now revised the methods section to clearly reflect this [page~\pageref{quoteJ-label}]}
+
+\begin{quote}
+	\textcolor{blue}{"\quoteJ\\ \\
+	\quoteK\\ \\
+	\quoteL"}
+\end{quote}
+
 
 To understand how many samples are in this study and how many are from 2019 study, the reader needs to go through Extended Table 2. The authors should make it easier to find and include in Fig 1C which samples are new which are from 2019 study.
 
@@ -18,7 +27,10 @@ To understand how many samples are in this study and how many are from 2019 stud
 
 Extended Table 2 is rather short and better description of metadata is necessary, which will help for future re-use of the data by other groups. The authors should include multiple technical parameters, such as version of 10x kit, type of Illumina kit used for sequencing, date/batch of sequencing (we believe that multiple Nextseq kits were used to sequence for 2019 study), total nucleus number (loaded/recovered), etc.
 
-\textcolor{red}{Do this}
+\textcolor{blue}{We now provide an additional table (\ref{data:cellranger_metrics}) summarizing key technical parameters extracted from the Cell Ranger analysis, including: Sample ID, Chemistry, Include Introns, Transcriptome, Pipeline Version, Estimated Number of Cells, Mean Reads per Cell, Median Genes per Cell, Number of Reads, Valid Barcodes, Sequencing Saturation, Q30 Bases in Barcode, Q30 Bases in RNA Read, Q30 Bases in UMI, Reads Mapped to Genome, Reads Mapped Confidently to Genome, Reads Mapped Confidently to Intergenic Regions, Reads Mapped Confidently to Intronic Regions, Reads Mapped Confidently to Exonic Regions, Reads Mapped Confidently to Transcriptome, Reads Mapped Antisense to Gene, Fraction Reads in Cells, Total Genes Detected, and Median UMI Counts per Cell, and study/sequencing batch.}
+
+\textcolor{blue}{We confirm that in the Nature 2019 study \cite{Mathys2019-dl}, sequencing was exclusively performed using NextSeq 500/550 High Output v2 kits (150 cycles). We have updated the Methods section to clearly specify the sequencing approach for each batch, including the 10x chemistry version and Illumina sequencing platforms and kits. [page~\pageref{quoteJ-label}] (see excerpt above).}
+
 
 For DE analysis, the authors should perform a PCA or similar analysis for overall transcriptomic similarity between the samples and color by sequencing batch, sex, age and few other major covariates.
 
@@ -36,45 +48,44 @@ The authors showed overall effects on principal and GABAergic neurons. However, 
 
 Analysis of cell type abundance changes is also missing – there multiple computational tools available.
 
-\textcolor{red}{Do this}
+\textcolor{blue}{We appreciate the reviewers suggesting this additional analysis. However, we believe that investigating changes in cell type abundance is beyond the scope of this manuscript and would be more appropriately addressed in future studies.}
 
 The protocol for iNs is rather short and neurons are still immature. Although the changes in electrophysiology in Fig. S8 are robust, the authors should confirm whether these changes are due to maturational delay of ABCA7 LoF neurons or are stable and also persist in more mature neurons.
 
-\textcolor{blue}{We thank the reviewer for this helpful suggestion. We have now generated neurospheroids from both p.Glu50fs*3 and p.Tyr622* iNs and show increase spontaneous action potential frequency by ephys, as well as increased Calcium events by imaging, confirming that this phenotype is stable and not due to maturational delay. We now show these data in Extended Data Figure~\ref{fig:main_neurospheroids} and discuss them in the main text. We also confirm by Calcium imaging that this phenotype is robust.}
+\textcolor{blue}{We thank the reviewer for this helpful suggestion. To address this point, we generated cortical organoids from both p.Tyr622 iNs and measured spontaneous action potential frequency using electrophysiology, as well as spontaneous calcium events using GCaMP6s calcium imaging. These experiments confirmed increased hyperexcitatbility of ABCA7 LoF neurons, demonstrating that this phenotype is robust, stable, and not due to delayed neuronal maturation. These new data are presented in Extended Data Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}C and discussed in the main text.}
 
 There are several issues that should be addressed to improve data and presentation in Fig. 5 experiments:
 \begin{enumerate}
 	\item NeuN/GFP signal in Fig5A is higher upon CDP-choline treatment – is it a consistent phenomenon or just happened for this particular image? If it is consistent, it can be that CDP-choline treatment for 2 weeks accelerates neuronal maturation and this should be measured.
 
-	\textcolor{red}{Check this with the RNAseq?}
-	\textcolor{red}{Look at NeuN signal with and without Choline treatment}
+	\textcolor{blue}{We thank the reviewer for highlighting this observation. The apparent increase in NeuN/GFP signal in Figure 5A is specific to the selected image. Quantitative analysis across multiple replicates shows no significant difference in NeuN/GFP intensity between CDP-choline and vehicle-treated cells (see data below).}
 
 	\item Quantifications in Fig. 5C show very high variability for vehicle treated cells. This experiment must be re-done to convince the reader that the mitochondrial membrane potential is indeed decreased upon CDP-choline treatment.
 	
-	\textcolor{blue}{We have redone this now with an orthogonal method; TMRM staining}.
+	\textcolor{blue}{We thank the reviewer for this helpful suggestion. We have now repeated the mitochondrial membrane potential measurements using tetramethylrhodamine methyl ester (TMRM), a fluorescent dye that accumulates within mitochondria proportionally to their membrane potential. These new TMRM experiments in p.Tyr622* iNs showed reduced variability, confirmed significantly increased mitochondrial membrane potential in ABCA7 LoF neurons compared to WT, and demonstrated rescue upon CDP-choline treatment. We have updated Figure~\ref{fig:main_mitochondrial}H and Figure~\ref{fig:main_choline}I to include these new data, while retaining the original MitoHealth results in Figure~\ref{fig:main_mitochondrial}H and Figure~\ref{fig:choline_treatment}K for completeness.}
 
 	\item The experiment in Fig. 5D is important to link changes in lipid metabolism and mitochondrial function to amyloid production. However, the change in Ab42 is rather minor. One of the reasons can be that vehicle-treated cells have too low levels of Ab42. Longer culture might help to increase Ab42 accumulation. In fact, same holds true for Fig. S9 experiments and longer culture might help the authors to have stronger support for Ab42-associated accumulation in ABCA7 LoF lines.
 	
-	\textcolor{red}{We now show ELISA in iNs and neurospheroids}
+	\textcolor{blue}{We have validated increases in soluble Aβ40 and Aβ42 by performing ELISA on media collected from ABCA7 LoF (p.Tyr622* and p.Glu50fs3) iNs compared to WT controls, shown in Figure~\ref{fig:differentiating_iPSC_neurons}H. Due to relatively low secreted Aβ levels at this early developmental stage, we further differentiated these lines into dorsal cortical organoids and repeated ELISA assays at a mature timepoint (six months). These analyses similarly revealed elevated soluble Aβ40 and Aβ42 levels in media from both ABCA7 LoF cortical organoid models (p.Tyr622 and p.Glu50fs*3) compared to WT, as presented in Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}B. Immunostaining data for Aβ42 have been removed to avoid confusion.}
 
 	\item In general, GFP signal is overexposed and better representative images with moderate exposition should be provided.
 	
-	\textcolor{red}{Reduce GFP saturation for all images} 
+	\textcolor{blue}{We have reduced the GFP saturation for all images, which are now presented in Figure~\ref{fig:main_mitochondrial}H and Extended Data Figure~\ref{fig:choline_treatment}K.} 
 
 	\item It is unclear what was used as “n” in different Fig. 5 plots, is it always 1 well? N is quite variable in different quantification panels in Fig. 5 and some clarifications should be provided.
 	
-	\textcolor{red}{Clarify this}
+	\textcolor{blue}{We thank the reviewer for pointing this out. We have clarified what each "n" represents in all figure panels, including the updated choline rescue figure (Figure~\ref{fig:main_choline}, previously Figure 5), and in all associated quantification plots.}
 
 \end{enumerate}
 
 The title is somewhat misguiding the readers – it is not single-cell atlas but functional experiments that reveal impaired neuronal respiration via choline-dependent lipid imbalances. Single-cell data helped the authors to generate the hypothesis, which they confirmed functionally. Thus, the title should be amended. Furthermore, the major strength of this manuscript is not in providing interactive single-cell atlas (which is already great), but rather in discovery of novel and potentially clinically relevant mechanisms of pathology in AD.
 
-\textcolor{red}{Update title}
+\textcolor{blue}{We thank the reviewer for this helpful suggestion and have now updated the title to reflect the focus of the manuscript.}
 
 \textbf{Minor issues:}
 Please explain why BA10 region was selected.
 
-\textcolor{red}{Explain}
+\textcolor{blue}{We selected the BA10 region to enable direct comparison and integration with data from previous studies. Additionally, BA10 is functionally relevant to Alzheimer's disease due to its established roles in executive function and memory recall.}
 
 Fig S1H – why astrocytic marker expression overlap with glutamatergic?
 	
@@ -82,11 +93,11 @@ Fig S1H – why astrocytic marker expression overlap with glutamatergic?
 
 Fig 1F has too many gene names, please either remove some and focus on most important or provide additional larger panels in extended data.
 	
-\textcolor{blue}{We have now done so and provided a larger panel in Extended Data}
+\textcolor{blue}{We thank the reviewer for this suggestion. We have improved the visualization by reducing the number of labeled genes in Figure~\ref{fig:main_atlas}C, clearly highlighting fewer top genes with enlarged labels. Additionally, an expanded view with more comprehensive gene annotations is provided in Figure~\ref{fig:snRNAseq_gene_scores}A.}
 
 Data S6 does not have information on “34 pathways with evidence for transcriptional perturbation at p<0.05 in excitatory neurons”, at least we could not find it.
 
-\textcolor{red}{Fix this}
+\textcolor{blue}{We have now fixed this and these data are included in Extended Data Table~\ref{data:pathway_enrichments}.}
 
 For “trend related to relatively increased triglyceride and decreased phosphatidylcholine abundance in the postmortem human PFC of ABCA7 LoF carriers (Fig. S9C )”This is not 9C, but 10C. In addition, p values are rather high; this data cannot be used to support the hypothesis and comments for trends should be removed. Otherwise, the experiment can be expanded to more samples.
 
@@ -94,12 +105,12 @@ For “trend related to relatively increased triglyceride and decreased phosphat
 
 The authors use MitoHealth dye as a proxy for mitochondrial membrane potential. However, when presenting immunofluorescent images, they label red fluorescence signal as delta psi m. This is not correct – the authors measured MitoHealth dye signal intensity and while in the text they can refer to MitoHealth dye as a proxy for mitochondrial membrane potential the labeling on the figure panels in Fig. 4 and 5 should be corrected.
 
-\textcolor{blue}{We have now corrected this and also supplemented with another measure of mitochondrial membrane potential}
+\textcolor{blue}{We thank the reviewer for pointing this out and have updated the text and figure panels to consistently refer to the MitoHealth dye explicitly}.
 
 Fig S11B, S12D are difficult to read, since color code is not provided. In addition, even with color code, there are too many lines – it will help for the reader to color by condition to visualize the variability within/between conditions.
 
-\textcolor{red}{clarify this}
+\textcolor{blue}{We apologize for the confusion. These plots were originally intended to display individual Seahorse assay traces without emphasizing experimental groups. We have now clarified this by adding descriptive titles to Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}B and Figure~\ref{fig:choline_treatment}I and removed the confusing color coding. To clearly visualize variability within and between conditions, traces grouped and colored by condition are provided in the preceding panels, Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}A and Figure~\ref{fig:choline_treatment}H.}
 
 Panels in Fig 4, Fig 5 and S11, S12: p values >10 to -4 should be presented in a regular form, without multiplication by 10.
 
-\textcolor{red}{this is scientific notatio?}
+\textcolor{blue}{We appreciate this suggestion from the reviewer. However, for consistency and readability throughout the manuscript, we have chosen to maintain our current notation style for presenting p-values.}

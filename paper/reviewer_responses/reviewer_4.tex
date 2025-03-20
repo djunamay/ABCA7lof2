@@ -31,24 +31,36 @@ Extended Table 2 is rather short and better description of metadata is necessary
 
 \textcolor{blue}{We confirm that in the Nature 2019 study \cite{Mathys2019-dl}, sequencing was exclusively performed using NextSeq 500/550 High Output v2 kits (150 cycles). We have updated the Methods section to clearly specify the sequencing approach for each batch, including the 10x chemistry version and Illumina sequencing platforms and kits. [page~\pageref{quoteJ-label}] (see excerpt above).}
 
-
 For DE analysis, the authors should perform a PCA or similar analysis for overall transcriptomic similarity between the samples and color by sequencing batch, sex, age and few other major covariates.
 
-\textcolor{blue}{We have now performed this both on the cell-level by adding additional UMAP plots colored by batch, sex, age, and individual ID (Figure~\ref{fig:snRNA_batch_quality}C).}
-
-\textcolor{red}{What is the point in this; the samples will separate by sequencing batch, that's why we correct for batch effects in the model. Should we show the correlation plots here instead?}
+\textcolor{blue}{We thank the reviewer for this suggestion. We have now performed and included additional dimensionality-reduction analyses (UMAP) to visualize overall transcriptomic similarity, coloring cells by sequencing batch, sex, age, and individual ID (Figure~\ref{fig:snRNA_batch_quality}C).}
 
 The difference between v2 and v3.1 10x Genomics chemistry should be extensively compared – number of cells per sample, number of genes per cell, number of UMIs. In addition, was it only v3.1 or also v3? v3.1 is different from v3 and these should be grouped separately for batch effect analysis. Finally, please compare v2 vs v3 data for its impact on cell composition.
 
-\textcolor{blue}{We appreciate the reviewer's suggestion and have now included a more comprehensive analysis of potential batch effects and differences in Figure~\ref{fig:snRNA_batch_quality} and a discussion thereof in the supplementary text. We refer to both in the main text and provide exerpts below. We can confirm that only V3 chemistry was used for samples in Batch 1 and only V2 chemistry was used for samples in Batch 2.}
+\textcolor{blue}{We can confirm that only V3 chemistry was used for samples in Batch 1 and only V2 chemistry was used for samples in Batch 2.}
+
+\textcolor{blue}{Below, we now provide the requested comparisons of the v2 versus v3 chemistry datasets. These analyses demonstrate minor differences in cell type composition (Panel A) and more pronounced differences in the number of high-quality cells recovered (Panel B). These findings align with the documented differences between chemistries, with the v2 chemistry typically yielding fewer cells (\href{https://kb.10xgenomics.com/hc/en-us/articles/360026501692-Do-we-see-a-difference-in-the-expression-profile-of-3-Single-Cell-v3-chemistry-compared-to-v2-chemistry}{see \underline{this analysis} by 10x Genomics}).}
+
+\begin{figure}[H]
+	\begin{subfigure}[t]{0.33\textwidth}
+		\caption{Sequencing metrics by chemistry}
+		\includegraphics[width=\textwidth]{./extended_plots/composition_comparison.png}        
+	\end{subfigure} 
+	\begin{subfigure}[t]{0.65\textwidth}
+		\caption{Cell type composition by chemistry}
+		\includegraphics[width=\textwidth]{./extended_plots/number_of_cells_per_sample.png}        
+	\end{subfigure} 
+\end{figure}
+
+\textcolor{blue}{To ensure these chemistry-related batch effects do not influence our conclusions, our analyses explicitly control for batch as a covariate. Additionally, we performed stratified analyses excluding the v2 chemistry batch and confirmed that differentially expressed gene scores remain robust and consistent with the full dataset (Figure~\ref{fig:snRNA_batch_quality}D).}
 
 The authors showed overall effects on principal and GABAergic neurons. However, it is a pity to miss any potential neuron type-specific effects since the data is there. If the data does not allow to subdivide and analyze fine subtypes of neurons, at least DE analysis should be performed for major families of principal (CUX2, RORB, FEZF2, THEMIS) and GABAergic (SST, PVALB, VIP, ID2) neurons. In particular, potential association of pathways in Fig 2C,D with specific types of principal neurons is interesting.
 
-\textcolor{red}{Do we have to do these analyses? They are expressing wishes here, not }
+\textcolor{blue}{We thank the reviewer for this insightful suggestion. While we agree that examining neuron type-specific effects is interesting, we believe this detailed analysis of principal and GABAergic neuron subtypes is beyond the primary scope of the current manuscript. However, we have made the data fully available to enable future studies exploring these finer-grained subtype-specific differences.}
 
 Analysis of cell type abundance changes is also missing – there multiple computational tools available.
 
-\textcolor{blue}{We appreciate the reviewers suggesting this additional analysis. However, we believe that investigating changes in cell type abundance is beyond the scope of this manuscript and would be more appropriately addressed in future studies.}
+\textcolor{blue}{We appreciate the reviewer’s suggestion regarding cell type abundance changes. Although valuable, we consider analyses of cell type proportions outside the main scope of our current study, and better suited for dedicated follow-up work.}
 
 The protocol for iNs is rather short and neurons are still immature. Although the changes in electrophysiology in Fig. S8 are robust, the authors should confirm whether these changes are due to maturational delay of ABCA7 LoF neurons or are stable and also persist in more mature neurons.
 
@@ -89,7 +101,7 @@ Please explain why BA10 region was selected.
 
 Fig S1H – why astrocytic marker expression overlap with glutamatergic?
 	
-\textcolor{red}{Explain}
+\textcolor{blue}{We appreciate the reviewer noting this overlap. Upon careful inspection, we found that the overlap primarily results from the gene \textit{SLC1A2}, which is highly expressed in both astrocytes and neurons. This gene appears in both the Astrocytic and Glutamatergic annotation gene sets from PanglaoDB. Because the Glutamatergic set contains relatively few genes (10 genes) compared to the Astrocytic set (63 genes), shared high expression of \textit{SLC1A2} significantly increases the perceived overlap.}
 
 Fig 1F has too many gene names, please either remove some and focus on most important or provide additional larger panels in extended data.
 	

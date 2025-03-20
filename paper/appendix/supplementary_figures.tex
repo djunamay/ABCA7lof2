@@ -1,5 +1,17 @@
-\renewcommand{\thefigure}{S\arabic{figure}}
-\setcounter{figure}{0}
+% \renewcommand{\thefigure}{S\arabic{figure}}
+% \setcounter{figure}{0}
+
+\newif\ifdocx
+% Uncomment the following line when converting to DOCX:
+%\docxtrue
+
+\ifdocx
+  % For DOCX: Use standard figure numbering (or any DOCX-friendly format)
+\else
+  % For PDF: Redefine figure numbering for supplemental figures
+  \renewcommand{\thefigure}{S\arabic{figure}}
+  \setcounter{figure}{0}
+\fi
 
 \clearpage
 
@@ -26,6 +38,8 @@
 \clearpage
 % MD simulations
 \input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/md_simulations.tex}
+\clearpage
+\input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/md_simulations_2.tex}
 \clearpage
 % Differentiating iPSC neurons
 \input{/Users/djuna/Documents/ABCA7lof2/paper/appendix/extended_figures/differentiating_iPSC_neurons.tex}

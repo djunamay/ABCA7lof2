@@ -3,50 +3,43 @@ The manuscript by Maydell et al to sheds light on how ABCA7 loss of functon(lof)
 
 \textcolor{blue}{We thank the reviewer for their comments, which we try to address point by point below.}
 
-Overall, however, it is unclear whether the results constitute a fundamental advance in our mechanistic understanding of human ABCA7 dysfunction beyond correlating it with a myriad of lipid and fatty acid homeostatic/metabolic pathways. Many of these correlations are confirmatory, having been reported for ABCA7 lof mouse / cellular models. 
+Overall, however, it is unclear whether the results constitute a fundamental advance in our mechanistic understanding of human ABCA7 dysfunction beyond correlating it with a myriad of lipid and fatty acid homeostatic/metabolic pathways. Many of these correlations are confirmatory, having been reported for ABCA7 lof mouse / cellular models. Considering the readouts for the experiments performed are indirect, it is unclear whether the phenotypic observations are directly stemming from ABCA7 dysfunction. In the absence biochemical validation at the protein level, the results do little to provide specifics of ABCA7 functionality in framework of AD progression and the manuscript would be more suited for a specialized audience. The description of residue 1527 could also be clarified considering:
 
-\textcolor{blue}{
-
-Considering the readouts for the experiments performed are indirect, it is unclear whether the phenotypic observations are directly stemming from ABCA7 dysfunction. 
-\textcolor{blue}{We respectfully disagree that the readouts from the experiments performed are indirect. Isogenically-matched cell lines are frequently used to dissect ....}
-
-In the absence biochemical validation at the protein level, the results do little to provide specifics of ABCA7 functionality in framework of AD progression and the manuscript would be more suited for a specialized audience. The description of residue 1527 could also be clarified considering:
-
-In this manuscript, A1527G is listed as a missense variant whereas the canonical sequence of human ABCA7 (uniprot ID Q8IZY2) is G1527. G1527A has been reported to be a benign or mildly protective variant. The equivalent residue in mouse ABCA7 is indeed an A, but the authors need to clarify if they believe there is a mistake in the annotation for the human protein sequence. Their MD analysis, which compares the effect of an A or G at this position would still be valid if one considers an A in this position is ‘protective.’
-
-\textcolor{blue}{The reviewer correctly points out that the canonical human ABCA7 reference sequence (UniProt ID Q8IZY2) contains Gly1527, which is indeed the risk-associated variant. Because this allele is represented in the reference genome, the more common Ala1527 allele is sometimes described as protective. However, this is a semantic issue arising from the arbitrary choice of reference genome allele, rather than a biological one. We agree that our molecular dynamics analyses remain valid regardless of annotation, as they clearly demonstrate structural differences between the two variants. For clarity and intuitive interpretation, we prefer to describe the minor Gly1527 allele as conferring increased Alzheimer's disease risk relative to the more common Ala1527 allele. We have now clarified this point in the text on page~\pageref{quoteL-label}}
-
+In this manuscript, A1527G is listed as a missense variant whereas the canonical sequence of human ABCA7 (uniprot ID Q8IZY2) is G1527. G1527A has been reported to be a benign or mildly protective variant. The equivalent residue in mouse ABCA7 is indeed an A, but the authors need to clarify if they believe there is a mistake in the annotation for the human protein sequence. Their MD analysis, which compares the effect of an A or G at this position would still be valid if one considers an A in this position is ‘protective.’\\
+\textcolor{blue}{The reviewer correctly points out that the canonical human ABCA7 reference sequence (UniProt ID Q8IZY2) contains Gly1527, which is indeed the risk-associated variant. Because the reference genome in this case lists the minor allele (coding for Gly), the more common allele (coding for Ala) is sometimes described as protective. However, this is a semantic issue rather than a biological one. We now clarify this in the text [page~\pageref{quoteL-label}]:}
 \begin{quote}
 	\textcolor{blue}{"}\quoteL\textcolor{blue}{"}\\
 \end{quote}
 
-ABCA7 was captured in multiple conformations by cryo-EM and its conformational transitions were shown to involve largely rigid body movements and significant contributions from bilayer lipids that are not considered here. 
-
-\textcolor{blue}{We thank the reviewer for this important point. While our molecular dynamics simulations were indeed performed within a lipid bilayer environment, we used a localized domain rather than the full-length transmembrane region for our simulations. The reviewer correctly notes that global ABCA7 conformational transitions involve large-scale rigid-body rearrangements and depend significantly on bilayer lipids, as previously demonstrated in \cite{Le2023-on}. Our simulations, however, specifically examine the local structural effects introduced by the p.Ala1527Gly variant, rather than global domain rearrangements. We have now clarified this distinction and noted the lipid bilayer evironment in the results text on page~\pageref{quoteP-label}}
-
+ABCA7 was captured in multiple conformations by cryo-EM and its conformational transitions were shown to involve largely rigid body movements and significant contributions from bilayer lipids that are not considered here.\\
+\textcolor{blue}{We thank the reviewer for this important point. Global ABCA7 conformational transitions indeed involve large-scale rigid-body rearrangements and depend significantly on bilayer lipids, as previously demonstrated in \cite{Le2023-on}. Our molecular dynamics simulations were performed within a lipid bilayer environment, but we focused specifically on the local structural effects introduced by the p.Ala1527Gly variant, rather than global domain rearrangements, and observed clear local structural differences between Gly1527 and Ala1527 specifically in the closed-holo conformation. We have now clarified the targeted scope of our simulations on page~\pageref{quoteP-label}:}
 \begin{quote}
 	\textcolor{blue}{"}\quoteP\textcolor{blue}{"}\\
 \end{quote}
 
-The rationale for a G in this position, which is a flexible region between the ECD and TMD, leading to significant disruptions in the ability for of the transporter to adopt a closed conformation for lipid extrusion is tenuous considering it would allow for the same backbone torsion angles, with TMD closure dictated by binding of ATP. 
-
-\textcolor{blue}{We thank the reviewer for raising this important point. Indeed, ATP binding at the nucleotide-binding domain drives ABCA7’s global transition into the closed state necessary for lipid transfer. Our simulations do not imply that the Gly1527 variant is incapable of adopting the closed conformation; rather, we identify substantial differences in local flexibility and secondary structure stability between the Gly1527 and Ala1527 variants specifically within this closed, ATP-bound state (both open ATP-unbound and closed ATP-bound structures were simulated). Additional molecular dynamics analyses—now detailed in supplementary materials—reveal that the enhanced local flexibility introduced by Gly1527 significantly affects the stability of nearby secondary structure elements within the closed conformation, potentially altering the efficiency of lipid extrusion.}
+The rationale for a G in this position, which is a flexible region between the ECD and TMD, leading to significant disruptions in the ability for of the transporter to adopt a closed conformation for lipid extrusion is tenuous considering it would allow for the same backbone torsion angles, with TMD closure dictated by binding of ATP.\\
+\textcolor{blue}{We thank the reviewer for raising this important point. Indeed, ATP binding at the nucleotide-binding domain drives ABCA7’s global transition into the closed state necessary for lipid transfer. Our simulations do not imply that the Gly1527 variant is incapable of adopting the closed conformation; rather, we identify substantial differences in local flexibility and secondary structure stability between the Gly1527 and Ala1527 variants specifically within this closed, ATP-bound state (both open ATP-unbound and closed ATP-bound structures were simulated). Additional molecular dynamics analyses—now detailed in supplementary materials—reveal that the enhanced local flexibility introduced by Gly1527 significantly affects the stability of nearby secondary structure elements within the closed conformation, potentially altering the efficiency of lipid extrusion. We have now clarified this in the supplementary text [page~\pageref{quoteM-label}]:}
 
 \textcolor{blue}{Further supporting this interpretation, recent experimental data from Fang et al. (2025) \cite{Fang2025} show that the Ala1527 variant has increased ATPase activity and phospholipid transport relative to the Gly1527 variant (Figure 3D,E in \cite{Fang2025}). Thus, the risk-associated Gly1527 variant appears to reduce ATP hydrolysis and phospholipid translocation efficiency. Together with these experimental findings, our simulations provide structural insight into how local conformational differences at residue 1527 impact ABCA7’s lipid transport function.}
 
-\textcolor{blue}{We have now clarified these points and provide additional analyses to support the presence of local conformational differences specific to the closed conformation in the supplementary text (page~\pageref{quoteM-label}):}
+\textcolor{blue}{We have now clarified these points in the supplementary text (page~\pageref{quoteM-label}), emphasizing the distinction between global conformational transitions (ATP-dependent) and local structural differences associated with residue 1527:}
 \begin{quote}
 	\textcolor{blue}{"}\quoteM\\\\
     \quoteN\\\\
     \quoteO\textcolor{blue}{"}
 \end{quote}
 
-Additionally, the experimental structures and in vitro analysis by Le et al, EMBO J 2023 were done using transporters with the canonical G1527 matching Q8IZY2, showing that the protein produced displayed the expected conformational spectrum upon ATP binding.
+Additionally, the experimental structures and in vitro analysis by Le et al, EMBO J 2023 were done using transporters with the canonical G1527 matching Q8IZY2, showing that the protein produced displayed the expected conformational spectrum upon ATP binding.\\
+\textcolor{blue}{Both Le et al.\cite{Le2023-on} and Fang et al.\cite{Fang2025} indeed  employed the canonical Gly1527 ABCA7 sequence, confirming that ABCA7 adopts the expected closed conformation upon ATP binding, consistent with related transporters ABCA1 and ABCA4. However, our analyses suggest that the Ala1527 substitution brings ABCA7 even closer in local structural similarity to ABCA1 and ABCA4. We have now conducted additional comparative analyses, showing that ABCA1, ABCA4, and the ABCA7 Ala1527 variant all maintain a similar $\alpha$-helical region in the closed conformation—a structural feature disrupted in ABCA7 by the Gly1527 variant (Panel A).}
 
-\textcolor{blue}{The reviewer correctly notes that both Le et al. (EMBO J, 2023) and Fang et al. (2025) \cite{Fang2025} employed the canonical Gly1527 ABCA7 sequence, confirming that ABCA7 adopts the expected closed conformation upon ATP binding, consistent with related transporters ABCA1 and ABCA4. However, our analyses suggest that the Ala1527 substitution brings ABCA7 even closer in local structural similarity to ABCA1 and ABCA4. We have now conducted additional comparative analyses, included below, showing that ABCA1 and ABCA4, as well as the ABCA7 Ala1527 variant, maintain a similar $\alpha$-helical region in the closed conformation—a structural feature disrupted by the Gly1527 variant. We show these plots below.}
+\begin{figure}[H]
+	\begin{subfigure}[t]{0.33\textwidth}
+		\caption{'xx'}
+		\includegraphics[width=\textwidth]{./extended_plots/x.png}        
+	\end{subfigure} 
+\end{figure}
 
-(Minor): The experimental structures were determined by single particle Cryo-EM, not crystallography as the authors state on lines 266-267.
-
+(Minor): The experimental structures were determined by single particle Cryo-EM, not crystallography as the authors state on lines 266-267.\\
 \textcolor{blue}{We thank the reviewer for pointing out this oversight and have edited the text accordingly.}
 
 

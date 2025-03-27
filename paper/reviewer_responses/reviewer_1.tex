@@ -6,7 +6,20 @@ While the study provides novel evidence of the important roles that phosphatidyl
 
 Fig. 1F,\\
 \dots what are the genes overlapping in the different cell types?\\ 
-\textcolor{blue}{ We have now added a supplementary heat map showing overlapping genes across cell types (Figure~\ref{fig:snRNAseq_gene_scores_2}A). For visualization purposes, we included only genes significantly perturbed (p<0.05) in ABCA7 loss-of-function (LoF) brains in at least two cell types. Figure~\ref{fig:snRNAseq_gene_scores_2}B provides functional annotations for these genes, grouping them into key categories.}
+\textcolor{blue}{ We have now added a supplementary heat map showing overlapping genes across cell types (Figure~\ref{fig:snRNAseq_gene_scores_2}A). For visualization purposes, we included only genes significantly perturbed (p<0.05) in ABCA7 loss-of-function (LoF) brains in at least two cell types. Figure~\ref{fig:snRNAseq_gene_scores_2}B provides functional annotations for these genes, grouping them into key categories. We also provide these plots in subpanels A and B directly below.}
+
+\begin{figure}[H] 
+    \begin{subfigure}[t]{0.2\textwidth}
+        \caption{DEGs across cell types}
+        \includegraphics[width=\textwidth]{./extended_plots/heatmap_overlap_with_gene_summaries.png}        
+    \end{subfigure}   
+	\hspace{2cm}
+    \begin{subfigure}[t]{0.8\textwidth}
+        \caption{Functional annotations of genes in the same order as in the heatmap in A.}
+        \vspace{.5cm}
+        \includegraphics[width=\textwidth]{./extended_plots/overlap_with_gene_summaries_legend.png}        
+    \end{subfigure}   
+\end{figure}
 
 \dots are these changes relevant for the risk of ABCA7 LOF on AD?\\ 
 \textcolor{blue}{These categories highlight pathways consistently identified in our study, such as lipid metabolism, mitochondrial function, and DNA damage response, suggesting these pathways may contribute to Alzheimer’s disease risk linked to ABCA7 LoF in other cell types, in addition to neurons.}
@@ -24,8 +37,18 @@ Fig. 1G, it is not clear how the clusters were defined and genes under each path
 Fig. 3E-F, the data of the 3 iNs should be provided.\\
 \textcolor{blue}{We have now included the data for all three lines in Figure~\ref{fig:iN_phenotypes}A,B}.
 
-Fig. S9. The increase of Aβ42 is not evident, Amyloid accumulation should be confirmed with another method like immunoblotting or ELISA. Images with more cells within the same ROI should be provided, for example like in Fig.4H. Same applies to Fig 5A, 5D and 5E.\\
+Fig. S9. The increase of Aβ42 is not evident, Amyloid accumulation should be confirmed with another method like immunoblotting or ELISA.\\
 \textcolor{blue}{We have now confirmed increased soluble Aβ40 and Aβ42 levels by ELISA in media from ABCA7 LoF (p.Tyr622* and p.Glu50fs*3) iNs compared to WT iNs and present these data in Figure~\ref{fig:differentiating_iPSC_neurons}K. Since secreted Aβ levels were low at this early developmental stage, we also differentiated WT and p.Tyr622* lines into dorsal cortical organoids and repeated ELISA measurements on the media at a more mature timepoint (six months). These experiments similarly confirmed elevated soluble Aβ40 and Aβ42 in media from p.Tyr622* cortical organoids compared to WT cortical organoids (Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}B)}.
+\begin{figure}[H] 
+	\centering
+	\begin{subfigure}[t]{.6\textwidth}
+		\caption{Abeta ELISA on the media from cortical organoids (aged to six months, with 4 weeks of CDP-choline treatment (1mM)).}
+		\includegraphics[width=\textwidth]{./main_plots/abeta_elisa.png}        
+	\end{subfigure}  
+\end{figure}
+
+\dots Images with more cells within the same ROI should be provided, for example like in Fig.4H. Same applies to Fig 5A, 5D and 5E.\\
+\textcolor{blue}{We have now updated all images to include more cells within the same ROI. See Figure~\ref{fig:main_fig:main_mitochondrial}H-J; Figure~\ref{fig:main_choline}I,J; Figure~\ref{fig:choline_treatment}K.}
 
 Is the number of up- and down-regulated PCs highlighted in Fig. 3K the sameas in Fig.3I.\\
 \textcolor{blue}{We thank the reviewer for highlighting this inconsistency. We have now revised the relevant panels, consistently applying the criteria of adjusted p-value < 0.05 and absolute log2 fold change > 1. These updated data are presented in Figure~\ref{fig:main_lipids}A,B,D,E}.
@@ -65,12 +88,24 @@ Fig. 4E, how OCR data were normalized should be explained.
 \end{quote}
 
 Line 457-459, CDP-choline cannot be directly taken up by cells. Although cells may uptake its hydrolyzed products, it remains important to confirm the cellular increase of CDP-choline.\\
-\textcolor{blue}{We thank the reviewer for raising this important point. To determine whether CDP-choline treatment increases cellular choline levels, we performed targeted LCMS analyses of both media and cell extracts with and without CDP-choline treatment. Our experiments revealed that: (1) CDP-choline treatment led to accumulation of CDP and choline in media conditioned by p.Tyr622* iNs but not in media without cells, indicating—as suggested by the reviewer—that iNs hydrolyze extracellular CDP-choline into CDP and choline; and (2) CDP-choline treatment led to a  significant increase of choline in cell extracts.. While CDP-choline was only detected at low levels in cellular extracts, the number of  p.Tyr622* samples with detectable CDP-choline increased from 1 of 8 (13\%) to 4 of 8 (50\%) after CDP-choline treatment.}\\\\
-\textcolor{blue}{In agreement with this, mRNA sequencing after CDP-choline treatment showed increased expression of choline transporters . Taken together, these data suggest that CDP-choline treatment leads to cellular uptake of choline.}\\\\
+\textcolor{blue}{We thank the reviewer for raising this important point. To determine whether CDP-choline treatment increases cellular choline levels, we performed targeted LCMS analyses of both media and cell extracts with and without CDP-choline treatment. Our experiments revealed that: (1) CDP-choline treatment led to accumulation of CDP and choline in media conditioned by p.Tyr622* iNs but not in media without cells, indicating—as suggested by the reviewer—that iNs hydrolyze extracellular CDP-choline into CDP and choline (Figure~\ref{fig:choline_treatment}A, and Panel A below); and (2) CDP-choline treatment led to a  significant increase of choline in cell extracts (Figure~\ref{fig:choline_treatment}B, and Panel B below). While CDP-choline was only detected at low levels in cellular extracts, the number of  p.Tyr622* samples with detectable CDP-choline increased from 1 of 8 (13\%) to 4 of 8 (50\%) after CDP-choline treatment (Extended Data~\ref{data:ngn2_metabolome}).}\\\\
+\textcolor{blue}{In agreement with this, mRNA sequencing after CDP-choline treatment showed increased expression of choline transporters (Figure~\ref{fig:choline_treatment}C). Taken together, these data suggest that CDP-choline treatment leads to cellular uptake of choline.}\\\\
 \textcolor{blue}{We have now updated the text with a detailed discussion of these results[page~\pageref{quoteD-label}]:}
 \begin{quote}
 	\textcolor{blue}{"\quoteD"}
 \end{quote}
+
+\begin{figure}[H] 
+	\begin{subfigure}[t]{\textwidth}
+		\caption{Targeted LCMS of media with and without p.Tyr622* iN, in the presence and absence of CDP-choline treatment.}
+		\includegraphics[width=\textwidth]{./extended_plots/choline_media_lcms.png}        
+	\end{subfigure}
+	\centering
+	\begin{subfigure}[t]{.4\textwidth}
+		\caption{Targeted LCMS of p.Tyr622* iN cells, in the presence and absence of CDP-choline treatment.}
+		\includegraphics[width=\textwidth]{./extended_plots/choline_in_cells_lcms.png}        
+	\end{subfigure}
+\end{figure}
 
 Line 453-455, from the data provided, it is unclear how PC and mitochondrial function are linked in ABCA7 LoF. Few questions remain to be addressed,
 \begin{itemize}
@@ -83,13 +118,28 @@ Line 453-455, from the data provided, it is unclear how PC and mitochondrial fun
 
 \textcolor{blue}{\underline{Regarding item \# 1:} We attempted to visualize mitochondrial membrane structure using both TEM and expansion microscopy. For expansion microscopy, we first successfully tested a single-shot 20x expansion protocol (https://www.nature.com/articles/s41592-024-02454-9) in HEK cells fixed with glutaraldehyde, achieving good preservation and visualization of mitochondrial architecture. However, induced neurons could not be reliably grown on cover glass, preventing their expansion due to poor cell adhesion. We also attempted the Magnify expansion microscopy protocol (https://www.nature.com/articles/s41587-022-01546-1) on paraformaldehyde-fixed spheroids. While we could visualize mitochondrial networks, the individual mitochondrial structures remained difficult to interpret clearly, likely due to limited expansion factor and insufficient organelle preservation with paraformaldehyde. Thus, both approaches would require substantial additional optimization beyond the scope of this manuscript, and we believe this is better addressed in future follow-up studies.}
 
-\textcolor{blue}{\underline{Regarding item \#2:} We newly performed mRNA analysis on p.Tyr622* iNs with and without CDP-choline treatment, which revealed increased expression of PCYT1B (Figure~\ref{fig:choline_treatment}C), the rate-limiting enzyme for converting choline into CDP-choline\cite{Lykidis1998-rj}, after treatment. Consistent with this, LCMS analysis of CDP-choline-treated p.Tyr622* cells demonstrated significant (p<0.05, |logFC|>1) increases in multiple phosphatidylcholine species, as well as in lysophosphatidylcholine—a phosphatidylcholine remodeling intermediate of the Land’s cycle (Figure~\ref{fig:main_choline}A). Expression of several LPCATs, which are involved in phosphatidylcholine-remodeling, was also increased  after treatment (Figure~\ref{fig:choline_treatment}D). These findings indicate that CDP-choline enhances phosphatidylcholine synthesis and remodeling, which is likely to impact mitochondrial membrane structure. We have moved previous discussions regarding the relationship between phosphatidylcholine and mitochondrial function (previously Line 453-455) to the discussion on page~\pageref{quoteI-label}, which now reads as follows:}
+\textcolor{blue}{\underline{Regarding item \#2:} We newly performed mRNA analysis on p.Tyr622* iNs with and without CDP-choline treatment, which revealed increased expression of PCYT1B (Figure~\ref{fig:choline_treatment}C), the rate-limiting enzyme for converting choline into CDP-choline\cite{Lykidis1998-rj}, after treatment. Consistent with this, LCMS analysis of CDP-choline-treated p.Tyr622* cells demonstrated significant (p<0.05, |logFC|>1) increases in multiple phosphatidylcholine species, as well as in lysophosphatidylcholine—a phosphatidylcholine remodeling intermediate of the Land’s cycle (Figure~\ref{fig:main_choline}A; and Panel A directly below). Expression of all known LPCATs, which catalyze phosphatidylcholine-remodeling, was also increased  after treatment (Figure~\ref{fig:choline_treatment}D; and Panel B directly below). These findings indicate that CDP-choline enhances phosphatidylcholine synthesis and remodeling, which is likely to impact mitochondrial membrane structure. We have moved previous discussions regarding the relationship between phosphatidylcholine and mitochondrial function (previously Line 453-455) to the discussion on page~\pageref{quoteI-label}, which now reads as follows:}
 
-%\begin{quote}
-%	\textcolor{blue}{"\quoteI"}
-%\end{quote}
+\begin{quote}
+	\textcolor{blue}{"\quoteI"}
+\end{quote}
 
-\textcolor{blue}{\underline{Regarding item \#3:} We did  observe a modest decrease in triglyceride species following CDP-choline treatment (Figure~\ref{fig:main_choline}A). However, since we did not detect  long-chain triglycerides in p.Tyr622* iNs – the lipid species previously shown to accumulate in p.Glu50fs*3 iNs (Figure~\ref{fig:main_lipids}I vs Figure~\ref{fig:main_lipids}C), we are cautious about drawing definitive conclusions regarding triglyceride accumulation in response to CDP-choline treatment, and we have updated the manuscript text accordingly to reflect this nuanced interpretation.}
+\begin{figure}[H] 
+	% \begin{subfigure}[t]{0.4\textwidth}
+	% 	\caption{Up-regulated PCYT1B mRNA after CDP-choline treatment.}
+	% 	\includegraphics[width=\textwidth]{./extended_plots/choline_synth_genes.png}        
+	% \end{subfigure}
+	\begin{subfigure}[t]{0.6\textwidth}
+		\caption{LCMS lipidomic analysis of CDP-choline-treated p.Tyr622* cells.}
+		\includegraphics[width=\textwidth]{./main_plots/all_lipids_choline_batch1.png}        
+	\end{subfigure}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\caption{Up-regulated LPCAT mRNA after CDP-choline treatment.}
+		\includegraphics[width=\textwidth]{./extended_plots/choline_lpcat.png}        
+	\end{subfigure}
+\end{figure}
+
+\textcolor{blue}{\underline{Regarding item \#3:} We did  observe a modest decrease in triglyceride species following CDP-choline treatment (Figure~\ref{fig:main_choline}A; and Panel A directly above). However, since we did not detect  long-chain triglycerides in p.Tyr622* iNs – the lipid species previously shown to accumulate in p.Glu50fs*3 iNs (Figure~\ref{fig:main_lipids}I vs Figure~\ref{fig:main_lipids}C), we are cautious about drawing definitive conclusions regarding triglyceride accumulation in response to CDP-choline treatment, and we have updated the manuscript text accordingly to reflect this nuanced interpretation.}
 
 Are the dyes used in Fig. 4H and Fig.5C the same? If different, both should be examined in Fig. 4H and 5C.
 
@@ -104,4 +154,12 @@ Line 479-487: The clearance of amyloid-β by CDP-choline is interesting yet perp
 \textcolor{blue}{\underline{Regarding the therapeutic potential of CDP-choline:} We demonstrate that CDP-choline treatment effectively reduces several key Alzheimer’s disease-related pathologies, including mitochondrial dysfunction, reactive oxygen species accumulation (Figure~\ref{fig:main_choline}J), amyloid pathology (Figure~\ref{fig:main_choline}L), and neuronal hyperexcitability (Figure~\ref{fig:main_choline}K). Importantly, our snRNAseq data suggest these benefits may generalize to carriers of the common ABCA7 variant (p.Ala1527Gly) (Figure~\ref{fig:main_neurons}), suggesting that CDP-choline—a readily available dietary supplement—may represent a promising therapeutic strategy to reduce AD risk in broader populations. This conclusion is further supported by recent findings from our lab showing CDP-choline’s effectiveness in reversing APOE4-associated cellular phenotypes \cite{Sienski2021-zt} and linking choline metabolism to cognitive resilience in AD \cite{Mathys2024-ex}. Choline supplementation is currently under clinical investigation as an AD treatment strategy \cite{Cummings2024-cu}. While testing CDP-choline efficacy in a mouse model would be valuable, we consider this beyond the scope of the present study.}
 
 Line 161-164, line 215-217, line 256-260, across many datasets, DNA damage/repair pathways were detected; this was not explored further. Yet DNA damage/repair is closely related to lipid dysregulation and protein aggregation, it is therefore interesting to explore whether DNA damage/repair was involved in the phenotypic changes upon ABCA7 LoF.\\
-\textcolor{blue}{We thank the reviewer for this insightful point. Given that DNA damage pathways consistently emerged in our RNAseq datasets, we agree that exploring this connection further is valuable. DNA damage frequently occurs downstream of increased reactive oxygen species (ROS)\cite{Welch2022-bp}, and decreased mitochondrial uncoupling—as observed in our ABCA7 LoF lines—is well-known to cause oxidative damage in cells\cite{Jain2024-br, Crivelli2024-pf}. We directly tested for increased ROS generation by using CellROX staining and found significantly increased ROS levels in ABCA7 LoF neurons (Figure~\ref{fig:main_mitochondrial}J). We also showed that this increase in ROS was effectively reversed by CDP-choline treatment (Figure~\ref{fig:main_choline}J), notably in parallel to normalization of mitochondrial uncoupling (Figure~\ref{fig:main_choline}H). We have updated the Results and Discussion sections accordingly, highlighting this clearer connection between mitochondrial dysfunction, ROS accumulation, and potential genotoxic effects in ABCA7 LoF neurons.}
+\textcolor{blue}{We thank the reviewer for this insightful point. Given that DNA damage pathways consistently emerged in our RNAseq datasets, we agree that exploring this connection further is valuable. DNA damage frequently occurs downstream of increased reactive oxygen species (ROS)\cite{Welch2022-bp}, and decreased mitochondrial uncoupling—as observed in our ABCA7 LoF lines—is well-known to cause oxidative damage in cells\cite{Jain2024-br, Crivelli2024-pf}. We directly tested for increased ROS generation by using CellROX staining and found significantly increased ROS levels in ABCA7 LoF neurons (Figure~\ref{fig:main_mitochondrial}J; and Panel A below). We also showed that this increase in ROS was effectively reversed by CDP-choline treatment (Figure~\ref{fig:main_choline}J), notably in parallel to normalization of mitochondrial uncoupling (Figure~\ref{fig:main_choline}H). We have updated the Results and Discussion sections accordingly, highlighting this clearer connection between mitochondrial dysfunction, ROS accumulation, and potential genotoxic effects in ABCA7 LoF neurons.}
+
+\begin{figure}[H] 
+	\centering
+	\begin{subfigure}[t]{.7\textwidth}
+		\caption{CellRox staining of ABCA7 LoF iNs}
+		\includegraphics[width=\textwidth]{./main_plots/cellrox_images.png}        
+	\end{subfigure}  
+\end{figure}

@@ -14,11 +14,21 @@ Figure 1B, the numbers of samples for normal (n=180) and LOF (n=5) are not balan
 Figure 5 needs to be strengthened. The statement of ABCA7 LoF iNs recapitulate AD amyloid pathology is weak in Figure. S9A,B and Figure 5D, ELISA is needed to support the effect of pGlu50fs on Abeta42. If BACE1 is reduced by the mutation (Fig. 5E), the levels of APP-CTF in the cell, and sAPPbeta in the medium should be assessed and quantified biochemically, in addition to IF, to confirm the reduction of enzyme activity.\\
 \textcolor{blue}{We now show by ELISA that soluble Aβ40 and Aβ42 are significantly increased in media from ABCA7 LoF (p.Tyr622* and p.Glu50fs3) iNs relative to WT iNs (Figure~\ref{fig:differentiating_iPSC_neurons}H). Given the low levels of secreted Aβ at this early developmental stage, we also performed ELISA measurements in media from six-months matured dorsal cortical organoids differentiated from WT and p.Tyr622* lines. Consistent with our earlier findings, these mature organoids exhibited elevated soluble Aβ40 and Aβ42 in ABCA7 LoF compared to WT (Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}B). We agree with the reviewer that the claim that BACE1 is reduced requires additional investigation. However, we believe this is beyond the scope of our study. Therefore, we have removed the BACE1 data from the manuscript.}
 
+\begin{figure}[H] 
+	\centering
+	\begin{subfigure}[t]{.6\textwidth}
+		\caption{Abeta ELISA on the media from cortical organoids (aged to six months, with 4 weeks of CDP-choline treatment (1mM)).}
+		\includegraphics[width=\textwidth]{./main_plots/abeta_elisa.png}        
+	\end{subfigure}  
+\end{figure}
+
 Figure 5A: a control line should be included to show the effect of pTyr622 on Lipid droplet. Also lipid staining should also be performed in pGlu50fs neurons, since the major lipidomics data were generated from pGlu50fs, not from pTyr622.\\
-\textcolor{blue}{To address this point, we performed an additional LC-MS lipidomics experiment comparing p.Tyr622* iNs to WT iNs. Previously, LC-MS analysis of p.Glu50fs*3 iNs revealed increased long-chain triglycerides ($\geq32$ carbons; Figure~\ref{fig:main_lipids}C), consistent with triglyceride species recently identified as increased in iNs in the context of APOE4 \cite{Haney2024-bp}. However, no longer-chain triglycerides were detected in the subsequent LC-MS experiment with p.Tyr622* iNs ($\leq32$ carbons; Figure~\ref{fig:main_lipids}C vs. Figure~\ref{fig:main_lipids}I). This discrepancy may reflect technical variability or inherent instability of certain triglyceride species. Given the consistent phosphatidylcholine changes across both ABCA7 LoF lines, we have now adjusted our interpretation to emphasize the robust increase in saturated phosphatidylcholine species, while discussing the triglyceride findings more cautiously [page~\pageref{quoteH-label}]:}\\
-\begin{quote}
-	\textcolor{blue}{"\quoteH"}
-\end{quote}
+\textcolor{blue}{In response to Reviewer 1's comments, we have simplified our LCMS lipidomics analysis to focus specifically on phosphatidylcholine changes, which we validated through a new LC-MS lipidomics experiment comparing p.Tyr622* iNs directly to WT iNs.}
+
+% Previously, LC-MS analysis of p.Glu50fs*3 iNs revealed increased long-chain triglycerides ($\geq32$ carbons; Figure~\ref{fig:main_lipids}C), consistent with triglyceride species recently identified as increased in iNs in the context of APOE4 \cite{Haney2024-bp}. However, no longer-chain triglycerides were detected in the subsequent LC-MS experiment with p.Tyr622* iNs ($\leq32$ carbons; Figure~\ref{fig:main_lipids}C vs. Figure~\ref{fig:main_lipids}I). This discrepancy may reflect technical variability or inherent instability of certain triglyceride species. Given the consistent phosphatidylcholine changes across both ABCA7 LoF lines, we have now adjusted our interpretation to emphasize the robust increase in saturated phosphatidylcholine species, while discussing the triglyceride findings more cautiously [page~\pageref{quoteH-label}]:}\\
+% \begin{quote}
+% 	\textcolor{blue}{"\quoteH"}
+% \end{quote}
 
 \textbf{Other comments:}
 
@@ -26,7 +36,24 @@ Figure. S7E, F: a nuclei staining and a merged image should be provided for iden
 \textcolor{blue}{Given limited \textit{postmortem} tissue, we were unable to perform this experiment and have now removed Figure. S7E,F from the manuscript.}
 
 It appears that only one clone is generated for human iPSC carrying ABCA7 variants (related to Fig. 3), it will be more convincing to have one more independent clone or line to replicate the findings for each variant.\\
-\textcolor{blue}{We agree with the reviewer that including multiple clones per ABCA7 LoF variant would further strengthen our manuscript. However, generating and thoroughly characterizing additional clones was not feasible given the substantial time and resources required. Nevertheless, we believe our use of two independent ABCA7 LoF lines—each harboring distinct genetic variants and originating from separate clonal selection events—addresses this concern effectively. Additionally, we have now included new mRNA-sequencing data demonstrating strong concordance between these two independent ABCA7 LoF lines (Figure~\ref{fig:main_mitochondrial}B), and also with the human \textit{postmortem} data (Figure~\ref{fig:main_mitochondrial}D), further reinforcing the validity and reproducibility of our findings.}
+\textcolor{blue}{We agree with the reviewer that including multiple clones per ABCA7 LoF variant would further strengthen our manuscript. However, generating and thoroughly characterizing additional clones was not feasible given the substantial time and resources required. Nevertheless, we believe our use of two independent ABCA7 LoF lines—each harboring distinct genetic variants and originating from separate clonal selection events—addresses this concern effectively. Additionally, we have now included new mRNA-sequencing data demonstrating strong concordance between these two independent ABCA7 LoF lines (Figure~\ref{fig:main_mitochondrial}B; and Panel A directly below), and also with the human \textit{postmortem} data (Figure~\ref{fig:main_mitochondrial}D; and Panel B direclty below), further reinforcing the validity and reproducibility of our findings.}
+
+\begin{figure}[H] 
+	\centering
+	\begin{subfigure}[t]{.4\textwidth}
+		\caption{RNA-seq correlation between p.Tyr622* and p.Glu50fs*3 independent ABCA7 LoF lines.}
+        \vspace{2cm}
+		\includegraphics[width=\textwidth]{./extended_plots/rna_correlation_both_lof_lines.png}        
+	\end{subfigure} 
+    \hspace{1cm}
+    \begin{subfigure}[t]{0.4\textwidth}
+		\caption{Overlap of perturbed gene clusters between p.Tyr622* and post-mortem ABCA7 LoF excitatory neurons. Red indicates up in ABCA7 LoF, blue indicates down in ABCA7 LoF.}
+        \vspace{1cm}
+        \centering
+        \includegraphics[width=0.5\textwidth]{./main_plots/jaccard_cartoon.png}        
+        \includegraphics[width=\textwidth]{./main_plots/jaccard_PM_pT622.png}        
+    \end{subfigure}  
+\end{figure}
 
 Figure 4D: The correlation is not convincing, especially due to the combination of two genotypes and the clustering of data points in the LOF line.\\
 \textcolor{blue}{We have now removed this panel.}

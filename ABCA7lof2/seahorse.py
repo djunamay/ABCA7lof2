@@ -55,7 +55,7 @@ def compute_seahorse_measures_per_well_long_run(well_id, df_sub, value='OCR'):
     
     
     CE = atp_linked/basal
-    SRC = basal/max_resp
+    SRC = max_resp/basal
     ATP_of_MAX = atp_linked/max_resp
 
     return CE, SRC, ATP_of_MAX, basal, proton_leak, atp_linked, max_resp, beta_ox, etp_linked, beta_abs
@@ -70,7 +70,7 @@ def compute_seahorse_measures_per_well_short_run(well_id, df_sub):
     max_resp = np.sum(integrals[6:8]) - non_mito
     
     CE = atp_linked/basal
-    SRC = basal/max_resp
+    SRC = max_resp/basal
     ATP_of_MAX = atp_linked/max_resp
 #     temp = df_sub[df_sub['Well']==well_id]
 #     non_mito = np.sum(temp[[x in set([10,11,12]) for x in temp['Measurement']]]['OCR']) #float(temp[temp['Measurement']==12]['OCR'])

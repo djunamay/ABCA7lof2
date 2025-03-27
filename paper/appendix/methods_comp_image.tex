@@ -29,3 +29,6 @@ For each condition, representative images were chosen from a single batch as the
 
 \paragraph{Quantification of live single-plane imaging}
 Single-plane live imaging data were binarized using a threshold set at the 75th intensity percentile for each channel of interest (TMRM or CellROX), and mean fluorescence intensities within these masked regions were calculated following previously established methodology (\cite{Esteras2020-md}). The standardized intensity threshold (75th percentile) was empirically selected to reliably identify high-fluorescence areas across experimental conditions.
+
+\paragraph{Quantification of live single-plane imaging with FCCP}
+For time-course experiments involving FCCP treatment, images acquired before and after treatment were aligned using Fourier-based image registration. Spatial shifts between time points were estimated by phase cross-correlation and corrected using Fourier transformations. Alignment accuracy was manually verified by visual inspection. A binary mask defining regions of high fluorescence intensity was generated from the 75th percentile threshold of the initial (baseline) TMRM image. This baseline-derived mask was consistently applied across all subsequent time points to quantify mean fluorescence intensities within these regions.

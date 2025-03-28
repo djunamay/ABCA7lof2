@@ -5,40 +5,42 @@
 \input{preamble.tex}
 
 \begin{document}
-% \onehalfspacing
+\onehalfspacing
 
-% %\pagestyle{empty}
+%\pagestyle{empty}
 
 
-% \input{sections/title_page}
+\input{sections/title_page}
 
-% \begin{center}
-% \subsubsection*{Abstract}
-% \end{center}
-% \label{sec:abstract}
-% \input{sections/abstract}
-% \clearpage
+\begin{center}
+\subsubsection*{Abstract}
+\end{center}
+\label{sec:abstract}
+\input{sections/abstract}
+\clearpage
 
-% \linenumbers
+\linenumbers
 
-% \section{Introduction}
-% \label{sec:introduction}
-% \input{sections/introduction}
+\section{Introduction}
+\label{sec:introduction}
+\input{sections/introduction}
 
-% \section{Results}
-% \label{sec:results}
-% \input{sections/results}
+\section{Results}
+\label{sec:results}
+\input{sections/results}
 
-% \section{Discussion}
-% \label{sec:discussion}
-% \input{sections/discussion}
-% \clearpage
+\section{Discussion}
+\label{sec:discussion}
+\input{sections/discussion}
+\clearpage
 
-% % \label{sec:acknowledgments}
-% % \input{sections/acknowledgements}
-% % \clearpage
+\label{sec:acknowledgments}
+\input{sections/acknowledgements}
+\clearpage
 
 \newgeometry{left=.5in, right=.5in, top=.5in, bottom=.5in} % adjust as desired
+
+\nolinenumbers
 
 \section{Main Figures}
 \label{sec:figures}
@@ -47,66 +49,74 @@
 
 \restoregeometry
 
-% \label{sec:supplementary}
-% \input{./appendix/title.tex}
-% \clearpage
+\label{sec:supplementary}
+\input{./appendix/title.tex}
+\clearpage
 
-% \section{Materials and Methods}
-% \label{sec:materials_and_methods}
-% \input{./appendix/methods_postmortem.tex}
-% \input{./appendix/ipsc_generation.tex}
-% \input{./appendix/methods_iPSC.tex}
-% \input{./appendix/methods_LCMS.tex}
-% \input{./appendix/methods_cortical_organoids.tex}
-% \input{./appendix/methods_comp_image.tex}
-% \input{./appendix/other_comp_methods.tex}
-% \input{./appendix/methods_comp_lcms.tex}
-% \input{./appendix/methods_bulk_mrna.tex}
-% \input{./appendix/methods_comp_singlecell.tex}
-% \input{./appendix/methods_comp_MD.tex}
+\linenumbers
+\onehalfspacing
 
-% \clearpage
+\section{Materials and Methods}
+\label{sec:materials_and_methods}
+\input{./appendix/methods_postmortem.tex}
+\input{./appendix/ipsc_generation.tex}
+\input{./appendix/methods_iPSC.tex}
+\input{./appendix/methods_LCMS.tex}
+\input{./appendix/methods_cortical_organoids.tex}
+\input{./appendix/methods_comp_image.tex}
+\input{./appendix/other_comp_methods.tex}
+\input{./appendix/methods_comp_lcms.tex}
+\input{./appendix/methods_bulk_mrna.tex}
+\input{./appendix/methods_comp_singlecell.tex}
+\input{./appendix/methods_comp_MD.tex}
 
-% \section{Supplementary Text}
-% \label{sec:supplementary_text}
-% \input{./appendix/description_variables.tex}
-% \clearpage
-% \input{./appendix/KL_clustering.tex}
-% \clearpage
-% \input{./appendix/molecular_dynamics.tex}
-% \clearpage
-% \newgeometry{left=.5in, right=.5in, top=.5in, bottom=.5in} % adjust as desired
+\clearpage
 
-% \section{Supplementary Figures}
-% \label{sec:supplementary_figures}
-% \input{./appendix/supplementary_figures.tex}
-% \clearpage
+\section{Supplementary Text}
+\label{sec:supplementary_text}
+\input{./appendix/description_variables.tex}
+\clearpage
+\input{./appendix/KL_clustering.tex}
+\clearpage
+\input{./appendix/molecular_dynamics.tex}
+\clearpage
+\newgeometry{left=.5in, right=.5in, top=.5in, bottom=.5in} % adjust as desired
 
-% \restoregeometry
+\nolinenumbers
 
-% \section{Supplementary Tables}
-% \label{sec:supplementary_tables}
-% \input{./appendix/supplementary_tables.tex}
-% \clearpage
+\section{Supplementary Figures}
+\label{sec:supplementary_figures}
+\input{./appendix/supplementary_figures.tex}
+\clearpage
 
-% \section{Extended Data}
-% \label{sec:extended_data}
-% \input{./appendix/extended_data.tex}
-% \clearpage
+\restoregeometry
 
-% \printbibliography
-% \onehalfspacing
+\section{Supplementary Tables}
+\label{sec:supplementary_tables}
+\input{./appendix/supplementary_tables.tex}
+\clearpage
 
+\section{Extended Data}
+\label{sec:extended_data}
+\input{./appendix/extended_data.tex}
+\clearpage
+
+\printbibliography
+
+
+\clearpage
+\onehalfspacing
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+\input{./reviewer_responses/summary_response.tex}
+\clearpage
+\input{./reviewer_responses/reviewer_1.tex}
+\clearpage
+\input{./reviewer_responses/reviewer_2.tex}
+\clearpage
+\input{./reviewer_responses/reviewer_3.tex}
+\clearpage
+\input{./reviewer_responses/reviewer_4.tex}
 % \clearpage
-% \input{./reviewer_responses/summary_response.tex}
-% \clearpage
-% \input{./reviewer_responses/reviewer_1.tex}
-% \clearpage
-% \input{./reviewer_responses/reviewer_2.tex}
-% \clearpage
-% \input{./reviewer_responses/reviewer_3.tex}
-% \clearpage
-% \input{./reviewer_responses/reviewer_4.tex}
-% % \clearpage
 
 \end{document}

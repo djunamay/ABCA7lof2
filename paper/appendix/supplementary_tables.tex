@@ -1,4 +1,6 @@
 \captionsetup{justification=raggedright,singlelinecheck=false}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}  
 
 \clearpage
 \begin{longtable}{p{3cm} p{3cm} p{3cm} p{2cm} p{2.5cm} p{0.5cm}}
@@ -69,127 +71,127 @@
     \label{tab:abca7_structures}
 \end{longtable}
 
-% \begin{table}[ht]
-%     \centering
-    %\resizebox{\textwidth}{!}{
-\clearpage
-\begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
-    \caption{Cluster 2 genes for p.Tyr622* vs WT bulk RNA-seq}
-    \hline
-    \textbf{Gene} & \textbf{Name} & \textbf{Function} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
-    \hline
-    \hline
-    MVD    & Mevalonate Diphosphate Decarboxylase      & Catalyzes a key decarboxylation step in the mevalonate pathway for cholesterol and isoprenoid synthesis. & -0.806566 & $6.153354\times10^{-7}$ & 0.000101 \\
-    \hline
-    SQLE   & Squalene Epoxidase                       & Converts squalene to oxidosqualene in cholesterol biosynthesis.  & -0.658307 & $2.820266\times10^{-6}$ & 0.000311 \\
-    \hline
-    MSMO1  & Methylsterol Monooxygenase 1             & Involved in cholesterol biosynthesis; catalyzes conversion of methylsterols. & -0.559031 & $2.906982\times10^{-5}$ & 0.001650 \\
-    \hline
-    LSS    & Lanosterol Synthase                      & Catalyzes conversion of oxidosqualene to lanosterol in cholesterol synthesis.  & -0.931772 & $3.693352\times10^{-5}$ & 0.001908 \\
-    \hline
-    SC5D   & Sterol-C5-Desaturase                     & Catalyzes a desaturation step in the cholesterol biosynthetic pathway. & -0.478859 & $4.171666\times10^{-5}$ & 0.002105 \\
-    \hline
-    LDLR   & Low-Density Lipoprotein Receptor         & Mediates the uptake of cholesterol-rich LDL particles.  & -0.844660 & $4.693678\times10^{-5}$ & 0.002272 \\
-    \hline
-    IDI1   & Isopentenyl-Diphosphate Delta Isomerase 1 & Catalyzes the isomerization in the isoprenoid biosynthesis pathway.  & -0.446118 & $8.553648\times10^{-5}$ & 0.003343 \\
-    \hline
-    FABP3  & Fatty Acid Binding Protein 3             & Binds and transports long-chain fatty acids in muscle tissue.  & -1.098855 & $1.068285\times10^{-4}$ & 0.003844 \\
-    \hline
-    MVK    & Mevalonate Kinase                        & Phosphorylates mevalonate in the cholesterol biosynthesis pathway.  & -0.665975 & $1.202561\times10^{-4}$ & 0.004201 \\
-    \hline
-    HMGCR  & 3-Hydroxy-3-Methylglutaryl-CoA Reductase  & The rate-limiting enzyme in cholesterol synthesis.  & -0.698146 & $1.667677\times10^{-4}$ & 0.005242 \\
-    \hline
-    NR3C1  & Nuclear Receptor Subfamily 3 Group C Member 1 & Glucocorticoid receptor involved in metabolism and stress response.  & -0.717633 & $2.626547\times10^{-4}$ & 0.006891 \\
-    \hline
-    RXRG   & Retinoid X Receptor Gamma                 & Nuclear receptor participating in retinoid signaling.  & -0.651401 & $2.731321\times10^{-4}$ & 0.007053 \\
-    \hline
-    SCD    & Stearoyl-CoA Desaturase                   & Introduces double bonds into saturated fatty acids.  & -0.666539 & $2.888673\times10^{-4}$ & 0.007302 \\
-    \hline
-    PPARD  & Peroxisome Proliferator-Activated Receptor Delta & Regulates fatty acid oxidation and energy homeostasis.  & -0.975431 & $3.589912\times10^{-4}$ & 0.008538 \\
-    \hline
-    HMGCS1 & 3-Hydroxy-3-Methylglutaryl-CoA Synthase 1 & Catalyzes the formation of HMG-CoA, a precursor in cholesterol synthesis.  & -0.508775 & $6.915444\times10^{-4}$ & 0.013011 \\
-    \hline
-    SEC23B & SEC23 Homolog B                         & Component of COPII vesicle coat involved in ER-to-Golgi protein transport.  & -0.423668 & $1.117650\times10^{-3}$ & 0.017498 \\
-    \hline
-    MED15  & Mediator Complex Subunit 15              & Part of the mediator complex that regulates transcription.  & -0.446544 & $1.664102\times10^{-3}$ & 0.022250 \\
-    \hline
-    SCARB1 & Scavenger Receptor Class B Member 1       & Mediates the selective uptake of HDL cholesterol.  & -0.480191 & $1.681501\times10^{-3}$ & 0.022369 \\
-    \hline
-    PDIA2  & Protein Disulfide Isomerase Family A Member 2 & Facilitates protein folding in the endoplasmic reticulum.  & -0.607056 & $1.705803\times10^{-3}$ & 0.022509 \\
-    \hline
-    NR1H2  & Nuclear Receptor Subfamily 1 Group H Member 2 & (LXR$\beta$) Regulates cholesterol and fatty acid metabolism.  & -0.401447 & $2.479408\times10^{-3}$ & 0.028861 \\
-    \hline
-    LPIN1  & Lipin 1                                  & Enzyme involved in lipid metabolism and acts as a transcriptional co-regulator.  & -0.377781 & $4.185350\times10^{-3}$ & 0.038889 \\
-    \hline
-    PCK2   & Phosphoenolpyruvate Carboxykinase 2        & Mitochondrial enzyme involved in gluconeogenesis.  & -0.814855 & $4.974208\times10^{-3}$ & 0.042986 \\
-    \hline
-    SEC24D & SEC24 Homolog D                         & Component of the COPII vesicle coat important for cargo selection.  & -0.740107 & $5.675430\times10^{-3}$ & 0.046082 \\
-    \hline
-    SREBF1 & Sterol Regulatory Element Binding Transcription Factor 1 & Regulates genes involved in lipid synthesis.  & -0.631129 & $7.524154\times10^{-3}$ & 0.054031 \\
-    \hline
-    FDFT1  & Farnesyl-Diphosphate Farnesyltransferase 1 & Also known as squalene synthase; catalyzes the first committed step in cholesterol synthesis.  & -0.258286 & $7.811542\times10^{-3}$ & 0.055271 \\
-    \hline
-    FDPS   & Farnesyl Diphosphate Synthase             & Synthesizes farnesyl diphosphate for isoprenoid biosynthesis.  & -0.304220 & $8.438325\times10^{-3}$ & 0.057433 \\
-    \hline
-    INSIG2 & Insulin Induced Gene 2                    & Regulates cholesterol synthesis by retaining SREBPs in the ER.  & -0.327084 & $8.490017\times10^{-3}$ & 0.057576 \\
-    \hline
-    CPT2   & Carnitine Palmitoyltransferase 2           & Converts acyl-carnitine to acyl-CoA in fatty acid oxidation.  & -0.408324 & $1.141812\times10^{-2}$ & 0.068793 \\
-    \hline
-    PLTP   & Phospholipid Transfer Protein             & Transfers phospholipids among lipoproteins and modulates HDL metabolism.  & -0.412457 & $1.214504\times10^{-2}$ & 0.071001 \\
-    \hline
-    LPL    & Lipoprotein Lipase                        & Hydrolyzes triglycerides in lipoproteins, releasing fatty acids.  & -0.539894 & $2.524848\times10^{-2}$ & 0.110399 \\
-    \hline
-    ACAA1  & Acetyl-CoA Acyltransferase 1              & Involved in peroxisomal $\beta$-oxidation of fatty acids.  & -0.226781 & $2.587491\times10^{-2}$ & 0.112059 \\
-    \hline
-    DDIT3  & DNA Damage Inducible Transcript 3         & Stress-induced transcription factor that promotes apoptosis.  & 0.180208  & $9.264319\times10^{-2}$ & 0.241510 \\
-    \hline
-    NR1H3  & Nuclear Receptor Subfamily 1 Group H Member 3 & (LXR$\alpha$) Regulates cholesterol and fatty acid metabolism.  & 0.226723  & $1.909281\times10^{-1}$ & 0.376065 \\
-    \hline
-    \label{tab:cluster2_genes_y622}
-\end{longtable}
+% % \begin{table}[ht]
+% %     \centering
+%     %\resizebox{\textwidth}{!}{
+% \clearpage
+% \begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
+%     \caption{Cluster 2 genes for p.Tyr622* vs WT bulk RNA-seq}
+%     \hline
+%     \textbf{Gene} & \textbf{Name} & \textbf{Function} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
+%     \hline
+%     \hline
+%     MVD    & Mevalonate Diphosphate Decarboxylase      & Catalyzes a key decarboxylation step in the mevalonate pathway for cholesterol and isoprenoid synthesis. & -0.806566 & $6.153354\times10^{-7}$ & 0.000101 \\
+%     \hline
+%     SQLE   & Squalene Epoxidase                       & Converts squalene to oxidosqualene in cholesterol biosynthesis.  & -0.658307 & $2.820266\times10^{-6}$ & 0.000311 \\
+%     \hline
+%     MSMO1  & Methylsterol Monooxygenase 1             & Involved in cholesterol biosynthesis; catalyzes conversion of methylsterols. & -0.559031 & $2.906982\times10^{-5}$ & 0.001650 \\
+%     \hline
+%     LSS    & Lanosterol Synthase                      & Catalyzes conversion of oxidosqualene to lanosterol in cholesterol synthesis.  & -0.931772 & $3.693352\times10^{-5}$ & 0.001908 \\
+%     \hline
+%     SC5D   & Sterol-C5-Desaturase                     & Catalyzes a desaturation step in the cholesterol biosynthetic pathway. & -0.478859 & $4.171666\times10^{-5}$ & 0.002105 \\
+%     \hline
+%     LDLR   & Low-Density Lipoprotein Receptor         & Mediates the uptake of cholesterol-rich LDL particles.  & -0.844660 & $4.693678\times10^{-5}$ & 0.002272 \\
+%     \hline
+%     IDI1   & Isopentenyl-Diphosphate Delta Isomerase 1 & Catalyzes the isomerization in the isoprenoid biosynthesis pathway.  & -0.446118 & $8.553648\times10^{-5}$ & 0.003343 \\
+%     \hline
+%     FABP3  & Fatty Acid Binding Protein 3             & Binds and transports long-chain fatty acids in muscle tissue.  & -1.098855 & $1.068285\times10^{-4}$ & 0.003844 \\
+%     \hline
+%     MVK    & Mevalonate Kinase                        & Phosphorylates mevalonate in the cholesterol biosynthesis pathway.  & -0.665975 & $1.202561\times10^{-4}$ & 0.004201 \\
+%     \hline
+%     HMGCR  & 3-Hydroxy-3-Methylglutaryl-CoA Reductase  & The rate-limiting enzyme in cholesterol synthesis.  & -0.698146 & $1.667677\times10^{-4}$ & 0.005242 \\
+%     \hline
+%     NR3C1  & Nuclear Receptor Subfamily 3 Group C Member 1 & Glucocorticoid receptor involved in metabolism and stress response.  & -0.717633 & $2.626547\times10^{-4}$ & 0.006891 \\
+%     \hline
+%     RXRG   & Retinoid X Receptor Gamma                 & Nuclear receptor participating in retinoid signaling.  & -0.651401 & $2.731321\times10^{-4}$ & 0.007053 \\
+%     \hline
+%     SCD    & Stearoyl-CoA Desaturase                   & Introduces double bonds into saturated fatty acids.  & -0.666539 & $2.888673\times10^{-4}$ & 0.007302 \\
+%     \hline
+%     PPARD  & Peroxisome Proliferator-Activated Receptor Delta & Regulates fatty acid oxidation and energy homeostasis.  & -0.975431 & $3.589912\times10^{-4}$ & 0.008538 \\
+%     \hline
+%     HMGCS1 & 3-Hydroxy-3-Methylglutaryl-CoA Synthase 1 & Catalyzes the formation of HMG-CoA, a precursor in cholesterol synthesis.  & -0.508775 & $6.915444\times10^{-4}$ & 0.013011 \\
+%     \hline
+%     SEC23B & SEC23 Homolog B                         & Component of COPII vesicle coat involved in ER-to-Golgi protein transport.  & -0.423668 & $1.117650\times10^{-3}$ & 0.017498 \\
+%     \hline
+%     MED15  & Mediator Complex Subunit 15              & Part of the mediator complex that regulates transcription.  & -0.446544 & $1.664102\times10^{-3}$ & 0.022250 \\
+%     \hline
+%     SCARB1 & Scavenger Receptor Class B Member 1       & Mediates the selective uptake of HDL cholesterol.  & -0.480191 & $1.681501\times10^{-3}$ & 0.022369 \\
+%     \hline
+%     PDIA2  & Protein Disulfide Isomerase Family A Member 2 & Facilitates protein folding in the endoplasmic reticulum.  & -0.607056 & $1.705803\times10^{-3}$ & 0.022509 \\
+%     \hline
+%     NR1H2  & Nuclear Receptor Subfamily 1 Group H Member 2 & (LXR$\beta$) Regulates cholesterol and fatty acid metabolism.  & -0.401447 & $2.479408\times10^{-3}$ & 0.028861 \\
+%     \hline
+%     LPIN1  & Lipin 1                                  & Enzyme involved in lipid metabolism and acts as a transcriptional co-regulator.  & -0.377781 & $4.185350\times10^{-3}$ & 0.038889 \\
+%     \hline
+%     PCK2   & Phosphoenolpyruvate Carboxykinase 2        & Mitochondrial enzyme involved in gluconeogenesis.  & -0.814855 & $4.974208\times10^{-3}$ & 0.042986 \\
+%     \hline
+%     SEC24D & SEC24 Homolog D                         & Component of the COPII vesicle coat important for cargo selection.  & -0.740107 & $5.675430\times10^{-3}$ & 0.046082 \\
+%     \hline
+%     SREBF1 & Sterol Regulatory Element Binding Transcription Factor 1 & Regulates genes involved in lipid synthesis.  & -0.631129 & $7.524154\times10^{-3}$ & 0.054031 \\
+%     \hline
+%     FDFT1  & Farnesyl-Diphosphate Farnesyltransferase 1 & Also known as squalene synthase; catalyzes the first committed step in cholesterol synthesis.  & -0.258286 & $7.811542\times10^{-3}$ & 0.055271 \\
+%     \hline
+%     FDPS   & Farnesyl Diphosphate Synthase             & Synthesizes farnesyl diphosphate for isoprenoid biosynthesis.  & -0.304220 & $8.438325\times10^{-3}$ & 0.057433 \\
+%     \hline
+%     INSIG2 & Insulin Induced Gene 2                    & Regulates cholesterol synthesis by retaining SREBPs in the ER.  & -0.327084 & $8.490017\times10^{-3}$ & 0.057576 \\
+%     \hline
+%     CPT2   & Carnitine Palmitoyltransferase 2           & Converts acyl-carnitine to acyl-CoA in fatty acid oxidation.  & -0.408324 & $1.141812\times10^{-2}$ & 0.068793 \\
+%     \hline
+%     PLTP   & Phospholipid Transfer Protein             & Transfers phospholipids among lipoproteins and modulates HDL metabolism.  & -0.412457 & $1.214504\times10^{-2}$ & 0.071001 \\
+%     \hline
+%     LPL    & Lipoprotein Lipase                        & Hydrolyzes triglycerides in lipoproteins, releasing fatty acids.  & -0.539894 & $2.524848\times10^{-2}$ & 0.110399 \\
+%     \hline
+%     ACAA1  & Acetyl-CoA Acyltransferase 1              & Involved in peroxisomal $\beta$-oxidation of fatty acids.  & -0.226781 & $2.587491\times10^{-2}$ & 0.112059 \\
+%     \hline
+%     DDIT3  & DNA Damage Inducible Transcript 3         & Stress-induced transcription factor that promotes apoptosis.  & 0.180208  & $9.264319\times10^{-2}$ & 0.241510 \\
+%     \hline
+%     NR1H3  & Nuclear Receptor Subfamily 1 Group H Member 3 & (LXR$\alpha$) Regulates cholesterol and fatty acid metabolism.  & 0.226723  & $1.909281\times10^{-1}$ & 0.376065 \\
+%     \hline
+%     \label{tab:cluster2_genes_y622}
+% \end{longtable}
 
-\clearpage
-\begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
-    \caption{Cluster 0 genes for p.Tyr622* vs WT bulk RNA-seq}
-    \hline
-    \textbf{Gene} & \textbf{Full Gene Name} & \textbf{Description} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
-    \hline
-    \hline
-    ATP6AP2 & ATPase H$^+$ Transporting Accessory Protein 2 & Functions as a prorenin receptor and is involved in vacuolar ATPase activity and cellular signaling. & 0.500397 & 0.000014 & 0.000907 \\
-    \hline
-    NDUFA1 & NADH:Ubiquinone Oxidoreductase Subunit A1 & A component of mitochondrial Complex I, contributing to electron transport. & 0.549808 & 0.001044 & 0.016825 \\
-    \hline
-    NDUFS4 & NADH:Ubiquinone Oxidoreductase Fe-S Protein 4 & An accessory subunit of Complex I; mutations can cause mitochondrial disorders. & 0.413792 & 0.001775 & 0.023121 \\
-    \hline
-    NDUFA4 & NADH:Ubiquinone Oxidoreductase Subunit A4 & Part of Complex I, playing a role in mitochondrial electron transport. & 0.536592 & 0.003587 & 0.035867 \\
-    \hline
-    NDUFAF2 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 2 & Involved in the assembly and stabilization of mitochondrial Complex I. & 0.430684 & 0.005764 & 0.046552 \\
-    \hline
-    NDUFC2 & NADH:Ubiquinone Oxidoreductase Subunit C2 & A structural component of Complex I required for proper electron transport. & 0.383357 & 0.007852 & 0.055362 \\
-    \hline
-    NDUFA12 & NADH:Ubiquinone Oxidoreductase Subunit A12 & Contributes to the assembly and function of mitochondrial Complex I. & 0.417669 & 0.011581 & 0.069300 \\
-    \hline
-    TMEM126B & Transmembrane Protein 126B & Plays a role in the assembly of mitochondrial Complex I. & 0.285170 & 0.012550 & 0.072104 \\
-    \hline
-    NDUFB3 & NADH:Ubiquinone Oxidoreductase Subunit B3 & A peripheral subunit of Complex I, involved in electron transport. & 0.432966 & 0.014125 & 0.077284 \\
-    \hline
-    NDUFAF6 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 6 & Contributes to the assembly of Complex I in mitochondria. & 0.216284 & 0.025872 & 0.112059 \\
-    \hline
-    NDUFS5 & NADH:Ubiquinone Oxidoreductase Subunit S5 & A component of Complex I involved in electron transfer. & 0.424571 & 0.028080 & 0.117541 \\
-    \hline
-    NDUFB11 & NADH:Ubiquinone Oxidoreductase Subunit B11 & Essential for the stability and function of Complex I. & 0.365850 & 0.038461 & 0.141634 \\
-    \hline
-    TMEM70 & Transmembrane Protein 70 & Involved in the assembly of mitochondrial ATP synthase. & 0.209582 & 0.041929 & 0.148586 \\
-    \hline
-    NDUFA5 & NADH:Ubiquinone Oxidoreductase Subunit A5 & A component of Complex I contributing to the electron transport chain. & 0.199476 & 0.044831 & 0.155062 \\
-    \hline
-    NDUFAB1 & NADH:Ubiquinone Oxidoreductase Subunit AB1 & Also known as mitochondrial acyl carrier protein; part of Complex I and involved in fatty acid metabolism. & 0.316403 & 0.048178 & 0.162527 \\
-    \label{tab:cluster0_genes_y622}
-\end{longtable}
+% \clearpage
+% \begin{longtable}{p{1.5cm} p{4cm} p{5cm} p{1.5cm} p{1.5cm} p{1.5cm}}
+%     \caption{Cluster 0 genes for p.Tyr622* vs WT bulk RNA-seq}
+%     \hline
+%     \textbf{Gene} & \textbf{Full Gene Name} & \textbf{Description} & \textbf{logFC} & \textbf{P.Value} & \textbf{adj.P.Val} \\
+%     \hline
+%     \hline
+%     ATP6AP2 & ATPase H$^+$ Transporting Accessory Protein 2 & Functions as a prorenin receptor and is involved in vacuolar ATPase activity and cellular signaling. & 0.500397 & 0.000014 & 0.000907 \\
+%     \hline
+%     NDUFA1 & NADH:Ubiquinone Oxidoreductase Subunit A1 & A component of mitochondrial Complex I, contributing to electron transport. & 0.549808 & 0.001044 & 0.016825 \\
+%     \hline
+%     NDUFS4 & NADH:Ubiquinone Oxidoreductase Fe-S Protein 4 & An accessory subunit of Complex I; mutations can cause mitochondrial disorders. & 0.413792 & 0.001775 & 0.023121 \\
+%     \hline
+%     NDUFA4 & NADH:Ubiquinone Oxidoreductase Subunit A4 & Part of Complex I, playing a role in mitochondrial electron transport. & 0.536592 & 0.003587 & 0.035867 \\
+%     \hline
+%     NDUFAF2 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 2 & Involved in the assembly and stabilization of mitochondrial Complex I. & 0.430684 & 0.005764 & 0.046552 \\
+%     \hline
+%     NDUFC2 & NADH:Ubiquinone Oxidoreductase Subunit C2 & A structural component of Complex I required for proper electron transport. & 0.383357 & 0.007852 & 0.055362 \\
+%     \hline
+%     NDUFA12 & NADH:Ubiquinone Oxidoreductase Subunit A12 & Contributes to the assembly and function of mitochondrial Complex I. & 0.417669 & 0.011581 & 0.069300 \\
+%     \hline
+%     TMEM126B & Transmembrane Protein 126B & Plays a role in the assembly of mitochondrial Complex I. & 0.285170 & 0.012550 & 0.072104 \\
+%     \hline
+%     NDUFB3 & NADH:Ubiquinone Oxidoreductase Subunit B3 & A peripheral subunit of Complex I, involved in electron transport. & 0.432966 & 0.014125 & 0.077284 \\
+%     \hline
+%     NDUFAF6 & NADH:Ubiquinone Oxidoreductase Complex Assembly Factor 6 & Contributes to the assembly of Complex I in mitochondria. & 0.216284 & 0.025872 & 0.112059 \\
+%     \hline
+%     NDUFS5 & NADH:Ubiquinone Oxidoreductase Subunit S5 & A component of Complex I involved in electron transfer. & 0.424571 & 0.028080 & 0.117541 \\
+%     \hline
+%     NDUFB11 & NADH:Ubiquinone Oxidoreductase Subunit B11 & Essential for the stability and function of Complex I. & 0.365850 & 0.038461 & 0.141634 \\
+%     \hline
+%     TMEM70 & Transmembrane Protein 70 & Involved in the assembly of mitochondrial ATP synthase. & 0.209582 & 0.041929 & 0.148586 \\
+%     \hline
+%     NDUFA5 & NADH:Ubiquinone Oxidoreductase Subunit A5 & A component of Complex I contributing to the electron transport chain. & 0.199476 & 0.044831 & 0.155062 \\
+%     \hline
+%     NDUFAB1 & NADH:Ubiquinone Oxidoreductase Subunit AB1 & Also known as mitochondrial acyl carrier protein; part of Complex I and involved in fatty acid metabolism. & 0.316403 & 0.048178 & 0.162527 \\
+%     \label{tab:cluster0_genes_y622}
+% \end{longtable}
 
 \clearpage
 \begin{longtable}{p{4cm} p{2cm} p{1.5cm} p{1.5cm} p{6cm}}
-    \caption{mito genes for p.Tyr622* vs WT bulk RNA-seq} \\
+    \caption{Enrichments of MitoCarta mitochondrial pathways in p.Tyr622* vs WT bulk RNA-seq} \\
     \hline
     \textbf{Term} & \textbf{score} & \textbf{P-value} & \textbf{FDR} & \textbf{Genes} \\
     \hline

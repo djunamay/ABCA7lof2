@@ -42,12 +42,12 @@
     \label{fig:main_atlas}
 \end{figure}
 \begin{itemize}
-\item[\textbf{(A)}] Overview of ABCA7 gene structure with the location of variants represented in this study (average minor allele frequency for depicted variants is < 1\%). Exons are depicted as black rectangles, and introns as black lines. The pie chart indicates the frequency of ABCA7 PTC-variant-carriers within the ROSMAP cohort. 
-\item[\textbf{(B)}] Overview of human cohort for snRNA-seq (Created with BioRender.com). 
-\item[\textbf{(C)}] Overview of snRNA-seq cohort metadata for 32 individuals. 
-\item[\textbf{(D)}] ABCA7 protein levels (log2(abundance)) from post-mortem human prefrontal cortex in all available controls ($N=180$) vs. ABCA7 LoF carriers ($N=5$). P-value computed by Wilcoxon rank sum test. Boxes indicate per-condition dataset quartiles, and whiskers extend to the most extreme data points not considered outliers (i.e., within 1.5 times the interquartile range from the first or third quartile). 
-\item[\textbf{(E)}] 2D UMAP projection of per-cell gene expression values and their transcriptionally defined cell type. 
-\item[\textbf{(F)}] 2D UMAP projection of ABCA7 LoF gene perturbation scores ($S = -\log_{10}(\text{p-value}) \times \text{sign}(\log_2(\text{fold change}))$); Red = $S>1.3$, Blue = $S<-1.3$; Point size indicates $|S|$). Up to top 20 genes by $|S|$ are labeled. 
-\item[\textbf{(G)}] Genes in 2D UMAP space colored by cluster assignment (Gaussian mixture model; see Methods) with per-cluster pathway enrichments shown (GO BP, hypergeometric enrichment, $p<0.01$). 
-\item[\textbf{(H)}] Cell type-specific gene cluster scores ($SC = \text{mean}(S_i)$, for genes $i$ in cluster $c$). * indicates permutation FDR-adjusted p-value $< 0.01$ and $|SC| > 0.25$.
+    \item[\textbf{(A)}] ABCA7 gene structure indicating variant locations studied here (average minor allele frequency <1\%). Exons are black rectangles; introns, black lines. Pie chart indicates frequency of ABCA7 PTC-variant carriers in ROSMAP cohort.
+    \item[\textbf{(B)}] Overview of human snRNA-seq cohort (created with BioRender.com).
+    \item[\textbf{(C)}] Metadata summary of snRNA-seq cohort ($N=32$ individuals).
+    \item[\textbf{(D)}] ABCA7 protein abundance in postmortem prefrontal cortex from controls ($N=180$) vs. ABCA7 LoF carriers ($N=5$). Statistical comparison by Wilcoxon rank sum test. Boxes indicate quartiles; whiskers represent data within 1.5× interquartile range.
+    \item[\textbf{(E)}] 2D UMAP projection of single-cell gene expression, colored by transcriptionally defined cell type.
+    \item[\textbf{(F)}] 2D UMAP projection of ABCA7 LoF gene perturbation scores ($S = -\log_{10}(p)\times\text{sign}(\log_2(\text{FC}))$). Red: $S>1.3$, Blue: $S<-1.3$; point size reflects $|S|$. Up to top 10 genes labeled.
+    \item[\textbf{(G)}] 2D UMAP projection colored by gene cluster assignment (Gaussian mixture model; see Methods). Top pathway enrichments per cluster shown (GO BP, hypergeometric enrichment, $p<0.01$).
+    \item[\textbf{(H)}] Cell type-specific gene cluster scores ($SC=\text{mean}(S_i)$ for genes $i$ in cluster $c$). * indicates permutation FDR-adjusted $p<0.01$ and $|SC|>0.25$.
 \end{itemize}

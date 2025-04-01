@@ -21,14 +21,15 @@
         \includegraphics[width=\textwidth]{./extended_plots/rna_correlation_miocarta_both_lines.png}        
     \end{subfigure}
     \caption{
-        \textbf{mRNAseq of p.Glu50fs* vs WT iNs.}\\
+        \textbf{mRNA-seq analysis of p.Glu50fs* vs. WT iNs.}\\
     }
     \label{fig:bulk_RNAseq_supplement}
 \end{figure}
 \begin{itemize}
-    \item[\textbf{(A)}] Kernighan-Lin (K/L) clustering of leading-edge genes from pathways perturbed in p.Glu50fs* vs. WT iNs (p-adjusted < 0.05). Colors indicate distinct K/L gene clusters, which are assigned cluster p.Tyr622* labels if they significantly overlap with p.Tyr622*-identified clusters based on Jaccard analysis in (B). Otherwise, they are labeled with a 'G' prefix.
-    \item[\textbf{(B)}] Heatmap showing Jaccard index-based overlap between K/L clusters from p.Glu50fs* vs. WT iNs and p.Tyr622*-identified clusters.
-    \item[\textbf{(C)}] Heatmap showing Jaccard index-based overlap between K/L clusters from postmortem-identified clusters and p.Glu50fs*-identified clusters.
-    \item[\textbf{(D)}] Left: Gaussian kernel density estimate plots of gene scores $S$ for genes within each cluster ($S>0$ indicates upregulation in ABCA7 LoF). Solid lines represent distribution means. Right: Top representative pathways associated with the highest intra-cluster connectivity.
-    \item[\textbf{(E)}] Correlation of per-gene perturbation scores ($S = -\log_{10}(\text{p-value}) \times \text{sign}(\log_2(\text{fold change}))$) between p.Glu50fs* vs. WT and p.Tyr622* vs. WT iNs for mitochondrial-localized genes.
+    \item[\textbf{(A)}] Kernighan-Lin (K/L) clustering of leading-edge genes from significantly perturbed pathways (Benjamini–Hochberg (BH) FDR-adjusted $p<0.05$) in p.Glu50fs*3 vs. WT iNs. Colors represent distinct K/L clusters.
+    \item[\textbf{(B)}] Heatmap of Jaccard index overlap between K/L gene clusters from p.Glu50fs*3 neurons and clusters identified in p.Tyr622* vs WT iNs. Red text denotes clusters with average score $S$ upregulated in ABCA7 LoF; blue text denotes clusters with average $S$ downregulated in ABCA7 LoF.
+    \item[\textbf{(B)}] Heatmap showing Jaccard index overlap between K/L clusters identified in p.Glu50fs* vs. WT iNs and p.Tyr622* vs. WT iNs.
+    \item[\textbf{(C)}] Heatmap of Jaccard index overlap between K/L gene clusters from p.Glu50fs*3 neurons and clusters identified in human postmortem excitatory neurons.
+    \item[\textbf{(D)}] Gaussian kernel density plots of gene perturbation scores ($S$) within each cluster. Positive $S$ indicates upregulation in p.Glu50fs*3. Solid lines denote cluster means. Top enriched pathways with highest intra-cluster connectivity indicated.
+    \item[\textbf{(E)}] Correlation of per-gene perturbation scores ($S = -\log_{10}(\text{p-value}) \times \text{sign}(\log_2(\text{fold change}))$) between p.Glu50fs*3 vs. WT and p.Tyr622* vs. WT iNs for MitoCarta genes.
 \end{itemize}

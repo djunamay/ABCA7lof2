@@ -1,0 +1,28 @@
+\begin{figure}[H]
+    \begin{subfigure}[t]{.3\textwidth}
+        \caption{}
+        \includegraphics[width=\textwidth]{./extended_plots/ex_neuronal_subtypes.png}        
+    \end{subfigure}
+    \begin{subfigure}[t]{.3\textwidth}
+        \caption{}
+        \includegraphics[width=\textwidth]{./extended_plots/ex_neuronal_subtypes_he_markers.png}        
+    \end{subfigure}
+    \begin{subfigure}[t]{.3\textwidth}
+        \caption{}
+        \includegraphics[width=\textwidth]{./extended_plots/ex_neuronal_subtypes_maynard_markers.png}        
+    \end{subfigure}
+    \begin{subfigure}[t]{0.8\textwidth}
+        \caption{}
+        \includegraphics[width=\textwidth]{./extended_plots/fgsea_by_ex_layer.png}        
+    \end{subfigure}
+    \caption{
+        \textbf{Excitatory neuronal layer annotation (snRNAseq from human PFC).}\\
+    }
+    \label{fig:ex_layers}
+\end{figure}
+\begin{itemize}
+    \item[\textbf{(A)}] UMAP visualization of excitatory neurons annotated by cortical layers based on Leiden clustering. 
+    \item[\textbf{(B)}] Heatmap showing enrichment of cortical layer-specific marker genes from \cite{He2017-dq} across annotated layers. Color indicates average marker gene expression (log2 fold change) for each layer marker gene set with respect to all other clusters.    
+    \item[\textbf{(C)}] Heatmap displaying validation of layer annotations using an independent set of cortical layer marker genes from \cite{Maynard2021-mz}. Color represents average marker gene expression (log2 fold change) for each layer marker gene set with respect to all other clusters.
+    \item[\textbf{(D)}] ABCA7 LoF-associated perturbations of excitatory neuronal PM gene clusters by layer (FGSEA).
+\end{itemize}

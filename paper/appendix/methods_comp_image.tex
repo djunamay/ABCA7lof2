@@ -1,7 +1,7 @@
 \subsubsection{\underline{Image Processing}}
 
 \paragraph{Quantification of fixed z-stack imaging.}
-Image data were acquired at 8 or 16 bits, with voxel sizes of 1 µm x 0.62 µm x 0.62 µm (MitoHealth) or 1 µm x 0.31 µm x 0.31 µm (PLIN2, LipidSpot, Aβ, β-secretase). Image files extracted from the confocal Zeiss microscope (.czi format) were loaded into Python using the `aicsimageio` package and converted to floating-point format in the range $[0,1]$. Confocal image acquisition settings were kept consistent within each imaging batch.
+Image data were acquired at 8 or 16 bits, with voxel sizes of 1 µm x 0.62 µm x 0.62 µm. Image files extracted from the confocal Zeiss microscope (.czi format) were loaded into Python using the `aicsimageio` package and converted to floating-point format in the range $[0,1]$. Confocal image acquisition settings were kept consistent within each imaging batch.
 
 A pre-trained model ("cyto2" from Cellpose \cite{Stringer2021-yn}) was applied to segment NeuN+ cell bodies per image. For images sampled at 0.62 µm along the xy-plane, segmentation on the NeuN channel in 3D produced the best results. For images sampled at 0.31 µm along the xy-plane, segmentation on the NeuN and Hoechst channels in 2D (xy), with subsequent stitching along the z-axis, produced the best results. Specific segmentation settings were determined for each imaging experiment. Segmentation quality was assessed manually, blinded to condition, and images with low-quality segmentations were discarded.
 

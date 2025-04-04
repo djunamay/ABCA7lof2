@@ -55,35 +55,64 @@ The difference between v2 and v3.1 10x Genomics chemistry should be extensively 
 
 \begin{figure}[H]
 	\begin{subfigure}[t]{\textwidth}
-	\includegraphics[width=\textwidth]{./extended_plots/score_correlations_by_batch.png}        
+	\includegraphics[width=\textwidth]{./extended_plots/score_correlations_by_batch_for_reviewer.png}        
 	\end{subfigure}   
 \end{figure}
 
 The authors showed overall effects on principal and GABAergic neurons. However, it is a pity to miss any potential neuron type-specific effects since the data is there. If the data does not allow to subdivide and analyze fine subtypes of neurons, at least DE analysis should be performed for major families of principal (CUX2, RORB, FEZF2, THEMIS) and GABAergic (SST, PVALB, VIP, ID2) neurons. In particular, potential association of pathways in Fig 2C,D with specific types of principal neurons is interesting.\\
-\textcolor{blue}{We thank the reviewer for this insightful suggestion. While we agree that examining neuron type-specific effects is interesting, we believe this detailed analysis of principal and GABAergic neuron subtypes is beyond the primary scope of the current manuscript. However, we have made the data fully available to enable future studies exploring these finer-grained subtype-specific differences.}
+\textcolor{blue}{We thank the reviewer for this insightful suggestion. We have now annotated excitatory neurons according to cortical layer (panel A, directly below) and assessed whether ABCA7 LoF-associated perturbations vary across these layers (panel B, directly below). We have included a statement describing this analysis - now shown in Figure~\ref{fig:ex_layers} - in the main text [page~\pageref{quoteLayer-label}]:}
+
+\begin{quote}
+	\textcolor{blue}{"\quoteLayer"}
+\end{quote}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\textwidth}
+	\caption{UMAP visualization of excitatory neurons annotated by cortical layers based on Leiden clustering.}
+	\includegraphics[width=\textwidth]{./extended_plots/ex_neuronal_subtypes.png}        
+	\end{subfigure} 
+	\begin{subfigure}[t]{\textwidth}
+	\caption{ABCA7 LoF-associated perturbations of excitatory neuronal PM gene clusters (from Figure~\ref{fig:main_neurons}A,B) by cortical layer (enrichments were computed by FGSEA).}
+	\includegraphics[width=\textwidth]{./extended_plots/fgsea_by_ex_layer.png}        
+	\end{subfigure} 
+\end{figure}
+
 
 Analysis of cell type abundance changes is also missing – there multiple computational tools available.\\
-\textcolor{blue}{We appreciate the reviewer’s suggestion regarding cell type abundance changes. Although valuable, we consider analyses of cell type proportions outside the main scope of our current study, and better suited for dedicated follow-up work.}
+\textcolor{blue}{We have now assessed cell type abundance changes and do not observe significant differences in cell type abundances. Specifically, we assessed differences in cell-type proportions associated with ABCA7 LoF status using generalized linear models (binomial family), adjusting for amyloid, NFTs, sex, age at death, PMI, sequencing batch, and APOE4. Significance was determined using dispersion-adjusted p-values (Pearson chi-square scaling). P-values associated with cell type abundance changes in ABCA7 LoF are shown below.}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{rl}
+	\toprule
+	cell type & p-value \\
+	\midrule
+	Astrocytes & 0.97 \\
+	Excitatory Neurons & 0.55 \\
+	Inhibitory Neurons & 0.10 \\
+	Microglia & 0.50 \\
+	Oligodendrocytes & 0.94 \\
+	OPCs & 0.29 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
 
 The protocol for iNs is rather short and neurons are still immature. Although the changes in electrophysiology in Fig. S8 are robust, the authors should confirm whether these changes are due to maturational delay of ABCA7 LoF neurons or are stable and also persist in more mature neurons.\\
-\textcolor{blue}{We thank the reviewer for this helpful suggestion. To address this point, we generated cortical organoids from p.Tyr622 and WT iNs and measured spontaneous action potential frequency using electrophysiology, as well as spontaneous calcium events using GCaMP6s calcium imaging. These experiments confirmed increased hyperexcitatbility of ABCA7 LoF neurons, demonstrating that this phenotype is robust, stable, and not due to delayed neuronal maturation. These new data are presented in Extended Data Figure~\ref{fig:main_choline}K (and Panel A directly below) and Figure~\ref{fig:neurospheroid_figure}C (and Panel B directly below), and discussed in the main text.}
+\textcolor{blue}{We thank the reviewer for this helpful suggestion. To address this point, we generated cortical organoids from p.Tyr622 and WT iNs and measured spontaneous action potential frequency using electrophysiology. This experiment confirmed increased hyperexcitatbility of ABCA7 LoF neurons, demonstrating that this phenotype is robust, stable, and not due to delayed neuronal maturation. These new data are presented in Extended Data Figure~\ref{fig:main_choline}K (and Panel A directly below), and discussed in the main text.}
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.4\textwidth}
-	\caption{Spontaneous action potentials measured in p.Tyr622* iNs with or without CDP-choline in cortical organoids.}
+	\caption{Spontaneous action potentials measured in p.Tyr622* iNs with or without 100 $\mu$M CDP-choline for 2 weeks in dissociated cortical organoids (150 days old).}
 	\includegraphics[width=\textwidth]{./main_plots/cortical_organoids_ephys.png}        
-	\end{subfigure} 
-	\begin{subfigure}[t]{.4\textwidth}
-	\caption{Spontaneous calcium events measured in p.Tyr622* iNs with or without CDP-choline in dissociated cortical organoids transduced with AAV1-GCaMP6s.}
-	\includegraphics[width=\textwidth]{./extended_plots/calcium_data.png}        
-	\end{subfigure} 
+	\end{subfigure}       
 \end{figure}
 
 There are several issues that should be addressed to improve data and presentation in Fig. 5 experiments:
 \begin{enumerate}
 	\item NeuN/GFP signal in Fig5A is higher upon CDP-choline treatment – is it a consistent phenomenon or just happened for this particular image? If it is consistent, it can be that CDP-choline treatment for 2 weeks accelerates neuronal maturation and this should be measured.\\
-	\textcolor{blue}{We thank the reviewer for highlighting this observation. The apparent increase in NeuN/GFP signal in Figure 5A is specific to the selected image. We have now updated the panel with better representative images (\ref{fig:choline_treatment}K).}
+	\textcolor{blue}{We thank the reviewer for highlighting this observation. The apparent increase in NeuN/GFP signal upon CDP-choline treatment (formerly Figure 5A) is specific to the selected image. We have now updated the panel with better representative images (\ref{fig:choline_treatment}K).}
 
 	\item Quantifications in Fig. 5C show very high variability for vehicle treated cells. This experiment must be re-done to convince the reader that the mitochondrial membrane potential is indeed decreased upon CDP-choline treatment.\\
 	\textcolor{blue}{We thank the reviewer for this helpful suggestion. We have now repeated the mitochondrial membrane potential measurements using tetramethylrhodamine methyl ester (TMRM), a fluorescent dye that accumulates within mitochondria proportionally to their membrane potential. These new TMRM experiments in p.Tyr622* iNs showed reduced variability, confirmed significantly increased mitochondrial membrane potential in ABCA7 LoF neurons compared to WT, and demonstrated rescue upon CDP-choline treatment. We have added these new data in Figure~\ref{fig:main_choline}I (and directly below), while retaining the original MitoHealth results in Figure~\ref{fig:main_mitochondrial}H and Figure~\ref{fig:choline_treatment}K for completeness.}
@@ -109,7 +138,7 @@ There are several issues that should be addressed to improve data and presentati
 	\end{figure}
 
 	\item In general, GFP signal is overexposed and better representative images with moderate exposition should be provided.\\
-	\textcolor{blue}{We have reduced the GFP saturation for all images, which are now presented in Figure~\ref{fig:main_mitochondrial}H and Extended Data Figure~\ref{fig:choline_treatment}K.} 
+	\textcolor{blue}{We have reduced GFP saturation and adjusted the color palette across all images to improve the visualization of cells with lower GFP expression levels, avoiding oversaturation. These updated images are presented in Figure~\ref{fig:main_mitochondrial}H and Extended Data Figure~\ref{fig:choline_treatment}L. In line with Reviewer 1's comment, we have now also increased the number of cells per representative image.} 
 
 	\item It is unclear what was used as “n” in different Fig. 5 plots, is it always 1 well? N is quite variable in different quantification panels in Fig. 5 and some clarifications should be provided.\\
 	\textcolor{blue}{We thank the reviewer for pointing this out. We have clarified what each "n" represents in all figure panels, including the updated choline rescue figure (Figure~\ref{fig:main_choline}, previously Figure 5), and in all associated quantification plots.}

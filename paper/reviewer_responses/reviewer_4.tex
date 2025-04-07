@@ -23,9 +23,9 @@ To understand how many samples are in this study and how many are from 2019 stud
 \end{quote}
 
 Extended Table 2 is rather short and better description of metadata is necessary, which will help for future re-use of the data by other groups. The authors should include multiple technical parameters, such as version of 10x kit, type of Illumina kit used for sequencing, date/batch of sequencing (we believe that multiple Nextseq kits were used to sequence for 2019 study), total nucleus number (loaded/recovered), etc.\\
-\textcolor{blue}{We now provide an additional table (\ref{data:cellranger_metrics}) summarizing key technical parameters extracted from the Cell Ranger analysis, including: Sample ID, Chemistry, Include Introns, Transcriptome, Pipeline Version, Estimated Number of Cells, Mean Reads per Cell, Median Genes per Cell, Number of Reads, Valid Barcodes, Sequencing Saturation, Q30 Bases in Barcode, Q30 Bases in RNA Read, Q30 Bases in UMI, Reads Mapped to Genome, Reads Mapped Confidently to Genome, Reads Mapped Confidently to Intergenic Regions, Reads Mapped Confidently to Intronic Regions, Reads Mapped Confidently to Exonic Regions, Reads Mapped Confidently to Transcriptome, Reads Mapped Antisense to Gene, Fraction Reads in Cells, Total Genes Detected, and Median UMI Counts per Cell, and study/sequencing batch.}
+\textcolor{blue}{We now provide an additional table (Data~\ref{data:cellranger_metrics}) summarizing key technical parameters extracted from the Cell Ranger analysis, including: Sample ID, Chemistry, Include Introns, Transcriptome, Pipeline Version, Estimated Number of Cells, Mean Reads per Cell, Median Genes per Cell, Number of Reads, Valid Barcodes, Sequencing Saturation, Q30 Bases in Barcode, Q30 Bases in RNA Read, Q30 Bases in UMI, Reads Mapped to Genome, Reads Mapped Confidently to Genome, Reads Mapped Confidently to Intergenic Regions, Reads Mapped Confidently to Intronic Regions, Reads Mapped Confidently to Exonic Regions, Reads Mapped Confidently to Transcriptome, Reads Mapped Antisense to Gene, Fraction Reads in Cells, Total Genes Detected, and Median UMI Counts per Cell, and study/sequencing batch.}
 
-\textcolor{blue}{We confirm that in the Nature 2019 study \cite{Mathys2019-wb}, sequencing was exclusively performed using NextSeq 500/550 High Output v2 kits (150 cycles). We have updated the Methods section to clearly specify the sequencing approach for each batch, including the 10x chemistry version and Illumina sequencing platforms and kits. [page~\pageref{quoteJ-label}] (see excerpt above).}\\
+\textcolor{blue}{We confirm that in the Nature 2019 study \cite{Mathys2019-wb}, sequencing was exclusively performed using NextSeq 500/550 High Output v2 kits (150 cycles). We have updated the Methods section to clearly specify the sequencing approach for each batch, including the 10x chemistry version and Illumina sequencing platforms and kits [page~\pageref{quoteJ-label}] (see excerpt above).}\\
 
 For DE analysis, the authors should perform a PCA or similar analysis for overall transcriptomic similarity between the samples and color by sequencing batch, sex, age and few other major covariates.\\
 \textcolor{blue}{We thank the reviewer for this suggestion. We have now performed and included additional dimensionality-reduction analyses (UMAP) colored by sequencing batch, sex, age, and individual ID (Figure~\ref{fig:snRNA_batch_quality}C) to illustrate transcriptomic similarity following batch correction. Additionally, we conducted PCA on the residuals after linear model batch correction, with individuals colored according to the requested covariates, as shown below.}
@@ -51,10 +51,11 @@ The difference between v2 and v3.1 10x Genomics chemistry should be extensively 
 	\end{subfigure} 
 \end{figure}
 
-\textcolor{blue}{To ensure these chemistry-related batch effects do not influence our conclusions, our analyses explicitly control for batch as a covariate. Additionally, we performed stratified analyses excluding the v2 chemistry batch and confirmed that differentially expressed gene scores remain robust and consistent with the full dataset (Figure~\ref{fig:snRNA_batch_quality}D), and shown below.}
+\textcolor{blue}{To ensure these chemistry-related batch effects do not influence our conclusions, our analyses explicitly control for batch as a covariate. Additionally, we performed stratified analyses excluding the v2 chemistry batch and confirmed that differentially expressed gene scores remain robust and consistent with the full dataset (Figure~\ref{fig:snRNA_batch_quality}D), and shown below in panel A.}
 
 \begin{figure}[H]
 	\begin{subfigure}[t]{\textwidth}
+	\caption{Comparison of differential gene expression (DEG) scores (-log10(pvalue) * sign(log2(fold change))) with and without v2 chemistry batch}
 	\includegraphics[width=\textwidth]{./extended_plots/score_correlations_by_batch_for_reviewer.png}        
 	\end{subfigure}   
 \end{figure}
@@ -99,7 +100,7 @@ Analysis of cell type abundance changes is also missing – there multiple compu
 \end{table}
 
 The protocol for iNs is rather short and neurons are still immature. Although the changes in electrophysiology in Fig. S8 are robust, the authors should confirm whether these changes are due to maturational delay of ABCA7 LoF neurons or are stable and also persist in more mature neurons.\\
-\textcolor{blue}{We thank the reviewer for this helpful suggestion. To address this point, we generated cortical organoids from p.Tyr622 and WT iNs and measured spontaneous action potential frequency using electrophysiology. This experiment confirmed increased hyperexcitatbility of ABCA7 LoF neurons, demonstrating that this phenotype is robust, stable, and not due to delayed neuronal maturation. These new data are presented in Extended Data Figure~\ref{fig:main_choline}K (and Panel A directly below), and discussed in the main text.}
+\textcolor{blue}{We thank the reviewer for this helpful suggestion. To address this point, we generated cortical organoids aged to 150 daysfrom p.Tyr622* and WT iNs and measured spontaneous action potential frequency using electrophysiology. This experiment confirmed increased hyperexcitatbility of ABCA7 LoF neurons, demonstrating that this phenotype is robust, stable, and not due to delayed neuronal maturation. These new data are presented in Figure~\ref{fig:main_choline}K (and Panel A directly below), and discussed in the main text.}
 
 \begin{figure}[H]
 	\centering
@@ -112,10 +113,10 @@ The protocol for iNs is rather short and neurons are still immature. Although th
 There are several issues that should be addressed to improve data and presentation in Fig. 5 experiments:
 \begin{enumerate}
 	\item NeuN/GFP signal in Fig5A is higher upon CDP-choline treatment – is it a consistent phenomenon or just happened for this particular image? If it is consistent, it can be that CDP-choline treatment for 2 weeks accelerates neuronal maturation and this should be measured.\\
-	\textcolor{blue}{We thank the reviewer for highlighting this observation. The apparent increase in NeuN/GFP signal upon CDP-choline treatment (formerly Figure 5A) is specific to the selected image. We have now updated the panel with better representative images (\ref{fig:choline_treatment}K).}
+	\textcolor{blue}{We thank the reviewer for highlighting this observation. The apparent increase in NeuN/GFP signal upon CDP-choline treatment (formerly Figure 5A) is specific to the selected image. We have now updated the panel with better representative images (Figure~\ref{fig:choline_treatment}L).}
 
 	\item Quantifications in Fig. 5C show very high variability for vehicle treated cells. This experiment must be re-done to convince the reader that the mitochondrial membrane potential is indeed decreased upon CDP-choline treatment.\\
-	\textcolor{blue}{We thank the reviewer for this helpful suggestion. We have now repeated the mitochondrial membrane potential measurements using tetramethylrhodamine methyl ester (TMRM), a fluorescent dye that accumulates within mitochondria proportionally to their membrane potential. These new TMRM experiments in p.Tyr622* iNs showed reduced variability, confirmed significantly increased mitochondrial membrane potential in ABCA7 LoF neurons compared to WT, and demonstrated rescue upon CDP-choline treatment. We have added these new data in Figure~\ref{fig:main_choline}I (and directly below), while retaining the original MitoHealth results in Figure~\ref{fig:main_mitochondrial}H and Figure~\ref{fig:choline_treatment}K for completeness.}
+	\textcolor{blue}{We thank the reviewer for this helpful suggestion. We have now repeated the mitochondrial membrane potential measurements using tetramethylrhodamine methyl ester (TMRM), a fluorescent dye that accumulates within mitochondria proportionally to their membrane potential. These new TMRM experiments in p.Tyr622* iNs showed reduced variability, confirmed significantly increased mitochondrial membrane potential in ABCA7 LoF neurons compared to WT (Figure~\ref{fig:main_mitochondrial}I), and demonstrated rescue upon CDP-choline treatment. We have added these new data in Figure~\ref{fig:main_choline}H (and directly below), while retaining the original MitoHealth results in Figure~\ref{fig:main_mitochondrial}H and Figure~\ref{fig:choline_treatment}L for completeness.}
 
 	\begin{figure}[H]
 		\centering
@@ -126,7 +127,7 @@ There are several issues that should be addressed to improve data and presentati
 	\end{figure}
 
 	\item The experiment in Fig. 5D is important to link changes in lipid metabolism and mitochondrial function to amyloid production. However, the change in Ab42 is rather minor. One of the reasons can be that vehicle-treated cells have too low levels of Ab42. Longer culture might help to increase Ab42 accumulation. In fact, same holds true for Fig. S9 experiments and longer culture might help the authors to have stronger support for Ab42-associated accumulation in ABCA7 LoF lines.\\
-	\textcolor{blue}{Because we found secreted Aβ40 and Aβ42 levels by ELISA in media from ABCA7 LoF iNs at this developmental time point to be low Figure~\ref{fig:differentiating_iPSC_neurons}A, we also differentiated WT and p.Tyr622* lines into dorsal cortical organoids and repeated ELISA measurements on the media at a more mature timepoint (six months). These analyses revealed elevated soluble Aβ40 and Aβ42 levels in media from p.Tyr622* cortical organoids compared to WT, as presented in Figure~\ref{fig:main_choline}L and Figure~\ref{fig:neurospheroid_figure}B, and shown below.}
+	\textcolor{blue}{Because we found secreted Aβ40 and Aβ42 levels by ELISA in media from ABCA7 LoF iNs at this developmental time point to be low (Figure~\ref{fig:neurospheroid_figure}A), we also differentiated WT and p.Tyr622* lines into dorsal cortical organoids and repeated ELISA measurements on the media at a more mature timepoint (six months). These analyses revealed elevated soluble Aβ40 and Aβ42 levels in media from p.Tyr622* cortical organoids compared to WT, as presented in Figure~\ref{fig:main_choline}J and Figure~\ref{fig:neurospheroid_figure}C, and shown below.}
 
 	\begin{figure}[H] 
 		\centering
@@ -155,10 +156,10 @@ Fig S1H – why astrocytic marker expression overlap with glutamatergic?\\
 \textcolor{blue}{We appreciate the reviewer noting this overlap. Upon careful inspection, we found that the overlap primarily results from the gene \textit{SLC1A2}, which is highly expressed in both astrocytes and neurons. This gene appears in both the Astrocytic and Glutamatergic annotation gene sets from PanglaoDB. Because the Glutamatergic set contains relatively few genes (10 genes) compared to the Astrocytic set (63 genes), shared high expression of \textit{SLC1A2} significantly increases the perceived overlap.}
 
 Fig 1F has too many gene names, please either remove some and focus on most important or provide additional larger panels in extended data.\\
-\textcolor{blue}{We thank the reviewer for this suggestion. We have improved the visualization by reducing the number of labeled genes in Figure~\ref{fig:main_atlas}C, clearly highlighting fewer top genes with enlarged labels. Additionally, an expanded view with more comprehensive gene annotations is provided in Figure~\ref{fig:snRNAseq_gene_scores}A.}
+\textcolor{blue}{We thank the reviewer for this suggestion. We have improved the visualization by reducing the number of labeled genes in Figure~\ref{fig:main_atlas}F, clearly highlighting fewer top genes with enlarged labels. Additionally, an expanded view with more comprehensive gene annotations is provided in Figure~\ref{fig:snRNAseq_gene_scores}A.}
 
 Data S6 does not have information on “34 pathways with evidence for transcriptional perturbation at p<0.05 in excitatory neurons”, at least we could not find it.\\
-\textcolor{blue}{We have now fixed this and these data are included in Extended Data Table~\ref{data:exci_pathways}.}
+\textcolor{blue}{We have now fixed this and these data are included in Extended Data File~\ref{data:exci_pathways}.}
 
 For “trend related to relatively increased triglyceride and decreased phosphatidylcholine abundance in the postmortem human PFC of ABCA7 LoF carriers (Fig. S9C )”This is not 9C, but 10C. In addition, p values are rather high; this data cannot be used to support the hypothesis and comments for trends should be removed. Otherwise, the experiment can be expanded to more samples.\\
 \textcolor{blue}{We have now removed these data.}
@@ -167,7 +168,7 @@ The authors use MitoHealth dye as a proxy for mitochondrial membrane potential. 
 \textcolor{blue}{We thank the reviewer for pointing this out and have updated the text and figure panels to consistently refer to the MitoHealth dye explicitly}.
 
 Fig S11B, S12D are difficult to read, since color code is not provided. In addition, even with color code, there are too many lines – it will help for the reader to color by condition to visualize the variability within/between conditions.\\
-\textcolor{blue}{We apologize for the confusion. These plots were originally intended to display individual Seahorse assay traces without emphasizing experimental groups. We have now clarified this by adding descriptive titles to Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}B and Figure~\ref{fig:choline_treatment}I and removed the confusing color coding. To clearly visualize variability within and between conditions, traces grouped and colored by condition are provided in the preceding panels, Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}A and Figure~\ref{fig:choline_treatment}H.}
+\textcolor{blue}{We apologize for the confusion. These plots were originally intended to display individual Seahorse assay traces without emphasizing experimental groups. We have now clarified this by adding descriptive titles to Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}B and Figure~\ref{fig:choline_treatment}J and removed the confusing color coding. To clearly visualize variability within and between conditions, traces grouped and colored by condition are provided in the preceding panels, Figure~\ref{fig:oxygen_consumption_rates_iPSC_neurons}A and Figure~\ref{fig:choline_treatment}I.}
 
 Panels in Fig 4, Fig 5 and S11, S12: p values >10 to -4 should be presented in a regular form, without multiplication by 10.\\
-\textcolor{blue}{We appreciate this suggestion from the reviewer and have now updated the p-values as suggested.}
+\textcolor{blue}{We appreciate this suggestion from the reviewer and have now updated presentation of the p-values as suggested.}

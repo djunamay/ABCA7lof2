@@ -30,9 +30,10 @@ Raw sequencing reads from all samples were processed jointly for alignment and g
 ## Code overview
 
 ### Requirements:
+- `mksquashfs` (version 4.5)
 
 ### Run cellranger counting:
-- Download the FASTQ files
+- Download the FASTQ files (see above)
 -  Make the squash file system:
 ```bash
 mksquashfs */fastqs/10x-4819F batch_4819F.sqsh

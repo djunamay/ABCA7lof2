@@ -3,7 +3,8 @@
 This directory contains instructions and scripts for performing sample swap analysis on VCF files, specifically on VCF-BAM files from ROSMAP samples, and was used to perform sample-swap analysis in our paper.
 
 ## Data availability
-- Download VCF files for each sample following instructions here: [ROSMAPwgs GitHub](https://github.com/djunamay/ROSMAPwgs).
+- Download VCF files for chromosome(s) of interest following instructions here: [ROSMAPwgs GitHub](https://github.com/djunamay/ROSMAPwgs).
+- We used `DEJ_11898_B01_GRM_WGS_2017-05-15_19.recalibrated_variants.vcf.gz.tbi` from `syn2580853` given ABCA7's location on Chr 19
 - Generate BAM files for each sample: [snRNAseq_processing](../snRNAseq_processing/README.md)
 
 ### Genome Chain File (for coordinate conversion)

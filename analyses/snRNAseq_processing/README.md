@@ -1,4 +1,6 @@
 
+# snRNA-seq data processing (QC, annotation)
+
 ## Experiment Description
 
 ### Isolation of nuclei from frozen postmortem brain tissue
@@ -27,6 +29,8 @@ Raw sequencing reads from all samples were processed jointly for alignment and g
 
 ## Code overview
 
+### Requirements:
+
 ### Run cellranger counting:
 - Download the FASTQ files
 -  Make the squash file system:
@@ -41,24 +45,25 @@ mksquashfs */fastqs/171013Tsa 171013Tsa.sqsh
 ### Get metadata files and aggregate counts:
 - Run `./metadata.ipynb`
 - Run `./aggregate.ipynb`
-
+<!-- 
 ### Run sample swap analysis:
 - Download the VCF files (see [this Git repo](https://github.com/djunamay/ROSMAPwgs) for instructions)
 - Remap the VCF file:
 ```bash
-/bash_files/crossmap.sh
+../../bash_files/crossmap.sh
 */htslib-1.10.2/bgzip out.hg38.vcf --threads 20
 */bcftools sort out.hg38.vcf.gz -o out.hg38.sorted.vcf.gz
 */htslib-1.10.2/tabix -p vcf out.hg38.sorted.vcf.gz
 */bcftools annotate --rename-chrs chr_name_conv.txt out.hg38.sorted.vcf.gz -Oz -o out.hg38.sorted.ChrNamed.vcf.gz --threads 40
 */htslib-1.10.2/tabix -p vcf out.hg38.sorted.ChrNamed.vcf.gz
 ```
-- Run `../bash_files/sample_swap_make_exec.ipynb` to make the text file to iterate over.
-- Run `../bash_files/sample_swap.sh`.
-- Run `../bash_files/sample_swap.ipynb` 
+- Run `../../bash_files/sample_swap_make_exec.ipynb` to make the text file to iterate over.
+- Run `../../bash_files/sample_swap.sh`.
+- Run `./sample_swap.ipynb`  -->
 
 ### ABCA7 loss-of-function snRNAseq QC & Annotation
 - Run `./get_marker_genes.ipynb` to get marker genes.
 - Run `./single_cell_qc_anno.ipynb` to run celltype quality control and annotation.
 - Run `./umaps.ipynb` to generate UMAPs.
 - Run `./make_sce.ipynb` to save single cell data as SingleCellExperiment object.
+

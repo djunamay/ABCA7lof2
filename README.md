@@ -20,7 +20,7 @@ cd ABCA7lof2
 | Human postmortem - snRNAseq gene-pathway partitioning  | Evaluate and apply graph partitioning algorithms to gene and pathway-level statistics from snRNAseq data. | [→](analyses/snRNAseq_score_partitioning/)               |
 | Human postmortem - snRNAseq ala1527gly          | Analysze snnRNAseq data from ROSMAP study participants with the ALA1527GLY variant.          | [→](analyses/common_variant_analysis/)                        |
 | induced-neurons - LCMS                            | Analyze lipidomic profiles from iPSC-derived neurons using Liquid Chromatography-Mass Spectrometry (LCMS).             | [→](analyses/iN_LCMS/)                                   |
-| induced-neurons - mRNA             |  Analyze mRNA datasets from iPSC-derived neurons.                                  | [→](analyses/iN_LCMS/) |
+| induced-neurons - mRNA             |  Analyze mRNA datasets from iPSC-derived neurons.                                  | [→](analyses/bulkRNAseq/) |
 | induced-neurons - O2 consumption rates             | Analyze oxygen consumption rates in iPSC neurons            | [→](analyses/iN_O2_consumption/)                         |
 | induced-neurons - fixed dyes              | Analyze MitoHealth imaging.          | [→](analyses/iN_membrane_potential/)                     |
 | induced-neurons - live dyes               | Analyze TMRM and CellROX imaging.           | [→](analyses/iN_membrane_potential/)                     |

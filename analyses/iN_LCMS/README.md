@@ -70,6 +70,8 @@ Also at Harvard C-MS, using a Vanquish LC + ID-X MS (Thermo). Samples (5 µL) we
 
 Flow was 0.15 mL min⁻¹ (except initial ramp). Data were acquired in polarity-switching MS1 at 120,000 resolution (AGC 1×10⁵; m/z 65–1000). MS2/MS3 was run on pooled samples via AcquireX DeepScan (five reinjections each for positive and negative). A targeted metabolites standard mixture was run immediately after samples for quantitation.
 
+---
+
 ### LC-MS Data Analysis
 
 #### LC-MS Lipidomics Data Analysis

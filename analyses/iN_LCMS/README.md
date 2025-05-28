@@ -1,27 +1,96 @@
 # LC-MS Experiments on induced Neurons
 
 ## Experiment Description
-\subsubsection{\underline{LC-MS Experiments on iNs}} 
+### LC-MS Experiments on iNs
 
-\paragraph{Biphasic Extraction.} 
-iPSC-derived neurons were washed once with cold PBS (Fisher; Cat\#MT21040CM) and lifted off plate with a cell scraper in 1 mL cold PBS. Cells were centrifuged at 2000 xg for 5 min. PBS was removed, and cells were resuspended in 2 mL cold methanol for biphasic extraction. Chloroform (Sigma 1.02444) (4 mL; cold) was added to each vial, and mixed by vortexing for 1 min. Water (Sigma WX0001) (2 mL; cold) was added to each vial, and mixed by vortexing for 1 min. Vials were placed in 50 mL conical tubes and centrifuged for 10 min at 3000 rcf for phase separation. The lower, chloroform phase was collected (3 mL from each sample) and transferred to new vials. 
-In instances where samples were prepared by the Harvard Center for Mass Spectrometry, cell pellets were provided in 500 µL of methanol, vortexed, and transferred to 8 mL glass vials. Each sample received an additional 1.5 mL of methanol and 4 mL of chloroform, followed by vortexing and incubation for 10 min in an ultrasound bath. Next, 2 mL of water was added, and samples were again vortexed. Phase separation was achieved by centrifugation at 800 rcf for 10 min at 4°C. The resulting upper aqueous phases were transferred into new glass vials designated for metabolomics analysis, while the lower chloroform phases were transferred separately for lipidomics analysis.
-At least one blank sample (containing no cells) was prepared alongside each biphasic extraction experiment and processed identically through the LC-MS analysis pipeline.
+#### Biphasic Extraction
 
-\paragraph{Cell pellet sample preparation for LC-MS Lipidomics.} 
-Subsequent sample preparation for lipidomics was performed by the Harvard Center for Mass Spectrometry. Samples were dried under nitrogen flow until approximately 1 mL remained, transferred into microcentrifuge tubes, and completely evaporated to dryness. Dried samples were resuspended in chloroform, with volumes scaled according to biomass (cell count) using a minimum of 60 µL, then split into two equal aliquots for positive and negative ionization mode analyses. For experiments using only positive ionization mode, samples were resuspended in a smaller biomass-scaled volume (minimum 20–25 µL) without splitting. Following resuspension, samples were centrifuged (maximum speed for 10 min or 18,000 rcf for 20 min at 4°C), and supernatants were transferred into microinserts for LC-MS analysis.
+iPSC-derived neurons were washed once with cold PBS (Fisher; Cat No. MT21040CM) and lifted off the plate with a cell scraper in 1 mL cold PBS. Cells were centrifuged at 2,000 × g for 5 min. PBS was removed, and cells were resuspended in 2 mL cold methanol for biphasic extraction. Chloroform (Sigma 1.02444; 4 mL cold) was added to each vial and mixed by vortexing for 1 min. Water (Sigma WX0001; 2 mL cold) was added and vortexed for 1 min. Vials were placed in 50 mL conical tubes and centrifuged at 3,000 rcf for 10 min for phase separation. The lower (chloroform) phase was collected (3 mL per sample) and transferred to new vials.
 
-\paragraph{Cell pellet sample preparation for LC-MS Metabolomics.}
-Subsequent sample preparation for metabolomics was performed by the Harvard Center for Mass Spectrometry. Samples were dried under nitrogen flow until approximately 1 mL remained, transferred into microcentrifuge tubes, and evaporated completely to dryness. Dried samples were resuspended in 50\% acetonitrile in water, using volumes scaled according to provided biomass (minimum ~20 µL). Following centrifugation at maximum speed for 10 min, a consistent volume (either 12 µL or 15 µL, depending on the batch) of supernatant from each sample was transferred into microinserts. The remaining supernatants from each batch were pooled separately to create batch-specific quality control (QC) samples.
+> **Note:** When samples were prepared by the Harvard Center for Mass Spectrometry, cell pellets arrived in 500 µL methanol, were vortexed, then transferred to 8 mL glass vials. Each received an additional 1.5 mL methanol and 4 mL chloroform, vortexed, and incubated in an ultrasound bath for 10 min. After adding 2 mL water and vortexing, phase separation was achieved by centrifugation at 800 rcf for 10 min at 4 °C. Upper aqueous phases went to metabolomics; lower chloroform phases went to lipidomics.
 
-\paragraph{Media preparation for LC-MS Metabolomics.}
-Media samples (100 µL each) were transferred into microcentrifuge tubes containing 1 mL of methanol and incubated at -20°C for 2 hours. Following incubation, samples were centrifuged at 18,000 rcf for 20 min at -9°C, and supernatants were transferred into new tubes and evaporated to dryness under nitrogen flow. The dried samples were resuspended in 50 µL of 30\% acetonitrile in water containing 2 mM medronic acid, centrifuged again at 18,000 rcf for 20 min at 4°C, and the resulting supernatants were transferred into glass microinserts for LC-MS analysis.
+At least one blank (no cells) was processed alongside each extraction and run through the LC-MS pipeline.
 
-\paragraph{LC-MS Lipidomics.}
-LC-MS lipidomics analyses were conducted at the Harvard Center for Mass Spectrometry using a procedure adapted from \cite{Miraldi2013-ng}. Samples were analyzed using an Orbitrap Exactive Plus mass spectrometer (Thermo Scientific) coupled to an Ultimate 3000 LC system (Thermo Scientific). Analyses were performed in both positive and negative ionization modes, in top 5 automatic data-dependent MS/MS mode. Chromatographic separation was performed on a Biobond C4 column (4.6 $\times$ 50 mm, 5 µm particle size; Dikma Technologies). The flow rate began at 100 µL min$^{-1}$ with 0\% mobile phase B (MB) for the initial 5 minutes, followed by an increase to 400 µL min$^{-1}$ over the next 50 minutes with a linear gradient of MB from 20\% to 100\%. The column was subsequently washed at 500 µL min$^{-1}$ for 8 minutes with 100\% MB, then re-equilibrated for 7 minutes at 500 µL min$^{-1}$ using 0\% MB. For positive ion mode, mobile phases consisted of buffer A (MA: 5 mM ammonium formate, 0.1\% formic acid, and 5\% methanol in water) and buffer B (MB: 5 mM ammonium formate, 0.1\% formic acid, 5\% water, and 35\% methanol in isopropanol). For negative ion mode, buffer A (MA) contained 0.03\% ammonium hydroxide and 5\% methanol in water, and buffer B (MB) contained 0.03\% ammonium hydroxide, 5\% water, and 35\% methanol in isopropanol. Lipids were identified, and their signals integrated using Lipidsearch software (version 4.2.27, Mitsui Knowledge Industry, University of Tokyo). Integration quality and peak selections were manually curated prior to data export.
+#### Cell Pellet Preparation for LC-MS Lipidomics
 
-\paragraph{LC-MS Metabolomics.}
-LC-MS metabolomics analyses were performed at the Harvard Center for Mass Spectrometry using a Vanquish LC system coupled with an ID-X mass spectrometer (Thermo Fisher Scientific). Samples (5 µL injection) were analyzed on a ZIC-pHILIC peek-coated column (150 mm $\times$ 2.1 mm, 5 µm particle size; Sigma Aldrich) held at 40°C. Mobile phases comprised buffer A (20 mM ammonium carbonate and 0.1\% ammonium hydroxide in water) and buffer B (97\% acetonitrile in water). The gradient initiated at 93\% B, decreasing linearly to 40\% B over 19 minutes, further decreasing to 0\% B over the subsequent 9 minutes, held at 0\% B for 5 minutes, returned to 93\% B within 3 minutes, and finally re-equilibrated at 93\% B for 9 minutes. The flow rate was held constant at 0.15 mL min$^{-1}$, except for an initial 30-second ramp from 0.05 to 0.15 mL min$^{-1}$. Mass spectrometry data were acquired in polarity-switching mode at 120,000 resolution, with an AGC target of $1 \times 10^5$, covering an m/z range from 65 to 1000. MS1 acquisition employed polarity switching for all samples. MS2 and MS3 analyses were performed on pooled samples using the AcquireX DeepScan method, with five reinjections each in positive and negative ion modes separately. A mixture containing standards of targeted metabolites was prepared and analyzed immediately following the sample runs for targeted metabolite analysis.
+Performed by the Harvard Center for Mass Spectrometry. Samples were dried under N₂ flow to \~1 mL, transferred to microcentrifuge tubes, and evaporated to dryness. Dried pellets were resuspended in chloroform (volume scaled to biomass; min. 60 µL), then split into two equal aliquots for positive and negative ionization analyses. For positive-only runs, samples were resuspended in 20–25 µL (min.) without splitting. After resuspension, samples were centrifuged (max speed, 10 min or 18,000 rcf for 20 min at 4 °C), and supernatants transferred into microinserts for LC-MS.
+
+#### Cell Pellet Preparation for LC-MS Metabolomics
+
+Also at the Harvard Center for Mass Spectrometry. Samples were dried under N₂ to \~1 mL, moved to microcentrifuge tubes, and evaporated to dryness. Dried pellets were resuspended in 50% acetonitrile/water (volume scaled to biomass; min. 20 µL). After centrifugation at max speed for 10 min, 12 µL or 15 µL of each supernatant (batch-dependent) was transferred into microinserts. Remaining supernatants were pooled to make batch-specific QC samples.
+
+#### Media Preparation for LC-MS Metabolomics
+
+Media (100 µL) was added to microcentrifuge tubes containing 1 mL methanol and held at –20 °C for 2 h. Samples were centrifuged at 18,000 rcf for 20 min at –9 °C; supernatants were transferred to new tubes and dried under N₂. Dried samples were resuspended in 50 µL 30% acetonitrile/water with 2 mM medronic acid, centrifuged again at 18,000 rcf for 20 min at 4 °C, and supernatants were moved into glass microinserts for LC-MS.
+
+---
+
+### LC-MS Lipidomics
+
+Performed at Harvard C-MS (adapted from Miraldi et al. 2013). An Orbitrap Exactive Plus (Thermo) coupled to an Ultimate 3000 LC (Thermo) was used in top-5 data-dependent MS/MS mode, both positive and negative ionization. Separation was on a Biobond C4 column (4.6 × 50 mm, 5 µm; Dikma) at:
+
+* **Flow**:
+
+  * 0–5 min: 100 µL min⁻¹, 0% B
+  * 5–55 min: ramp to 400 µL min⁻¹, linear gradient B 20→100%
+  * 55–63 min: 500 µL min⁻¹, 100% B
+  * 63–70 min: 500 µL min⁻¹, 0% B (re-equilibration)
+
+* **Buffers (positive):**
+
+  * A: 5 mM ammonium formate, 0.1% formic acid, 5% methanol in water
+  * B: 5 mM ammonium formate, 0.1% formic acid, 5% water, 35% methanol in isopropanol
+
+* **Buffers (negative):**
+
+  * A: 0.03% ammonium hydroxide, 5% methanol in water
+  * B: 0.03% ammonium hydroxide, 5% water, 35% methanol in isopropanol
+
+Lipids were identified and integrated using LipidSearch v4.2.27, with manual curation before export.
+
+---
+
+### LC-MS Metabolomics
+
+Also at Harvard C-MS, using a Vanquish LC + ID-X MS (Thermo). Samples (5 µL) were run on a ZIC-pHILIC PEEK-coated column (150 × 2.1 mm, 5 µm; Sigma) at 40 °C:
+
+* **Mobile phases:**
+
+  * A: 20 mM ammonium carbonate, 0.1% ammonium hydroxide in water
+  * B: 97% acetonitrile in water
+
+* **Gradient:**
+
+  1. 0–30 s: flow ramp 0.05→0.15 mL min⁻¹ at 93% B
+  2. 30 s–19 min: 93→40% B
+  3. 19–28 min: 40→0% B
+  4. 28–33 min: hold 0% B
+  5. 33–36 min: 0→93% B
+  6. 36–45 min: re-equilibrate at 93% B
+
+Flow was 0.15 mL min⁻¹ (except initial ramp). Data were acquired in polarity-switching MS1 at 120,000 resolution (AGC 1×10⁵; m/z 65–1000). MS2/MS3 was run on pooled samples via AcquireX DeepScan (five reinjections each for positive and negative). A targeted metabolites standard mixture was run immediately after samples for quantitation.
+
+### LC-MS Data Analysis
+
+#### LC-MS Lipidomics Data Analysis
+
+Lipids were identified and their signals integrated using LipidSearch™ (v4.2.27, Mitsui Knowledge Industry, University of Tokyo). Integrations and peak quality were manually curated. Peak areas were background-corrected by subtracting three times the median peak area measured in blank samples; any resultant negative values were set to zero.
+
+* **Between-cell-line comparisons**: Welch’s *t*-test (`scipy.stats.ttest_ind`, `equal_var=False`).
+* **Within-cell-line (treatment) comparisons**: Student’s *t*-test (`scipy.stats.ttest_ind`, `equal_var=True`), assuming equal variance.
+
+#### LC-MS Metabolomics Data Analysis
+
+Data were processed in Compound Discoverer 3.2 (Thermo Fisher Scientific). Metabolite IDs were assigned by:
+
+1. **Level 1**: MS²/MS³ spectral matching against a local mzVault library plus retention‐time confirmation with pure standards.
+2. **Level 2**: Spectral matching via mzCloud.
+
+All IDs were manually reviewed. Peak areas were background-corrected (subtracting three times the median blank), with negatives set to zero. Median-centered peak areas were then scaled using `StandardScaler()` from scikit-learn before principal component analysis (PCA). Three samples flagged by the Harvard C-MS as having low overall intensities were excluded from downstream analyses.
+
+#### Targeted LC-MS Metabolite Analysis in Media Samples
+
+Peak areas of CDP, CDP-choline, and choline in media were compared. Solvent blanks confirmed that CDP and CDP-choline were undetectable, while choline appeared at levels several orders of magnitude below those in media samples.
 
 ## Data Availability
 - The raw will be available through [Dryad]().

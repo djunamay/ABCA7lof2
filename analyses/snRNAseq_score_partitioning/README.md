@@ -1,4 +1,5 @@
 # snRNA-seq cluster analyses
+Project genes into lower-dimensional embedding based on cell type perturbation scores.
 Partition gene-pathway graph using K/L heuristic.
 
 ## Data availability

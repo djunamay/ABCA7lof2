@@ -26,6 +26,5 @@ cd ABCA7lof2
 | induced-neurons - LCMS                            | Analyze lipidomic profiles from iPSC-derived neurons using Liquid Chromatography-Mass Spectrometry (LCMS).             | [→](analyses/iN_LCMS/)                                   |
 | induced-neurons - mRNA             |  Analyze mRNA datasets from iPSC-derived neurons.                                  | [→](analyses/bulkRNAseq/) |
 | induced-neurons - O2 consumption rates             | Analyze oxygen consumption rates in iPSC neurons            | [→](analyses/iN_O2_consumption/)                         |
-| induced-neurons - live and fixed dyes              | Analyze MitoHealth, TMRM, and CellROX imaging.          | [→](analyses/iN_membrane_potential/)                     |
-| cortical organoid - other plots               | Plot Amyloid ELISAs and Ephysiological data from cortical organoids.          | [→](analyses/iN_membrane_potential/)                     |
-| induced-neurons and cortical organoids - marker images               | Visualize neuronal marker imaging.         | [→](analyses/iN_membrane_potential/)                     |
+| induced-neurons / cortical organoid - imaging              | Analyze MitoHealth, TMRM, and CellROX dyes, and visualize neuronal markers.          | [→](analyses/iN_membrane_potential/)                     |
+| cortical organoid - ephys and amyloid               | Plot Amyloid ELISAs and Ephysiological data from cortical organoids.          | [→](analyses/iN_membrane_potential/)                     |

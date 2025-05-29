@@ -4,7 +4,7 @@
 This repository contains the main analysis code and links to raw and processed datasets, and relevant analysis pipelines, to reproduce (or extend on) results from our paper.
 
 ## Setup
-- Clone the repository and install required packages:
+- Clone the repository:
 ```bash
 git clone git@github.com:djunamay/ABCA7lof2.git
 cd ABCA7lof2

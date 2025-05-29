@@ -228,5 +228,69 @@
       </ul>
     </td>
   </tr>
+
+  <tr>
+    <th colspan="3">Induced-neurons / cortical organoids - Imaging Data</th>
+  </tr>
+  <tr>
+    <th>File name</th>
+    <th>Description</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>batch*.csv</li>
+        <li>batch_*_df_quant.csv</li>
+        <li><code>*.xlsx</code></li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Processed oxygen consumption rates (per run)</li>
+        <li>Quantified summary tables</li>
+        <li>Raw Excel exports from Seahorse analyzer</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+      </ul>
+    </td>
+  </tr>
+
+  <tr>
+    <th colspan="3">Cortical organoids – Amyloid and Ephys Data</th>
+  </tr>
+  <tr>
+    <th>File name</th>
+    <th>Description</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>batch*.csv</li>
+        <li>batch_*_df_quant.csv</li>
+        <li><code>*.xlsx</code></li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Processed oxygen consumption rates (per run)</li>
+        <li>Quantified summary tables</li>
+        <li>Raw Excel exports from Seahorse analyzer</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+      </ul>
+    </td>
+  </tr>
 </table>
 

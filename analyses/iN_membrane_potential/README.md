@@ -1,4 +1,4 @@
-# induced-neurons - live and fixed dyes
+# Imaging Experiments on induced Neurons
 
 ## Experiment Description
 

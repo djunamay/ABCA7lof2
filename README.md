@@ -12,6 +12,11 @@ cd ABCA7lof2
 - See analysis-specific subfolders below for package requirements, data links, and code
   
 ## Data and Code Availability
+Raw and processed data are available via:
+- Synapse
+- Dryad
+- Gene Expression Omnibus
+Follow READMEs below for more information.  
 | Analysis                                          | Description                                                                                                                                                                     | Go to Code and Readme                                           |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
 | Human postmortem - snRNAseq processing          | Process raw fastq files from single-nucleus RNA sequencing of human postmortem samples, including quality control and preprocessing steps.                   | [→](analyses/snRNAseq_processing/)                       |

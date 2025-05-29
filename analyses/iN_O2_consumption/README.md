@@ -15,4 +15,4 @@ The oxygen consumption rate (OCR) of cells was determined over time using a Seah
 - Raw and Processed data will be made available on Dryad
 
 ## Code overview
-- Run `./seahorse_updpated.ipynb`.
+- Run `./seahorse_updpated.ipynb` for seahorse analyses and plots.

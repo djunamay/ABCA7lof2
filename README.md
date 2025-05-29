@@ -12,11 +12,7 @@ cd ABCA7lof2
 - See analysis-specific subfolders below for package requirements, data links, and code
   
 ## Data and Code Availability
-Raw and processed data are available via one of the following platforms:
-- Synapse
-- Dryad
-- Gene Expression Omnibus
-Follow READMEs below for more information.
+Raw and processed data are available via Synapse, Dryad, or Gene Expression Omnibus. Follow the READMEs below for more information.
 
 | Analysis                                          | Description                                                                                                                                                                     | Go to Code and Readme                                           |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|

@@ -29,7 +29,7 @@
       <ul>
         <li>Source: NA</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: Raw</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a></li>
       </ul>
     </td>
   </tr>
@@ -48,7 +48,7 @@
       <ul>
         <li>Source: PsychENCODE</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing/get_marker_genes.ipynb">get_marker_genes.ipynb</a></li>
-        <li>Available: Accessory</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>
@@ -82,7 +82,7 @@
       <ul>
         <li>Source: WikiPathways_2019_Human</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats/compute_stats.ipynb">compute_stats.ipynb</a></li>
-        <li>Available: Processed</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>
@@ -115,7 +115,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/snRNAseq_stats/compute_stats.ipynb">compute_stats.ipynb</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning/projections.ipynb">projections.ipynb</a></li>
-        <li>Available: Processed</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>
@@ -147,7 +147,7 @@
       <ul>
         <li>Source: Harvard LCMS Core</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS/lipidomics/SUB14737_lipidomics_choline.ipynb">SUB14737_lipidomics_choline.ipynb</a></li>
-        <li>Available: Processed</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>
@@ -192,7 +192,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a></li>
-        <li>Available: Processed</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">GEO</a></li>
       </ul>
     </td>
   </tr>
@@ -224,7 +224,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
-        <li>Available: Processed</li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>

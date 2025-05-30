@@ -11,18 +11,20 @@
   <tr>
     <td>
       <ul>
-        <li>fastq files</li>
-        <li>raw aggregated counts matrix</li>
-        <li>QC’ed aggregated counts matrix</li>
-        <li>patient metadata</li>
+        <li><code>*.fastq</code></li>
+        <li><code>raw_counts.mtx</code></li>
+        <li><code>qc_counts.mtx</code></li>
+        <li><code>individual_metadata_redacted.csv</code></li>
+        <li><code>input_stats.rds</code></li>
       </ul>
     </td>
     <td>
       <ul>
         <li>Raw sequencing reads</li>
-        <li>Gene × cell count matrix</li>
-        <li>Quality-filtered count matrix</li>
+        <li>raw aggregated counts matrix</li>
+        <li>QC’ed aggregated counts matrix</li>
         <li>Sample (patient) metadata</li>
+        <li>Inputs for DEG analysis</li>
       </ul>
     </td>
     <td>
@@ -36,7 +38,7 @@
   <tr>
     <td>
       <ul>
-        <li>RefCellTypeMarkers.adultBrain.rds</li>
+        <li><code>RefCellTypeMarkers.adultBrain.rds</code></li>
       </ul>
     </td>
     <td>
@@ -47,7 +49,7 @@
     <td>
       <ul>
         <li>Source: PsychENCODE</li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing/get_marker_genes.ipynb">get_marker_genes.ipynb</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
@@ -64,24 +66,21 @@
   <tr>
     <td>
       <ul>
-        <li>all_paths.csv</li>
-        <li>WikiPathways_2019_Human.npy</li>
-        <li>DEGs (soon)</li>
-        <li>pathway enrichments (soon)</li>
+        <li><code>degs_per_celltype_postmortem.npz</code></li>
+        <li><code>WikiPathways_2019_Human.npy</code></li>
+        <li><code>GO_Biological_Process_2023.npy</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>List of all analysis file paths</li>
-        <li>Pre-compiled pathway gene sets</li>
-        <li>Differential expression results (pending)</li>
-        <li>Enrichment summaries (pending)</li>
+        <li>differentially expressed genes per celltype</li>
+        <li>pathway databases</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: WikiPathways_2019_Human</li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats/compute_stats.ipynb">compute_stats.ipynb</a></li>
+        <li>Source: WikiPathways and Gene Ontology databases, <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
@@ -98,23 +97,20 @@
   <tr>
     <td>
       <ul>
-        <li>all_scores_0825.csv</li>
-        <li>leading_edge_0825Ex.csv</li>
-        <li><code>*_loss.npy</code></li>
-        <li><code>*_labs.npy</code></li>
+        <li><code>umap_data_figure_1.npz</code></li>
+        <li><code>kl_data_figure_2.npz</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Per-gene, per-pathway score matrix</li>
-        <li>Leading-edge gene lists for each pathway</li>
-        <li>NumPy arrays of cluster losses & labels</li>
+        <li>data related to the analysis in Figure 1</li>
+        <li>data related to the analysis in Figure 2</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/snRNAseq_stats/compute_stats.ipynb">compute_stats.ipynb</a></li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning/projections.ipynb">projections.ipynb</a></li>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">analyses/snRNAseq_score_partitioning</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
@@ -131,34 +127,46 @@
   <tr>
     <td>
       <ul>
-        <li>5041.SUB14737_LipidXData.csv</li>
-        <li>1096.SUB12877_lipidXData.csv</li>
-        <li>2685.SUB15127_LipidXData.csv</li>
-        <li>7689.SUB15127_MetabolomicsData_Targeted.xlsx</li>
+        <li><code>*_LipidXData.csv</code></li>
+        <li><code>MetabolomicsData_Targeted.xlsx</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Quantified lipid features (three batches)</li>
-        <li>Targeted metabolomics summary spreadsheet</li>
+        <li>LCMS lipidomic quantifications for WT, p.Glu50fs*3, p.Tyr622*, p.Tyr622* +/- CDP-choline</li>
+        <li>LCMS metabolomic data for WT, p.Tyr622*, p.Tyr622* +/- CDP-choline</li>
       </ul>
     </td>
     <td>
       <ul>
         <li>Source: Harvard LCMS Core</li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS/lipidomics/SUB14737_lipidomics_choline.ipynb">SUB14737_lipidomics_choline.ipynb</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
   </tr>
+<tr>
+    <th>File name</th>
+    <th>Description</th>
+    <th>Details</th>
+  </tr>
   <tr>
-    <td colspan="3">
+    <td>
       <ul>
-        <li>(placeholder for raw LCMS instrument files, e.g. vendor <code>.raw</code>)</li>
-        <li>Placeholder for raw LCMS instrument output files</li>
-        <li>Source: NA</li>
-        <li>Used in: NA</li>
-        <li>Available: Raw</li>
+        <li><code>*.raw</code></li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>raw LCMS lipidomic data for WT, p.Glu50fs*3, p.Tyr622*, p.Tyr622* +/- CDP-choline</li>
+        <li>raw LCMS metabolomic data for WT, p.Tyr622*, p.Tyr622* +/- CDP-choline</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Source: Harvard LCMS Core</li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Metabolite</a></li>
       </ul>
     </td>
   </tr>
@@ -174,24 +182,22 @@
   <tr>
     <td>
       <ul>
-        <li>fastq files</li>
-        <li>counts.txt</li>
-        <li>g2_degs.csv</li>
-        <li>y622_degs.csv</li>
-        <li>choline_degs.csv</li>
+        <li><code>*.fastq</code></li>
+        <li><code>counts.txt</code></li>
+        <li><code>degs_by_genotype_induced_neurons.npz</code></li>
       </ul>
     </td>
     <td>
       <ul>
         <li>Raw reads for each condition</li>
         <li>Gene count matrix</li>
-        <li>DEG tables for G2, Y622, and choline treatments</li>
+        <li>DEG tables for WT, p.Glu50fs*3, p.Tyr622*, p.Tyr622* +/- CDP-choline</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a></li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a></li>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">GEO</a></li>
       </ul>
     </td>
@@ -208,22 +214,20 @@
   <tr>
     <td>
       <ul>
-        <li>batch*.csv</li>
-        <li>batch_*_df_quant.csv</li>
         <li><code>*.xlsx</code></li>
+        <li><code>seahorse_quantifications.npz</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Processed oxygen consumption rates (per run)</li>
-        <li>Quantified summary tables</li>
         <li>Raw Excel exports from Seahorse analyzer</li>
+        <li>Processed and quantified data</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">analyses/iN_O2_consumption</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">analyses/iN_O2_consumption</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
@@ -240,22 +244,20 @@
   <tr>
     <td>
       <ul>
-        <li>batch*.csv</li>
-        <li>batch_*_df_quant.csv</li>
-        <li><code>*.xlsx</code></li>
+        <li><code>*.czi</code></li>
+        <li><code>image_quantifications.npz</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Processed oxygen consumption rates (per run)</li>
-        <li>Quantified summary tables</li>
-        <li>Raw Excel exports from Seahorse analyzer</li>
+        <li>Raw images</li>
+        <li>Image quantification</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">analyses/imaging</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">analyses/imaging</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>
@@ -272,22 +274,22 @@
   <tr>
     <td>
       <ul>
-        <li>batch*.csv</li>
-        <li>batch_*_df_quant.csv</li>
+        <li><code>*.xlsx</code></li>
+        <li><code>*.csv</code></li>
         <li><code>*.xlsx</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Processed oxygen consumption rates (per run)</li>
-        <li>Quantified summary tables</li>
-        <li>Raw Excel exports from Seahorse analyzer</li>
+        <li>amyloid ELISA data with analysis</li>
+        <li>processed ephys data</li>
+        <li>Raw ephys data</li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
-        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption/seahorse_updpated.ipynb">seahorse_updpated.ipynb</a></li>
+        <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
+        <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
       </ul>
     </td>

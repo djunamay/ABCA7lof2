@@ -1,0 +1,178 @@
+% Options for packages loaded elsewhere
+\documentclass[a4paper,12pt]{article} 
+\usepackage{xcolor}
+% In your preamble, open an output file:
+
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+% Basic packages
+\usepackage{amsmath,amssymb}
+
+% Remove section numbering
+\setcounter{secnumdepth}{-\maxdimen}
+
+% Font setup depending on engine
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % for LuaTeX or XeTeX
+  \usepackage{unicode-math} % also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{textcomp}   % extra symbols
+  \usepackage{mathptmx}   % Times text + maths for pdfLaTeX
+\else                      % XeLaTeX / LuaLaTeX
+  \usepackage{unicode-math}   % already loads fontspec
+  \setmainfont{Times New Roman}            % text
+  \setmathfont{TeX Gyre Termes Math}       % maths, looks like Times
+\fi
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}
+\DeclareUnicodeCharacter{1D6FD}{\ensuremath{\beta}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}
+\DeclareUnicodeCharacter{0470}{\ensuremath{\Psi}}
+
+% Use upquote if available (for straight quotes in verbatim)
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+% Use microtype if available
+\IfFileExists{microtype.sty}{%
+  \usepackage{microtype}%
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+% Adjust paragraph spacing for non-KOMA classes
+\makeatletter
+\@ifundefined{KOMAClassName}{%
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}%
+  }{%
+    \setlength{\parindent}{0pt}%
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}%
+  }%
+}{%
+  \KOMAoptions{parskip=half}%
+}
+\makeatother
+
+\usepackage{graphicx}
+
+% Define a macro for scaling images to fit within the text area
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi
+}
+\makeatother
+
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+
+% Load color and highlighting packages for LuaTeX vs. others
+% \ifLuaTeX
+%   \usepackage{luacolor}
+%   \usepackage[soul]{lua-ul}
+% \else
+%   \usepackage{soul}
+% \fi
+
+% Prevent overfull lines
+\setlength{\emergencystretch}{3em}
+
+% Define tight list formatting (from pandoc)
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+}
+
+% Hyperlinks and bookmarks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % allow URL line breaks
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}
+}
+
+% Page geometry and additional formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{lineno}   % for line numbering
+\usepackage{setspace}
+
+\usepackage[
+  backend=biber,
+  style=nature,
+  citestyle=nature,
+  sorting=none,
+  isbn=false,
+  doi=false,
+  url=false,
+  eprint=false,
+  articletitle=false
+]{biblatex}
+\addbibresource{references.bib}
+
+
+\usepackage{booktabs}  % For nicer horizontal lines
+\usepackage{graphicx}
+
+\usepackage{hyperref} % For clickable references and \phantomsection
+
+% New counter for supplemental data
+\newcounter{datafile}
+\renewcommand{\thedatafile}{S\arabic{datafile}}
+
+% Command for supplemental data sections
+\newcommand{\datasection}[2]{%
+  \refstepcounter{datafile}%
+  \phantomsection%
+  \noindent\textbf{Data \thedatafile.} #1%
+  \label{#2}%
+}
+
+\usepackage{etoc}
+\usepackage{lineno}
+
+\usepackage{subcaption}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\captionsetup[subfigure]{%
+  labelformat = simple,           % “a:”
+  labelsep    = colon,            % “a: Caption…”
+  labelfont   = {sf,small,bf}, % Helvetica, 8 pt, bold
+  textfont    = footnotesize,     % 10 pt legend text
+  justification = raggedright,
+  singlelinecheck = false
+}
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{longtable}
+\usepackage{capt-of}
+
+\usepackage[justification=raggedright, singlelinecheck=false]{caption}
+\usepackage[belowskip=0pt]{caption}
+\usepackage{float}
+\usepackage{seqsplit}
+
+\usepackage{titling}  % after hyperref, before \title{...}
+
+% Flush-left title, author, date
+\pretitle{\begin{flushleft}\large\bfseries}
+\posttitle{\end{flushleft}}
+\preauthor{\begin{flushleft}\large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}\large}
+\postdate{\end{flushleft}}
+

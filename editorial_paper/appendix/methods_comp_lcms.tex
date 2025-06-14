@@ -1,0 +1,12 @@
+\subsubsection{\underline{LC-MS Data Analysis}} 
+
+\paragraph{LC-MS Lipidomics Data Analysis.}
+Lipids were identified, and their signals integrated using the Lipidsearch © software (version 4.2.27, Mitsui Knowledge Industry, University of Tokyo). Integrations and peak quality were curated manually. Peak areas were first background-corrected by subtracting three times the median peak area measured in blank samples; negative values resulting from this correction were set to zero. Statistical comparisons between different cell lines were performed using Welch's t-test (\texttt{scipy.stats.ttest\_ind}, \texttt{equal\_var=False}). For comparisons involving treatment conditions within the same cell line, Student's t-test (\texttt{scipy.stats.ttest\_ind}, \texttt{equal\_var=True}) was used, assuming equal variance due to identical genetic backgrounds.
+
+\paragraph{LC-MS Metabolomics Data Analysis.}
+Data were analyzed using Compound Discoverer 3.2 (Thermo Fisher Scientific). Metabolite identification was based either on MS2/MS3 spectral matching against a local mzVault library and corresponding retention times from pure standards (Level 1), or spectral matching using mzCloud (Level 2). Each metabolite identification was manually inspected. Peak areas were first background-corrected by subtracting three times the median peak area measured in blank samples; negative values resulting from this correction were set to zero. Median-centered peak areas were scaled (\texttt{StandardScaler()} from scikit-learn) prior to principal component analysis (PCA). The Harvard Center for Mass Spectrometry identified three samples with notably low overall metabolite intensities, which were subsequently excluded from downstream analyses.
+
+\paragraph{Targeted LC-MS Metabolite Analysis in Media Samples.}
+Peak areas from targeted metabolite analysis of media samples were compared for CDP, CDP-choline, and choline. To ensure accurate detection, solvent blanks were analyzed: CDP and CDP-choline were not detected in these blanks, while choline was detected at levels several orders of magnitude lower than in media samples.
+
+

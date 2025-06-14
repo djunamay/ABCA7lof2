@@ -1,0 +1,76 @@
+% main.tex
+\documentclass[12pt]{article}
+
+% Load the preamble from the separate file
+\input{preamble.tex}
+\usepackage{etoc}
+
+
+\usepackage{geometry}
+\geometry{margin=.6in}
+
+
+\begin{document}
+
+\input{sections/title_page}
+\newpage
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/results}
+\input{sections/discussion}
+%\printbibliography
+\printbibliography[
+  title={References},
+  notkeyword=SI,
+  notkeyword=methods
+]
+\input{sections/main_fig_legends}
+\input{sections/methods}
+\input{sections/data_code}
+%\Methods references
+\printbibliography[heading=none, keyword=methods]
+
+\input{sections/acknowledgements}
+\input{sections/extended_data_fig_legends}
+\input{sections/extended_data_tables}
+
+\clearpage
+
+\usepackage[scaled]{helvet}
+\renewcommand\sfdefault{phv}
+% … later, where your SI begins …
+\begingroup
+  % 1) Switch to the phv (Helvetica) family and normal weight:
+  \renewcommand{\familydefault}{\sfdefault}
+  % 2) …and actually switch to “normal” shape (so headings see it)…
+  \normalfont
+  % 3) …then pick 11pt with a 13pt baseline
+  \fontsize{11}{13}\selectfont
+
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+
+  \section*{Supplementary Information}
+  \addcontentsline{toc}{section}{Supplementary Information}
+
+  % tell etoc to show only section‐level entries (adjust to subsection if needed)
+  \etocsettocdepth{subsubsection}
+
+  % now print the local TOC of everything that follows
+  \localtableofcontents
+  \clearpage
+
+  \input{appendix/description_variables}
+  \clearpage
+  \input{./appendix/KL_clustering.tex}
+  \clearpage
+  \input{./appendix/molecular_dynamics.tex}
+  \clearpage
+  \input{./appendix/supplementary_tables.tex}
+  \clearpage
+  \printbibliography[heading=none, keyword=SI]
+  \input{./sections/supplementary_figures.tex}
+  \clearpage
+\endgroup
+
+\end{document}

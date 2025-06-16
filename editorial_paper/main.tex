@@ -7,7 +7,7 @@
 
 
 \usepackage{geometry}
-\geometry{margin=.6in}
+%\\geometry{margin=.6in}
 
 
 \begin{document}
@@ -25,9 +25,10 @@
   notkeyword=methods
 ]
 \input{sections/main_fig_legends}
-\input{sections/methods}
+%\input{sections/methods}
 \input{sections/data_code}
 %\Methods references
+\subsubsection{Methods references}
 \printbibliography[heading=none, keyword=methods]
 
 \input{sections/acknowledgements}
@@ -36,8 +37,8 @@
 
 \clearpage
 
-\usepackage[scaled]{helvet}
-\renewcommand\sfdefault{phv}
+% \usepackage[scaled]{helvet}
+% \renewcommand\sfdefault{phv}
 % … later, where your SI begins …
 \begingroup
   % 1) Switch to the phv (Helvetica) family and normal weight:
@@ -59,7 +60,8 @@
   % now print the local TOC of everything that follows
   \localtableofcontents
   \clearpage
-
+  \input{./sections/supplementary_figures.tex}
+  \clearpage
   \input{appendix/description_variables}
   \clearpage
   \input{./appendix/KL_clustering.tex}
@@ -68,9 +70,8 @@
   \clearpage
   \input{./appendix/supplementary_tables.tex}
   \clearpage
+  \subsubsection{Supplementary references}
   \printbibliography[heading=none, keyword=SI]
-  \input{./sections/supplementary_figures.tex}
-  \clearpage
 \endgroup
 
 \end{document}

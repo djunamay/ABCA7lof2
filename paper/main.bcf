@@ -172,7 +172,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>none</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -642,6 +642,7 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
@@ -724,6 +725,7 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="xml">labelalphatemplate</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
@@ -812,6 +814,7 @@
     <bcf:option datatype="boolean" backendout="1">eprint</bcf:option>
     <bcf:option datatype="boolean" backendout="1">related</bcf:option>
     <bcf:option datatype="boolean" backendout="1">subentry</bcf:option>
+    <bcf:option datatype="boolean" backendout="1">subentrycomp</bcf:option>
     <bcf:option datatype="boolean" backendout="1">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer" backendin="maxcitenames,maxbibnames,maxsortnames">maxnames</bcf:option>
     <bcf:option datatype="integer" backendin="mincitenames,minbibnames,minsortnames">minnames</bcf:option>
@@ -2361,43 +2364,215 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">Welch2022-aa</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Welch2022-aa</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">WHO2023Dementia</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Alzheimers_Association2016-jx</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">Karlsson2022-vv</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Lambert2013-km</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">Marioni2019-os</bcf:citekey>
+    <bcf:citekey order="4" intorder="3">Jansen2019-ww</bcf:citekey>
+    <bcf:citekey order="4" intorder="4">Kunkle2019-yo</bcf:citekey>
+    <bcf:citekey order="4" intorder="5">Wightman2021-km</bcf:citekey>
+    <bcf:citekey order="4" intorder="6">Bellenguez2022-ao</bcf:citekey>
+    <bcf:citekey order="4" intorder="7">Belloy2023-kj</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">Steinberg2015-mu</bcf:citekey>
+    <bcf:citekey order="5" intorder="2">De_Roeck2019-bs</bcf:citekey>
+    <bcf:citekey order="5" intorder="3">Reitz2013-eo</bcf:citekey>
+    <bcf:citekey order="5" intorder="4">Bellenguez2022-ao</bcf:citekey>
+    <bcf:citekey order="5" intorder="5">Holstege2022-vp</bcf:citekey>
+    <bcf:citekey order="5" intorder="6">Lyssenko2021-gw</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Steinberg2015-mu</bcf:citekey>
+    <bcf:citekey order="6" intorder="2">De_Roeck2019-bs</bcf:citekey>
+    <bcf:citekey order="6" intorder="3">Reitz2013-eo</bcf:citekey>
+    <bcf:citekey order="6" intorder="4">Bellenguez2022-ao</bcf:citekey>
+    <bcf:citekey order="6" intorder="5">Le_Guennec2016-mr</bcf:citekey>
+    <bcf:citekey order="6" intorder="6">Hollingworth2011-tr</bcf:citekey>
+    <bcf:citekey order="6" intorder="7">Naj2011-bs</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Reitz2013-eo</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Kim2008-zi</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Koldamova2014-kd</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Abe-Dohmae2004-wb</bcf:citekey>
+    <bcf:citekey order="10" intorder="2">Wang2003-wh</bcf:citekey>
+    <bcf:citekey order="10" intorder="3">Tomioka2017-nv</bcf:citekey>
+    <bcf:citekey order="10" intorder="4">Picataggi2022-yp</bcf:citekey>
+    <bcf:citekey order="10" intorder="5">Quazi2013-pe</bcf:citekey>
+    <bcf:citekey order="10" intorder="6">Fang2025</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Aikawa2018-ek</bcf:citekey>
+    <bcf:citekey order="11" intorder="2">Tanaka2011-zo</bcf:citekey>
+    <bcf:citekey order="11" intorder="3">Duchateau2023-ji</bcf:citekey>
+    <bcf:citekey order="11" intorder="4">Kawatani2023-vf</bcf:citekey>
+    <bcf:citekey order="11" intorder="5">Tayran2024-bo</bcf:citekey>
+    <bcf:citekey order="11" intorder="6">Wang2025-de</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Satoh2015-yu</bcf:citekey>
+    <bcf:citekey order="12" intorder="2">Sakae2016-uy</bcf:citekey>
+    <bcf:citekey order="12" intorder="3">Chan2008-qu</bcf:citekey>
+    <bcf:citekey order="12" intorder="4">Bamji-Mirza2018-xt</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Kim2013-sv</bcf:citekey>
+    <bcf:citekey order="13" intorder="2">Fu2016-qe</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Aikawa2019-hv</bcf:citekey>
+    <bcf:citekey order="14" intorder="2">Aikawa2021-vz</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">Kawatani2023-vf</bcf:citekey>
+    <bcf:citekey order="15" intorder="2">Allen2017-vw</bcf:citekey>
+    <bcf:citekey order="15" intorder="3">Liu2021-zh</bcf:citekey>
+    <bcf:citekey order="15" intorder="4">Bamji-Mirza2018-xt</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Kawatani2023-vf</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">Brase2023-xk</bcf:citekey>
+    <bcf:citekey order="17" intorder="2">Blanchard2022-cf</bcf:citekey>
+    <bcf:citekey order="17" intorder="3">Sayed2021-qn</bcf:citekey>
+    <bcf:citekey order="17" intorder="4">Wamsley2024-zm</bcf:citekey>
+    <bcf:citekey order="17" intorder="5">Kamath2022-if</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Steinberg2015-mu</bcf:citekey>
+    <bcf:citekey order="18" intorder="2">Holstege2022-vp</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">Duchateau2024-rf</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">Johnson2020-ip</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Holstege2022-vp</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Mathys2019-wb</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Welch2022-ef</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">Subramanian2005-pu</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">Steinberg2015-mu</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">Duchateau2024-rf</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">Kunkle2019-yo</bcf:citekey>
+    <bcf:citekey order="27" intorder="2">Holstege2022-vp</bcf:citekey>
+    <bcf:citekey order="27" intorder="3">Naj2011-bs</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">Mathys2023-rs</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">LeThiMy2022-dp</bcf:citekey>
+    <bcf:citekey order="29" intorder="2">Jumper2021-na</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">LeThiMy2022-dp</bcf:citekey>
+    <bcf:citekey order="30" intorder="2">Fang2025</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">Fang2025</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">Steinberg2015-mu</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">De_Roeck2017-hv</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">Ho2016-kz</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">Subramanian2005-pu</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">Divakaruni2014-eq</bcf:citekey>
+    <bcf:citekey order="36" intorder="2">Gu2021-ms</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">Divakaruni2022-bp</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">Divakaruni2022-bp</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">Divakaruni2022-bp</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">Divakaruni2011-uj</bcf:citekey>
+    <bcf:citekey order="40" intorder="2">Jekabsons2004-fn</bcf:citekey>
+    <bcf:citekey order="40" intorder="3">Jain2024-br</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">Kumar2022-bb</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Demine2019-yq</bcf:citekey>
+    <bcf:citekey order="42" intorder="2">Zorov2021-sj</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Monteiro2021-ei</bcf:citekey>
+    <bcf:citekey order="43" intorder="2">Demine2019-yq</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">Tomioka2017-sq</bcf:citekey>
+    <bcf:citekey order="44" intorder="2">Picataggi2022-hf</bcf:citekey>
+    <bcf:citekey order="44" intorder="3">Fang2025</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">LeThiMy2022-dp</bcf:citekey>
+    <bcf:citekey order="45" intorder="2">Fang2025</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">Boumann2003-ew</bcf:citekey>
+    <bcf:citekey order="46" intorder="2">Wang2019-om</bcf:citekey>
+    <bcf:citekey order="46" intorder="3">Zhao2008-pq</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">Boumann2006-nz</bcf:citekey>
+    <bcf:citekey order="47" intorder="2">Sienski2021-zt</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">Westermann2010-au</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">Satoh2015-yu</bcf:citekey>
+    <bcf:citekey order="49" intorder="2">Sakae2016-uy</bcf:citekey>
+    <bcf:citekey order="49" intorder="3">Bamji-Mirza2018-xt</bcf:citekey>
+    <bcf:citekey order="49" intorder="4">Chan2008-qu</bcf:citekey>
+    <bcf:citekey order="49" intorder="5">De_Roeck2018-fw</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">Giblin2025-ri</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">Takada2018-ce</bcf:citekey>
+    <bcf:citekey order="51" intorder="2">Renne2018-fc</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">McMahon2015-gy</bcf:citekey>
+    <bcf:citekey order="52" intorder="2">Yang2024-tz</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">Ballweg2020-rv</bcf:citekey>
+    <bcf:citekey order="53" intorder="2">Covino2018-hz</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">Boumann2003-im</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">Decker2024-ae</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">Wang2019-om</bcf:citekey>
+    <bcf:citekey order="56" intorder="2">Van_der_Veen2017-ei</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">Decker2024-ae</bcf:citekey>
+    <bcf:citekey order="57" intorder="2">Adachi2016-tg</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">Bano2023-qz</bcf:citekey>
+    <bcf:citekey order="58" intorder="2">Zong2024-tn</bcf:citekey>
+    <bcf:citekey order="58" intorder="3">Demine2019-qj</bcf:citekey>
+    <bcf:citekey order="58" intorder="4">Picca2023-gt</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">Morant-Ferrando2023-va</bcf:citekey>
+    <bcf:citekey order="59" intorder="2">Trigo2022-ym</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">Park2023-fa</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">Demine2019-qj</bcf:citekey>
+    <bcf:citekey order="61" intorder="2">Shadel2015-kt</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">Korshunov1997-aj</bcf:citekey>
+    <bcf:citekey order="62" intorder="2">Wisloff2005-ho</bcf:citekey>
+    <bcf:citekey order="62" intorder="3">Andrews2005-yy</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">Korshunov1997-aj</bcf:citekey>
+    <bcf:citekey order="63" intorder="2">Wisloff2005-ho</bcf:citekey>
+    <bcf:citekey order="63" intorder="3">Andrews2005-yy</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">Robert2020-sc</bcf:citekey>
+    <bcf:citekey order="64" intorder="2">Volanti2002-mc</bcf:citekey>
+    <bcf:citekey order="64" intorder="3">Canty1999-oj</bcf:citekey>
+    <bcf:citekey order="64" intorder="4">Schreck1992-zr</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">Kawatani2023-vf</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">Gavrilova2018-oi</bcf:citekey>
+    <bcf:citekey order="66" intorder="2">Zeisel2009-xv</bcf:citekey>
+    <bcf:citekey order="66" intorder="3">Blusztajn2017-nv</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">Sienski2021-zt</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">Mathys2024-ex</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">Wang2021-oa</bcf:citekey>
+    <bcf:citekey order="69" intorder="2">Hemani2013-zr</bcf:citekey>
+    <bcf:citekey order="69" intorder="3">Haig2011-vs</bcf:citekey>
+    <bcf:citekey order="69" intorder="4">Zuk2012-uz</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">Haney2024-fx</bcf:citekey>
+    <bcf:citekey order="70" intorder="2">Victor2022-tl</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">Mathys2019-wb</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">Mathys2019-wb</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">Mathys2019-wb</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">Lin2018-ma</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">De_Roeck2019-ee</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">Ran2013-sf</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">Sienski2021-zt</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">Miraldi2013-ng</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">Sloan2018-ja</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">Stringer2021-yn</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">Esteras2020-md</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">Fort2017-jq</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">Korsunsky2019-qz</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">Wolf2018-jx</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">Traag2019-xu</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">Subramanian2005-gt</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">Kernighan1970-zl</bcf:citekey>
+    <bcf:citekey order="88" intorder="1">He2017-dq</bcf:citekey>
+    <bcf:citekey order="89" intorder="1">Maynard2021-mz</bcf:citekey>
+    <bcf:citekey order="90" intorder="1">Elsner1997GraphPartitioning</bcf:citekey>
+    <bcf:citekey order="91" intorder="1">Elsner1997GraphPartitioning</bcf:citekey>
+    <bcf:citekey order="92" intorder="1">Karypis1997METIS</bcf:citekey>
+    <bcf:citekey order="93" intorder="1">Kernighan1970-zl</bcf:citekey>
+    <bcf:citekey order="94" intorder="1">Welch2022-ef</bcf:citekey>
+    <bcf:citekey order="95" intorder="1">He2017-dq</bcf:citekey>
+    <bcf:citekey order="96" intorder="1">Maynard2021-mz</bcf:citekey>
+    <bcf:citekey order="97" intorder="1">Allen2017-on</bcf:citekey>
+    <bcf:citekey order="98" intorder="1">Steinberg2015-vj</bcf:citekey>
+    <bcf:citekey order="99" intorder="1">Allen2017-on</bcf:citekey>
+    <bcf:citekey order="99" intorder="2">Steinberg2015-vj</bcf:citekey>
+    <bcf:citekey order="100" intorder="1">Steinberg2015-vj</bcf:citekey>
+    <bcf:citekey order="101" intorder="1">Allen2017-on</bcf:citekey>
+    <bcf:citekey order="102" intorder="1">Steinberg2015-vj</bcf:citekey>
+    <bcf:citekey order="103" intorder="1">Allen2017-on</bcf:citekey>
+    <bcf:citekey order="104" intorder="1">Steinberg2015-vj</bcf:citekey>
+    <bcf:citekey order="105" intorder="1">Johnson2020-ib</bcf:citekey>
+    <bcf:citekey order="106" intorder="1">Wang2018-im</bcf:citekey>
+    <bcf:citekey order="107" intorder="1">Franzen2019-hh</bcf:citekey>
+    <bcf:citekey order="108" intorder="1">Welch2022-ef</bcf:citekey>
+    <bcf:citekey order="109" intorder="1">Mathys2023-rs</bcf:citekey>
+    <bcf:citekey order="110" intorder="1">He2017-dq</bcf:citekey>
+    <bcf:citekey order="111" intorder="1">Maynard2021-mz</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    <bcf:sort order="2">
+      <bcf:sortitem order="1">intciteorder</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global"
+                name="none/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

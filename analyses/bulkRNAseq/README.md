@@ -30,5 +30,5 @@ Counts were summarized at the exon level and then aggregated by gene identifier.
 - Run `computing_degs.ipynb` to calculate differentially-expressed genes
 - Run `compute_ffcv.ipynb` to calculate pathway enrichments using FGSEA
 - Run `run_partitioning_bulkRNAseq.py` to partition the gene-pathway graphs for each comparison
-- Run `KL_bulk.ipynb` to plot the partitioning outputs
+- Run `KL_bulk_clean.ipynb` to plot the partitioning outputs
 - Run `rna_seq_plots.ipynb` for other RNAseq plots in the paper

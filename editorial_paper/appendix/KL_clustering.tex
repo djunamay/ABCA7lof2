@@ -1,7 +1,9 @@
-\subsubsection*{Supplementary Note 2}
-\addcontentsline{toc}{subsubsection}{Supplementary Note 2: Choosing a partitioning heuristic for gene-pathway grouping}
-\textbf{Choosing a partitioning heuristic for gene-pathway grouping}
-\paragraph{Methods.}
+\paragraph*{Supplementary Note 2.}
+\phantomsection
+\addcontentsline{toc}{paragraph}{Supplementary Note 2.}
+Choosing a partitioning heuristic for gene-pathway grouping.
+
+\textbf{Methods.}\newline
 The heatmap in Supplementary Figure 3a highlights how frequently pathways within a pathway database, such as WikiPathways, share gene members. On average, every pathway shown in Supplementary Figure 3a shares at least one gene with approximately 40\% of the other pathways, highlighting that there is redundancy in this matrix that could be summarized in simpler terms.
 
 To summarize redundant gene-pathway information into a limited number of non-redundant gene-pathway groups, we reformulated the gene-pathway association problem as a bipartite graph $G$ constructed from all the genes in the Leading Edge subset (LE) and their associated pathways. LE was defined as the set of 268 genes driving the enrichment signal for pathways that passed a significance threshold of $p < 0.05$ (fGSEA) in Con vs. ABCA7 LoF excitatory neurons. $G$ was constructed from an $n \times m$ unweighted adjacency matrix, where $n$ represented the number of LE genes and $m$ the number of pathways associated with four or more LE genes, as specified in the WikiPathways database.
@@ -18,7 +20,7 @@ Additionally, the Spectral Clustering algorithm, a commonly used clustering meth
 
 For benchmarking purposes, the three graph partitioning techniques and the spectral clustering algorithm were evaluated by segmenting graph $G$ into eight gene-pathway clusters using the respective algorithms. Spectral clustering was run over 1,000 initiations, while K/L and METIS were run over 50,000 iterations because their solutions were slightly more variable across runs. The deterministic bisection method was run only once. A randomized graph partitioning benchmark was also computed by permuting the eight cluster labels of approximately equivalent size for 1,000 initiations. Average losses were computed per algorithm on all initiations. The benchmarking process and source code are available at: GitHub Repository.
 
-\paragraph{Results.}
+\textbf{Results.}\newline
 Spectral clustering performed significantly better than all other algorithms based on the loss (Supplementary Figure 3b). This was expected, as spectral clustering does not place a constraint on cluster size. Spectral clustering results were characterized by a single large cluster and many small clusters (Supplementary Figure 3c), indicating that this clustering algorithm was highly susceptible to outliers and suggesting that graph partitioning, which imposes the constraint of equal partitioning, was a better approach to the problem of grouping genes and pathways into biologically informative groups. Indeed, all three graph partitioning algorithms divided the graph into more uniformly-sized groups (Supplementary Figure 3c). Among the partitioning algorithms, K/L and METIS produced the most uniformly sized groups (Supplementary Figure 3c) and also had significantly lower losses compared to the spectral bisection algorithm (Supplementary Figure 3b). K/L and METIS solutions were very similar, with their respective best solutions (lowest loss) having an average Jaccard similarity index of 0.91 on the diagonal (Supplementary Figure 3d,e). K/L and METIS solutions were also consistent across pairwise random initiations, both when comparing within K/L or METIS solutions (Rand Index=0.87 and 0.91, respectively) and when comparing all pairwise K/L and METIS solutions (Rand Index=0.88) (Supplementary Figure 3f).
 
 Overall, these results indicate the importance of non-redundant gene-pathway groupings to interpret biological effects. They also indicate that for some gene-pathway graphs, such as the one in this study, graph partitioning is a better approach than clustering.

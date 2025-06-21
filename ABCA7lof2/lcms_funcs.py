@@ -57,7 +57,7 @@ def plot_volcano(pval_col, name_col, group_col,lfc_col, data, palette, force_tex
 
     data.loc[:,'size'] = np.where((data[pval_col]<0.05) & (np.abs(data[lfc_col])>1), max_size, min_size)
     
-    sns.scatterplot(data=data, x=lfc_col, y=-1*np.log10(data[pval_col]), hue=group_col, size='size', alpha=alpha, sizes=(min_size, max_size), palette=palette)
+    sns.scatterplot(data=data, x=lfc_col, y=-1*np.log10(data[pval_col]), hue=group_col, size='size', alpha=alpha, sizes=(min_size, max_size), palette=palette, edgecolor='black')
 
     if label_top_genes:
         # Label top genes

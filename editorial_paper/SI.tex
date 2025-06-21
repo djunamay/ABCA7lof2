@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+% Load the preamble from the separate file
+\input{preamble.tex}
+
+\setcounter{secnumdepth}{4}   % allow numbering/anchors down to level 4
+\setcounter{tocdepth}{4}      % let the ToC show level 4 entries
+
+\usepackage{geometry}
+\geometry{margin=1in}
+
+
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+
+% — offset the label numbers so they begin at 46 —
+\DeclareFieldFormat{labelnumber}{%
+  \ifinteger{#1}
+    {\number\numexpr#1+69\relax}
+    {#1}}
+
+\addbibresource{references.bib}
+
+% ─── in your preamble, after \geometry and before \begin{document} ───
+\usepackage{tocloft}
+
+% show TOC down to paragraph (level 4)
+\setcounter{tocdepth}{4}
+
+
+\begin{document}
+
+\section*{Supplementary Information}
+\tableofcontents
+\clearpage
+
+\input{appendix/description_variables}
+\input{./appendix/KL_clustering.tex}
+\input{./appendix/molecular_dynamics.tex}
+\input{./supplementary_figures/figS1.tex}
+\input{./supplementary_figures/figS2.tex}
+\input{./supplementary_figures/figS3.tex}
+\input{./supplementary_figures/figS4.tex}
+\input{./supplementary_figures/figS5.tex}
+\input{./supplementary_figures/figS6.tex}
+\newgeometry{margin=0.5in}
+\input{./appendix/supplementary_tables.tex}
+\restoregeometry
+\printbibliography[
+  title={SI References},
+  keyword=SI  % replace 46 with (last main ref + 1)
+]
+\end{document}

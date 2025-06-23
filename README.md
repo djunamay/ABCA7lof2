@@ -28,3 +28,7 @@ cd ABCA7lof2
 | induced-neurons - O2 consumption rates             | Analyze oxygen consumption rates in iPSC neurons            | [→](analyses/iN_O2_consumption/)                         |
 | induced-neurons / cortical organoid - imaging              | Analyze MitoHealth, TMRM, and CellROX dyes, and visualize neuronal markers.          | [→](analyses/iN_membrane_potential/)                     |
 | cortical organoid - ephys and amyloid               | Plot Amyloid ELISAs and Ephysiological data from cortical organoids.          | [→](analyses/iN_membrane_potential/)                     |
+
+## Software & Package Versions
+
+[→](./package_info.md)

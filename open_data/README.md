@@ -38,19 +38,19 @@
   <tr>
     <td>
       <ul>
-        <li><code>RefCellTypeMarkers.adultBrain.rds</code></li>
+        <li><code>reference markers</code></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>Reference cell-type marker definitions for adult brain cell types</li>
+        <li>Reference cell-type marker definitions for adult brain cell types and excitatory layer annotations</li>
       </ul>
     </td>
     <td>
       <ul>
         <li>Source: PsychENCODE</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705](https://osf.io/5k8v2/files/osfstorage">OSF</a></li>
       </ul>
     </td>
   </tr>

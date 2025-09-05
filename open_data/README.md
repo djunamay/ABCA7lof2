@@ -31,8 +31,8 @@
       <ul>
         <li>Source: NA</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a></li>
-        <li>Available: <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP (redacted)</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a></li>
+        <li>Available: <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">redacted data</a></li>
       </ul>
     </td>
   </tr>
@@ -53,7 +53,7 @@
       <ul>
         <li>Source: PsychENCODE</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://osf.io/5k8v2/files/osfstorage">OSF</a></li>
+        <li>Available: <a href="https://osf.io/5k8v2/files/osfstorage">celltype markers</a></li>
       </ul>
     </td>
   </tr>
@@ -84,8 +84,8 @@
       <ul>
         <li>Source: WikiPathways and Gene Ontology databases, <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
-        <li>Available: <a href="https://osf.io/v6y3d/files/osfstorage">OSF</a></li>
-        <li>Available: <a href="https://osf.io/5cnfy/wiki/home/</li">DEGs</a>>
+        <li>Available: <a href="https://osf.io/v6y3d/files/osfstorage">pathways</a></li>
+        <li>Available: <a href="https://osf.io/5cnfy/wiki/home/</li">DEGs</a>
       </ul>
     </td>
   </tr>
@@ -170,7 +170,7 @@
       <ul>
         <li>Source: Harvard LCMS Core</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
-        <li>Available: <a href="https://osf.io/u68k3/">OSF</a></li>
+        <li>Available: <a href="https://osf.io/u68k3/">raw data</a></li>
       </ul>
     </td>
   </tr>
@@ -202,7 +202,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
-        <li>Available: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">Gene Expression Omnibus</a></li>
+        <li>Available: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">raw data</a></li>
         <li>Available: <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a></li>
       </ul>
     </td>
@@ -269,7 +269,7 @@
   </tr>
 
   <tr>
-    <th colspan="3">Cortical organoids – Amyloid and Ephys Data</th>
+    <th colspan="3">Induced-neurons / cortical organoids – Amyloid and Ephys Data</th>
   </tr>
   <tr>
     <th>File name</th>
@@ -287,7 +287,7 @@
     <td>
       <ul>
         <li>amyloid ELISA data with analysis</li>
-        <li>processed ephys data</li>
+        <li>iN ephys data</li>
         <li>Raw ephys data</li>
       </ul>
     </td>
@@ -295,7 +295,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://osf.io/jy3fe/">iN ephys data</a></li>
       </ul>
     </td>
   </tr>

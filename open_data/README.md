@@ -233,7 +233,8 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">analyses/iN_O2_consumption</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">analyses/iN_O2_consumption</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://osf.io/kptbw/">raw seahorse data</a></li>
+        <li>Available: <a href="https://osf.io/mnysb/">processed seahorse data</a></li>
       </ul>
     </td>
   </tr>
@@ -263,7 +264,8 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">analyses/imaging</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">analyses/imaging</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://osf.io/htb23/">Raw Images</a></li>
+        <li>Available: <a href="https://osf.io/mnysb/">Image quantifications</a></li>
       </ul>
     </td>
   </tr>
@@ -296,6 +298,8 @@
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">analyses/amyloid_ephys</a></li>
         <li>Available: <a href="https://osf.io/jy3fe/">iN ephys data</a></li>
+        <li>Available: <a href="https://osf.io/em92c/">cortical organoid ephys data</a></li>
+        <li>Available: <a href="https://osf.io/szuvt/">ELISA data</a></li>
       </ul>
     </td>
   </tr>

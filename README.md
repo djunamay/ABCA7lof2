@@ -38,9 +38,9 @@ To install specific environments:
 ```bash
 conda create --name myenv --file env.txt
 ```
-- `bulkrna_packages.txt` and `trim_env_packages.txt` and `qtltools_env_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
-- `wgs_env_packages.txt` $\rightarrow$ conda environment to access WGS data 
-- `confocalquant_packages.txt` $\rightarrow$ conda environment for confocal image analysis
-- `bulkrna_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
-- `scmod_py_packages.txt` $\rightarrow$ conda environment for snRNAseq analysis
+- `/envs/bulkrna_packages.txt` and `trim_env_packages.txt` and `qtltools_env_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
+- `/envs/wgs_env_packages.txt` $\rightarrow$ conda environment to access WGS data 
+- `/envs/confocalquant_packages.txt` $\rightarrow$ conda environment for confocal image analysis
+- `/envs/bulkrna_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
+- `/envs/scmod_py_packages.txt` $\rightarrow$ conda environment for snRNAseq analysis
 - More Info [→](./package_info.md)

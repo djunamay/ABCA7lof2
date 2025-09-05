@@ -15,7 +15,7 @@
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
       Available @: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a> | 
       <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">redacted data</a> | 
-      <a href="https://osf.io/mnysb/">input statistics</a>
+      <a href="https://osf.io/mnysb/files/osfstorage#">input statistics</a>
     </td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@
     </td>
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">snRNAseq_score_partitioning</a><br>
-      Available @: <a href="https://osf.io/mnysb/">processed data</a>
+      Available @: <a href="https://osf.io/n9a35/files/osfstorage">processed data and intermediate results</a>
     </td>
   </tr>
 
@@ -64,7 +64,7 @@
     </td>
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
-      Available @: <a href="https://osf.io/mnysb/">processed data</a>
+      Available @: <a href="https://osf.io/mnysb/files/osfstorage">processed data</a>
     </td>
   </tr>
   <tr>
@@ -87,7 +87,8 @@
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a><br>
       Available @: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">raw data</a> | 
-      <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a>
+      <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a> |
+      <a href="https://osf.io/5cnfy/wiki/home/">other</a>
     </td>
   </tr>
 
@@ -100,8 +101,8 @@
     </td>
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">iN_O2_consumption</a><br>
-      Available @: <a href="https://osf.io/kptbw/">raw data</a> | 
-      <a href="https://osf.io/mnysb/">processed data</a>
+      Available @: <a href="https://osf.io/kptbw/files/osfstorage">raw data</a> | 
+      <a href="https://osf.io/mnysb/files/osfstorage">processed data</a>
     </td>
   </tr>
 

@@ -52,7 +52,7 @@
       <ul>
         <li>Source: PsychENCODE</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705](https://osf.io/5k8v2/files/osfstorage">OSF</a></li>
+        <li>Available: <a href="https://osf.io/5k8v2/files/osfstorage">OSF</a></li>
       </ul>
     </td>
   </tr>
@@ -83,7 +83,7 @@
       <ul>
         <li>Source: WikiPathways and Gene Ontology databases, <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705](https://osf.io/v6y3d/files/osfstorage">OSF</a></li>
+        <li>Available: <a href="https://osf.io/v6y3d/files/osfstorage">OSF</a></li>
       </ul>
     </td>
   </tr>
@@ -143,7 +143,7 @@
       <ul>
         <li>Source: Harvard LCMS Core</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://osf.io/u68k3/">OSF</a></li>
       </ul>
     </td>
   </tr>

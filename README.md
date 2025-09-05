@@ -33,4 +33,14 @@ cd ABCA7lof2
 
 ## Software & Package Versions
 
+`bulkrna_packages.txt` and `trim_env_packages.txt` and `qtltools_env_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
+`wgs_env_packages.txt` $\rightarrow$ conda environment to access WGS data 
+`confocalquant_packages.txt` $\rightarrow$ conda environment for confocal image analysis
+`bulkrna_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
+`scmod_py_packages.txt` $\rightarrow$ conda environment for snRNAseq analysis
+
+```bash
+conda create --name myenv --file env.txt
+```
+
 [→](./package_info.md)

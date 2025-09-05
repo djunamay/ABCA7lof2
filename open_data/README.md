@@ -14,16 +14,16 @@
         <li><code>*.fastq</code></li>
         <li><code>raw_counts.mtx</code></li>
         <li><code>qc_counts.mtx</code></li>
-        <li><code>individual_metadata_redacted.csv</code></li>
+        <li><code>colData, rowData</code></li>
         <li><code>input_stats.rds</code></li>
       </ul>
     </td>
     <td>
       <ul>
         <li>Raw sequencing reads</li>
-        <li>raw aggregated counts matrix</li>
-        <li>QC’ed aggregated counts matrix</li>
-        <li>Sample (patient) metadata</li>
+        <li>raw aggregated per-cell counts matrix</li>
+        <li>QC’ed aggregated per-cell counts matrix</li>
+        <li>per-cell and per-gene metadata</li>
         <li>Inputs for DEG analysis</li>
       </ul>
     </td>
@@ -31,7 +31,7 @@
       <ul>
         <li>Source: NA</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a>, <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a>, <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP (redacted)</a></li>
       </ul>
     </td>
   </tr>

@@ -31,7 +31,7 @@
       <ul>
         <li>Source: NA</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a>, <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP</a></li>
       </ul>
     </td>
   </tr>

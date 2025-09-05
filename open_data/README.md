@@ -31,7 +31,8 @@
       <ul>
         <li>Source: NA</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a>, <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP (redacted)</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Synapse</a></li>
+        <li>Available: <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">SCP (redacted)</a></li>
       </ul>
     </td>
   </tr>
@@ -68,7 +69,7 @@
   <tr>
     <td>
       <ul>
-        <li><code>degs_per_celltype_postmortem.npz [ ]</code></li>
+        <li><code>supplementary_table_6.csv</code></li>
         <li><code>WikiPathways_2019_Human.npy</code></li>
         <li><code>GO_Biological_Process_2023.npy</code></li>
       </ul>
@@ -84,6 +85,7 @@
         <li>Source: WikiPathways and Gene Ontology databases, <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
         <li>Available: <a href="https://osf.io/v6y3d/files/osfstorage">OSF</a></li>
+        <li>Available: <a href="https://osf.io/5cnfy/wiki/home/</li">DEGs</a>>
       </ul>
     </td>
   </tr>
@@ -186,7 +188,7 @@
       <ul>
         <li><code>*.fastq</code></li>
         <li><code>counts.txt</code></li>
-        <li><code>degs_by_genotype_induced_neurons.npz</code></li>
+        <li><code>supplementary_table_9.csv</code></li>
       </ul>
     </td>
     <td>
@@ -200,7 +202,8 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">analyses/bulkRNAseq</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">GEO</a></li>
+        <li>Available: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">Gene Expression Omnibus</a></li>
+        <li>Available: <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a></li>
       </ul>
     </td>
   </tr>

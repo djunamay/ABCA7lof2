@@ -15,7 +15,7 @@
         <li><code>raw_counts.mtx</code></li>
         <li><code>qc_counts.mtx</code></li>
         <li><code>colData, rowData</code></li>
-        <li><code>input_stats.rds</code></li>
+        <li><code>input_stats.rds [ ]</code></li>
       </ul>
     </td>
     <td>
@@ -38,7 +38,9 @@
   <tr>
     <td>
       <ul>
-        <li><code>reference markers</code></li>
+        <li><code>PanglaoDB_Franzen2019.csv</code></li>
+        <li><code>RefCellTypeMarkers.adultBrain.rds</code></li>
+        <li><code>RefCellTypeMarkers.adultBrain_Wang2018.csv</code></li>
       </ul>
     </td>
     <td>
@@ -66,7 +68,7 @@
   <tr>
     <td>
       <ul>
-        <li><code>degs_per_celltype_postmortem.npz</code></li>
+        <li><code>degs_per_celltype_postmortem.npz [ ]</code></li>
         <li><code>WikiPathways_2019_Human.npy</code></li>
         <li><code>GO_Biological_Process_2023.npy</code></li>
       </ul>
@@ -81,7 +83,7 @@
       <ul>
         <li>Source: WikiPathways and Gene Ontology databases, <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705](https://osf.io/v6y3d/files/osfstorage">OSF</a></li>
       </ul>
     </td>
   </tr>

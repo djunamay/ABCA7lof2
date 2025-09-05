@@ -1,7 +1,6 @@
 
 # ABCA7 variants impact phosphatidylcholine and mitochondria in neurons
-DOI: 10.1038/s41586-025-09520-y
-Link: https://www.nature.com/articles/s41586-025-09520-y
+`DOI:` [10.1038/s41586-025-09520-y](https://www.nature.com/articles/s41586-025-09520-y)
 
 This repository contains the main analysis code and links to raw and processed datasets, and relevant analysis pipelines, to reproduce (or extend on) results from our paper.
 

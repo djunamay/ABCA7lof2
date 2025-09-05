@@ -15,7 +15,7 @@
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
       Available @: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a> | 
       <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">redacted data</a> | 
-      <a href="https://osf.io/mnysb/files/osfstorage#">input statistics</a>
+      <a href="https://osf.io/xegjk">input statistics</a>
     </td>
   </tr>
   <tr>

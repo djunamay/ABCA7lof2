@@ -88,7 +88,7 @@
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a><br>
       Available @: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">raw data</a> | 
       <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a> |
-      <a href="https://osf.io/5cnfy/wiki/home/">other</a>
+      <a href="https://osf.io/mnysb/files/osfstorage">other</a>
     </td>
   </tr>
 
@@ -116,7 +116,7 @@
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">imaging</a><br>
       Available @: <a href="https://osf.io/htb23/">raw images</a> | 
-      <a href="https://osf.io/mnysb/">quantifications</a>
+      <a href="https://osf.io/mnysb/files/osfstorage">quantifications</a>
     </td>
   </tr>
 

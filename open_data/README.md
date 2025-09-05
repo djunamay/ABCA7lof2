@@ -33,6 +33,7 @@
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">analyses/snRNAseq_processing</a></li>
         <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a></li>
         <li>Available: <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">redacted data</a></li>
+        <li>Available: <a href="https://osf.io/mnysb/">input stats</a></li>
       </ul>
     </td>
   </tr>
@@ -115,7 +116,7 @@
       <ul>
         <li>Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/snRNAseq_stats">analyses/snRNAseq_stats</a></li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">analyses/snRNAseq_score_partitioning</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Dryad</a></li>
+        <li>Available: <a href="https://osf.io/mnysb/">processed data</a></li>
       </ul>
     </td>
   </tr>
@@ -145,7 +146,7 @@
       <ul>
         <li>Source: Harvard LCMS Core</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
-        <li>Available: <a href="https://osf.io/u68k3/">OSF</a></li>
+        <li>Available: <a href="https://osf.io/mnysb/">processed data</a></li>
       </ul>
     </td>
   </tr>

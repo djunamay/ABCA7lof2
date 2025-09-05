@@ -168,7 +168,7 @@
       <ul>
         <li>Source: Harvard LCMS Core</li>
         <li>Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">analyses/iN_LCMS</a></li>
-        <li>Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">Metabolite</a></li>
+        <li>Available: <a href="https://osf.io/u68k3/">OSF</a></li>
       </ul>
     </td>
   </tr>

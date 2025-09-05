@@ -50,7 +50,6 @@
       Processed data supporting analyses in Figures 1–2
     </td>
     <td>
-      Source: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/snRNAseq_stats">snRNAseq_stats</a><br>
       Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">snRNAseq_score_partitioning</a><br>
       Available: <a href="https://osf.io/mnysb/">processed data</a>
     </td>
@@ -64,7 +63,6 @@
       Lipidomic and metabolomic quantifications (WT, p.Glu50fs*3, p.Tyr622*, ±CDP-choline)
     </td>
     <td>
-      Source: Harvard LCMS Core <br>
       Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
       Available: <a href="https://osf.io/mnysb/">processed data</a>
     </td>
@@ -74,7 +72,6 @@
       Raw lipidomic and metabolomic LCMS files
     </td>
     <td>
-      Source: Harvard LCMS Core <br>
       Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
       Available: <a href="https://osf.io/u68k3/">raw data</a>
     </td>

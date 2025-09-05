@@ -10,7 +10,6 @@ This repository contains the main analysis code and links to raw and processed d
 git clone git@github.com:djunamay/ABCA7lof2.git
 cd ABCA7lof2
 ```
-- See analysis-specific subfolders below for package requirements, data links, and code
   
 ## Data and Code Availability
 - Raw and processed data are available via [Synapse](https://www.synapse.org/#!Synapse:syn53461705), [OSF](https://osf.io/pqr9m/), or [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277).

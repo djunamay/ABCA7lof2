@@ -12,8 +12,8 @@
       Raw sequencing reads, per-cell count matrices (raw and QC’ed), per-cell and per-gene metadata, and DEG input statistics
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
-      Available: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
+      Available @: <a href="https://www.synapse.org/#!Synapse:syn53461705">raw and unredacted data</a> | 
       <a href="https://singlecell.broadinstitute.org/single_cell/study/SCP3182/a-single-cell-atlas-of-abca7-loss-of-function-in-human-brain#study-download">redacted data</a> | 
       <a href="https://osf.io/mnysb/">input statistics</a>
     </td>
@@ -23,8 +23,8 @@
       Reference cell-type marker definitions for adult brain cell types and excitatory layer annotations
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
-      Available: <a href="https://osf.io/5k8v2/files/osfstorage">cell-type markers</a>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
+      Available @: <a href="https://osf.io/5k8v2/files/osfstorage">cell-type markers</a>
     </td>
   </tr>
 
@@ -36,8 +36,8 @@
       Differential expression tables (per cell type) and pathway databases
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a><br>
-      Available: <a href="https://osf.io/v6y3d/files/osfstorage">pathways</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a><br>
+      Available @: <a href="https://osf.io/v6y3d/files/osfstorage">pathways</a> | 
       <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a>
     </td>
   </tr>
@@ -50,8 +50,8 @@
       Processed data supporting analyses in Figures 1–2
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">snRNAseq_score_partitioning</a><br>
-      Available: <a href="https://osf.io/mnysb/">processed data</a>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">snRNAseq_score_partitioning</a><br>
+      Available @: <a href="https://osf.io/mnysb/">processed data</a>
     </td>
   </tr>
 
@@ -63,8 +63,8 @@
       Lipidomic and metabolomic quantifications (WT, p.Glu50fs*3, p.Tyr622*, ±CDP-choline)
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
-      Available: <a href="https://osf.io/mnysb/">processed data</a>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
+      Available @: <a href="https://osf.io/mnysb/">processed data</a>
     </td>
   </tr>
   <tr>
@@ -72,8 +72,8 @@
       Raw lipidomic and metabolomic LCMS files
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
-      Available: <a href="https://osf.io/u68k3/">raw data</a>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/iN_LCMS">iN_LCMS</a><br>
+      Available @: <a href="https://osf.io/u68k3/">raw data</a>
     </td>
   </tr>
 
@@ -85,8 +85,8 @@
       Raw reads, gene count matrices, and DEG tables (WT, p.Glu50fs*3, p.Tyr622*, ±CDP-choline)
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a><br>
-      Available: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">raw data</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/bulkRNAseq">bulkRNAseq</a><br>
+      Available @: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299277">raw data</a> | 
       <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a>
     </td>
   </tr>
@@ -99,8 +99,8 @@
       Raw Seahorse analyzer exports and processed quantifications
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">iN_O2_consumption</a><br>
-      Available: <a href="https://osf.io/kptbw/">raw data</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_O2_consumption">iN_O2_consumption</a><br>
+      Available @: <a href="https://osf.io/kptbw/">raw data</a> | 
       <a href="https://osf.io/mnysb/">processed data</a>
     </td>
   </tr>
@@ -113,8 +113,8 @@
       Raw images and image quantifications
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">imaging</a><br>
-      Available: <a href="https://osf.io/htb23/">raw images</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">imaging</a><br>
+      Available @: <a href="https://osf.io/htb23/">raw images</a> | 
       <a href="https://osf.io/mnysb/">quantifications</a>
     </td>
   </tr>
@@ -127,8 +127,8 @@
       Amyloid ELISA data, iN ephys datasets, and cortical organoid ephys datasets
     </td>
     <td>
-      Used in: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">amyloid_ephys</a><br>
-      Available: <a href="https://osf.io/szuvt/">ELISA</a> | 
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">amyloid_ephys</a><br>
+      Available @: <a href="https://osf.io/szuvt/">ELISA</a> | 
       <a href="https://osf.io/jy3fe/">iN ephys</a> | 
       <a href="https://osf.io/em92c/">cortical organoid ephys</a>
     </td>

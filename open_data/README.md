@@ -128,7 +128,7 @@
       Amyloid ELISA data, iN ephys datasets, and cortical organoid ephys datasets
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">amyloid_ephys</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_iNs">amyloid_iNs</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/neurospheroid_amyloid">amyloid_organoids</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/neurospheroid_ephys">ephys_organoids</a><br>
       Available @: <a href="https://osf.io/szuvt/">ELISA</a> | 
       <a href="https://osf.io/jy3fe/">iN ephys</a> | <a href="https://osf.io/em92c/">cortical organoid ephys</a>
     </td>

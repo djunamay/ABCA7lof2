@@ -23,7 +23,7 @@
       Reference cell-type marker definitions for adult brain cell types and excitatory layer annotations
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_reviewer_analysis">snRNAseq_ex_layers</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_reviewer_analysis">snRNAseq_ex_layers</a><br>
       Available @: <a href="https://osf.io/5k8v2/files/osfstorage">cell-type markers</a>
     </td>
   </tr>
@@ -36,7 +36,7 @@
       Differential expression tables (per cell type) and pathway databases
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_pAla1527Gly_analysis</a><br>
       Available @: <a href="https://osf.io/v6y3d/files/osfstorage">pathways</a> | 
       <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a>
     </td>
@@ -114,8 +114,7 @@
       Raw images and image quantifications
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">membrane_potential</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">cellrox</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">iN_markers</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">organoid_markers</a><br>
-
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">membrane_potential</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">cellrox</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">iN_markers</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">organoid_markers</a><br>
       Available @: <a href="https://osf.io/htb23/">raw images</a> | 
       <a href="https://osf.io/mnysb/files/osfstorage">quantifications</a>
     </td>

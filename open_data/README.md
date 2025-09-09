@@ -114,7 +114,7 @@
       Raw images and image quantifications
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">membrane_potential</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">cellrox</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">iN_markers</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">organoid_markers</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_membrane_potential">membrane_potential</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_cellrox">cellrox</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/iN_markers">iN_markers</a> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/neurospheroid_markers">organoid_markers</a><br>
       Available @: <a href="https://osf.io/htb23/">raw images</a> | 
       <a href="https://osf.io/mnysb/files/osfstorage">quantifications</a>
     </td>

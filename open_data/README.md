@@ -36,7 +36,7 @@
       Differential expression tables (per cell type) and pathway databases
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_pAla1527Gly_analysis</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_stats">snRNAseq_stats</a> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/common_variant_analysis">snRNAseq_pAla1527Gly_analysis</a><br>
       Available @: <a href="https://osf.io/v6y3d/files/osfstorage">pathways</a> | 
       <a href="https://osf.io/5cnfy/wiki/home/">DEGs</a>
     </td>

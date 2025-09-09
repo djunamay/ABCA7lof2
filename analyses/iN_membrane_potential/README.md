@@ -3,7 +3,8 @@
 ## Experiment Description
 
 ## Data availability
-- Raw and Processed data will be made available on Dryad
+- Raw data are available on [OSF](https://osf.io/htb23/).
+- Processed data are available on [OSF](https://osf.io/mnysb/files/osfstorage).
 
 ## Code overview
 - Run `tmrm_011825_011925_with_fccp.ipynb` for TMRM analysis + FCCP

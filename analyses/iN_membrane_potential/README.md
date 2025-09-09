@@ -1,6 +1,7 @@
-# Imaging Experiments on induced Neurons
+# Membrane Potential Imaging Experiments on induced Neurons
 
 ## Experiment Description
+See the "Confocal imaging experiments" section in the `Methods` of our paper.
 
 ## Data availability
 - Raw data are available on [OSF](https://osf.io/htb23/).

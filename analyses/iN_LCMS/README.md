@@ -93,8 +93,8 @@ All IDs were manually reviewed. Peak areas were background-corrected (subtractin
 Peak areas of CDP, CDP-choline, and choline in media were compared. Solvent blanks confirmed that CDP and CDP-choline were undetectable, while choline appeared at levels several orders of magnitude below those in media samples.
 
 ## Data Availability
-- The raw will be available through [Dryad]().
-- The processed data used in the following analyses will be available through [Dryad]().
+- The raw data are available through [OSF](https://osf.io/u68k3/).
+- The processed data used in the following analyses will be available through [OSF: /LCMS_processed](https://osf.io/mnysb/files/osfstorage).
   
 ## Code Overview
 - Run `./lipidomics/SUB15127_lipidomics_Y622.ipynb` for p.Tyr622* lipidomics-related plots.

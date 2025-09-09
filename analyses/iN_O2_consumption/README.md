@@ -12,7 +12,7 @@ The oxygen consumption rate (OCR) of cells was determined over time using a Seah
 5. **Spare respiratory capacity** was determined as the ratio of maximal respiration to basal respiration.
 
 ## Data availability
-- Raw and Processed data will be made available on Dryad
-
+- Raw data are available via [OSF](https://osf.io/kptbw/files/osfstorage).
+- Processed data are available via [OSF](https://osf.io/mnysb/files/osfstorage#)
 ## Code overview
 - Run `./seahorse_updpated.ipynb` for seahorse analyses and plots.

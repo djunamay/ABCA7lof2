@@ -6,8 +6,6 @@ Action potentials were elicited by injecting current steps in current-clamp mode
 For electrophysiological recordings from cortical organoids, day 150 organoids were dissociated using Accutase (Stem Cell Technologies, #07920, 40 min, 37°C), plated onto #1 glass coverslips (Fisher Scientific, #50-194-4702) coated with PDL, laminin, and Matrigel, and maintained in 2D culture with or without 100 µM CDP-choline for two weeks prior to recordings.
 Spontaneous action potential outliers were identified using the IQR method (values outside Q1-2×IQR or Q3+2×IQR) and removed, resulting in the exclusion of two data points (values: 9.38 in p.Tyr622*; 6.15 in p.Tyr622*+Choline). Cells recording zero spontaneous potentials (likely glial) were also excluded.
 
-<img width="468" height="360" alt="image" src="https://github.com/user-attachments/assets/beb3c25c-33e3-4acd-bcc4-d099850f74ff" />
-
 ## Data availability
 - Raw data are available on [OSF](https://osf.io/em92c/).
 

@@ -23,7 +23,7 @@
       Reference cell-type marker definitions for adult brain cell types and excitatory layer annotations
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_processing">snRNAseq_processing</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_reviewer_analysis">snRNAseq_ex_layers</a><br>
       Available @: <a href="https://osf.io/5k8v2/files/osfstorage">cell-type markers</a>
     </td>
   </tr>

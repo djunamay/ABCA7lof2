@@ -51,7 +51,7 @@
     </td>
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/tree/main/analyses/snRNAseq_score_partitioning">snRNAseq_score_partitioning</a><br>
-      Available @: <a href="https://osf.io/n9a35/files/osfstorage">processed data and intermediate results</a>
+      Available @: <a href="https://osf.io/mnysb/files/osfstorage">processed data and intermediate results</a>
     </td>
   </tr>
 

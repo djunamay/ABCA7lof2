@@ -114,7 +114,8 @@
       Raw images and image quantifications
     </td>
     <td>
-      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">imaging</a><br>
+      Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">membrane_potential</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">cellrox</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">iN_markers</a><br> | <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/imaging">organoid_markers</a><br>
+
       Available @: <a href="https://osf.io/htb23/">raw images</a> | 
       <a href="https://osf.io/mnysb/files/osfstorage">quantifications</a>
     </td>
@@ -130,8 +131,7 @@
     <td>
       Related code: <a href="https://github.com/djunamay/ABCA7lof2/blob/main/analyses/amyloid_ephys">amyloid_ephys</a><br>
       Available @: <a href="https://osf.io/szuvt/">ELISA</a> | 
-      <a href="https://osf.io/jy3fe/">iN ephys</a> | 
-      <a href="https://osf.io/em92c/">cortical organoid ephys</a>
+      <a href="https://osf.io/jy3fe/">iN ephys</a> | <a href="https://osf.io/em92c/">cortical organoid ephys</a>
     </td>
   </tr>
 </table>

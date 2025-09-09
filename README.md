@@ -28,15 +28,20 @@ cd ABCA7lof2
 | induced-neurons - LCMS                            | Analyze lipidomic profiles from iPSC-derived neurons using Liquid Chromatography-Mass Spectrometry (LCMS).             | [→](analyses/iN_LCMS/)                                   |
 | induced-neurons - mRNA             |  Analyze mRNA datasets from iPSC-derived neurons.                                  | [→](analyses/bulkRNAseq/) |
 | induced-neurons - O2 consumption rates             | Analyze oxygen consumption rates in iPSC neurons            | [→](analyses/iN_O2_consumption/)                         |
-| induced-neurons / cortical organoid - imaging              | Analyze MitoHealth, TMRM, and CellROX dyes, and visualize neuronal markers.          | [→](analyses/iN_membrane_potential/)                     |
-| cortical organoid - ephys and amyloid               | Plot Amyloid ELISAs and Ephysiological data from cortical organoids.          | [→](analyses/iN_membrane_potential/)                     |
+| induced-neurons - membrane potential imaging              | Analyze MitoHealth and TMRM dyes from iPSC-derived neurons.          | [→](analyses/iN_membrane_potential/)                     |
+| induced-neurons - CellROX imaging              | Analyze CellROX dye from iPSC-derived neurons.          | [→](analyses/iN_cellrox/)                     |
+| induced-neurons - Neuronal marker imaging              | Show neuroanl marker images from iPSC-derived neurons.          | [→](analyses/iN_markers/)                     |
+| induced-neurons - ELISAs               | Plot Amyloid ELISAs from iPSC-derived neurons.          | [→](analyses/amyloid_iNs/)                     |
+| cortical organoid - Neuronal marker imaging              | Show neuroanl marker images from cortical organoids.          | [→](analyses/neurospheroid_markers/)                     |
+| cortical organoid - ELISAs               | Plot Amyloid ELISAs from cortical organoids.          | [→](analyses/neurospheroid_amyloid/)                     |
+| cortical organoid - ephys              | Plot Ephysiological data from cortical organoids.          | [→](analyses/neurospheroid_ephys/)                     |
 
 ## Software & Package Versions
 
 To install specific environments:
 
 ```bash
-conda create --name myenv --file env.txt
+conda create --name envname --file env.txt
 ```
 - `/envs/bulkrna_packages.txt` and `trim_env_packages.txt` and `qtltools_env_packages.txt` $\rightarrow$ conda environment for bulk mRNA-seq analysis
 - `/envs/wgs_env_packages.txt` $\rightarrow$ conda environment to access WGS data 

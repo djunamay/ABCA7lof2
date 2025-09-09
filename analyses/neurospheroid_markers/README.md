@@ -7,4 +7,4 @@ See the "Confocal imaging experiments" section in the `Methods` of our paper.
 - Raw data are available on [OSF](https://osf.io/htb23/).
 
 ## Code overview
-- Run `iN_markers.ipynb` to generate panels.
+- Run `markers_spheroid.ipynb` to generate panels.

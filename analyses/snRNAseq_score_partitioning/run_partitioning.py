@@ -29,8 +29,8 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 urls = [
-    'https://storage.googleapis.com/abca7lof/scRNAseq/processed_data/leading_edge_0825Ex.csv',
-    'https://storage.googleapis.com/abca7lof/scRNAseq/processed_data/WikiPathways_2019_Human.npy'
+    'https://storage.googleapis.com/abca7lof/scRNAseq/processed_data/leading_edge_0825Ex.csv', # output of 'compute_stats.ipynb' or from https://osf.io/ney78
+    'https://storage.googleapis.com/abca7lof/scRNAseq/processed_data/WikiPathways_2019_Human.npy' # from https://osf.io/v6y3d/
 ]
 for url in urls:
     local_filename = os.path.join(output_dir, os.path.basename(url))

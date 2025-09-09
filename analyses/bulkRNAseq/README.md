@@ -19,7 +19,7 @@ Counts were summarized at the exon level and then aggregated by gene identifier.
 
 ## Data availability
 - Raw data will be available via the Gene Expression Omnibus under accession ID [GSE219999]()
-- Processed data will be made available on Dryad
+- Processed data are available via [OSF](https://osf.io/mnysb/files/osfstorage)
   
 ## Code Overview
 - Run `get_reference.sh` to download the GRCh38 primary assembly FASTA and GENCODE v47 GTF  
